@@ -1,86 +1,11 @@
-/* --- Global Reset & Base Layout --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #eae5db;
-    overflow-x: hidden;
-}
-
-/* --- Floating Sticky Header Styling --- */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    z-index: 100;
-    background: transparent;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    transition: opacity 0.3s ease;
-}
-
-.logo-link:hover {
-    opacity: 0.8;
-}
-
-.logo-img {
-    height: auto;
-    max-height: 40px; 
-    width: auto;
-    display: block;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-left: 35px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    transition: opacity 0.3s ease;
-}
-
-.nav-links a:hover {
-    opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 20px 5%;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links a {
-        margin: 0 12px;
-    }
-}
-
 /* --- Hero Section Styling --- */
 .hero {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center; /* Swapped to center to lock your design centerpiece in the middle */
-    padding: 0 5%;
+    justify-content: flex-start; /* Swapped back to left-aligned */
+    padding-left: 8%; /* Restores that nice breathing room on the left edge */
     background: url('hero.webp') no-repeat center 60%/cover;
 }
 
@@ -90,7 +15,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
@@ -99,27 +24,27 @@ body {
     z-index: 2;
     color: #ffffff;
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers text details below the logo layout */
-    text-align: center;
+    align-items: flex-start; /* Slides text details below the logo layout back to the left */
+    text-align: left; /* Aligns paragraph text to the left */
 }
 
-/* Flex layout locks the emblem vertically stacked straight above the wordmark */
+/* Keeps the emblem stacked straight above the wordmark, but left-aligned */
 .hero-logo-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Adds clean breathing space between emblem and words */
+    align-items: flex-start; /* Aligns both logo images to the left edge */
+    gap: 15px; 
     margin-bottom: 35px;
 }
 
-/* This controls the brand new big center emblem size */
+/* This controls your big emblem size */
 .hero-emblem-center {
     width: 100%;
-    max-width: 280px; /* Make this number higher if you want the mountain icon even larger */
+    max-width: 280px; 
     height: auto;
     display: block;
 }
@@ -130,317 +55,4 @@ body {
     max-width: 580px; 
     height: auto;
     display: block;
-}
-
-.tagline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.75rem, 1.8vw, 1rem);
-    font-weight: 500;
-    letter-spacing: 6px;
-    color: #dfd5c6;
-    margin-bottom: 15px;
-}
-
-.sub-tagline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(0.95rem, 2.2vw, 1.3rem);
-    opacity: 0.85;
-    margin-bottom: 40px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 14px 35px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ffffff;
-    color: #1a1a1a;
-}
-
-/* --- Narrative Content Layout --- */
-.content-container {
-    background-color: #eae5db;
-    padding: 0 max(5%, 20px) 80px max(5%, 20px);
-    position: relative;
-    z-index: 3; 
-    margin-top: -60px; 
-}
-
-/* --- Subtle Cinematic Ripped Paper Divider --- */
-.torn-divider {
-    width: 110%;
-    height: 60px; 
-    background-image: url('torn-edge.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    left: -5%;
-    margin-bottom: 40px;
-}
-
-.narrative-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    padding-bottom: 120px;
-}
-
-@media (max-width: 968px) {
-    .narrative-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .torn-divider {
-        left: -20px;
-        width: calc(100% + 40px);
-    }
-}
-
-.section-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    color: #8a7e6a;
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.narrative-text h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
-
-.lead-paragraph {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.narrative-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.secondary-button {
-    display: inline-block;
-    padding: 12px 30px;
-    border: 2px solid #1a1a1a;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.secondary-button:hover {
-    background-color: #1a1a1a;
-    color: #eae5db;
-}
-
-.story-image-frame {
-    position: relative;
-    width: 100%;
-    height: 450px;
-}
-
-.story-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: #d1c9bc;
-    border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-/* --- Visual Journal Grid Styling --- */
-.gallery-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 40px;
-}
-
-.gallery-intro {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.gallery-intro h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.5rem;
-    color: #1a1a1a;
-    font-weight: 400;
-}
-
-.photography-grid {
-    column-count: 3;
-    column-gap: 30px;
-}
-
-.grid-item {
-    break-inside: avoid;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border-radius: 4px;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-}
-
-.grid-item.tall .photo-box { height: 480px; }
-.grid-item.medium .photo-box { height: 360px; }
-.grid-item.short .photo-box { height: 260px; }
-
-.photo-box {
-    width: 100%;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.bg-dark-neutral { background-color: #c4bcaf; }
-.bg-mid-neutral { background-color: #d8d0c3; }
-.bg-light-neutral { background-color: #e2dacd; }
-
-.grid-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.grid-item:hover .photo-box {
-    transform: scale(1.08);
-}
-
-.photo-info {
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.photo-info h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.1rem;
-    color: #1a1a1a;
-    margin-bottom: 4px;
-    font-weight: 600;
-}
-
-.photo-info span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    color: #8a7e6a;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
-@media (max-width: 900px) {
-    .photography-grid { column-count: 2; }
-}
-@media (max-width: 600px) {
-    .photography-grid { column-count: 1; }
-}
-
-/* --- Universal Footer Styling --- */
-.main-footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 80px max(8%, 20px) 30px max(8%, 20px);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.footer-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.brand-col h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.brand-col p {
-    color: #b3b3b3;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    max-width: 400px;
-}
-
-.footer-col h4 {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: #8a7e6a;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 15px;
-}
-
-.footer-col ul li a {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-bottom p {
-    color: #666666;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-}
-
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .main-footer {
-        padding-top: 60px;
-    }
 }
