@@ -1,4 +1,6 @@
-/* --- Master Core Reset --- */
+/* ==========================================================================
+   RESET & GLOBAL BASE STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +8,16 @@
 }
 
 body {
-    background-color: #eae5db; /* Main Sand Color */
+    background-color: #111111;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
-    color: #1a1a1a;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* --- Navigation Header --- */
+/* ==========================================================================
+   STICKY NAVIGATION HEADER
+   ========================================================================== */
 .main-header {
     position: fixed;
     top: 0;
@@ -21,9 +26,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background: transparent;
+    padding: 20px 40px;
     z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(3px);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .logo-img {
@@ -32,29 +44,29 @@ body {
     object-fit: contain;
 }
 
-.nav-links {
+.nav-menu {
     display: flex;
-    list-style: none;
     gap: 30px;
 }
 
-.nav-links a {
-    color: #ffffff;
+.nav-item {
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 400;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    opacity: 0.6;
+.nav-item:hover,
+.nav-item.active {
+    color: #ffffff;
 }
 
-/* --- Hero Section Styling --- */
+/* ==========================================================================
+   CINEMATIC HERO LANDING SECTION
+   ========================================================================== */
 .hero {
     position: relative;
     width: 100%;
@@ -64,18 +76,17 @@ body {
     background-position: center 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps the content aligned to the left side */
-    padding-left: 6%;
+    justify-content: flex-start;
+    padding-left: 10%;
 }
 
-/* CUT DOWN BY 50%: Adjusted opacity values to soften the dark blending gradient at the bottom */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
+    background: radial-gradient(circle at 30% 50%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
     z-index: 1;
 }
 
@@ -84,24 +95,23 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns textual children to the left side */
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
-/* Restored to keep the stacked logo block locked on the left side */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Stacks emblem and text flush left */
-    margin-bottom: 25px;
-    padding-left: 34px; /* Keeps your custom visual center nudge intact */
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 34px;
 }
 
 .hero-emblem-center {
     width: 320px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: -10px;
 }
 
 .hero-logo-text {
@@ -111,118 +121,306 @@ body {
 }
 
 .hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 45px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   SUBPAGE HEADER BANNERS
+   ========================================================================== */
+.subpage-banner {
+    position: relative;
+    width: 100%;
+    padding: 180px 10% 80px 10%;
+    background-color: #161616;
+    border-bottom: 1px solid #222222;
+}
+
+.banner-content {
+    max-width: 800px;
+}
+
+.banner-content h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #ffffff;
+    font-size: 52px;
     font-weight: 400;
-    margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    padding-left: 34px; /* Matches logo alignment */
+    letter-spacing: -1px;
+    margin: 10px 0 20px 0;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    background: transparent;
-    transition: all 0.4s ease;
-    margin-left: 34px; /* Matches logo alignment */
-}
-
-.cta-button:hover {
-    background: #ffffff;
-    color: #1a1a1a;
-}
-
-/* --- Layout Utility Classes --- */
-.content-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
-}
-
-.internal-page-padding {
-    padding-top: 140px; 
-}
-
-.max-width-center {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Narrative Section Styling --- */
-.narrative-section {
-    padding: 100px 0;
-}
-
-.narrative-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.section-tag {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #7a756c;
-    margin-bottom: 15px;
-}
-
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.paragraph {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #333333;
-    margin-bottom: 25px;
+.banner-lead {
+    font-size: 18px;
+    color: #999999;
     font-weight: 300;
 }
 
-.text-link {
-    display: inline-block;
+/* ==========================================================================
+   CORE LAYOUT AND GLOBAL CONTAINERS
+   ========================================================================== */
+.content-container {
+    background-color: #eae5db;
     color: #1a1a1a;
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    margin-top: 10px;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 4px;
-}
-
-.story-photo-placeholder {
+    position: relative;
+    z-index: 10;
     width: 100%;
-    height: 550px;
-    background-color: #d0c9bc; 
+    padding: 100px 10%;
 }
 
-/* --- Gallery & Journal Architecture --- */
+/* Typography Tokens */
+.section-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a8270;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Interactive Utility Elements */
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #111111;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: #1a1a1a;
+    color: #eae5db;
+}
+
+.cta-button.secondary:hover {
+    background-color: #eae5db;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+}
+
+.text-link {
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.text-link:hover {
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   SECTION LIBRARIES (STORY CORES)
+   ========================================================================== */
+.story-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.story-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.story-text p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.story-photo-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-photo-frame:hover {
+    transform: scale(1.03);
+}
+
+/* Placeholder Utility Vectors */
+.bg-dark-neutral  { background-color: #2c2822; }
+.bg-mid-neutral   { background-color: #cdc4b5; }
+.bg-light-neutral { background-color: #bdae97; }
+
+/* ==========================================================================
+   SECTION LIBRARIES (VISUAL GALLERY ARRAYS)
+   ========================================================================== */
 .gallery-section {
-    padding: 80px 0 140px 0;
+    padding-top: 40px;
 }
 
-.section-header-center {
+.gallery-header {
+    margin-bottom: 5px;
+}
+
+.gallery-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* 3-Column Masonry Wireframe Grid */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.grid-item {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.grid-item.tall {
+    grid-row: span 2;
+    aspect-ratio: 2 / 3;
+}
+
+.grid-item.short {
+    aspect-ratio: 4 / 3;
+}
+
+/* Upgraded Hover States */
+.grid-item:hover {
+    transform: scale(1.08) translateY(-8px);
+    z-index: 5;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.gallery-footer-link {
     text-align: center;
+    margin-top: 60px;
+}
+
+/* ==========================================================================
+   UNIVERSAL FOOTER BLOCKS
+   ========================================================================== */
+.universal-footer {
+    background-color: #141414;
+    color: #ffffff;
+    padding: 80px 10% 40px 10%;
+    border-top: 1px solid #222222;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
     margin-bottom: 60px;
 }
 
-.gallery-grid {
-    display: grid;
+.brand-col h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.brand-col p {
+    color: #777777;
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 320px;
+}
+
+.footer-column h4 {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #8a8270;
+    margin-bottom: 25px;
+}
+
+.footer-column a {
+    display: block;
+    color: #888888;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222222;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #444444;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT SYSTEMS (MOBILE BREAKPOINTS)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .story-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-header {
+        padding: 20px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+}
