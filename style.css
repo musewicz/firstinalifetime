@@ -270,7 +270,8 @@ body {
 .gallery-item.medium { grid-row: span 1; }
 .gallery-item.short { grid-row: span 1; }
 
-/* CUSTOM OVERRIDES */
+
+/* --- CUSTOM OVERRIDES --- */
 
 /* Japan Castle Override - Pushes framing view up to capture the peaks */
 .japan-castle img {
@@ -282,19 +283,16 @@ body {
     object-position: center 20%; 
 }
 
-/* 1. Target the specific photo for alignment adjustments */
-.gallery-item img.bali-sunset {
-    object-position: center center; /* Changes the default focal point */
-    transition: transform 0.5s ease; /* Prepares smooth transition for the zoom */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
+.bali-sunset img {
+    object-position: center center;
 }
 
-/* 2. Scale the image inside the box when the container is hovered */
-.gallery-item:hover img.bali-sunset {
-    transform: scale(1.08); /* Scales the actual photo inside its bounds */
+/* Scales the inside image on hover perfectly matching custom frame logic */
+.bali-sunset:hover img {
+    transform: scale(1.08);
 }
+
 
 /* --- Universal Footer Architecture --- */
 .main-footer {
