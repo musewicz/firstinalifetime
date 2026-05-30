@@ -166,7 +166,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    padding-bottom: 120px; /* Separates the text block from the gallery grid */
+    padding-bottom: 120px;
 }
 
 @media (max-width: 968px) {
@@ -245,7 +245,7 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-/* --- NEW: Visual Journal Grid Styling --- */
+/* --- Visual Journal Grid Styling --- */
 .gallery-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -264,7 +264,6 @@ body {
     font-weight: 400;
 }
 
-/* Masonry Columns Layout */
 .photography-grid {
     column-count: 3;
     column-gap: 30px;
@@ -277,29 +276,34 @@ body {
     overflow: hidden;
     background-color: #ffffff;
     border-radius: 4px;
+    /* Added transition to the item container so the lift animation is completely smooth */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
-/* Heights mapping for varied layout aesthetic */
 .grid-item.tall .photo-box { height: 480px; }
 .grid-item.medium .photo-box { height: 360px; }
 .grid-item.short .photo-box { height: 260px; }
 
-/* Neutral placeholders until you insert your real files */
 .photo-box {
     width: 100%;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .bg-dark-neutral { background-color: #c4bcaf; }
-.bg-mid-neutral { background-color: #ce stroke #d3cbd0; background-color: #d8d0c3; }
+.bg-mid-neutral { background-color: #d8d0c3; }
 .bg-light-neutral { background-color: #e2dacd; }
 
-.grid-item:hover .photo-box {
-    transform: scale(1.04);
+/* FIXED: Double the scale and add a clean 8px vertical lifting effect on hover */
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* Text info beneath photo grids */
+.grid-item:hover .photo-box {
+    transform: scale(1.08);
+}
+
 .photo-info {
     padding: 20px;
     background-color: #ffffff;
@@ -321,7 +325,6 @@ body {
     font-weight: 500;
 }
 
-/* Adapts masonry format to single column flow for smartphone layouts */
 @media (max-width: 900px) {
     .photography-grid {
         column-count: 2;
