@@ -68,7 +68,6 @@ body {
     padding-left: 6%;
 }
 
-/* CUT DOWN BY 50%: Adjusted opacity values to soften the dark blending gradient at the bottom */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -88,13 +87,13 @@ body {
     text-align: left;
 }
 
-/* Restored to keep the stacked logo block locked on the left side */
+/* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Stacks emblem and text flush left */
+    align-items: center; /* Centers word logo horizontally directly under the emblem */
     margin-bottom: 25px;
-    padding-left: 34px; /* Keeps your custom visual center nudge intact */
+    margin-left: 34px; /* Global offset matching text below */
 }
 
 .hero-emblem-center {
@@ -119,7 +118,7 @@ body {
     margin-bottom: 35px;
     letter-spacing: 0.05em;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    padding-left: 34px; /* Matches logo alignment */
+    margin-left: 34px; /* Standard left grid line anchor */
 }
 
 .cta-button {
@@ -133,7 +132,7 @@ body {
     letter-spacing: 0.2em;
     background: transparent;
     transition: all 0.4s ease;
-    margin-left: 34px; /* Matches logo alignment */
+    margin-left: 34px; /* Standard left grid line anchor */
 }
 
 .cta-button:hover {
@@ -227,9 +226,7 @@ body {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Try removing this next line if you want images to set their own height, 
-       or keep it if you want strict uniform boxes */
-    grid-auto-rows: 300px; 
+    grid-auto-rows: 250px; /* Base height */
     gap: 24px;
 }
 
@@ -255,15 +252,22 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
-}/* Neutral Placeholder Colors */
+}
+
+/* Neutral Placeholder Colors */
 .bg-dark-neutral  { background-color: #bab3a6; }
 .bg-mid-neutral   { background-color: #c4bdae; }
 .bg-light-neutral { background-color: #cfc8b9; }
 
 /* Masonry Varied Sizing Controls */
-.tall { grid-row: span 3; }
-.medium { grid-row: span 2; }
-.short { grid-row: span 1; }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.medium { grid-row: span 1; }
+.gallery-item.short { grid-row: span 1; }
+
+/* Specific override for the bus */
+.nz-bus img {
+    object-position: center 20%; 
+}
 
 /* --- Universal Footer Architecture --- */
 .main-footer {
@@ -346,7 +350,7 @@ body {
         width: 45vw;
     }
     .hero-logo-wrapper {
-        padding-left: 0;
+        margin-left: 0;
         align-items: center;
     }
     .hero {
@@ -358,7 +362,7 @@ body {
         text-align: center;
     }
     .hero-subtitle {
-        padding-left: 0;
+        margin-left: 0;
     }
     .cta-button {
         margin-left: 0;
@@ -378,4 +382,3 @@ body {
         gap: 40px;
     }
 }
-
