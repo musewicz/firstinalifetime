@@ -23,18 +23,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 8%;
+    padding: 20px 8%;
     z-index: 100;
     background: transparent;
 }
 
-.logo {
-    color: #ffffff;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.1rem;
-    letter-spacing: 3px;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+.logo-link {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+/* Restrains your graphical icon mark to a clean header height */
+.logo-img {
+    height: auto;
+    max-height: 40px; 
+    width: auto;
+    display: block;
 }
 
 .nav-links a {
@@ -90,16 +99,21 @@ body {
     position: relative;
     z-index: 2;
     color: #ffffff;
+    width: 100%;
     max-width: 650px;
 }
 
-.hero-content h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+/* NEW: Controls layout and spacing for your graphical brand words centerpiece */
+.hero-logo-wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.hero-logo-text {
+    width: 100%;
+    max-width: 550px; /* Adjust this to make the typography wider or narrower on the screen */
+    height: auto;
+    display: block;
 }
 
 .tagline {
@@ -330,7 +344,7 @@ body {
     .photography-grid { column-count: 1; }
 }
 
-/* --- NEW: Universal Footer Styling --- */
+/* --- Universal Footer Styling --- */
 .main-footer {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -390,7 +404,6 @@ body {
     color: #ffffff;
 }
 
-/* Bottom Bar details */
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
@@ -406,7 +419,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Formats footer columns to clean single row stacks on devices */
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
