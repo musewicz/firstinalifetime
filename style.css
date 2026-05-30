@@ -14,6 +14,58 @@ body {
     overflow-x: hidden;
 }
 
+/* --- Floating Sticky Header Styling --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    z-index: 100; /* Keeps menu floating on top of all other elements */
+    background: transparent;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 35px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Re-adjusts padding on mobile screens so links don't crowd the edges */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin: 0 12px;
+    }
+}
+
 /* --- Hero Section Styling --- */
 .hero {
     position: relative;
@@ -22,7 +74,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-left: 8%;
-    /* center 60% balances the image: lowers the sky, raises the car and desert trail */
     background: url('hero.webp') no-repeat center 60%/cover;
 }
 
@@ -93,7 +144,6 @@ body {
     background-color: #eae5db;
     padding: 0 max(5%, 20px) 80px max(5%, 20px);
     position: relative;
-    /* Lifting this container upward and forcing it to stack on top of the hero photo layer */
     z-index: 3; 
     margin-top: -60px; 
 }
@@ -101,7 +151,7 @@ body {
 /* --- Subtle Cinematic Ripped Paper Divider --- */
 .torn-divider {
     width: 110%;
-    height: 60px; /* Perfectly scales the height of your new textured asset */
+    height: 60px; 
     background-image: url('torn-edge.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
