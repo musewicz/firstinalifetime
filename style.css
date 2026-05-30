@@ -266,6 +266,15 @@ body {
     display: block;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This shifts the focus of the crop. 'top' keeps the top of the photo visible */
+    object-position: center; 
+    display: block;
+}
+
 /* Neutral Placeholder Colors */
 .bg-dark-neutral  { background-color: #bab3a6; }
 .bg-mid-neutral   { background-color: #c4bdae; }
