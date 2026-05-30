@@ -64,7 +64,7 @@ body {
     background-position: center 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps the content aligned to the left side */
+    justify-content: flex-start; /* Keeps the content container on the left side */
     padding-left: 6%;
 }
 
@@ -83,17 +83,17 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns textual children to the left side */
-    text-align: left;
+    align-items: center; /* This aligns EVERY element inside (logo, text, and button) along a shared vertical center axis */
+    text-align: center;   /* Centers text inside elements smoothly */
+    margin-left: 34px;    /* Global offset keeping the block beautifully nested on the left */
 }
 
 /* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers word logo horizontally directly under the emblem */
+    align-items: center; 
     margin-bottom: 25px;
-    margin-left: 34px; /* Global offset matching text below */
 }
 
 .hero-emblem-center {
@@ -118,7 +118,6 @@ body {
     margin-bottom: 35px;
     letter-spacing: 0.05em;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    margin-left: 34px; /* Standard left grid line anchor */
 }
 
 .cta-button {
@@ -132,7 +131,6 @@ body {
     letter-spacing: 0.2em;
     background: transparent;
     transition: all 0.4s ease;
-    margin-left: 34px; /* Standard left grid line anchor */
 }
 
 .cta-button:hover {
@@ -283,102 +281,4 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
     border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
-}
-
-.footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-}
-
-.footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
-}
-
-.footer-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #999999;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
-}
-
-/* --- Mobile Responsive Rules --- */
-@media (max-width: 968px) {
-    .main-header {
-        padding: 20px 6%;
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-emblem-center {
-        width: 45vw;
-    }
-    .hero-logo-wrapper {
-        margin-left: 0;
-        align-items: center;
-    }
-    .hero {
-        justify-content: center;
-        padding-left: 0;
-    }
-    .hero-content {
-        align-items: center;
-        text-align: center;
-    }
-    .hero-subtitle {
-        margin-left: 0;
-    }
-    .cta-button {
-        margin-left: 0;
-    }
-    .narrative-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .story-photo-placeholder {
-        height: 380px;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
+    padding-bottom:
