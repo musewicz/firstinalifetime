@@ -250,6 +250,10 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
+
+/* Custom framing override to show the top of the castle */
+.japan-castle img {
+    object-position: center top;
 }
 
 /* Neutral Placeholder Colors */
