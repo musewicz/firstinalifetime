@@ -378,3 +378,19 @@ body {
         gap: 40px;
     }
 }
+
+/* ... all your previous code ... */
+
+/* General rule for all images (Keep this) */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Specific rule for the bus (Paste this here) */
+.nz-bus img {
+    object-position: center 20%; 
+}
