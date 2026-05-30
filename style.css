@@ -71,7 +71,7 @@ body {
     background-position: center 60%;
     display: flex;
     align-items: center;
-    /* Anchors everything to the left side */
+    /* Keeps the entire content block anchored to the left side */
     justify-content: flex-start;
     padding-left: 10%;
 }
@@ -86,19 +86,20 @@ body {
     z-index: 1;
 }
 
-/* UPDATED: Aligns everything in the hero center-horizontally */
 .hero-content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    /* Keeps the textual elements and buttons aligned left relative to the container */
+    align-items: flex-start; 
 }
 
-/* UPDATED: Maintains the logo stack alignment */
+/* THE FIX: This centers the emblem and words perfectly over each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
+    /* Centers the two images relative to each other */
     align-items: center; 
     margin-bottom: 25px;
 }
@@ -116,7 +117,6 @@ body {
     object-fit: contain;
 }
 
-/* UPDATED: Centered text */
 .hero-subtitle {
     font-size: 1.15rem;
     font-weight: 300;
@@ -125,7 +125,7 @@ body {
     color: #eae5db;
     margin-bottom: 35px;
     opacity: 0.9;
-    text-align: center;
+    text-align: left;
 }
 
 .cta-button {
@@ -266,20 +266,4 @@ body {
     color: #eae5db;
     text-decoration: none;
     opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-    opacity: 1;
-}
-
-.footer-bottom {
-    max-width: 1200px;
-    margin: 60px auto 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(234, 229, 219, 0.1);
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.4;
-    letter-spacing: 0.05em;
-}
+    transition
