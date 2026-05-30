@@ -115,7 +115,7 @@ body {
     gap: 20px; 
     margin-bottom: 30px;
     
-    /* Reduced from 55px to 34px to slide the mountain back to the left a smidge */
+    /* Fine-tuned visual padding for alignment balance */
     padding-left: 34px; 
 }
 
@@ -163,25 +163,43 @@ body {
     color: #1a1a1a;
 }
 
+/* --- Cinematic Mountain Range Silhouette Divider --- */
+.mountain-divider {
+    width: 100%;
+    height: 90px; 
+    background-color: #1a1a1a; 
+    position: relative;
+    margin-top: -90px; 
+    margin-bottom: 50px;
+    z-index: 10;
+    
+    /* Mathematically draws jagged peaks and valleys across the horizon */
+    clip-path: polygon(
+        0% 60%, 
+        8% 40%, 
+        15% 55%, 
+        23% 25%, 
+        31% 50%, 
+        40% 30%, 
+        48% 65%, 
+        55% 45%, 
+        64% 20%, 
+        72% 55%, 
+        80% 35%, 
+        88% 60%, 
+        100% 40%, 
+        100% 100%, 
+        0% 100%
+    );
+}
+
 /* --- Narrative Content Layout --- */
 .content-container {
     background-color: #eae5db;
     padding: 0 max(5%, 20px) 80px max(5%, 20px);
     position: relative;
     z-index: 3; 
-    margin-top: -60px; 
-}
-
-/* --- Subtle Cinematic Ripped Paper Divider --- */
-.torn-divider {
-    width: 110%;
-    height: 60px; 
-    background-image: url('torn-edge.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    left: -5%;
-    margin-bottom: 40px;
+    margin-top: 0; 
 }
 
 .narrative-section {
@@ -198,10 +216,6 @@ body {
     .narrative-section {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-    .torn-divider {
-        left: -20px;
-        width: calc(100% + 40px);
     }
 }
 
