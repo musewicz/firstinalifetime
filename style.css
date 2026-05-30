@@ -116,7 +116,7 @@ body {
     display: block;
     
     /* Nudges the mountain emblem slightly to the right to correct the optical center */
-    transform: translateX(42px); 
+    transform: translateX(55px); 
 }
 /* Scaled down ~25% (from 870px to 650px) */
 .hero-logo-text {
