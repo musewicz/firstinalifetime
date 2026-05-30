@@ -1,198 +1,52 @@
-/* --- Global Reset & Base Layout --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First in a Lifetime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-html {
-    scroll-behavior: smooth;
-}
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>FIRST IN A LIFETIME</h1>
+            <p class="tagline">STORIES. PHOTOGRAPHY. FOOD. ADVENTURE.</p>
+            <p class="sub-tagline">Every journey has a story. What will yours be?</p>
+            <a href="#our-story" class="cta-button">START THE JOURNEY</a>
+        </div>
+    </section>
 
-body {
-    background-color: #eae5db;
-    overflow-x: hidden;
-}
+    <main class="content-container">
+        
+        <div class="torn-divider"></div>
 
-/* --- Hero Section Styling --- */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 8%;
-    background: url('hero.webp') no-repeat center center/cover;
-}
+        <section id="our-story" class="narrative-section">
+            <div class="narrative-text">
+                <span class="section-label">THE BEGINNING</span>
+                <h2>A Passion for the Unseen World</h2>
+                <p class="lead-paragraph">
+                    We believe the best stories aren't found on the main roads. They are tucked away in quiet alleys, captured in the fleeting glow of a setting sun, and shared over plates of food prepared by hands that carry generations of tradition.
+                </p>
+                <p>
+                    First in a Lifetime is a canvas for those moments that take your breath away—the ones that make you pause, look around, and realize you are experiencing something you will remember for the rest of your days. Through photography, storytelling, and a relentless pursuit of adventure, we invite you to explore the world through our eyes.
+                </p>
+                <a href="#explore" class="secondary-button">Read the Journal</a>
+            </div>
+            
+            <div class="narrative-gallery">
+                <div class="story-image-frame">
+                    <div class="image-accent-border"></div>
+                    <div class="story-photo-placeholder"></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;
-    max-width: 650px;
-}
-
-.hero-content h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.tagline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 1.1rem);
-    font-weight: 500;
-    letter-spacing: 6px;
-    color: #dfd5c6;
-    margin-bottom: 15px;
-}
-
-.sub-tagline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    opacity: 0.85;
-    margin-bottom: 40px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 14px 35px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ffffff;
-    color: #1a1a1a;
-}
-
-/* --- Narrative Content Layout --- */
-.content-container {
-    background-color: #eae5db;
-    padding: 0 max(5%, 20px) 80px max(5%, 20px); /* Reset top padding to let divider sit flush */
-    position: relative;
-    z-index: 10;
-    margin-top: -80px; /* FIX: Pulls the ENTIRE container up into the image space */
-}
-
-/* --- Cinematic Ripped Paper Divider --- */
-.torn-divider {
-    width: 100%;
-    height: 80px;
-    background-image: url('torn-edge.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    left: -5%; /* Offsets the main container padding so the rip touches both side edges of the screen */
-    width: 110%; /* Stretches edge-to-edge over the screen */
-    margin-bottom: 60px; /* Leaves room before the text starts */
-}
-
-.narrative-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-/* Stacks columns into one block on phones or small tablets */
-@media (max-width: 968px) {
-    .narrative-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .torn-divider {
-        left: -20px;
-        width: calc(100% + 40px);
-    }
-}
-
-.section-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    color: #8a7e6a;
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.narrative-text h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
-
-.lead-paragraph {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.narrative-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* Secondary Minimalist Button Style */
-.secondary-button {
-    display: inline-block;
-    padding: 12px 30px;
-    border: 2px solid #1a1a1a;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.secondary-button:hover {
-    background-color: #1a1a1a;
-    color: #eae5db;
-}
-
-/* Story Photography Frame Structure */
-.story-image-frame {
-    position: relative;
-    width: 100%;
-    height: 450px;
-}
-
-.story-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: #d1c9bc; /* Clean neutral tone until we place a photo here */
-    border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+</body>
+</html>
 }
