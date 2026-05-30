@@ -116,12 +116,13 @@ body {
     margin-bottom: 35px;
 }
 
-/* This controls your big emblem size */
+/* This controls your big emblem size and handles the optical center nudge */
 .hero-emblem-center {
     width: 100%;
     max-width: 280px; 
     height: auto;
     display: block;
+    margin-left: 150px; /* Adjust this number up or down to nudge the emblem perfectly into place */
 }
 
 /* This keeps your main text block beautifully proportioned */
