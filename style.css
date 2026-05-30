@@ -447,3 +447,101 @@ body {
         text-align: center;
     }
 }
+
+/* --- Horizontal Updates Ticker --- */
+.updates-ticker-section {
+    padding: 40px 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    margin: 40px 0 60px 0;
+}
+
+.ticker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ticker-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #a39e93;
+}
+
+/* This is the magic wrapper that enables horizontal scrolling */
+.updates-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    
+    /* Smooth native momentum scrolling on mobile */
+    -webkit-overflow-scrolling: touch; 
+    
+    /* Hide ugly scrollbars on clean browsers */
+    scrollbar-width: thin;
+    scrollbar-color: #a39e93 transparent;
+}
+
+/* Individual Update Card Styles */
+.update-card {
+    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 24px;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.update-card:hover {
+    background: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.update-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a39e93;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.update-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.update-excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Optional "NEW" dot indicator for the latest post */
+.update-card.new-tag::after {
+    content: 'NEW';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    background: #1a1a1a;
+    color: #eae5db;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+}
