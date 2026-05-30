@@ -22,7 +22,8 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-left: 8%;
-    background: url('hero.webp') no-repeat center 65%/cover;
+    /* center 60% balances the image: lowers the sky, raises the car and desert trail */
+    background: url('hero.webp') no-repeat center 60%/cover;
 }
 
 .hero-overlay {
@@ -92,14 +93,15 @@ body {
     background-color: #eae5db;
     padding: 0 max(5%, 20px) 80px max(5%, 20px);
     position: relative;
-    z-index: 10;
-    margin-top: -75px; /* FIXED: Increased from -40px to pull the rip higher onto the image */
+    /* Lifting this container upward and forcing it to stack on top of the hero photo layer */
+    z-index: 3; 
+    margin-top: -60px; 
 }
 
 /* --- Subtle Cinematic Ripped Paper Divider --- */
 .torn-divider {
     width: 110%;
-    height: 40px; 
+    height: 60px; /* Perfectly scales the height of your new textured asset */
     background-image: url('torn-edge.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
