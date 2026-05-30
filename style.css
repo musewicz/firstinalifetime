@@ -1,4 +1,4 @@
-/* --- Master Core Reset --- */
+/* -/* --- Master Core Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -250,6 +250,7 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
+} /* <-- Fixed: Closed this bracket completely so code below applies properly */
 
 /* Custom framing override to show the top of the castle */
 .japan-castle img {
@@ -289,138 +290,4 @@ body {
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-}
-
-.footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
-}
-
-.footer-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #999999;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
-}
-
-/* --- Mobile Responsive Rules --- */
-@media (max-width: 968px) {
-    .main-header {
-        padding: 20px 6%;
-    }
-    .hero {
-        justify-content: center; /* Sits block completely centered on screen viewports */
-        padding-left: 0;
-    }
-    .hero-content {
-        margin-left: 0;
-    }
-    .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
-    }
-    .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
-    }
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    .narrative-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .section-title {
-        font-size: 2.8rem;
-    }
-    .story-photo-placeholder {
-        height: 380px;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .main-header {
-        padding: 15px 6%;
-    }
-    .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
-    }
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-    }
-    .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 25px;
-    }
-    .cta-button {
-        padding: 12px 28px;
-        font-size: 0.75rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
-        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
-    }
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
-        height: 320px;            /* Symmetrical portrait presentation scale */
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
+    font-family: 'Cormorant Garamond', serif
