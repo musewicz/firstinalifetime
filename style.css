@@ -64,17 +64,18 @@ body {
     background-position: center 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Keeps the content aligned to the left side */
     padding-left: 6%;
 }
 
+/* CUT DOWN BY 50%: Adjusted opacity values to soften the dark blending gradient at the bottom */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 70%, #eae5db 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
     z-index: 1;
 }
 
@@ -83,17 +84,17 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: flex-start; /* Aligns textual children to the left side */
+    text-align: left;
 }
 
+/* Restored to keep the stacked logo block locked on the left side */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Stacks emblem and text flush left */
     margin-bottom: 25px;
-    padding-left: 34px;
+    padding-left: 34px; /* Keeps your custom visual center nudge intact */
 }
 
 .hero-emblem-center {
@@ -118,6 +119,7 @@ body {
     margin-bottom: 35px;
     letter-spacing: 0.05em;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    padding-left: 34px; /* Matches logo alignment */
 }
 
 .cta-button {
@@ -131,6 +133,7 @@ body {
     letter-spacing: 0.2em;
     background: transparent;
     transition: all 0.4s ease;
+    margin-left: 34px; /* Matches logo alignment */
 }
 
 .cta-button:hover {
@@ -146,7 +149,7 @@ body {
 }
 
 .internal-page-padding {
-    padding-top: 140px; /* Pushes content below the sticky transparent nav header */
+    padding-top: 140px; 
 }
 
 .max-width-center {
@@ -208,7 +211,7 @@ body {
 .story-photo-placeholder {
     width: 100%;
     height: 550px;
-    background-color: #d0c9bc; /* Neutral layout block fill */
+    background-color: #d0c9bc; 
 }
 
 /* --- Gallery & Journal Architecture --- */
@@ -223,129 +226,3 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 220px;
-    gap: 24px;
-}
-
-.gallery-item {
-    width: 100%;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-.gallery-item:hover {
-    transform: scale(1.08) translateY(-8px);
-    box-shadow: 0 20px 38px rgba(0,0,0,0.15);
-    z-index: 10;
-}
-
-/* Neutral Placeholder Colors */
-.bg-dark-neutral  { background-color: #bab3a6; }
-.bg-mid-neutral   { background-color: #c5be12; background-color: #c4bdae; }
-.bg-light-neutral { background-color: #cfc8b9; }
-
-/* Masonry Varied Sizing Controls */
-.tall { grid-row: span 3; }
-.medium { grid-row: span 2; }
-.short { grid-row: span 1; }
-
-/* --- Universal Footer Architecture --- */
-.main-footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 90px 6% 40px 6%;
-}
-
-.footer-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
-    border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
-}
-
-.footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-}
-
-.footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
-}
-
-.footer-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #999999;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
-}
-
-/* --- Mobile Responsive Rules --- */
-@media (max-width: 968px) {
-    .main-header {
-        padding: 20px 6%;
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-emblem-center {
-        width: 45vw;
-    }
-    .hero-logo-wrapper {
-        padding-left: 0;
-    }
-    .narrative-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .story-photo-placeholder {
-        height: 380px;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
