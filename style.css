@@ -108,14 +108,16 @@ body {
 
 /* ... hero-logo-wrapper rules remain unchanged ... */
 
-/* Scaled down ~25% (from 420px to 320px) */
+/* Scaled down ~25% (from 420px to 320px) and precision centered */
 .hero-emblem-center {
     width: 100%;
     max-width: 320px; 
     height: auto;
     display: block;
+    
+    /* Nudges the mountain emblem slightly to the right to correct the optical center */
+    transform: translateX(42px); 
 }
-
 /* Scaled down ~25% (from 870px to 650px) */
 .hero-logo-text {
     width: 100%;
