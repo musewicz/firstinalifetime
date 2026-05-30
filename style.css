@@ -205,5 +205,97 @@ header {
     position: relative;
     z-index: 5;
     margin-top: -79px; /* Pulls the divider up to seamlessly blend the hero and content sections */
+
+/* Narrative Content Layout */
+.content-container {
+    background-color: #eae5db;
+    padding: 80px max(5%, 20px);
+    position: relative;
+    z-index: 2;
+}
+
+.narrative-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* This makes the layout stack into a single column on phones/tablets */
+@media (max-width: 968px) {
+    .narrative-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #8a7e6a;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.narrative-text h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.lead-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.narrative-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Secondary Minimalist Button Style */
+.secondary-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #1a1a1a;
+    color: #eae5db;
+}
+
+/* Story Photography Frame Structure */
+.story-image-frame {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.story-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #d1c9bc; /* Clean neutral tone until we place a photo here */
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
 }
 }
