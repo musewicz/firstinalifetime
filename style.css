@@ -62,20 +62,44 @@ body {
 }
 
 /* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('hero.webp');
+    background-size: cover;
+    background-position: center 60%;
+    display: flex;
+    align-items: center;
+    /* Anchors everything to the left side */
+    justify-content: flex-start;
+    padding-left: 10%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at 30% 50%, rgba(17,17,17,0.2) 0%, rgba(17,17,17,0.6) 100%);
+    z-index: 1;
+}
+
+/* UPDATED: Aligns everything in the hero center-horizontally */
 .hero-content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    /* This centers the logo, text, and button on top of each other */
     align-items: center; 
-    text-align: center;
 }
 
+/* UPDATED: Maintains the logo stack alignment */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     margin-bottom: 25px;
 }
 
@@ -92,18 +116,18 @@ body {
     object-fit: contain;
 }
 
+/* UPDATED: Centered text */
 .hero-subtitle {
     font-size: 1.15rem;
     font-weight: 300;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #eae5db;
-    /* This creates the space between the logo stack and the subtitle */
-    margin-bottom: 35px; 
+    margin-bottom: 35px;
     opacity: 0.9;
-    /* Centered text to match the logo alignment */
-    text-align: center; 
+    text-align: center;
 }
+
 .cta-button {
     display: inline-block;
     padding: 14px 36px;
@@ -242,4 +266,20 @@ body {
     color: #eae5db;
     text-decoration: none;
     opacity: 0.6;
-    transition
+    transition: opacity 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(234, 229, 219, 0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+}
