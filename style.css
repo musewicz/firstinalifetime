@@ -163,43 +163,12 @@ body {
     color: #1a1a1a;
 }
 
-/* --- Cinematic Mountain Range Silhouette Divider --- */
-.mountain-divider {
-    width: 100%;
-    height: 90px; 
-    background-color: #1a1a1a; 
-    position: relative;
-    margin-top: -90px; 
-    margin-bottom: 50px;
-    z-index: 10;
-    
-    /* Mathematically draws jagged peaks and valleys across the horizon */
-    clip-path: polygon(
-        0% 60%, 
-        8% 40%, 
-        15% 55%, 
-        23% 25%, 
-        31% 50%, 
-        40% 30%, 
-        48% 65%, 
-        55% 45%, 
-        64% 20%, 
-        72% 55%, 
-        80% 35%, 
-        88% 60%, 
-        100% 40%, 
-        100% 100%, 
-        0% 100%
-    );
-}
-
 /* --- Narrative Content Layout --- */
 .content-container {
     background-color: #eae5db;
-    padding: 0 max(5%, 20px) 80px max(5%, 20px);
+    padding: 80px max(5%, 20px); /* Restored clean padding for seamless start */
     position: relative;
     z-index: 3; 
-    margin-top: 0; 
 }
 
 .narrative-section {
