@@ -472,11 +472,15 @@ body {
 }
 
 /* This is the magic wrapper that enables horizontal scrolling */
+/* Update this exact block in your style.css */
 .updates-scroll-container {
     display: flex;
+    flex-direction: row;       /* Explicitly forces cards side-by-side */
+    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: auto;          /* Turns on horizontal scrolling */
     padding-bottom: 15px;
+    width: 100%;               /* Ensures it uses the full content window width */
     
     /* Smooth native momentum scrolling on mobile */
     -webkit-overflow-scrolling: touch; 
