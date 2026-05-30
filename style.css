@@ -24,7 +24,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 8%;
-    z-index: 100; /* Keeps menu floating on top of all other elements */
+    z-index: 100;
     background: transparent;
 }
 
@@ -54,7 +54,6 @@ body {
     opacity: 0.7;
 }
 
-/* Re-adjusts padding on mobile screens so links don't crowd the edges */
 @media (max-width: 768px) {
     .main-header {
         padding: 20px 5%;
@@ -167,9 +166,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
+    padding-bottom: 120px; /* Separates the text block from the gallery grid */
 }
 
-/* Stacks columns into one block on phones or small tablets */
 @media (max-width: 968px) {
     .narrative-section {
         grid-template-columns: 1fr;
@@ -214,7 +213,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Secondary Minimalist Button Style */
 .secondary-button {
     display: inline-block;
     padding: 12px 30px;
@@ -233,7 +231,6 @@ body {
     color: #eae5db;
 }
 
-/* Story Photography Frame Structure */
 .story-image-frame {
     position: relative;
     width: 100%;
@@ -246,4 +243,92 @@ body {
     background-color: #d1c9bc;
     border-radius: 4px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* --- NEW: Visual Journal Grid Styling --- */
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.gallery-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-intro h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 400;
+}
+
+/* Masonry Columns Layout */
+.photography-grid {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+.grid-item {
+    break-inside: avoid;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* Heights mapping for varied layout aesthetic */
+.grid-item.tall .photo-box { height: 480px; }
+.grid-item.medium .photo-box { height: 360px; }
+.grid-item.short .photo-box { height: 260px; }
+
+/* Neutral placeholders until you insert your real files */
+.photo-box {
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bg-dark-neutral { background-color: #c4bcaf; }
+.bg-mid-neutral { background-color: #ce stroke #d3cbd0; background-color: #d8d0c3; }
+.bg-light-neutral { background-color: #e2dacd; }
+
+.grid-item:hover .photo-box {
+    transform: scale(1.04);
+}
+
+/* Text info beneath photo grids */
+.photo-info {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.photo-info h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.photo-info span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: #8a7e6a;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Adapts masonry format to single column flow for smartphone layouts */
+@media (max-width: 900px) {
+    .photography-grid {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .photography-grid {
+        column-count: 1;
+    }
 }
