@@ -87,24 +87,26 @@ body {
     color: #1a1a1a;
 }
 
+/* --- Narrative Content Layout --- */
+.content-container {
+    background-color: #eae5db;
+    padding: 0 max(5%, 20px) 80px max(5%, 20px); /* Reset top padding to let divider sit flush */
+    position: relative;
+    z-index: 10;
+    margin-top: -80px; /* FIX: Pulls the ENTIRE container up into the image space */
+}
+
 /* --- Cinematic Ripped Paper Divider --- */
 .torn-divider {
     width: 100%;
-    height: 80px; /* Optimized height for the new texture */
+    height: 80px;
     background-image: url('torn-edge.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
-    z-index: 5;
-    margin-top: -79px; /* Pulls divider up to blend hero and content seamlessly */
-}
-
-/* --- Narrative Content Layout --- */
-.content-container {
-    background-color: #eae5db;
-    padding: 80px max(5%, 20px);
-    position: relative;
-    z-index: 2;
+    left: -5%; /* Offsets the main container padding so the rip touches both side edges of the screen */
+    width: 110%; /* Stretches edge-to-edge over the screen */
+    margin-bottom: 60px; /* Leaves room before the text starts */
 }
 
 .narrative-section {
@@ -121,6 +123,10 @@ body {
     .narrative-section {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    .torn-divider {
+        left: -20px;
+        width: calc(100% + 40px);
     }
 }
 
