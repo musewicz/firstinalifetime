@@ -22,7 +22,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-left: 8%;
-    /* CHANGED: center 65% shifts the crop down, showing more car/ground and less sky */
     background: url('hero.webp') no-repeat center 65%/cover;
 }
 
@@ -94,13 +93,13 @@ body {
     padding: 0 max(5%, 20px) 80px max(5%, 20px);
     position: relative;
     z-index: 10;
-    margin-top: -40px; /* CHANGED: Pulls up less so it eats less into the hero photo */
+    margin-top: -75px; /* FIXED: Increased from -40px to pull the rip higher onto the image */
 }
 
 /* --- Subtle Cinematic Ripped Paper Divider --- */
 .torn-divider {
     width: 110%;
-    height: 40px; /* CHANGED: Shrunk from 80px to 40px to make the rip much more subtle */
+    height: 40px; 
     background-image: url('torn-edge.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -192,7 +191,7 @@ body {
 .story-photo-placeholder {
     width: 100%;
     height: 100%;
-    background-color: #d1c9bc; /* Clean neutral tone until we place a photo here */
+    background-color: #d1c9bc;
     border-radius: 4px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
