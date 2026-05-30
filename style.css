@@ -1,4 +1,4 @@
-/* --- Global Resets & Theme Variables --- */
+/* --- Master Core Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +6,13 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #111111;
-    color: #eae5db;
+    background-color: #eae5db; /* Main Sand Color */
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* --- Header & Navigation --- */
+/* --- Navigation Header --- */
 .main-header {
     position: fixed;
     top: 0;
@@ -22,15 +21,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px 4%;
+    background: transparent;
     z-index: 1000;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
 }
 
 .logo-img {
@@ -46,43 +39,43 @@ body {
 }
 
 .nav-links a {
-    color: #eae5db;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.85rem;
-    font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    opacity: 0.7;
+    font-weight: 400;
     transition: opacity 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    opacity: 1;
+    opacity: 0.6;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section Styling --- */
 .hero {
     position: relative;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     background-image: url('hero.webp');
     background-size: cover;
     background-position: center 60%;
     display: flex;
     align-items: center;
-    /* Keeps the entire content block anchored to the left side */
-    justify-content: flex-start;
-    padding-left: 10%;
+    justify-content: flex-start; /* Keeps the content aligned to the left side */
+    padding-left: 6%;
 }
 
+/* CUT DOWN BY 50%: Adjusted opacity values to soften the dark blending gradient at the bottom */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: radial-gradient(circle at 30% 50%, rgba(17,17,17,0.2) 0%, rgba(17,17,17,0.6) 100%);
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
     z-index: 1;
 }
 
@@ -91,24 +84,24 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    /* Keeps the textual elements and buttons aligned left relative to the container */
-    align-items: flex-start; 
+    align-items: flex-start; /* Aligns textual children to the left side */
+    text-align: left;
 }
 
-/* THE FIX: This centers the emblem and words perfectly over each other */
+/* Restored to keep the stacked logo block locked on the left side */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    /* Centers the two images relative to each other */
-    align-items: center; 
+    align-items: flex-start; /* Stacks emblem and text flush left */
     margin-bottom: 25px;
+    padding-left: 34px; /* Keeps your custom visual center nudge intact */
 }
 
 .hero-emblem-center {
     width: 320px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .hero-logo-text {
@@ -118,152 +111,118 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #eae5db;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 400;
     margin-bottom: 35px;
-    opacity: 0.9;
-    text-align: left;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    padding-left: 34px; /* Matches logo alignment */
 }
 
 .cta-button {
     display: inline-block;
     padding: 14px 36px;
-    border: 1px solid #eae5db;
-    background-color: transparent;
-    color: #eae5db;
+    border: 1px solid #ffffff;
+    color: #ffffff;
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: transparent;
+    transition: all 0.4s ease;
+    margin-left: 34px; /* Matches logo alignment */
 }
 
 .cta-button:hover {
-    background-color: #eae5db;
-    color: #111111;
+    background: #ffffff;
+    color: #1a1a1a;
 }
 
-/* --- Content Layout --- */
+/* --- Layout Utility Classes --- */
 .content-container {
-    background-color: #eae5db;
-    color: #111111;
-    padding: 100px 10%;
-    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4%;
 }
 
-.story-teaser-section {
-    display: flex;
+.internal-page-padding {
+    padding-top: 140px; 
+}
+
+.max-width-center {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Narrative Section Styling --- */
+.narrative-section {
+    padding: 100px 0;
+}
+
+.narrative-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.story-text {
-    flex: 1;
-}
-
-.section-label {
+.section-tag {
+    display: block;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    font-weight: 700;
-    color: #777777;
+    color: #7a756c;
     margin-bottom: 15px;
 }
 
-.story-heading {
-    font-size: 2.5rem;
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
     font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
-
-.story-paragraph {
-    font-size: 1.05rem;
-    color: #333333;
+    line-height: 1.1;
     margin-bottom: 30px;
 }
 
-.text-link {
-    color: #111111;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 2px solid #111111;
-    padding-bottom: 4px;
+.paragraph {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 25px;
+    font-weight: 300;
 }
 
-.story-image-frame {
-    flex: 1;
+.text-link {
+    display: inline-block;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-top: 10px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 4px;
 }
 
 .story-photo-placeholder {
     width: 100%;
-    height: 450px;
-    background-color: #ded9cf;
-    border: 1px dashed #999999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777777;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    height: 550px;
+    background-color: #d0c9bc; 
 }
 
-/* --- Universal Footer Styling --- */
-.main-footer {
-    background-color: #161616;
-    color: #eae5db;
-    padding: 80px 10% 30px 10%;
-    font-size: 0.9rem;
+/* --- Gallery & Journal Architecture --- */
+.gallery-section {
+    padding: 80px 0 140px 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-    flex-wrap: wrap;
+.section-header-center {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-column h3 {
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.footer-column p {
-    opacity: 0.6;
-    max-width: 280px;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-    color: #eae5db;
-    text-decoration: none;
-    opacity: 0.6;
-    transition
+.gallery-grid {
+    display: grid;
