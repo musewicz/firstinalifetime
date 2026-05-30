@@ -38,7 +38,6 @@ body {
     opacity: 0.8;
 }
 
-/* Restrains your graphical icon mark to a clean header height */
 .logo-img {
     height: auto;
     max-height: 40px; 
@@ -80,8 +79,8 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 8%;
+    justify-content: center; /* Swapped to center to lock your design centerpiece in the middle */
+    padding: 0 5%;
     background: url('hero.webp') no-repeat center 60%/cover;
 }
 
@@ -91,7 +90,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
     z-index: 1;
 }
 
@@ -100,25 +99,42 @@ body {
     z-index: 2;
     color: #ffffff;
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers text details below the logo layout */
+    text-align: center;
 }
 
-/* Controls layout and spacing for your graphical brand words centerpiece */
+/* Flex layout locks the emblem vertically stacked straight above the wordmark */
 .hero-logo-wrapper {
     width: 100%;
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adds clean breathing space between emblem and words */
+    margin-bottom: 35px;
 }
 
+/* This controls the brand new big center emblem size */
+.hero-emblem-center {
+    width: 100%;
+    max-width: 280px; /* Make this number higher if you want the mountain icon even larger */
+    height: auto;
+    display: block;
+}
+
+/* This keeps your main text block beautifully proportioned */
 .hero-logo-text {
     width: 100%;
-    max-width: 550px; 
+    max-width: 580px; 
     height: auto;
     display: block;
 }
 
 .tagline {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-size: clamp(0.75rem, 1.8vw, 1rem);
     font-weight: 500;
     letter-spacing: 6px;
     color: #dfd5c6;
@@ -128,7 +144,7 @@ body {
 .sub-tagline {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: clamp(0.95rem, 2.2vw, 1.3rem);
     opacity: 0.85;
     margin-bottom: 40px;
 }
