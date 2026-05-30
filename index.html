@@ -3,147 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First in a Lifetime</title>
+    <title>First In A Lifetime | Cinematic Travel Journal</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Sticky Navigation Header -->
     <header class="main-header">
         <a href="index.html" class="logo-link">
-            <img src="LogoTopClear.png" alt="FIAL Icon" class="logo-img">
+            <img src="LogoTopClear.png" alt="FIAL Emblem" class="logo-img">
         </a>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="journal.html">Journal</a>
-            <a href="stories.html">Stories</a>
-            <a href="about.html">About</a>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </nav>
     </header>
 
+    <!-- Fullscreen Hero Entrance -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo-wrapper">
                 <img src="LogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center">
-                <img src="LogoWordsClearWhite.png" alt="First in a Lifetime" class="hero-logo-text">
+                <img src="LogoWordsClearWhite.png" alt="First In A Lifetime" class="hero-logo-text">
             </div>
-            <p class="sub-tagline">Every journey has a story. What will yours be?</p>
-            <a href="#our-story" class="cta-button">START THE JOURNEY</a>
+            <h2 class="hero-subtitle">Every journey has a story.</h2>
+            <a href="journal.html" class="cta-button">Start the Journey</a>
         </div>
     </section>
 
+    <!-- Main Narrative Block -->
     <main class="content-container">
-
         <section id="our-story" class="narrative-section">
-            <div class="narrative-text">
-                <span class="section-label">THE BEGINNING</span>
-                <h2>A Passion for the Unseen World</h2>
-                <p class="lead-paragraph">
-                    We believe the best stories aren't found on the main roads. They are tucked away in quiet alleys, captured in the fleeting glow of a setting sun, and shared over plates of food prepared by hands that carry generations of tradition.
-                </p>
-                <p>
-                    First in a Lifetime is a canvas for those moments that take your breath away—the ones that make you pause, look around, and realize you are experiencing something you will remember for the rest of your days. Through photography, storytelling, and a relentless pursuit of adventure, we invite you to explore the world through our eyes.
-                </p>
-                <a href="journal.html" class="secondary-button">Read the Journal</a>
-            </div>
-            
-            <div class="narrative-gallery">
-                <div class="story-image-frame">
-                    <div class="image-accent-border"></div>
+            <div class="narrative-grid">
+                <div class="text-block">
+                    <span class="section-tag">Introduction</span>
+                    <h2 class="section-title">A Passion for the Unseen World</h2>
+                    <p class="paragraph">Welcome to First In A Lifetime. This space is designed as a visual diary and cinematic travel archive—capturing moments that feel rare, emotional, and transient. We focus on the transitions, the golden hours, and the memories fragments left behind from the road.</p>
+                    <p class="paragraph">Explore the curated photography collections or dive deep into the sensory snapshots of our journeys across the globe.</p>
+                    <a href="about.html" class="text-link">Read our full philosophy &rarr;</a>
+                </div>
+                <div class="photo-block">
                     <div class="story-photo-placeholder"></div>
                 </div>
             </div>
         </section>
 
+        <!-- Visual Journal Grid Preview -->
         <section id="journal" class="gallery-section">
-            <div class="gallery-intro">
-                <span class="section-label">VISUAL JOURNAL</span>
-                <h2>Captured Moments</h2>
+            <div class="section-header-center">
+                <span class="section-tag">Recent Snapshots</span>
+                <h2 class="section-title">The Visual Archive</h2>
             </div>
-            
-            <div class="photography-grid">
-                <div class="grid-item tall">
-                    <div class="photo-box bg-dark-neutral"></div>
-                    <div class="photo-info">
-                        <h3>Solitude in the Canyon</h3>
-                        <span>Utah / Adventure</span>
-                    </div>
-                </div>
-
-                <div class="grid-item short">
-                    <div class="photo-box bg-mid-neutral"></div>
-                    <div class="photo-info">
-                        <h3>Taste of Tradition</h3>
-                        <span>Oaxaca / Food</span>
-                    </div>
-                </div>
-
-                <div class="grid-item medium">
-                    <div class="photo-box bg-light-neutral"></div>
-                    <div class="photo-info">
-                        <h3>The Coastal Mist</h3>
-                        <span>Iceland / Travel</span>
-                    </div>
-                </div>
-
-                <div class="grid-item medium">
-                    <div class="photo-box bg-dark-neutral"></div>
-                    <div class="photo-info">
-                        <h3>Chasing Golden Hour</h3>
-                        <span>Dolomites / Photography</span>
-                    </div>
-                </div>
-
-                <div class="grid-item tall">
-                    <div class="photo-box bg-light-neutral"></div>
-                    <div class="photo-info">
-                        <h3>Backalley Markets</h3>
-                        <span>Kyoto / Culture</span>
-                    </div>
-                </div>
-
-                <div class="grid-item short">
-                    <div class="photo-box bg-mid-neutral"></div>
-                    <div class="photo-info">
-                        <h3>Restless Wheels</h3>
-                        <span>Overland / Journey</span>
-                    </div>
-                </div>
+            <div class="gallery-grid">
+                <div class="gallery-item tall bg-dark-neutral"></div>
+                <div class="gallery-item short bg-mid-neutral"></div>
+                <div class="gallery-item medium bg-light-neutral"></div>
+                <div class="gallery-item tall bg-mid-neutral"></div>
+                <div class="gallery-item medium bg-dark-neutral"></div>
+                <div class="gallery-item short bg-light-neutral"></div>
             </div>
         </section>
     </main>
 
-    <footer id="footer" class="main-footer">
+    <!-- Universal Footer -->
+    <footer class="main-footer">
         <div class="footer-grid">
-            <div class="footer-col brand-col">
-                <h3>FIRST IN A LIFETIME</h3>
-                <p>Documenting authentic travel, regional culinary heritages, and raw landscape photography from unexpected roads across the globe.</p>
+            <div class="footer-column">
+                <h3 class="footer-brand">FIAL</h3>
+                <p class="footer-text">Capturing the fleeting, once-in-a-lifetime moments that define our journeys across the world.</p>
             </div>
-            
-            <div class="footer-col links-col">
-                <h4>EXPLORE</h4>
-                <ul>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="journal.html">Journal</a></li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-col contact-col">
-                <h4>CONNECT</h4>
-                <ul>
-                    <li><a href="#instagram">Instagram</a></li>
-                    <li><a href="#youtube">YouTube</a></li>
-                    <li><a href="mailto:hello@firstinalifetime.com">Contact Email</a></li>
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Vero</a></li>
+                    <li><a href="#">Contact Email</a></li>
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <p>&copy; 2026 First in a Lifetime. All Rights Reserved.</p>
+            <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
         </div>
     </footer>
+
+</body>
+</html>
