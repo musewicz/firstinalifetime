@@ -276,7 +276,6 @@ body {
     overflow: hidden;
     background-color: #ffffff;
     border-radius: 4px;
-    /* Added transition to the item container so the lift animation is completely smooth */
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
@@ -294,7 +293,6 @@ body {
 .bg-mid-neutral { background-color: #d8d0c3; }
 .bg-light-neutral { background-color: #e2dacd; }
 
-/* FIXED: Double the scale and add a clean 8px vertical lifting effect on hover */
 .grid-item:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
@@ -326,12 +324,95 @@ body {
 }
 
 @media (max-width: 900px) {
-    .photography-grid {
-        column-count: 2;
-    }
+    .photography-grid { column-count: 2; }
 }
 @media (max-width: 600px) {
-    .photography-grid {
-        column-count: 1;
+    .photography-grid { column-count: 1; }
+}
+
+/* --- NEW: Universal Footer Styling --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 80px max(8%, 20px) 30px max(8%, 20px);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-col h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.brand-col p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+.footer-col h4 {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #8a7e6a;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+/* Bottom Bar details */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    color: #666666;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* Formats footer columns to clean single row stacks on devices */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .main-footer {
+        padding-top: 60px;
     }
 }
