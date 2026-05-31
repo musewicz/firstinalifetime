@@ -27,9 +27,20 @@ body {
 }
 
 .logo-img {
-    height: 40px;
+    height: 52px;
     width: auto;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+:root {
+    --logo-emblem: 320px;
+    --logo-wordmark: 650px;
+}
 }
 
 .nav-links {
@@ -83,29 +94,32 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
+    align-items: center;
     text-align: center;
-    margin-left: 34px;    /* Global anchor layout offset offset */
-    transform: translateY(-120px);
+    margin-left: 34px;
+    margin-top: -60px; /* softer than transform */
 }
 
 /* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin-bottom: 25px;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 18px;
+
 }
 
 .hero-emblem-center {
-    width: 320px;
+    width: var(--logo-emblem);
+    max-width: 80vw;
     height: auto;
     object-fit: contain;
-    margin-bottom: 15px;
 }
 
 .hero-logo-text {
-    width: 650px;
+    width: var(--logo-wordmark);
+    max-width: 90vw;
     height: auto;
     object-fit: contain;
 }
