@@ -62,7 +62,7 @@ body {
     height: 100vh;
     min-height: 700px;
     /* Updated background asset reference matching image_b34b41.jpg layout setup */
-    background-image: url('image_b34b41.jpg');
+    background-image: url('hero.webp');
     background-size: cover;
     background-position: center center;
     display: flex;
