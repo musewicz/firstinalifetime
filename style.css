@@ -86,7 +86,7 @@ body {
     align-items: center; /* Aligns all children elements symmetrically down a shared center line */
     text-align: center;
     margin-left: 34px;    /* Global anchor layout offset offset */
-    transform: translateY(-120px);
+    transform: translateY(-60px);
 }
 
 /* Centers the emblem and word logo text relative to each other */
