@@ -3,79 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First In A Lifetime</title>
+    <title>First In A Lifetime | Cinematic Travel Journal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Sticky Header Navigation -->
     <header class="main-header">
-        <a href="#home" class="logo-link">
-            <img src="LogoTopClear.png" alt="FIAL Emblem" class="logo-img">
-        </a>
-        <nav class="nav-links">
-            <a href="#journal">JOURNAL</a>
-            <a href="#stories">STORIES</a>
-            <a href="#about">ABOUT</a>
-        </nav>
+        <div class="logo">
+            <img src="LogoTopClear.png" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
     </header>
 
-    <!-- Hero Section Content -->
     <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo-wrapper">
-                <img src="LogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center">
-                <img src="LogoWordsClear.png" alt="First In A Lifetime" class="hero-logo-text">
+                <img src="LogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center" width="320" height="320">
+                <img src="LogoWordsClearWhite.png" alt="First In A Lifetime" class="hero-logo-text" width="650" height="auto">
             </div>
-            <p class="hero-tagline">Because life's too short to only have a grand adventure ONCE!</p>
-            <a href="#journal" class="cta-button">Start Your Journey</a>
+            <h2 class="hero-subtitle">Every journey has a story.</h2>
+            <a href="journey.html" class="cta-button">Start the Journey</a>
         </div>
     </section>
 
-    <!-- Main Content Container Grid -->
     <main class="content-container">
-        <section id="about" class="story-section">
-            <div class="story-text">
-                <h2>A Passion for the Unseen World</h2>
-                <p>This is where your story begins. Share the philosophy behind First In A Lifetime—the chasing of moments that cannot be repeated, the beauty of transitions, and the art of cinematic reflection.</p>
-                <a href="#stories" class="read-more-btn">Read the Journal</a>
-            </div>
-            <div class="story-photo-placeholder">
-                <!-- Frame holds visual portfolio cards later -->
+        <section id="our-story" class="narrative-section">
+            <div class="narrative-grid">
+                <div class="text-block">
+                    <span class="section-tag">Introduction</span>
+                    <h2 class="section-title">A Passion for the Unseen World</h2>
+                    <p class="paragraph">Welcome to First In A Lifetime. This space is designed as a visual diary and cinematic travel archive—capturing moments that feel rare, emotional, and transient. We focus on the transitions, the golden hours, and the memories fragments left behind from the road.</p>
+                    <p class="paragraph">Explore the curated photography collections or dive deep into the sensory snapshots of our journeys across the globe.</p>
+                    <a href="about.html" class="text-link">Read our full philosophy &rarr;</a>
+                </div>
+                <div class="photo-block">
+                    <div class="story-photo-placeholder"></div>
+                </div>
             </div>
         </section>
 
-        <!-- Responsive Photography Grid Block -->
+<section class="updates-ticker-section">
+            <div class="ticker-header">
+                <span class="section-tag">Recent Logs</span>
+                <span class="ticker-hint">Swipe for more &rarr;</span>
+            </div>
+            
+            <div class="updates-scroll-container">
+                <a href="journey.html" class="update-card new-tag">
+                    <span class="update-date">May 30, 2026</span>
+                    <h4 class="update-title">Departing for Kyoto, Japan</h4>
+                    <p class="update-excerpt">First field notes from the transitions into Asia...</p>
+                </a>
+
+                <a href="recipes.html" class="update-card">
+                    <span class="update-date">May 24, 2026</span>
+                    <h4 class="update-title">Balinese Satay Recipe</h4>
+                    <p class="update-excerpt">Recreating the roadside skewers of Ubud.</p>
+                </a>
+
+                <a href="photos.html" class="update-card">
+                    <span class="update-date">May 18, 2026</span>
+                    <h4 class="update-title">New Zealand Print Shop Drop</h4>
+                    <p class="update-excerpt">Three museum-grade frames added to archives.</p>
+                </a>
+
+                <a href="journey.html" class="update-card">
+                    <span class="update-date">May 10, 2026</span>
+                    <h4 class="update-title">The Philosophy of FIAL</h4>
+                    <p class="update-excerpt">Reflecting on what makes a moment transient.</p>
+                </a>
+            </div>
+        </section>
+
         <section id="journal" class="gallery-section">
+            <div class="section-header-center">
+                <span class="section-tag">Recent Snapshots</span>
+                <h2 class="section-title">The Visual Archive</h2>
+            </div>
+            
             <div class="gallery-grid">
-                <div class="gallery-item item-v"><h4>Chasing Sunsets</h4></div>
-                <div class="gallery-item item-h"><h4>Visual Fragments</h4></div>
-                <div class="gallery-item item-s"><h4>Taste of Travel</h4></div>
-                <div class="gallery-item item-v"><h4>Nostalgia in Motion</h4></div>
+                <div class="gallery-item tall">
+                    <img src="Photos/TheShire.webp" alt="The Shire" loading="lazy" decoding="async" width="450" height="524">
+                    <div class="item-overlay"></div>
+                </div>
+                
+                <div class="gallery-item short">
+                    <img src="Photos/BalatSteps.webp" alt="Balat Steps" loading="lazy" decoding="async" width="450" height="250">
+                    <div class="item-overlay"></div>
+                </div>
+
+                <div class="gallery-item tall japan-castle">
+                    <img src="Photos/JapanCastle.webp" alt="Japan Castle" loading="lazy" decoding="async" width="450" height="250">
+                    <div class="item-overlay"></div>
+                </div>
+
+                <div class="gallery-item tall">
+                    <img src="Photos/PhillyMomsTattoo.webp" alt="Philly Moms Tattoo" loading="lazy" decoding="async" width="450" height="524">
+                    <div class="item-overlay"></div>
+                </div>
+
+                <div class="gallery-item medium">
+                    <img src="Photos/BaliSunset.webp" class="bali-sunset" alt="Bali Sunset" loading="lazy" decoding="async" width="450" height="250">
+                    <div class="item-overlay"></div>
+                </div>
+
+                <div class="gallery-item short">
+                    <img src="Photos/MoroccoSpice.webp" alt="Morocco Spice" loading="lazy" decoding="async" width="450" height="250">
+                    <div class="item-overlay"></div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Universal Closing Footer Grid -->
     <footer class="main-footer">
-        <div class="footer-column">
-            <h3>FIAL</h3>
-            <p>Capturing transient moments, golden hour landscapes, and the emotional reflections of life in motion across the globe.</p>
-        </div>
-        <div class="footer-column">
-            <h3>EXPLORE</h3>
-            <a href="#home">Home</a>
-            <a href="#journal">Journal</a>
-            <a href="#stories">Stories</a>
-        </div>
-        <div class="footer-column">
-            <h3>CONNECT</h3>
-            <a href="#">Instagram</a>
-            <a href="#">Email Contact</a>
-            <a href="#">Archives</a>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 First In A Lifetime. All Rights Reserved.</p>
+            <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
         </div>
     </footer>
 
