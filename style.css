@@ -1,18 +1,23 @@
-/* --- Master Core Reset --- */
+/* --- Core Reset & Foundations --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    background-color: #111111;
+}
+
 body {
-    background-color: #eae5db; /* Main Sand Color */
     font-family: 'Inter', sans-serif;
-    color: #1a1a1a;
+    color: #eae5db;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* --- Navigation Header --- */
+/* --- Sticky Navigation Header --- */
 .main-header {
     position: fixed;
     top: 0;
@@ -21,15 +26,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background: transparent;
+    padding: 20px 40px;
     z-index: 1000;
+    background: linear-gradient(to bottom, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0) 100%);
+    backdrop-filter: blur(4px);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
-    height: 40px;
+    height: 45px;
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 .nav-links {
@@ -39,514 +51,354 @@ body {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #eae5db;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-size: 13px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     font-weight: 400;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    opacity: 0.6;
+.nav-links a:hover {
+    color: #d4af37;
 }
 
-/* --- Hero Section Styling --- */
+/* --- Fullscreen Cinematic Hero Section --- */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('hero.webp');
+    background: linear-gradient(rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0.7)), url('hero.webp') no-repeat center center;
     background-size: cover;
-    background-position: center 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps content box structural left side anchoring */
-    padding-left: 6%;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
-    z-index: 1;
+    justify-content: center;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
     text-align: center;
-    margin-left: 34px;    /* Global anchor layout offset offset */
-    transform: translateY(-120px);
+    z-index: 10;
+    padding: 0 20px;
 }
 
-/* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .hero-emblem-center {
-    width: 320px;
+    display: block;
+    margin-bottom: -40px;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
 }
 
 .hero-logo-text {
-    width: 650px;
+    display: block;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
 }
 
 .hero-subtitle {
     font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
     font-style: italic;
-    font-size: 1.8rem;
-    color: #ffffff;
     font-weight: 400;
+    letter-spacing: 1px;
     margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    color: #eae5db;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .cta-button {
     display: inline-block;
     padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid #eae5db;
+    color: #eae5db;
     text-decoration: none;
+    font-size: 12px;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    background: transparent;
-    transition: all 0.4s ease;
+    letter-spacing: 3px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: rgba(17, 17, 17, 0.3);
 }
 
 .cta-button:hover {
-    background: #ffffff;
-    color: #1a1a1a;
+    background-color: #eae5db;
+    color: #111111;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-/* --- Layout Utility Classes --- */
+/* --- Content Container --- */
 .content-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
+    background-color: #eae5db;
+    color: #1c1c1c;
+    padding: 100px 4%;
+    position: relative;
+    z-index: 20;
 }
 
-.internal-page-padding {
-    padding-top: 140px; 
+/* --- Section Global Elements --- */
+.section-tag {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8a857c;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
-.max-width-center {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Narrative Section Styling --- */
-.narrative-section {
-    padding: 100px 0;
-}
-
-.narrative-grid {
+/* --- Narrative Layout Section --- */
+.narrative-block {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto 120px auto;
     align-items: center;
 }
 
-.section-tag {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #7a756c;
-    margin-bottom: 15px;
-}
-
-.section-title {
+.story-text h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 46px;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 30px;
+    letter-spacing: -0.5px;
 }
 
-.paragraph {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #333333;
+.story-text p {
+    font-size: 16px;
     margin-bottom: 25px;
+    color: #3a3a3a;
     font-weight: 300;
 }
 
-.text-link {
+.read-more {
     display: inline-block;
-    color: #1a1a1a;
+    color: #1c1c1c;
     text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 13px;
     font-weight: 500;
+    letter-spacing: 1px;
     margin-top: 10px;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 4px;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
 }
 
 .story-photo-placeholder {
     width: 100%;
     height: 550px;
-    background-color: #d0c9bc; 
+    background-color: #d1cbc0;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-/* --- Gallery & Journal Architecture --- */
+/* --- Photography Journal Layout Section --- */
 .gallery-section {
-    padding: 80px 0 140px 0;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 60px;
 }
 
-.section-header-center {
-    text-align: center;
+.gallery-intro {
     margin-bottom: 60px;
 }
 
-.gallery-grid {
+.gallery-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+/* 3-Column Masonry Style Layout Configuration */
+.masonry-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px; /* Base structural track height unit */
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
-.gallery-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+.grid-card {
+    background-color: #eae5db;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Outer wrapper subtle scale & elevation change */
-.gallery-item:hover {
-    transform: scale(1.02); 
-    box-shadow: 0 20px 38px rgba(0,0,0,0.15);
-    z-index: 10;
+.grid-card:hover {
+    transform: translateY(-8px) scale(1.08);
 }
 
-/* Inner picture frame properties with matching transition curve */
-.gallery-item img {
+.card-image-slot {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: #d1cbc0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transition: box-shadow 0.6s ease;
 }
 
-/* Tells the inside photo to expand slightly within the frame when hovered */
-.gallery-item:hover img {
-    transform: scale(1.06);
+.grid-card:hover .card-image-slot {
+    box-shadow: 0 40px 80px rgba(0,0,0,0.2);
 }
 
-/* Neutral Placeholder Colors */
-.bg-dark-neutral  { background-color: #bab3a6; }
-.bg-mid-neutral   { background-color: #c4bdae; }
-.bg-light-neutral { background-color: #cfc8b9; }
-
-/* Masonry Varied Sizing Controls */
-.gallery-item.tall { grid-row: span 2; }
-.gallery-item.medium { grid-row: span 1; }
-.gallery-item.short { grid-row: span 1; }
-
-
-/* --- CUSTOM OVERRIDES --- */
-
-/* Japan Castle Override - Pushes framing view up to capture the peaks */
-.japan-castle img {
-    object-position: center top;
+/* Masonry Height Variations */
+.tall .card-image-slot {
+    height: 500px;
 }
 
-/* Specific override for the bus */
-.nz-bus img {
-    object-position: center 20%; 
+.short .card-image-slot {
+    height: 340px;
 }
 
-/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
-.bali-sunset img {
-    object-position: center center;
+.card-meta {
+    padding: 20px 0;
 }
 
-/* Scales the inside image on hover perfectly matching custom frame logic */
-.bali-sunset:hover img {
-    transform: scale(1.08);
+.card-meta h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
 }
 
+.card-meta p {
+    font-size: 12px;
+    color: #8a857c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-/* --- Universal Footer Architecture --- */
+/* --- Universal Dark Footer Section --- */
 .main-footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 90px 6% 40px 6%;
+    background-color: #111111;
+    color: #eae5db;
+    padding: 80px 4% 40px 4%;
+    position: relative;
+    z-index: 20;
+    border-top: 1px solid #1a1a1a;
 }
 
 .footer-grid {
-    max-width: 1400px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
-    border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.footer-brand {
+.brand-info h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
+    font-size: 26px;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-.footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
+.brand-info p {
+    font-size: 14px;
+    color: #8a857c;
+    max-width: 400px;
+    font-weight: 300;
 }
 
-.footer-heading {
-    font-size: 0.8rem;
+.footer-column h4 {
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
+    letter-spacing: 2px;
     margin-bottom: 25px;
-    font-weight: 500;
+    color: #eae5db;
 }
 
-.footer-links {
+.footer-column ul {
     list-style: none;
 }
 
-.footer-links li {
+.footer-column ul li {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    color: #999999;
+.footer-column ul li a {
+    color: #8a857c;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 14px;
     transition: color 0.3s ease;
+    font-weight: 300;
 }
 
-.footer-links a:hover {
-    color: #ffffff;
+.footer-column ul li a:hover {
+    color: #eae5db;
 }
 
 .footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1300px;
+    margin: 60px auto 0 auto;
     padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
 }
 
-/* --- Mobile Responsive Rules --- */
-@media (max-width: 968px) {
+.footer-bottom p {
+    font-size: 12px;
+    color: #555555;
+    letter-spacing: 0.5px;
+}
+
+/* --- MEDIA QUERY: Mobile Spacing and Scaling Overrides --- */
+@media (max-width: 768px) {
+    /* Header Scaling Fix: Evenly layout elements or drop padding on narrow widths */
     .main-header {
-        padding: 20px 6%;
+        padding: 15px 20px;
     }
-    .hero {
-        justify-content: center; /* Sits block completely centered on screen viewports */
-        padding-left: 0;
+    
+    .logo-img {
+        height: 35px; /* Scales down logo asset slightly so links fit on screen */
     }
-    .hero-content {
-        margin-left: 0;
+    
+    .nav-links {
+        gap: 15px; /* Condenses spacing between links to make sure "About" fits cleanly */
     }
-    .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
+    
+    .nav-links a {
+        font-size: 11px; /* Subtle text downscale for small devices */
+        letter-spacing: 1px;
     }
-    .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
-    }
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    .narrative-grid {
+
+    /* Content Layout Overrides */
+    .narrative-block {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .section-title {
-        font-size: 2.8rem;
-    }
+    
     .story-photo-placeholder {
-        height: 380px;
+        height: 350px;
     }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
+    
+    .masonry-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
+    
+    .tall .card-image-slot, 
+    .short .card-image-slot {
+        height: 300px;
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-}
-
-@media (max-width: 600px) {
-    .main-header {
-        padding: 15px 6%;
-    }
-    .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
-    }
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-    }
-    .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
+    
     .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 25px;
+        font-size: 20px;
     }
-    .cta-button {
-        padding: 12px 28px;
-        font-size: 0.75rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
-        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
-    }
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
-        height: 320px;            /* Symmetrical portrait presentation scale */
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-/* --- Horizontal Updates Ticker --- */
-.updates-ticker-section {
-    padding: 40px 0;
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
-    margin: 40px 0 60px 0;
-}
-
-.ticker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.ticker-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #a39e93;
-}
-
-/* This is the magic wrapper that enables horizontal scrolling */
-/* Update this exact block in your style.css */
-.updates-scroll-container {
-    display: flex;
-    flex-direction: row;       /* Explicitly forces cards side-by-side */
-    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
-    gap: 20px;
-    overflow-x: auto;          /* Turns on horizontal scrolling */
-    padding-bottom: 15px;
-    width: 100%;               /* Ensures it uses the full content window width */
-    
-    /* Smooth native momentum scrolling on mobile */
-    -webkit-overflow-scrolling: touch; 
-    
-    /* Hide ugly scrollbars on clean browsers */
-    scrollbar-width: thin;
-    scrollbar-color: #a39e93 transparent;
-}
-
-/* Individual Update Card Styles */
-.update-card {
-    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(26, 26, 26, 0.08);
-    padding: 24px;
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-}
-
-.update-card:hover {
-    background: #ffffff;
-    border-color: #1a1a1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
-
-.update-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a39e93;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.update-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.update-excerpt {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: #555555;
-}
-
-/* Optional "NEW" dot indicator for the latest post */
-.update-card.new-tag::after {
-    content: 'NEW';
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    background: #1a1a1a;
-    color: #eae5db;
-    padding: 2px 6px;
-    letter-spacing: 0.05em;
 }
