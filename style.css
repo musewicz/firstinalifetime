@@ -1,450 +1,579 @@
-/* ==========================================================================
-   FIAL MASTER STYLESHEET CONFIGURATION
-   ========================================================================== */
-
-/* GLOBAL ARCHITECTURE RESET */
+/* --- Master Core Reset --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #eae5db;
-}
-
 body {
+    background-color: #eae5db; /* Main Sand Color */
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
     overflow-x: hidden;
 }
 
-/* STICKY HEADER NAVIGATION BAR LAYER */
+/* --- Navigation Header --- */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
-    background-color: rgba(26, 26, 26, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    padding: 20px 4%;
+    background: transparent;
     z-index: 1000;
-    border-bottom: 1px solid rgba(234, 229, 219, 0.05);
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    height: 100%;
 }
 
 .logo-img {
-    height: 42px;
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
 
 .nav-links {
     display: flex;
+    list-style: none;
     gap: 30px;
 }
 
 .nav-links a {
+    color: #ffffff;
     text-decoration: none;
-    color: #eae5db;
     font-size: 0.85rem;
-    font-weight: 500;
     letter-spacing: 0.15em;
-    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.nav-links a:hover {
-    color: #f39c12;
+.nav-links a:hover,
+.nav-links a.active {
+    opacity: 0.6;
 }
 
-/* CINEMATIC FULLSCREEN HERO SCENE */
+/* --- Hero Section Styling --- */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(26,26,26,1)), url('hero.webp') center center / cover no-repeat;
+    background-image: url('hero.webp');
+    background-size: cover;
+    background-position: center 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-left;
-    padding: 0 8%;
+    justify-content: flex-start; /* Keeps content box structural left side anchoring */
+    padding-left: 6%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin-top: -50px;
-}
-
-.logo-wrapper {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
+    text-align: center;
+    margin-left: 34px;    /* Global anchor layout offset offset */
+    transform: translateY(-120px);
+}
+
+/* Centers the emblem and word logo text relative to each other */
+.hero-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
     margin-bottom: 25px;
 }
 
 .hero-emblem-center {
-    width: 110px;
+    width: 320px;
     height: auto;
-    margin-left: 140px;
-    margin-bottom: -15px;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .hero-logo-text {
-    width: 100%;
-    max-width: 480px;
+    width: 650px;
     height: auto;
+    object-fit: contain;
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
-    font-weight: 300;
-    letter-spacing: 0.25em;
-    color: rgba(234, 229, 219, 0.75);
-    margin-bottom: 40px;
-    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 35px;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .cta-button {
     display: inline-block;
     padding: 14px 36px;
-    border: 1px solid #eae5db;
-    color: #eae5db;
+    border: 1px solid #ffffff;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
     text-transform: uppercase;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    background: transparent;
+    transition: all 0.4s ease;
 }
 
 .cta-button:hover {
-    background-color: #eae5db;
+    background: #ffffff;
     color: #1a1a1a;
 }
 
-/* MASTER RUNTIME CONTENT CONTAINER */
+/* --- Layout Utility Classes --- */
 .content-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 100px 4% 120px 4%;
-    background-color: #eae5db;
-    color: #1a1a1a;
+    padding: 0 4%;
 }
 
-/* TWO-COLUMN NARRATIVE EDITORIAL BLOCK */
-.story-section {
-    display: flex;
-    gap: 8%;
+.internal-page-padding {
+    padding-top: 140px; 
+}
+
+.max-width-center {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Narrative Section Styling --- */
+.narrative-section {
+    padding: 100px 0;
+}
+
+.narrative-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: center;
-    margin-bottom: 120px;
 }
 
-.story-text-column {
-    flex: 1;
-}
-
-.section-tagline {
+.section-tag {
     display: block;
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: #f39c12;
-    margin-bottom: 15px;
     text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #7a756c;
+    margin-bottom: 15px;
 }
 
-.story-title {
-    font-size: 2.2rem;
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
     font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    color: #1a1a1a;
+    line-height: 1.1;
     margin-bottom: 30px;
 }
 
-.story-paragraph {
-    font-size: 1rem;
+.paragraph {
+    font-size: 1.05rem;
     line-height: 1.7;
-    color: #4a4a4a;
-    margin-bottom: 20px;
+    color: #333333;
+    margin-bottom: 25px;
+    font-weight: 300;
 }
 
-.read-more-btn {
+.text-link {
     display: inline-block;
-    margin-top: 15px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
     color: #1a1a1a;
     text-decoration: none;
-    border-bottom: 2px solid #1a1a1a;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-top: 10px;
+    border-bottom: 1px solid #1a1a1a;
     padding-bottom: 4px;
-    transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.read-more-btn:hover {
-    color: #f39c12;
-    border-color: #f39c12;
-}
-
-.story-photo-column {
-    flex: 1;
 }
 
 .story-photo-placeholder {
     width: 100%;
-    height: 500px;
-    background-color: #1a1a1a;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    height: 550px;
+    background-color: #d0c9bc; 
 }
 
-/* PHOTOGRAPHY JOURNAL MASONRY GRID */
+/* --- Gallery & Journal Architecture --- */
 .gallery-section {
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    padding-top: 80px;
+    padding: 80px 0 140px 0;
 }
 
-.gallery-header {
-    margin-bottom: 50px;
-}
-
-.gallery-title {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #1a1a1a;
-}
-
-.gallery-masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-auto-rows: 240px;
-    gap: 30px;
-    grid-auto-flow: dense;
-}
-
-/* IMAGE CARD COMPONENT FRAMEWORK */
-.gallery-item {
-    position: relative;
-    background-color: #1a1a1a;
-    overflow: visible;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    outline: none; /* Removes the default blue browser outline on click */
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.vertical-frame { grid-row: span 2; }
-.horizontal-frame { grid-column: span 2; }
-.square-frame { grid-row: span 1; grid-column: span 1; }
-
-/* HOVER FEEDBACK INDICATION - CARD GROWS SLIGHTLY */
-.gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-/* CLICKED/ACTIVE FOCUS STATE STATE RULES */
-.gallery-item:focus {
-    transform: scale(1.05) translateY(-8px);
-    z-index: 10;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-}
-
-/* ==========================================================================
-   CLICK-ACTIVATED THOUGHT BUBBLE & REVEAL ENGINE
-   ========================================================================== */
-.thought-bubble {
-    position: absolute;
-    bottom: calc(100% + 25px);
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    transform-origin: bottom center;
-    width: 85%;
-    max-width: 280px;
-    background-color: #ffffff;
-    color: #1a1a1a;
-    padding: 18px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 100;
-}
-
-/* GENERATE TRAILING THOUGHT CLOUD CIRCE ASSETS */
-.thought-bubble::before,
-.thought-bubble::after {
-    content: '';
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 50%;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.thought-bubble::before {
-    width: 14px;
-    height: 14px;
-    bottom: -14px;
-    transition-delay: 0.05s;
-}
-
-.thought-bubble::after {
-    width: 8px;
-    height: 8px;
-    bottom: -24px;
-    transition-delay: 0s;
-}
-
-/* CLICK RESPONDERS: INFLATE ONCE PARENT CAPTURES FOCUS */
-.gallery-item:focus .thought-bubble {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) scale(1);
-}
-
-.gallery-item:focus .thought-bubble::before,
-.gallery-item:focus .thought-bubble::after {
-    transform: translateX(-50%) scale(1);
-}
-
-/* CHARACTER BY CHARACTER TYPING TEXT ENGINE */
-.bubble-text {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    font-style: italic;
-    color: #333333;
-    display: block;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.1s ease;
-}
-
-/* CLICK RESPONDER: SLIDE OPEN MASK AFTER POP FINISHES */
-.gallery-item:focus .bubble-text {
-    max-height: 120px;
-    animation: fialTypingReveal 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 0.3s;
-}
-
-@keyframes fialTypingReveal {
-    from { clip-path: inset(0 100% 0 0); }
-    to { clip-path: inset(0 0% 0 0); }
-}
-
-/* TRAILING ELLIPSIS REVEAL TIMER */
-.ellipsis {
-    display: block;
-    text-align: right;
-    font-weight: bold;
-    color: #f39c12;
-    font-size: 1.1rem;
-    line-height: 1;
-    margin-top: 4px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    transition-delay: 1.5s;
-}
-
-.gallery-item:focus .ellipsis {
-    opacity: 1;
-}
-
-/* UNIVERSAL FOOTER TRACKING DECORATIONS */
-.universal-footer {
-    background-color: #1a1a1a;
-    color: #eae5db;
-    padding: 80px 6% 40px 6%;
-    border-top: 1px solid rgba(234, 229, 219, 0.05);
-}
-
-.footer-grid-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
+.section-header-center {
+    text-align: center;
     margin-bottom: 60px;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 220px;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px; /* Base structural track height unit */
+    gap: 24px;
 }
 
-.branding-info h3 {
-    font-size: 1.5rem;
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Outer wrapper subtle scale & elevation change */
+.gallery-item:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 20px 38px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+/* Inner picture frame properties with matching transition curve */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Tells the inside photo to expand slightly within the frame when hovered */
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* Neutral Placeholder Colors */
+.bg-dark-neutral  { background-color: #bab3a6; }
+.bg-mid-neutral   { background-color: #c4bdae; }
+.bg-light-neutral { background-color: #cfc8b9; }
+
+/* Masonry Varied Sizing Controls */
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.medium { grid-row: span 1; }
+.gallery-item.short { grid-row: span 1; }
+
+
+/* --- CUSTOM OVERRIDES --- */
+
+/* Japan Castle Override - Pushes framing view up to capture the peaks */
+.japan-castle img {
+    object-position: center top;
+}
+
+/* Specific override for the bus */
+.nz-bus img {
+    object-position: center 20%; 
+}
+
+/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
+.bali-sunset img {
+    object-position: center center;
+}
+
+/* Scales the inside image on hover perfectly matching custom frame logic */
+.bali-sunset:hover img {
+    transform: scale(1.08);
+}
+
+
+/* --- Universal Footer Architecture --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 90px 6% 40px 6%;
+}
+
+.footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 60px;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
-    color: #eae5db;
 }
 
-.branding-info p {
-    font-size: 0.9rem;
+.footer-text {
+    color: #999999;
     line-height: 1.6;
-    color: rgba(234, 229, 219, 0.5);
-    max-width: 300px;
+    font-size: 0.95rem;
+    max-width: 320px;
 }
 
-.footer-column h4 {
+.footer-heading {
     font-size: 0.8rem;
+    text-transform: uppercase;
     letter-spacing: 0.2em;
+    color: #ffffff;
     margin-bottom: 25px;
-    color: #f39c12;
+    font-weight: 500;
 }
 
-.footer-column ul { list-style: none; }
-.footer-column ul li { margin-bottom: 12px; }
+.footer-links {
+    list-style: none;
+}
 
-.footer-column ul li a {
-    color: rgba(234, 229, 219, 0.6);
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #999999;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.footer-column ul li a:hover { color: #eae5db; }
+.footer-links a:hover {
+    color: #ffffff;
+}
 
-.footer-copyright-row {
-    border-top: 1px solid rgba(234, 229, 219, 0.05);
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
     padding-top: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #555555;
 }
 
-.footer-copyright-row p {
+/* --- Mobile Responsive Rules --- */
+@media (max-width: 968px) {
+    .main-header {
+        padding: 20px 6%;
+    }
+    .hero {
+        justify-content: center; /* Sits block completely centered on screen viewports */
+        padding-left: 0;
+    }
+    .hero-content {
+        margin-left: 0;
+    }
+    .hero-emblem-center {
+        width: 220px; /* Adapts size for tablet */
+    }
+    .hero-logo-text {
+        width: 85vw; /* Fluid scaling width profiles */
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .narrative-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .section-title {
+        font-size: 2.8rem;
+    }
+    .story-photo-placeholder {
+        height: 380px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 15px 6%;
+    }
+    .nav-links {
+        gap: 15px; /* Tighter navigation layout on small phones */
+    }
+    .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+    .hero-emblem-center {
+        width: 160px; /* Adapts beautifully for small mobile phones */
+    }
+    .hero-logo-text {
+        width: 90vw;
+    }
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+    }
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 0.75rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
+        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
+    }
+    .gallery-item.tall, 
+    .gallery-item.medium, 
+    .gallery-item.short { 
+        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
+        height: 320px;            /* Symmetrical portrait presentation scale */
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* --- Horizontal Updates Ticker --- */
+.updates-ticker-section {
+    padding: 40px 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    margin: 40px 0 60px 0;
+}
+
+.ticker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ticker-hint {
+    font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    color: rgba(234, 229, 219, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #a39e93;
 }
 
-/* CROSS-DEVICE BREAKPOINT CONTROLS */
+/* This is the magic wrapper that enables horizontal scrolling */
+/* Update this exact block in your style.css */
+.updates-scroll-container {
+    display: flex;
+    flex-direction: row;       /* Explicitly forces cards side-by-side */
+    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
+    gap: 20px;
+    overflow-x: auto;          /* Turns on horizontal scrolling */
+    padding-bottom: 15px;
+    width: 100%;               /* Ensures it uses the full content window width */
+    
+    /* Smooth native momentum scrolling on mobile */
+    -webkit-overflow-scrolling: touch; 
+    
+    /* Hide ugly scrollbars on clean browsers */
+    scrollbar-width: thin;
+    scrollbar-color: #a39e93 transparent;
+}
+
+/* Individual Update Card Styles */
+.update-card {
+    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 24px;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.update-card:hover {
+    background: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.update-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a39e93;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.update-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.update-excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Optional "NEW" dot indicator for the latest post */
+.update-card.new-tag::after {
+    content: 'NEW';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    background: #1a1a1a;
+    color: #eae5db;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   MOBILE-ONLY RESPONSIVE OVERRIDES (Triggers only on screens 768px or smaller)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    .main-header { padding: 10px 12px !important; display: flex !important; justify-content: space-between !important; align-items: center !important; }
-    .logo-img { height: 28px !important; }
-    .nav-container { display: block !important; max-width: 75% !important; }
-    .nav-links { display: flex !important; flex-direction: row !important; justify-content: flex-end !important; gap: 10px !important; }
-    .nav-links a { font-size: 11px !important; letter-spacing: 0.3px !important; white-space: nowrap !important; }
     
-    .story-section { flex-direction: column; gap: 50px; }
-    .story-photo-placeholder { height: 350px; }
-    .gallery-masonry-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-    .vertical-frame, .horizontal-frame { grid-row: auto; grid-column: auto; }
+    /* 1. Reduce padding around the header container so it doesn't push links off screen */
+    .main-header {
+        padding: 15px 15px !important; 
+    }
     
-    .thought-bubble { bottom: 15px; left: 15px; transform: none; width: calc(100% - 30px); max-width: none; }
-    .gallery-item:focus .thought-bubble { transform: none; }
-    .thought-bubble::before, .thought-bubble::after { display: none; }
+    /* 2. Scale down your main emblem image slightly to free up horizontal space */
+    .logo-img {
+        height: 32px !important; 
+    }
+    
+    /* 3. Tighten the gaps between your text links so they all fit on one row */
+    .nav-links {
+        gap: 12px !important; 
+    }
+    
+    /* 4. Drop the font size and letter spacing slightly for perfect mobile readability */
+    .nav-links a {
+        font-size: 11px !important;
+        letter-spacing: 0.5px !important;
+    }
 }
