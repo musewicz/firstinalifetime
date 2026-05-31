@@ -550,3 +550,19 @@ body {
     padding: 2px 6px;
     letter-spacing: 0.05em;
 }
+
+@media (max-width: 968px) {
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(234,229,219,0.9);
+        backdrop-filter: blur(10px);
+        z-index: 9999;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+}
