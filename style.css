@@ -1,4 +1,4 @@
-/* --- Master Core Reset --- */
+/* --- Global Resets & Typography --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,41 +6,44 @@
 }
 
 body {
-    background-color: #eae5db; /* Main Sand Color */
-    font-family: 'Inter', sans-serif;
+    background-color: #eae5db; /* Clean warm sand-colored page background */
     color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* --- Navigation Header --- */
+/* Base style for standalone subpages to ensure visibility without hero section */
+.subpage-body {
+    background-color: #1a1a1a;
+    color: #eae5db;
+}
+
+/* --- Sticky Header Navigation --- */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 26, 26, 0.85); /* Slick semi-transparent charcoal background */
+    backdrop-filter: blur(10px); /* Gives a premium glassy look as things scroll underneath */
+    border-bottom: 1px solid rgba(234, 229, 219, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background: transparent;
-    z-index: 1000;
 }
 
 .logo-img {
-    height: 52px;
+    height: 40px; /* Constrained elegant height for navigation logo */
     width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
-:root {
-    --logo-emblem: 320px;
-    --logo-wordmark: 650px;
-}
+    display: block;
 }
 
 .nav-links {
@@ -50,33 +53,31 @@ body {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #eae5db;
     text-decoration: none;
     font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-weight: 600;
     text-transform: uppercase;
-    font-weight: 400;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    opacity: 0.6;
+    color: #ff8c00; /* Subtle sunset orange highlight when active or hovering */
 }
 
-/* --- Hero Section Styling --- */
+/* --- Fullscreen Cinematic Hero Section --- */
 .hero {
     position: relative;
-    width: 100%;
     height: 100vh;
+    width: 100vw;
     background-image: url('hero.webp');
     background-size: cover;
-    background-position: center 60%;
+    background-position: center 60%; /* Tilted camera framing down to capture more roadground */
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps content box structural left side anchoring */
-    padding-left: 6%;
 }
 
 .hero-overlay {
@@ -85,482 +86,325 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-left: 34px;
-    margin-top: -60px; /* softer than transform */
+    align-items: center; /* Center layout alignment track */
 }
 
-/* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    gap: 18px;
-
+    padding-left: 34px; /* Optically calibrated nudge to fix visual center lines */
+    margin-bottom: 10px;
 }
 
 .hero-emblem-center {
-    width: var(--logo-emblem);
-    max-width: 80vw;
+    max-width: 320px; /* Restored elegant proportions */
     height: auto;
-    object-fit: contain;
+    margin-bottom: -40px; /* Overlaps perfectly into text graphic */
 }
 
 .hero-logo-text {
-    width: var(--logo-wordmark);
-    max-width: 90vw;
+    max-width: 650px; /* Restored balance scale */
     height: auto;
-    object-fit: contain;
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #ffffff;
+    font-family: 'Cinzel', serif;
+    color: #eae5db;
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    color: #eae5db;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border: 1px solid #eae5db;
+    padding: 15px 35px;
     background: transparent;
     transition: all 0.4s ease;
 }
 
 .cta-button:hover {
-    background: #ffffff;
+    background-color: #eae5db;
     color: #1a1a1a;
 }
 
-/* --- Layout Utility Classes --- */
+/* --- Content Layout Settings --- */
 .content-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 4%;
+    padding: 100px 40px;
 }
 
-.internal-page-padding {
-    padding-top: 140px; 
+.subpage-padding {
+    padding-top: 160px; /* Leaves clean room for sticky header on empty subpages */
 }
 
-.max-width-center {
+.subpage-intro {
+    font-size: 1.1rem;
+    color: #999;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 15px;
 }
 
-/* --- Narrative Section Styling --- */
+/* --- Narrative Structural Rows --- */
 .narrative-section {
-    padding: 100px 0;
+    padding-bottom: 60px;
 }
 
-.narrative-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.story-block {
+    display: flex;
     gap: 80px;
     align-items: center;
 }
 
+.story-text {
+    flex: 1;
+}
+
 .section-tag {
-    display: block;
+    font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #7a756c;
+    letter-spacing: 3px;
+    color: #ff8c00;
+    font-weight: 600;
+    display: block;
     margin-bottom: 15px;
 }
 
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+.story-text h2, 
+.section-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
     font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.paragraph {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #333333;
+    letter-spacing: 2px;
     margin-bottom: 25px;
-    font-weight: 300;
 }
 
-.text-link {
-    display: inline-block;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    margin-top: 10px;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 4px;
+.subpage-body .story-text h2,
+.subpage-body .section-header h2 {
+    color: #eae5db;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.subpage-body .lead-text {
+    color: #ccc;
+}
+
+.story-text p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.subpage-body .story-text p {
+    color: #999;
+}
+
+.story-image-frame {
+    flex: 1;
 }
 
 .story-photo-placeholder {
     width: 100%;
-    height: 550px;
-    background-color: #d0c9bc; 
+    height: 450px;
+    background-color: #1a1a1a; /* Empty frame slate */
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* --- Gallery & Journal Architecture --- */
+/* --- Masonry Journal Gallery Grid --- */
 .gallery-section {
-    padding: 80px 0 140px 0;
+    padding-top: 40px;
 }
 
-.section-header-center {
-    text-align: center;
-    margin-bottom: 60px;
+.section-header {
+    margin-bottom: 50px;
 }
 
-.gallery-grid {
+.journal-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px; /* Base structural track height unit */
-    gap: 24px;
+    gap: 30px;
 }
 
-.gallery-item {
+.grid-card {
+    height: 500px; /* Editorial profile height tracking vertical frames */
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
     position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
 }
 
-/* Outer wrapper subtle scale & elevation change */
-.gallery-item:hover {
-    transform: scale(1.02); 
-    box-shadow: 0 20px 38px rgba(0,0,0,0.15);
-    z-index: 10;
+/* Doubled Interaction Vectors for Floating Card Experience */
+.grid-card:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 5;
 }
 
-/* Inner picture frame properties with matching transition curve */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
+.bg-dark-neutral { background-color: #262626; }
+.bg-mid-neutral { background-color: #333333; }
+.bg-light-neutral { background-color: #404040; }
+
+.card-meta {
+    z-index: 2;
+}
+
+.card-date {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff8c00;
+    font-weight: 600;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    margin-bottom: 8px;
 }
 
-/* Tells the inside photo to expand slightly within the frame when hovered */
-.gallery-item:hover img {
-    transform: scale(1.06);
+.grid-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #eae5db;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
-/* Neutral Placeholder Colors */
-.bg-dark-neutral  { background-color: #bab3a6; }
-.bg-mid-neutral   { background-color: #c4bdae; }
-.bg-light-neutral { background-color: #cfc8b9; }
-
-/* Masonry Varied Sizing Controls */
-.gallery-item.tall { grid-row: span 2; }
-.gallery-item.medium { grid-row: span 1; }
-.gallery-item.short { grid-row: span 1; }
-
-
-/* --- CUSTOM OVERRIDES --- */
-
-/* Japan Castle Override - Pushes framing view up to capture the peaks */
-.japan-castle img {
-    object-position: center top;
-}
-
-/* Specific override for the bus */
-.nz-bus img {
-    object-position: center 20%; 
-}
-
-/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
-.bali-sunset img {
-    object-position: center center;
-}
-
-/* Scales the inside image on hover perfectly matching custom frame logic */
-.bali-sunset:hover img {
-    transform: scale(1.08);
-}
-
-
-/* --- Universal Footer Architecture --- */
+/* --- Universal Structural Footer --- */
 .main-footer {
     background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 90px 6% 40px 6%;
+    color: #eae5db;
+    padding: 80px 40px 30px 40px;
+    border-top: 1px solid rgba(234, 229, 219, 0.05);
 }
 
-.footer-grid {
-    max-width: 1400px;
+.footer-container {
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
-    border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
+    gap: 80px;
+    margin-bottom: 60px;
 }
 
-.footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
+.footer-column h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
     margin-bottom: 20px;
 }
 
-.footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
-}
-
-.footer-heading {
+.footer-column h4 {
+    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
+    letter-spacing: 2px;
+    color: #ff8c00;
     margin-bottom: 25px;
-    font-weight: 500;
 }
 
-.footer-links {
+.footer-column p {
+    color: #999;
+    font-size: 0.9rem;
+    max-width: 380px;
+}
+
+.footer-column ul {
     list-style: none;
 }
 
-.footer-links li {
+.footer-column ul li {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    color: #999999;
+.footer-column ul li a {
+    color: #ccc;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: #ffffff;
+.footer-column ul li a:hover {
+    color: #eae5db;
+}
+
+.social-links a {
+    color: #eae5db;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff8c00;
 }
 
 .footer-bottom {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    border-top: 1px solid rgba(234, 229, 219, 0.05);
     padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
 }
 
 /* --- Mobile Responsive Rules --- */
 @media (max-width: 968px) {
-    .main-header {
-        padding: 20px 6%;
-    }
-    .hero {
-        justify-content: center; /* Sits block completely centered on screen viewports */
-        padding-left: 0;
-    }
-    .hero-content {
-        margin-left: 0;
-    }
-    .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
-    }
-    .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
-    }
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    .narrative-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .section-title {
-        font-size: 2.8rem;
-    }
-    .story-photo-placeholder {
-        height: 380px;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .main-header {
-        padding: 15px 6%;
-    }
-    .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
-    }
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-    }
-    .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 25px;
-    }
-    .cta-button {
-        padding: 12px 28px;
-        font-size: 0.75rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
-        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
-    }
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
-        height: 320px;            /* Symmetrical portrait presentation scale */
-    }
-    .footer-bottom {
+    .story-block {
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        gap: 40px;
     }
-}
-
-/* --- Horizontal Updates Ticker --- */
-.updates-ticker-section {
-    padding: 40px 0;
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
-    margin: 40px 0 60px 0;
-}
-
-.ticker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.ticker-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #a39e93;
-}
-
-/* This is the magic wrapper that enables horizontal scrolling */
-/* Update this exact block in your style.css */
-.updates-scroll-container {
-    display: flex;
-    flex-direction: row;       /* Explicitly forces cards side-by-side */
-    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
-    gap: 20px;
-    overflow-x: auto;          /* Turns on horizontal scrolling */
-    padding-bottom: 15px;
-    width: 100%;               /* Ensures it uses the full content window width */
-    
-    /* Smooth native momentum scrolling on mobile */
-    -webkit-overflow-scrolling: touch; 
-    
-    /* Hide ugly scrollbars on clean browsers */
-    scrollbar-width: thin;
-    scrollbar-color: #a39e93 transparent;
-}
-
-/* Individual Update Card Styles */
-.update-card {
-    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(26, 26, 26, 0.08);
-    padding: 24px;
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-}
-
-.update-card:hover {
-    background: #ffffff;
-    border-color: #1a1a1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
-
-.update-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a39e93;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.update-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.update-excerpt {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: #555555;
-}
-
-/* Optional "NEW" dot indicator for the latest post */
-.update-card.new-tag::after {
-    content: 'NEW';
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    background: #1a1a1a;
-    color: #eae5db;
-    padding: 2px 6px;
-    letter-spacing: 0.05em;
+    .journal-grid, .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .hero-emblem-center {
+        max-width: 220px;
+        margin-bottom: -25px;
+    }
+    .hero-logo-text {
+        max-width: 420px;
+    }
 }
