@@ -551,18 +551,29 @@ body {
     letter-spacing: 0.05em;
 }
 
-@media (max-width: 968px) {
+/* ==========================================================================
+   MOBILE-ONLY RESPONSIVE OVERRIDES (Triggers only on screens 768px or smaller)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Reduce padding around the header container so it doesn't push links off screen */
     .main-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(234,229,219,0.9);
-        backdrop-filter: blur(10px);
-        z-index: 9999;
+        padding: 15px 15px !important; 
     }
-
-    body {
-        padding-top: 80px;
+    
+    /* 2. Scale down your main emblem image slightly to free up horizontal space */
+    .logo-img {
+        height: 32px !important; 
+    }
+    
+    /* 3. Tighten the gaps between your text links so they all fit on one row */
+    .nav-links {
+        gap: 12px !important; 
+    }
+    
+    /* 4. Drop the font size and letter spacing slightly for perfect mobile readability */
+    .nav-links a {
+        font-size: 11px !important;
+        letter-spacing: 0.5px !important;
     }
 }
