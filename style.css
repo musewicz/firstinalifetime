@@ -1,4 +1,6 @@
-/* --- Master Core Reset --- */
+/* ==========================================================================
+   1. GLOBAL SYSTEM FOUNDATIONS & RESET
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +8,16 @@
 }
 
 body {
-    background-color: #eae5db; /* Main Sand Color */
-    font-family: 'Inter', sans-serif;
-    color: #1a1a1a;
+    background-color: #111111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #eae5db;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* --- Navigation Header --- */
+/* ==========================================================================
+   2. HEADER & NAVIGATION LAYOUT
+   ========================================================================== */
 .main-header {
     position: fixed;
     top: 0;
@@ -21,15 +26,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background: transparent;
-    z-index: 1000;
+    padding: 20px 40px;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0) 100%);
 }
 
 .logo-img {
     height: 40px;
     width: auto;
-    object-fit: contain;
 }
 
 .nav-links {
@@ -39,33 +43,36 @@ body {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #eae5db;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-size: 14px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600; /* Increased to 600 for a slightly bolder profile */
     transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0.85; /* Increased opacity slightly to help it stand out */
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    opacity: 0.6;
+    opacity: 1;
 }
 
-/* --- Hero Section Styling --- */
+/* ==========================================================================
+   3. HERO DISPLAY CONTAINER (CINEMATIC ENTRY)
+   ========================================================================== */
 .hero {
     position: relative;
-    width: 100%;
     height: 100vh;
+    width: 100%;
     background-image: url('hero.webp');
     background-size: cover;
-    background-position: center 60%;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps content box structural left side anchoring */
-    padding-left: 6%;
+    justify-content: flex-start;
+    padding-left: 10%;
 }
 
 .hero-overlay {
@@ -74,7 +81,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
+    background: radial-gradient(circle at 30% 50%, rgba(17,17,17,0.2) 0%, rgba(17,17,17,0.6) 100%);
     z-index: 1;
 }
 
@@ -83,137 +90,207 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
-    text-align: center;
-    margin-left: 34px;    /* Global anchor layout offset offset */
+    align-items: flex-start;
+    margin-top: -96px; /* Shifted upward by approximately 1 inch (96 pixels) */
 }
 
-/* Centers the emblem and word logo text relative to each other */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: flex-start;
     margin-bottom: 25px;
 }
 
 .hero-emblem-center {
-    width: 320px;
+    margin-left: 150px;
+    margin-bottom: -40px;
     height: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
 }
 
 .hero-logo-text {
-    width: 650px;
     height: auto;
-    object-fit: contain;
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #eae5db;
     margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-transform: uppercase;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    padding: 16px 36px;
+    border: 1px solid #eae5db;
+    color: #eae5db;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
     background: transparent;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .cta-button:hover {
-    background: #ffffff;
-    color: #1a1a1a;
+    background-color: #eae5db;
+    color: #111111;
 }
 
-/* --- Layout Utility Classes --- */
+/* ==========================================================================
+   4. TEXTURED TRANSITION ELEMENT (TORN PAPER EFFECT)
+   ========================================================================== */
+.torn-divider {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-image: url('torn-edge.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -99px;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   5. NARRATIVE LAYOUT CORE (EDITORIAL SECTION)
+   ========================================================================== */
 .content-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
+    background-color: #eae5db;
+    color: #111111;
+    position: relative;
+    z-index: 5;
+    padding: 100px 10%;
 }
 
-.internal-page-padding {
-    padding-top: 140px; 
-}
-
-.max-width-center {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Narrative Section Styling --- */
 .narrative-section {
-    padding: 100px 0;
+    max-width: 1200px;
+    margin: 0 auto 120px auto;
 }
 
 .narrative-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 80px;
     align-items: center;
 }
 
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .section-tag {
-    display: block;
-    font-size: 0.75rem;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #7a756c;
+    letter-spacing: 3px;
+    color: #666666;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 42px;
     font-weight: 400;
+    letter-spacing: -1px;
     line-height: 1.1;
     margin-bottom: 30px;
 }
 
 .paragraph {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 16px;
     color: #333333;
     margin-bottom: 25px;
-    font-weight: 300;
+    max-width: 540px;
 }
 
 .text-link {
-    display: inline-block;
-    color: #1a1a1a;
+    color: #111111;
     text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    margin-top: 10px;
-    border-bottom: 1px solid #1a1a1a;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #111111;
     padding-bottom: 4px;
+    transition: opacity 0.3s ease;
+    margin-top: 15px;
+}
+
+.text-link:hover {
+    opacity: 0.7;
+}
+
+.photo-block {
+    width: 100%;
 }
 
 .story-photo-placeholder {
     width: 100%;
-    height: 550px;
-    background-color: #d0c9bc; 
+    padding-top: 135%;
+    background-color: #d1cbc4;
+    position: relative;
 }
 
-/* --- Gallery & Journal Architecture --- */
+/* ==========================================================================
+   6. UPDATES COMPONENT CARDS GRID
+   ========================================================================== */
+.updates-section {
+    max-width: 1200px;
+    margin: 0 auto 120px auto;
+}
+
+.updates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.update-card {
+    background-color: #f4f0ea;
+    padding: 40px;
+    text-decoration: none;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.update-card:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+}
+
+.update-date {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 15px;
+}
+
+.update-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.update-excerpt {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* ==========================================================================
+   7. INTERACTIVE PHOTOGRAPHY JOURNAL SECTION
+   ========================================================================== */
 .gallery-section {
-    padding: 80px 0 140px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
 }
 
 .section-header-center {
@@ -221,117 +298,119 @@ body {
     margin-bottom: 60px;
 }
 
+.section-header-center .section-title {
+    margin-top: 10px;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px; /* Base structural track height unit */
-    gap: 24px;
+    grid-auto-rows: 260px;
+    gap: 25px;
 }
 
 .gallery-item {
     position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: visible; /* Modified to allow popup thought bubbles to overflow boundaries */
+    background-color: #d1cbc4;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    outline: none;
 }
 
-/* Outer wrapper subtle scale & elevation change */
-.gallery-item:hover {
-    transform: scale(1.02); 
-    box-shadow: 0 20px 38px rgba(0,0,0,0.15);
-    z-index: 10;
-}
-
-/* Inner picture frame properties with matching transition curve */
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Tells the inside photo to expand slightly within the frame when hovered */
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(17,17,17,0) 40%, rgba(17,17,17,0.4) 100%);
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Grid Cell Height Extensions */
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item.medium {
+    grid-row: span 1.5;
+}
+
+.gallery-item.short {
+    grid-row: span 1;
+}
+
+/* Specific item layout overrides */
+.gallery-grid {
+    grid-template-rows: 280px 220px 280px;
+}
+
+.japan-castle {
+    grid-row: 2 / span 2;
+    grid-column: 2;
+}
+
+.bali-sunset {
+    object-position: center 35%;
+}
+
 .gallery-item:hover img {
-    transform: scale(1.06);
+    transform: scale(1.03);
 }
 
-/* Neutral Placeholder Colors */
-.bg-dark-neutral  { background-color: #bab3a6; }
-.bg-mid-neutral   { background-color: #c4bdae; }
-.bg-light-neutral { background-color: #cfc8b9; }
-
-/* Masonry Varied Sizing Controls */
-.gallery-item.tall { grid-row: span 2; }
-.gallery-item.medium { grid-row: span 1; }
-.gallery-item.short { grid-row: span 1; }
-
-
-/* --- CUSTOM OVERRIDES --- */
-
-/* Japan Castle Override - Pushes framing view up to capture the peaks */
-.japan-castle img {
-    object-position: center top;
+.gallery-item:hover .item-overlay {
+    opacity: 0.2;
 }
 
-/* Specific override for the bus */
-.nz-bus img {
-    object-position: center 20%; 
-}
-
-/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
-.bali-sunset img {
-    object-position: center center;
-}
-
-/* Scales the inside image on hover perfectly matching custom frame logic */
-.bali-sunset:hover img {
-    transform: scale(1.08);
-}
-
-
-/* --- Universal Footer Architecture --- */
+/* ==========================================================================
+   8. FOOTER STRUCTURAL SETUP
+   ========================================================================== */
 .main-footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 90px 6% 40px 6%;
+    background-color: #111111;
+    color: #eae5db;
+    padding: 80px 10% 40px 10%;
+    position: relative;
+    z-index: 5;
 }
 
 .footer-grid {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
-    border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
+    grid-template-columns: 1.5fr 0.8fr 0.7fr;
+    gap: 80px;
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 500;
 }
 
 .footer-text {
-    color: #999999;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
+    font-size: 14px;
+    color: #888888;
+    max-width: 380px;
 }
 
 .footer-heading {
-    font-size: 0.8rem;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
+    letter-spacing: 3px;
+    color: #666666;
     margin-bottom: 25px;
-    font-weight: 500;
 }
 
 .footer-links {
@@ -343,209 +422,87 @@ body {
 }
 
 .footer-links a {
-    color: #999999;
+    color: #888888;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    color: #eae5db;
 }
 
 .footer-bottom {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
+    padding-top: 40px;
+    border-top: 1px solid #222222;
+    text-align: center;
 }
 
-/* --- Mobile Responsive Rules --- */
-@media (max-width: 968px) {
+.footer-bottom p {
+    font-size: 12px;
+    color: #555555;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   9. MOBILE RESPONSIVE TUNING OVERRIDES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
     .main-header {
-        padding: 20px 6%;
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px !important;
+        white-space: nowrap !important;
+    }
+    .nav-links a {
+        font-size: 11px !important;
+        letter-spacing: 1px !important;
+    }
+    .logo-img {
+        height: 28px !important;
     }
     .hero {
-        justify-content: center; /* Sits block completely centered on screen viewports */
-        padding-left: 0;
+        padding-left: 5%;
     }
     .hero-content {
-        margin-left: 0;
+        margin-top: -48px; /* Scales down the shift slightly on smaller mobile ports */
     }
     .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
+        width: 160px;
+        margin-left: 40px;
+        margin-bottom: -20px;
     }
     .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
+        width: 300px;
     }
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 16px;
+        letter-spacing: 2px;
     }
     .narrative-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .section-title {
-        font-size: 2.8rem;
-    }
-    .story-photo-placeholder {
-        height: 380px;
+    .updates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     .gallery-grid {
-        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+    .gallery-item.tall, .gallery-item.medium, .gallery-item.short {
+        grid-row: span 1;
+    }
+    .japan-castle {
+        grid-row: auto;
+        grid-column: auto;
     }
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-}
-
-@media (max-width: 600px) {
-    .main-header {
-        padding: 15px 6%;
-    }
-    .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
-    }
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-    }
-    .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 25px;
-    }
-    .cta-button {
-        padding: 12px 28px;
-        font-size: 0.75rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
-        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
-    }
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
-        height: 320px;            /* Symmetrical portrait presentation scale */
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-/* --- Horizontal Updates Ticker --- */
-.updates-ticker-section {
-    padding: 40px 0;
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
-    margin: 40px 0 60px 0;
-}
-
-.ticker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.ticker-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #a39e93;
-}
-
-/* This is the magic wrapper that enables horizontal scrolling */
-/* Update this exact block in your style.css */
-.updates-scroll-container {
-    display: flex;
-    flex-direction: row;       /* Explicitly forces cards side-by-side */
-    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
-    gap: 20px;
-    overflow-x: auto;          /* Turns on horizontal scrolling */
-    padding-bottom: 15px;
-    width: 100%;               /* Ensures it uses the full content window width */
-    
-    /* Smooth native momentum scrolling on mobile */
-    -webkit-overflow-scrolling: touch; 
-    
-    /* Hide ugly scrollbars on clean browsers */
-    scrollbar-width: thin;
-    scrollbar-color: #a39e93 transparent;
-}
-
-/* Individual Update Card Styles */
-.update-card {
-    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(26, 26, 26, 0.08);
-    padding: 24px;
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-}
-
-.update-card:hover {
-    background: #ffffff;
-    border-color: #1a1a1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
-
-.update-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a39e93;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.update-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.update-excerpt {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: #555555;
-}
-
-/* Optional "NEW" dot indicator for the latest post */
-.update-card.new-tag::after {
-    content: 'NEW';
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    background: #1a1a1a;
-    color: #eae5db;
-    padding: 2px 6px;
-    letter-spacing: 0.05em;
 }
