@@ -3,87 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First In A Lifetime | Cinematic Travel & Storytelling</title>
+    <title>First In A Lifetime | Cinematic Travel Journal</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for Editorial Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Sticky Navigation Header -->
+    <!-- --- Sticky Header Navigation --- -->
     <header class="main-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img src="LogoTopClear.png" alt="FIAL Emblem" class="logo-img">
             </a>
-            <nav class="nav-menu">
+            <nav class="nav-bar">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="journal.html">Journal</a></li>
+                    <li><a href="stories.html">Stories</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Fullscreen Cinematic Hero Entrance -->
+    <!-- --- Hero/Landing Section --- -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo-wrapper">
-                <img src="LogoTopClear.png" alt="FIAL Mountain Emblem" class="hero-emblem-center">
+                <img src="LogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center">
                 <img src="LogoWordsClearWhite.png" alt="First In A Lifetime" class="hero-logo-text">
             </div>
-            <h2 class="hero-subtitle">Every journey has a story.</h2>
-            <a href="journal.html" class="btn-primary">Start the Journey</a>
+            <h2 class="hero-subtitle">Every Journey Has A Story</h2>
+            <a href="journal.html" class="cta-button">Start Your Journey</a>
         </div>
     </section>
 
-    <!-- Main Content Container -->
+    <!-- --- Core Main Content --- -->
     <main class="content-container">
         
-        <!-- Brief Welcome Teaser Section -->
-        <section id="welcome-teaser" class="story-section">
-            <div class="story-text">
-                <span class="section-label">The Philosophy</span>
-                <h2>A Passion for the Unseen World</h2>
-                <p>Welcome to First In A Lifetime. This is a visual diary of once-in-a-lifetime experiences, captured transitions, and fleeting moments that cannot be recreated. We believe life is not about destinations, but the emotional reflection found along the way.</p>
-                <a href="about.html" class="text-link">Read our story &rarr;</a>
+        <!-- --- Narrative Layout Section --- -->
+        <section id="our-story" class="narrative-section">
+            <div class="story-block">
+                <div class="story-text">
+                    <span class="section-tag">The Philosophy</span>
+                    <h2>A Passion for the Unseen World</h2>
+                    <p class="lead-text">Life isn't measured by the destinations we check off a map, but by the fleeting moments that catch us completely off guard.</p>
+                    <p>We chase the transitions—the split-second where day turns into night, the quiet fog blanketing an empty highway, and the warmth of a coffee cup in a town whose name you can't pronounce. This is an open archive of raw exploration, visual poetry, and emotional reflection.</p>
+                </div>
+                <div class="story-image-frame">
+                    <div class="story-photo-placeholder"></div>
+                </div>
             </div>
-            <div class="story-photo-frame bg-dark-neutral">
-                <!-- Visual asset placeholder -->
+        </section>
+
+        <!-- --- Photography Journal Layout --- -->
+        <section id="journal" class="gallery-section">
+            <div class="section-header">
+                <span class="section-tag">Visual Archives</span>
+                <h2>Recent Entries</h2>
+            </div>
+            
+            <div class="journal-grid">
+                <div class="grid-card bg-dark-neutral">
+                    <div class="card-meta">
+                        <span class="card-date">May 2026</span>
+                        <h3>Chasing Sunsets</h3>
+                    </div>
+                </div>
+                
+                <div class="grid-card bg-mid-neutral">
+                    <div class="card-meta">
+                        <span class="card-date">April 2026</span>
+                        <h3>Photography</h3>
+                    </div>
+                </div>
+                
+                <div class="grid-card bg-light-neutral">
+                    <div class="card-meta">
+                        <span class="card-date">March 2026</span>
+                        <h3>Taste of the Journey</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Universal Footer -->
+    <!-- --- Universal Footer Section --- -->
     <footer class="main-footer">
         <div class="footer-container">
-            <div class="footer-column">
+            <div class="footer-column about-col">
                 <h3>FIAL</h3>
-                <p>Capturing the rare, emotional, and transient moments of life in motion.</p>
+                <p>Capturing transient, fleeting moments across the globe. A cinematic travel diary centered around journeys, sunsets, and personal reflection.</p>
             </div>
-            <div class="footer-column">
-                <h3>Explore</h3>
+            <div class="footer-column links-col">
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="journal.html">Journal</a></li>
+                    <li><a href="stories.html">Stories</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+            <div class="footer-column contact-col">
+                <h4>Connect</h4>
+                <p>Follow the motion or reach out to collaborate on future expeditions.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Email</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 First In A Lifetime. All Rights Reserved.</p>
+            <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
         </div>
     </footer>
 
