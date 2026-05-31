@@ -21,8 +21,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
-    background: transparent;
+    padding: 20px 6%;
+    /* Smooth dark gradient overlay at top to make white text pop against light clouds */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 70%, transparent 100%);
     z-index: 1000;
 }
 
@@ -44,9 +45,9 @@ body {
     font-size: 0.85rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow security pass for white links */
 }
 
 .nav-links a:hover,
@@ -59,13 +60,15 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('hero.webp');
+    min-height: 700px;
+    /* Updated background asset reference matching image_b34b41.jpg layout setup */
+    background-image: url('image_b34b41.jpg');
     background-size: cover;
-    background-position: center 60%;
+    background-position: center center;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Keeps content box structural left side anchoring */
-    padding-left: 6%;
+    justify-content: flex-start; /* Clean structural left side anchoring */
+    padding-left: 10%;
 }
 
 .hero-overlay {
@@ -74,7 +77,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 70%, rgba(234,229,219,0.5) 100%);
+    /* Smooth transition from soft dark tint straight into your exact body sand color code */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0,0,0,0.3) 0%, 
+        rgba(0,0,0,0) 50%, 
+        rgba(234,229,219,0.7) 85%, 
+        rgba(234,229,219,1) 100%
+    );
     z-index: 1;
 }
 
@@ -83,60 +93,89 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
-    text-align: center;
-    margin-left: 34px;    /* Global anchor layout offset offset */
-    transform: translateY(-120px);
+    align-items: flex-start; /* Asymmetric balance layout change */
+    text-align: left;
+    max-width: 650px;
+    margin-left: 0;
+    transform: translateY(-40px); /* Clean balance alignment offset within viewport window */
 }
 
-/* Centers the emblem and word logo text relative to each other */
+/* Integrated Typography Identity Structure rules */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin-bottom: 25px;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .hero-emblem-center {
-    width: 320px;
+    max-width: 180px; /* Refined scale tracking to keep visual weight balanced */
     height: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.hero-logo-text {
-    width: 650px;
-    height: auto;
-    object-fit: contain;
+.hero-brand-title {
+    color: #ffffff;
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-brand-title .small-caps {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    display: block;
+    margin: 4px 0;
+}
+
+.hero-brand-tagline {
+    color: #cccccc;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em; /* Generous letter spacing tracking to optimize contrast scale */
+    margin: 15px 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    width: 100%;
 }
 
 .hero-subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #ffffff;
     font-weight: 400;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .cta-button {
     display: inline-block;
     padding: 14px 36px;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff; /* Thicker premium border frame tracking */
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
     background: transparent;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cta-button:hover {
     background: #ffffff;
     color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* --- Layout Utility Classes --- */
@@ -373,14 +412,16 @@ body {
         justify-content: center; /* Sits block completely centered on screen viewports */
         padding-left: 0;
     }
-    .hero-content {
+    .hero-content, .hero-logo-wrapper {
         margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-brand-title {
+        font-size: 2.6rem;
     }
     .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
-    }
-    .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
+        width: 140px; /* Adapts size cleanly for tablet frameworks */
     }
     .hero-subtitle {
         font-size: 1.5rem;
@@ -415,11 +456,15 @@ body {
         font-size: 0.75rem;
         letter-spacing: 0.1em;
     }
-    .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
+    .hero-content, .hero-logo-wrapper {
+        align-items: center;
+        text-align: center;
     }
-    .hero-logo-text {
-        width: 90vw;
+    .hero-brand-title {
+        font-size: 2rem;
+    }
+    .hero-emblem-center {
+        width: 110px; /* Adapts beautifully for small mobile phones */
     }
     .hero-subtitle {
         font-size: 1.25rem;
@@ -473,7 +518,6 @@ body {
 }
 
 /* This is the magic wrapper that enables horizontal scrolling */
-/* Update this exact block in your style.css */
 .updates-scroll-container {
     display: flex;
     flex-direction: row;       /* Explicitly forces cards side-by-side */
