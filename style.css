@@ -823,7 +823,66 @@ body.fade-out {
     transform: rotateY(180deg) !important;
 }
 
-.postcard-rack-grid .postcard-front, 
+/* Updated Postcard Front - Generates stacking order safely accommodating reflections */
+.postcard-rack-grid .postcard-front {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 12px solid #faf9f5 !important; 
+    box-sizing: border-box !important;
+    background-color: #faf9f5 !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+}
+
+.postcard-rack-grid .postcard-front img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important; 
+    display: block !important;
+}
+
+/* Photographic Satin/Glossy Reflection Layer */
+.postcard-rack-grid .postcard-front::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.18) 0%, 
+        rgba(255, 255, 255, 0.08) 25%, 
+        rgba(255, 255, 255, 0) 50%, 
+        rgba(0, 0, 0, 0.02) 80%,
+        rgba(0, 0, 0, 0.05) 100%
+    ) !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+/* Microscopic Front Paper-Grain Pattern Overlay */
+.postcard-rack-grid .postcard-front::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E") !important;
+    background-size: 100px 100px !important;
+    mix-blend-mode: overlay !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Updated Postcard Back - Merges Original Notebook Dots with Uncoated Heavy Stock Fibers */
 .postcard-rack-grid .postcard-back {
     position: absolute !important;
     top: 0 !important;
@@ -835,28 +894,17 @@ body.fade-out {
     border-radius: 4px !important;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
     box-sizing: border-box !important;
-}
-
-.postcard-rack-grid .postcard-front img {
-    width: 100% !important;
-    height: 100% !important;
-    max-height: 100% !important;
-    object-fit: cover !important; 
-    border: 12px solid #faf9f5 !important; 
-    box-sizing: border-box !important;
-    border-radius: 4px !important;
-    display: block !important;
-}
-
-.postcard-rack-grid .postcard-back {
-    background-color: #faf9f5 !important;
-    color: #1a1a1a !important;
     transform: rotateY(180deg) !important;
     padding: 24px !important;
     border: 1px solid rgba(0, 0, 0, 0.08) !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
+    background-color: #faf9f5 !important;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.04) 1.2px, transparent 1.2px), 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E") !important;
+    background-size: 4px 4px, 150px 150px !important;
 }
 
 .postcard-back .handwritten-caption {
@@ -1168,7 +1216,7 @@ body.fade-out {
         overflow: visible !important;
     }
     
-    .postcard-rack-grid .postcard-front img { border: 8px solid #faf9f5 !important; }
+    .postcard-rack-grid .postcard-front { border: 8px solid #faf9f5 !important; }
     .postcard-rack-grid .postcard-back { padding: 16px 20px !important; }
     
     .postcard-back .handwritten-caption {
@@ -1189,7 +1237,7 @@ body.fade-out {
     .postcard-rack-grid .postcard-container::before {
         content: '';
         position: absolute;
-        top: -10px !important;   /* Safe border seating shift on mobile viewports */
+        top: -10px !important;   
         left: 50%;
         transform: translateX(-50%);
         width: 14px;
@@ -1203,7 +1251,7 @@ body.fade-out {
     .postcard-rack-grid .postcard-container::after {
         content: '';
         position: absolute;
-        top: -2px !important;    /* Precision adjustments locking casting shadow down */
+        top: -2px !important;    
         left: 53%;
         width: 4px;
         height: 4px;
