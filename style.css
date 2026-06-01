@@ -100,21 +100,6 @@ body {
     margin-bottom: 30px;    /* Extra breathing room before your subtitle text */
 }
 
-/* The Mountain/Sunset Emblem Image */
-.hero-logo-wrapper img[src*="WoodsLogoTopClear"] {
-    width: 420px;          /* Enlarged from 320px to fill the space */
-    height: auto;
-    object-fit: contain;
-    margin-bottom: -10px;   /* Pulls the text up closer to the emblem if needed */
-}
-
-/* The "First In A Lifetime" Words Image */
-.hero-logo-text {
-    width: 440px;          /* Enlarged from 325px to match the bold new footprint */
-    height: auto;
-    object-fit: contain;
-}
-
 .hero-emblem-center {
     width: 320px;
     height: auto;
