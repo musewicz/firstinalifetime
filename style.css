@@ -1031,21 +1031,21 @@ body.fade-out {
     object-fit: cover !important;
 }
 
+/* Notebook Page Styling */
 .notebook-page {
     position: relative;
-    background: #f4f1ea; /* Old notebook paper color */
+    background: #f4f1ea;
     padding: 40px;
     margin: 40px auto;
     max-width: 800px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    
     /* Torn bottom-left corner */
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 90%);
 }
 
 .notebook-header {
     font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
     border-bottom: 1px solid #dcdcdc;
     display: inline-block;
@@ -1053,13 +1053,13 @@ body.fade-out {
 
 .notebook-lines {
     background-image: linear-gradient(#dcdcdc 1px, transparent 1px);
-    background-size: 100% 30px; /* Adjust spacing between lines */
+    background-size: 100% 30px;
     line-height: 30px;
     font-family: 'Caveat', cursive;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
-/* The Pins (Top two corners and bottom right) */
+/* Pins */
 .notebook-page::before, .notebook-page::after {
     content: '';
     position: absolute;
@@ -1070,15 +1070,11 @@ body.fade-out {
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Top Left Pin */
-.notebook-page::before { top: 10px; left: 10px; }
-
-/* Top Right Pin */
-.notebook-page::after { top: 10px; right: 10px; }
+.notebook-page::before { top: 10px; left: 10px; } /* Top Left Pin */
+.notebook-page::after { top: 10px; right: 10px; } /* Top Right Pin */
 
 /* Bottom Right Pin */
-.notebook-page::after { 
-    content: '';
+.notebook-page .pin-bottom-right {
     position: absolute;
     bottom: 10px; right: 10px;
     width: 12px; height: 12px;
