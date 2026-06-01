@@ -24,8 +24,22 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 4%;
-    background: transparent;
     z-index: 1000;
+    
+    /* Deep espresso leather base color instead of solid black */
+    background-color: #241911; 
+    
+    /* Layered micro-grain texturing to break up the flat digital look */
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
+        radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-size: 4px 4px, 5px 5px, 100% 100%;
+    background-blend-mode: multiply;
+    
+    /* A subtle, hand-pressed crease line along the bottom edge */
+    border-bottom: 2px solid #160f0a;
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.03), 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .logo-img {
@@ -302,9 +316,23 @@ body {
 
 /* --- Universal Footer Architecture --- */
 .main-footer {
-    background-color: #1a1a1a;
     color: #ffffff;
     padding: 90px 6% 40px 6%;
+    
+    /* Matches the header's dark weathered hide hue */
+    background-color: #241911;
+    
+    /* Replicates the same rugged micro-grain texture */
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
+        radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+    background-size: 4px 4px, 5px 5px, 100% 100%;
+    background-blend-mode: multiply;
+    
+    /* Hand-pressed crease line along the top edge of the footer */
+    border-top: 2px solid #160f0a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .footer-grid {
