@@ -85,21 +85,22 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: row;       /* Flips layout from vertical to side-by-side */
-    align-items: center;       /* Centers them perfectly on a level horizontal axis */
+    flex-direction: row;       /* Keeps the logo block and button side-by-side */
+    align-items: center;       /* Aligns their centers perfectly on a level horizontal plane */
     justify-content: center;
-    gap: 60px;                 /* Creates a solid structural gap between the logo block and the CTA button */
+    gap: 70px;                 /* Clean, deliberate separation between the logo pillar and the button */
     margin-left: 14%;          
     transform: translateY(-80px); 
-    width: 80%;                /* Gives the row breathing room to spread across the sky background */
+    width: 80%;                
 }
 
-/* Adjust the old spacing so the subtitle doesn't push down the new row alignment */
+/* This is the magic fix: forcing the logo components and subtitle to stack vertically */
 .hero-logo-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;          /* Removed bottom margin since button is now to the right */
+    flex-direction: column;    /* Explicitly stacks the emblem, logo text, and subtitle on top of each other */
+    align-items: center;       /* Keeps everything perfectly centered in its column */
+    margin-bottom: 0;          
+    text-align: center;
 }
 
 .hero-subtitle {
@@ -108,7 +109,8 @@ body {
     font-size: 1.8rem;
     color: #ffffff;
     font-weight: 400;
-    margin-bottom: 0;          /* Cleared to keep the row tight and clean */
+    margin-top: 25px;          /* Adds an elegant structural gap right above the text line */
+    margin-bottom: 0;          
     letter-spacing: 0.05em;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
