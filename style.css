@@ -660,6 +660,13 @@ body {
     transform: scale(1.08);
 }
 
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces 4 equal columns */
+    gap: 30px;
+    padding: 20px 0;
+}
+
 /* --- Journey Page Layout Upgrades --- */
 .journey-header-layout {
     display: grid;
