@@ -1098,3 +1098,59 @@ body.fade-out {
     width: 280px; 
     flex-shrink: 0; 
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS FIXES (Phones & Tablets)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* --- 1. Polaroid Grids (Index & Journey Pages) --- */
+    /* Forces the grid into 1 column so photos stack vertically */
+    .polaroid-grid, 
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important; /* Healthy spacing between cards as you scroll */
+        padding: 20px !important;
+    }
+
+    /* Makes the Polaroids expand to fill the screen beautifully */
+    .journey-card.polaroid {
+        width: 100% !important;
+        max-width: 340px !important; /* Keeps them crisp without stretching too wide */
+        margin: 0 auto !important;
+    }
+
+    /* --- 2. Gastronomy Index (Recipes Page) --- */
+    /* Breaks the horizontal postcard split and stacks the elements */
+    .ledger-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+    }
+
+    .recipe-card-postcard {
+        flex-direction: column !important; /* Stacks photo over text inside card */
+        max-height: none !important; /* Unlocks the desktop height restriction */
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    .ledger-col-visual {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .food-thumbnail-wrapper {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important; /* Better landscape layout for mobile recipe cards */
+    }
+
+    .ledger-col-interactive {
+        width: 100% !important; /* Sidebar links stretch to full width below card */
+    }
+}
