@@ -1020,5 +1020,5 @@ body.fade-out {
 
 /* Moves the Japan Castle image down to show the peaks */
 .japan-castle .polaroid-img-wrapper img {
-    object-position: center 20%; /* Move from center center to center 20% */
+    object-position: center 20%;
 }
