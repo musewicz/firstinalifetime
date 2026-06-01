@@ -1142,18 +1142,25 @@ body.fade-out {
         max-width: 100% !important;
         margin: 0 auto !important;
     }
-
 /* ==========================================================================
    POSTCARD RACK SYSTEM (APPEND TO THE BOTTOM OF STYLE.CSS)
    ========================================================================== */
 
-/* Fixes global desktop grid rendering for postcards */
-.gallery-grid .postcard-container {
+/* 1. OVERRIDE: Unlocks the 290px restriction from the original journal view */
+.content-container .gallery-grid {
+    grid-auto-rows: auto !important; /* Dynamically sizes row heights based on card proportions */
+    gap: 65px 24px !important;       /* Generous vertical spacing for the captions */
+    height: auto !important;
+}
+
+/* 2. Fixes global desktop grid rendering for postcards */
+.postcard-container {
     width: 100%;
-    min-height: 250px;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 2;             /* Classic rectangular postcard proportions */
     perspective: 1000px;
     cursor: pointer;
+    position: relative;
+    overflow: visible !important;
 }
 
 .postcard-card {
@@ -1165,7 +1172,7 @@ body.fade-out {
 }
 
 /* Hover flip trigger */
-.gallery-grid .postcard-container:hover .postcard-card {
+.postcard-container:hover .postcard-card {
     transform: rotateY(180deg);
 }
 
@@ -1173,22 +1180,24 @@ body.fade-out {
 .postcard-front, 
 .postcard-back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 4px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     box-sizing: border-box;
 }
 
 /* Formats the raw image elements flawlessly */
 .postcard-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 10px solid #faf9f5;
-    box-sizing: border-box;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;     /* Prevents native image blowouts by cropping to frame scale */
+    border: 12px solid #faf9f5 !important;
+    box-sizing: border-box !important;
     border-radius: 4px;
 }
 
@@ -1197,14 +1206,24 @@ body.fade-out {
     background-color: #faf9f5;
     color: #1a1a1a;
     transform: rotateY(180deg);
-    padding: 20px;
+    padding: 24px;
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Mobile Adaptive Override Structure */
 @media (max-width: 768px) {
-    .gallery-grid .postcard-container {
-        aspect-ratio: auto;
-        height: 380px; /* Gives the text block plenty of breathing space vertically on phone layouts */
+    .content-container .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 50px !important;
+    }
+
+    .postcard-container {
+        aspect-ratio: auto !important;
+        height: 400px !important;    /* Gives your written field notes breathing room on touchscreens */
+    }
+    
+    .postcard-front img {
+        border: 8px solid #faf9f5 !important;
     }
 }
