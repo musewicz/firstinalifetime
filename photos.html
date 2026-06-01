@@ -13,38 +13,22 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Fade in on page load
-    document.body.classList.remove("fade-out");
-
-    // Handle link clicks
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-
-        // Ignore external links or anchors
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            document.body.classList.add("fade-out");
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350); // matches CSS transition time
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Toggle flip class when clicking a postcard container
+    // 1. CLICK TO FLIP POSTCARDS
+    // This looks for your postcards and toggles the flip effect when clicked
     document.querySelectorAll('.postcard-container').forEach(card => {
         card.addEventListener('click', function() {
             this.classList.toggle('is-flipped');
         });
     });
 
-    // Fade in on page load
+
+    // 2. PAGE FADE IN ON LOAD
+    // Removes the fade class so the content smoothly drifts in
     document.body.classList.remove("fade-out");
 
-    // Handle link clicks
+
+    // 3. SMOOTH PAGE TRANSITIONS FOR LINKS
+    // Handles page switching animations cleanly when navigation links are clicked
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
 
@@ -59,12 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 window.location.href = href;
             }, 350); // matches CSS transition time
-        });
-    });
-
-});
-</script>
-Save your files, refresh your PC browser, and test it out! They will be beautifully resized, have that clean white border finish, and flip around perfectly only when clicked.
         });
     });
 
