@@ -323,6 +323,7 @@ body {
 .main-footer {
     color: #ffffff;
     padding: 90px 6% 40px 6%;
+    margin-top: 100px !important;
     
     /* Matches the header's dark weathered hide hue */
     background-color: #241911;
@@ -935,6 +936,7 @@ body.fade-out {
 .weathered-leather-block {
     position: relative;
     color: #e3dcd2; /* Soft parchment-tan text color to cut contrast */
+    margin-top: 100px !important;
     
     /* Deep, uneven, smoke-stained leather palette */
     background-color: #2b1d12; 
