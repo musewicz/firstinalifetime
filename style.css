@@ -171,13 +171,15 @@ body {
     align-items: center;
 }
 
+/* --- Narrative / Home Sections --- */
 .section-tag {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.8rem;              /* Increased slightly from 0.75rem */
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #7a756c;
+    letter-spacing: 0.25em;         /* Pushed out tracking for a more deliberate luxury feel */
+    color: #4a453c;                 /* Deepened to charcoal for perfect contrast against the canvas */
     margin-bottom: 15px;
+    font-weight: 600;               /* Bumped weight to make it pop */
 }
 
 .section-title {
@@ -485,14 +487,15 @@ body {
     margin-bottom: 20px;
 }
 
+/* --- Ticker / Logs Section --- */
 .ticker-hint {
     font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;              /* Increased size */
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #a39e93;
+    letter-spacing: 0.22em;         /* More spacing to prevent letters from bunching up */
+    color: #4a453c;                 /* Deepened color matching the core section tags */
+    font-weight: 600;               /* Added bold clarity */
 }
-
 /* This is the magic wrapper that enables horizontal scrolling */
 /* Update this exact block in your style.css */
 .updates-scroll-container {
@@ -838,14 +841,15 @@ body.fade-out {
     border: 1px solid rgba(26, 26, 26, 0.05);
 }
 
-/* Column B: Editorial Typography */
+/* --- Column B text metadata --- */
 .recipe-origin {
-    font-size: 0.65rem;
+    font-size: 0.72rem;             /* Increased from 0.65rem */
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #8a8377;
+    letter-spacing: 0.2em;          /* Wider spacing across the canvas */
+    color: #4a453c;                 /* Brought into the high-contrast dark charcoal spectrum */
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    font-weight: 600;               /* Crisp, structural bolding */
 }
 
 .recipe-title {
@@ -866,21 +870,15 @@ body.fade-out {
     padding-left: 20px;
 }
 
+/* --- Column C interactive header label --- */
 .wiki-label {
-    font-size: 0.65rem;
+    font-size: 0.72rem;             /* Increased size */
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a39c90;
-    font-weight: bold;
+    letter-spacing: 0.18em;         /* Balanced width */
+    color: #4a453c;                 /* Replaced light gray with clean charcoal */
+    font-weight: 600;               /* Standardized explicit bolding across all pages */
     display: block;
     margin-bottom: 15px;
-}
-
-.interactive-capsule-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
 
 /* The Modern "Click-Me" Capsule Module */
 .click-me-capsule {
