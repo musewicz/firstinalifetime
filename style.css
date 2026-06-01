@@ -85,34 +85,11 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: row;       /* Keeps the logo block and button side-by-side */
-    align-items: center;       /* Aligns their centers perfectly on a level horizontal plane */
-    justify-content: center;
-    gap: 70px;                 /* Clean, deliberate separation between the logo pillar and the button */
-    margin-left: 14%;          
-    transform: translateY(-80px); 
-    width: 80%;                
-}
-
-/* This is the magic fix: forcing the logo components and subtitle to stack vertically */
-.hero-logo-wrapper {
-    display: flex;
-    flex-direction: column;    /* Explicitly stacks the emblem, logo text, and subtitle on top of each other */
-    align-items: center;       /* Keeps everything perfectly centered in its column */
-    margin-bottom: 0;          
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-}
-
-.hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-top: 25px;          /* Adds an elegant structural gap right above the text line */
-    margin-bottom: 0;          
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin-left: 18%;       /* Shifting right: increased from your old baseline to push it into the sky */
+    transform: translateY(-100px); /* Slightly adjusted up/down position to account for larger size */
 }
 
 /* --- Hero Logo & Emblem Sizing --- */
@@ -147,20 +124,17 @@ body {
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* --- CTA Button Sizing & Aesthetics --- */
 .cta-button {
     display: inline-block;
-    padding: 24px 64px;        /* Drastically expanded padding to pull the bar 2x wider and taller */
-    border: 2px solid #ffffff; /* Thickened border to match the larger scale presence */
+    padding: 14px 36px;
+    border: 1px solid #ffffff;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.1rem;         /* Bumped font size up significantly */
-    letter-spacing: 0.25em;    /* Pushed letter spacing wider for balance at scale */
-    font-weight: 600;          /* Stronger font weight so it doesn't get washed out */
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
     background: transparent;
     transition: all 0.4s ease;
-    white-space: nowrap;       /* Keeps your button text on a single clean line */
 }
 
 .cta-button:hover {
@@ -405,9 +379,7 @@ body {
         padding-left: 0;
     }
     .hero-content {
-        flex-direction: column; /* Safely stacks logo above the large button on tablets/phones */
         margin-left: 0;
-        gap: 30px;
     }
     .hero-emblem-center {
         width: 220px; /* Adapts size for tablet */
