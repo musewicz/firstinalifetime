@@ -249,7 +249,9 @@ body.fade-out {
 
 /* --- Gallery & Journal Architecture --- */
 .gallery-section {
-    padding: 80px 0 200px 0; /* Changed from 140px to 200px to push the footer away */
+    max-width: 1200px;  /* Matches your global site layout width */
+    margin: 0 auto;     /* Centers the entire gallery grid on the screen */
+    padding: 0 4%;
 }
 
 .section-header-center {
