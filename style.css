@@ -1118,4 +1118,26 @@ body.fade-out {
     .click-me-capsule {
         width: 100% !important;
     }
+
+    .ledger-col-interactive {
+        width: 100% !important;
+        padding-left: 0 !important;
+    }
+    
+    .click-me-capsule {
+        width: 100% !important;
+    }
+
+    /* PASTE THE FIX HERE: */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding-bottom: 40px !important;
+        text-align: center !important;
+    }
+
+    .footer-text {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
 }
