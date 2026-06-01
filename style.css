@@ -1254,4 +1254,28 @@ body.fade-out {
         margin-bottom: 10px !important;
     }
 
+/* ==========================================================================
+   CLEAN DIGITAL INK STAMP CONTEXT
+   ========================================================================== */
+.postcard-stamp-box {
+    width: 65px !important;  /* Sets the perfect proportional stamp width */
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+}
+
+.postcard-stamp-box img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    mix-blend-mode: multiply; /* Optional: Makes the clear background merge seamlessly into your cardstock color */
+}
+
+/* Scaled adjustments for mobile views so it fits smaller screens perfectly */
+@media (max-width: 768px) {
+    .postcard-stamp-box {
+        width: 52px !important;
+    }
+
 }
