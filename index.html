@@ -82,25 +82,33 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
 
 <section class="updates-ticker-section">
-            <div class="ticker-header">
-                <span class="section-tag">Recent Logs</span>
-                <span class="ticker-hint">Swipe for more &rarr;</span>
+    <div class="ticker-header">
+        <span class="ticker-hint">Recent Logs</span>
+    </div>
+    <div class="updates-scroll-container">
+        <div class="update-card">...</div>
+        <div class="update-card">...</div>
+    </div>
+</section> <section id="journal" class="gallery-section">
+    <div class="section-header-center">
+        <span class="section-tag">Recent Snapshots</span>
+        <h2 class="section-title">The Visual Archive</h2>
+    </div>
+    
+    <div class="polaroid-grid">
+        <a href="#" class="journey-card polaroid japan-castle">
+            <div class="polaroid-img-wrapper">
+                <img src="Photos/JapanCastle.webp" alt="Japan Castle">
             </div>
-            
-            <div class="updates-scroll-container">
-                <a href="journey.html" class="update-card new-tag">
-                    <span class="update-date">May 30, 2026</span>
-                    <h4 class="update-title">Departing for Kyoto, Japan</h4>
-                    <p class="update-excerpt">First field notes from the transitions into Asia...</p>
-                </a>
-
+            <span class="handwritten-caption">Japan Castle</span>
+        </a>
                 <a href="recipes.html" class="update-card">
                     <span class="update-date">May 24, 2026</span>
                     <h4 class="update-title">Balinese Satay Recipe</h4>
                     <p class="update-excerpt">Recreating the roadside skewers of Ubud.</p>
                 </a>
 
-                <a href="photos.html" class="update-card">
+                <a href="photos.html" class="update-card new-tag">
                     <span class="update-date">May 18, 2026</span>
                     <h4 class="update-title">New Zealand Print Shop Drop</h4>
                     <p class="update-excerpt">Three museum-grade frames added to archives.</p>

@@ -1018,7 +1018,7 @@ body.fade-out {
     opacity: 0.6;
 }
 
-/* Moves the Japan Castle image down to show the peaks */
+/* Force the Japan Castle image to move down 20% regardless of other settings */
 .japan-castle .polaroid-img-wrapper img {
-    object-position: center 20%;
+    object-position: center 20% !important; 
 }
