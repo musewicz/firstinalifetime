@@ -1166,15 +1166,23 @@ body.fade-out {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 40px !important; /* Healthy spacing between cards as you scroll */
-        padding: 20px !important;
+        gap: 65px !important; /* Increased to give handwritten captions breathing room */
+        padding: 20px 4% !important;
+        grid-template-columns: 1fr !important;
     }
 
     /* Makes the Polaroids expand to fill the screen beautifully */
-    .journey-card.polaroid {
+    .journey-card.polaroid,
+    .gallery-item.tall, 
+    .gallery-item.medium, 
+    .gallery-item.short { 
+        grid-row: auto !important;
         width: 100% !important;
-        max-width: 340px !important; /* Keeps them crisp without stretching too wide */
+        max-width: 420px !important; 
+        height: auto !important;
+        min-height: 380px !important;
         margin: 0 auto !important;
+        overflow: visible !important; /* Crucial so the handwritten caption text isn't cut off */
     }
 
     /* --- 2. Gastronomy Index (Recipes Page) --- */
@@ -1207,5 +1215,43 @@ body.fade-out {
 
     .ledger-col-interactive {
         width: 100% !important; /* Sidebar links stretch to full width below card */
+    }
+
+    .handwritten-caption {
+        font-size: 1.8rem !important; /* Slightly scaled down so it fits gracefully on phone screens */
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: 20px !important;
+    }
+    /* Tighten the leather header layout box constraints on phones */
+    .main-header, 
+    .inner-page-header {
+        position: relative !important; /* Allows layout content flow without absolute overlapping */
+        padding: 12px 4% !important;   /* Slams the vertical thickness down */
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        flex-direction: column !important; /* Stacks logo above navigation links cleanly if tight */
+        gap: 8px !important;
+    }
+
+    .logo-img {
+        height: 28px !important; /* Slightly smaller logo profile on phone viewports */
+        width: auto;
+    }
+
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 16px !important; /* Perfectly balanced horizontal link gaps */
+        padding: 4px 0 !important;
+        width: 100% !important;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem !important; /* Crisp, readable text that doesn't wrap or truncate */
+        letter-spacing: 0.08em !important;
     }
 }
