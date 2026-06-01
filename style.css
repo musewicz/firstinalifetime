@@ -747,17 +747,6 @@ body {
     z-index: 2;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-left: 12%;       /* Shifted right to move it out of the left corner gutter */
-    transform: translateY(-16px, -120px);
-}
-
 .featured-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2rem;
@@ -800,12 +789,6 @@ body {
     text-decoration: none;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
-
 body {
     opacity: 1;
     transition: opacity 0.35s ease;
@@ -813,4 +796,142 @@ body {
 
 body.fade-out {
     opacity: 0;
+}
+
+
+/* ==========================================================================
+   RECIPES HYBRID - SLEEK LEDGER + INTERACTIVE CAPSULES
+   ========================================================================== */
+
+/* Page Background Setup utilizing your fine canvas texture image */
+.recipes-page-body {
+    background-color: #eae5db; 
+    background-image: url('PageBackground.png');
+    background-repeat: repeat;
+}
+
+.hybrid-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Generous editorial spacing between row structures */
+    width: 100%;
+}
+
+/* Strict Row Layout (Sleekness & Organization) */
+.ledger-row {
+    display: grid;
+    grid-template-columns: 140px 1.2fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+    padding-bottom: 60px;
+    border-bottom: 1px dashed rgba(26, 26, 26, 0.08);
+}
+
+.ledger-row:last-child {
+    border-bottom: none;
+}
+
+/* Column A: Visual Thumbnail Frame */
+.food-thumbnail-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(26, 26, 26, 0.05);
+}
+
+/* Column B: Editorial Typography */
+.recipe-origin {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #8a8377;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.recipe-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.recipe-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Column C: Interactive Wiki Module Space */
+.ledger-col-interactive {
+    padding-left: 20px;
+}
+
+.wiki-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a39c90;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.interactive-capsule-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* The Modern "Click-Me" Capsule Module */
+.click-me-capsule {
+    background: #ffffff; /* Floats perfectly as crisp cards on your texture canvas */
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.88rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+    
+    /* Smooth transition framework for the physical tactile feel */
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* The High-End "Click Me" Interaction Rules */
+.click-me-capsule:hover {
+    background: #1a1a1a;      /* Inverts color elegantly on hover */
+    color: #ffffff;           /* Flips text to stark white */
+    border-color: #1a1a1a;
+    transform: translateX(6px); /* Physically glides rightward to indicate motion */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.06); /* Adds elevated shadow lift */
+}
+
+.capsule-arrow {
+    font-size: 0.8rem;
+    opacity: 0.4;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.click-me-capsule:hover .capsule-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px); /* Makes the wiki arrow spring outward on hover */
+}
+
+/* Responsive Fallbacks for Tablets & Mobile Viewports */
+@media (max-width: 900px) {
+    .ledger-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-bottom: 40px;
+    }
+    .ledger-col-interactive {
+        padding-left: 0;
+    }
+    .food-thumbnail-wrapper {
+        width: 120px;
+    }
 }
