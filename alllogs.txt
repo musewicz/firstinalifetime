@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories - First in a Lifetime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" style="background: #1a1a1a; position: relative; padding: 20px 8%;">
+        <a href="index.html" class="logo-link">
+            <img src="Logos/LogoTopClear.png" alt="FIAL Icon" class="logo-img">
+        </a>
+        <nav class="nav-links">
+         <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="about.html">About</a></li>
+        </nav>
+    </header>
+
+   <main class="content-container internal-page-padding">
+        
+        <!-- HEADER SECTION -->
+        <section class="journey-header-layout">
+            <div class="header-text-block">
+                <span class="section-tag">Deep Narratives</span>
+                <h1 class="section-title">The Journey</h1>
+                <p class="paragraph">
+                    Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.
+                </p>
+                
+                <!-- Category Filters -->
+                <div class="journey-filters">
+                     <a href="alllinks.html" class="filter-link active">All Logs</a>
+                     <a href="international.html" class="filter-link">International</a>
+                     <a href="states.html" class="filter-link">The States</a>
+                     <a href="food.html" class="filter-link">Food</a>
+                   </div>
+
+            </div>
+
+            <!-- FEATURED BIG STORY HERO (Breaks up the blandness) -->
+            <div class="featured-story-hero">
+                <a href="stories/tokyo-ramen.html" class="featured-hero-link">
+                    <div class="featured-image-wrapper">
+                        <!-- Temporary placeholder background color until photo is added -->
+                        <div class="story-photo-placeholder" style="height: 100%; background-color: #bab3a6;"></div>
+                    </div>
+                    <div class="featured-hero-badge">Latest Field Notes</div>
+                    <div class="featured-hero-content">
+                        <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
+                        <h3 class="featured-hero-title">The Master Artisans of Tokyo Duck Ramen</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- THE POLAROID GRID -->
+        <div class="polaroid-grid">
+            
+            <!-- Polaroid Card 1 -->
+            <a href="stories/tokyo-ramen.html" class="journey-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/tokyo-duck.jpg" alt="Tokyo Alleyway">
+                </div>
+                <span class="handwritten-caption">Tokyo, Japan</span>
+            </a>
+
+            <!-- Polaroid Card 2 -->
+            <a href="stories/australia-outback.html" class="journey-card polaroid tilt-right">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/desert-sunset.jpg" alt="Australian Outback">
+                </div>
+                <span class="handwritten-caption">Melbourne, AUS</span>
+            </a>
+
+            <!-- Polaroid Card 3 -->
+            <a href="stories/warped-tour.html" class="journey-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">w
+                    <img src="Photos/warped-crowd.jpg" alt="Warped Tour Community">
+                </div>
+                <span class="handwritten-caption">Warped Tour '25</span>
+            </a>
+
+            <!-- Polaroid Card 4 -->
+            <a href="stories/portugal.html" class="journey-card polaroid TILT-right">
+                <div class="polaroid-img-wrapper">
+                     <img src="Photos/YOUR-IMAGE.jpg" alt="Lisbon">
+                </div>
+                <span class="handwritten-caption">Lisbon, Portugal</span>
+            </a>
+
+
+        </div>
+    </main>
+
+        <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+           </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
