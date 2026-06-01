@@ -618,51 +618,46 @@ body {
     padding: 16px 16px 40px 16px;
     text-decoration: none !important;
     color: #1a1a1a;
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    /* Transition handles the lift and the shadow */
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    /* The magic: we apply the transition to transform ONLY */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
     position: relative;
     cursor: pointer;
-    /* Essential: This keeps the tilt applied to the base card */
-    will-change: transform;
 }
 
-/* --- 2. Tilt Modifiers --- */
+/* --- 2. Tilt Logic (Applied to the cards) --- */
 @media (min-width: 769px) {
-    .tilt-left { transform: rotate(-2deg); }
+    .tilt-left { transform: rotate(-3deg); }
     .tilt-right { transform: rotate(3deg); }
 
-    /* --- 3. Interactive Hover --- */
-    /* We use 'inherit' or just transform the Y-axis so the tilt stays! */
+    /* Hover: Lift and slight scale-up, keeping the rotation! */
     .journey-card.polaroid:hover {
-        transform: translateY(-15px) scale(1.02); 
-        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        transform: translateY(-15px) scale(1.03) !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         z-index: 10;
-    }
-
-    /* Inner image growth */
-    .journey-card.polaroid:hover .polaroid-img-wrapper img {
-        transform: scale(1.05);
     }
 }
 
-/* --- 4. Image Wrapper Styling --- */
+/* --- 3. Image Wrapper & Effects --- */
 .polaroid-img-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     background: #eae5db;
     margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); 
-    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .polaroid-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
+}
+
+.journey-card.polaroid:hover .polaroid-img-wrapper img {
+    transform: scale(1.08);
 }
 
 /* --- Journey Page Layout Upgrades --- */
