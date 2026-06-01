@@ -1143,87 +1143,95 @@ body.fade-out {
         margin: 0 auto !important;
     }
 /* ==========================================================================
-   POSTCARD RACK SYSTEM (APPEND TO THE BOTTOM OF STYLE.CSS)
+   POSTCARD RACK SYSTEM (APPEND TO THE ABSOLUTE BOTTOM OF STYLE.CSS)
    ========================================================================== */
 
-/* 1. OVERRIDE: Unlocks the 290px restriction from the original journal view */
-.content-container .gallery-grid {
-    grid-auto-rows: auto !important; /* Dynamically sizes row heights based on card proportions */
-    gap: 65px 24px !important;       /* Generous vertical spacing for the captions */
+/* 1. Fully isolated grid system independent of old site properties */
+.postcard-rack-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 50px 30px !important;
+    width: 100% !important;
     height: auto !important;
+    overflow: visible !important;
+    padding: 20px 0 !important;
 }
 
-/* 2. Fixes global desktop grid rendering for postcards */
-.postcard-container {
-    width: 100%;
-    aspect-ratio: 3 / 2;             /* Classic rectangular postcard proportions */
-    perspective: 1000px;
-    cursor: pointer;
-    position: relative;
+/* 2. Container bounds enforcing postcard scale calculations */
+.postcard-rack-grid .postcard-container {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important; /* Forces layout boxes to standard postcard dimensions */
+    perspective: 1000px !important;
+    cursor: pointer !important;
+    position: relative !important;
     overflow: visible !important;
 }
 
-.postcard-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-}
-
-/* Hover flip trigger */
-.postcard-container:hover .postcard-card {
-    transform: rotateY(180deg);
-}
-
-/* Force elements to match card wrappers seamlessly */
-.postcard-front, 
-.postcard-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    box-sizing: border-box;
-}
-
-/* Formats the raw image elements flawlessly */
-.postcard-front img {
+.postcard-rack-grid .postcard-card {
+    position: relative !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;     /* Prevents native image blowouts by cropping to frame scale */
-    border: 12px solid #faf9f5 !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-style: preserve-3d !important;
+}
+
+/* 3. Hover command to rotate the card matrix */
+.postcard-rack-grid .postcard-container:hover .postcard-card {
+    transform: rotateY(180deg) !important;
+}
+
+/* 4. Layer anchors flattening front and back elements inside container dimensions */
+.postcard-rack-grid .postcard-front, 
+.postcard-rack-grid .postcard-back {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    border-radius: 4px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
     box-sizing: border-box !important;
-    border-radius: 4px;
 }
 
-/* Style the text-heavy back face */
-.postcard-back {
-    background-color: #faf9f5;
-    color: #1a1a1a;
-    transform: rotateY(180deg);
-    padding: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+/* 5. FIX THE BLOWOUT: Constrain original photos to card dimension variables */
+.postcard-rack-grid .postcard-front img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important; /* Crops high-res shots inside the card border */
+    border: 12px solid #faf9f5 !important; /* Heavy heavy matte card finish */
+    box-sizing: border-box !important;
+    border-radius: 4px !important;
+    display: block !important;
 }
 
-/* Mobile Adaptive Override Structure */
+/* 6. Text Backplate Settings */
+.postcard-rack-grid .postcard-back {
+    background-color: #faf9f5 !important;
+    color: #1a1a1a !important;
+    transform: rotateY(180deg) !important;
+    padding: 24px !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEWPORT ADAPTATION (SCREENS 768PX AND LOWER)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .content-container .gallery-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 50px !important;
-    }
-
-    .postcard-container {
-        aspect-ratio: auto !important;
-        height: 400px !important;    /* Gives your written field notes breathing room on touchscreens */
+    .postcard-rack-grid {
+        grid-template-columns: 1fr !important; /* Shift to single column stacked row rules */
+        gap: 40px !important;
     }
     
-    .postcard-front img {
+    .postcard-rack-grid .postcard-container {
+        aspect-ratio: auto !important;
+        height: 380px !important; /* Grants expansion room for text rendering */
+    }
+    
+    .postcard-rack-grid .postcard-front img {
         border: 8px solid #faf9f5 !important;
     }
 }
