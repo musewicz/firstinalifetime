@@ -59,7 +59,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav-links a {
@@ -916,6 +916,7 @@ body.fade-out {
     font-weight: 600;               /* Standardized explicit bolding across all pages */
     display: block;
     margin-bottom: 15px;
+}
 
 /* The Modern "Click-Me" Capsule Module */
 .click-me-capsule {
