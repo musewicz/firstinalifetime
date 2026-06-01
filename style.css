@@ -1242,4 +1242,60 @@ body.fade-out {
     .postcard-rack-grid .postcard-front img {
         border: 8px solid #faf9f5 !important;
     }
+/* ==========================================================================
+   POSTCARD RACK SYSTEM RENDERING RULES
+   ========================================================================== */
+.postcard-rack-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces clean 2-column layout on desktop */
+    gap: 60px 40px !important;
+    padding: 40px 0 !important;
+}
+
+.postcard-container {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    perspective: 1200px !important;
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.postcard-card {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-style: preserve-3d !important;
+}
+
+/* Toggle rotation via JavaScript .is-flipped class instead of hover */
+.postcard-container.is-flipped .postcard-card {
+    transform: rotateY(180deg) !important;
+}
+
+.postcard-front, 
+.postcard-back {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    border-radius: 4px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+}
+
+.postcard-back {
+    background-color: #faf9f5 !important;
+    padding: 25px !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+@media (max-width: 768px) {
+    .postcard-rack-grid {
+        grid-template-columns: 1fr !important; /* Stacks vertically on phone screens */
+        max-width: 100% !important;
+    }
 }

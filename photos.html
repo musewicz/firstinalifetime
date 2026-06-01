@@ -13,36 +13,30 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. CLICK TO FLIP POSTCARDS
-    // This looks for your postcards and toggles the flip effect when clicked
+    // 1. CLICK TO FLIP CARDS
+    // Finds every postcard container, turns on 3D rotation toggles
     document.querySelectorAll('.postcard-container').forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            // Prevent clicking buttons/links from accidentally triggering the flip
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
             this.classList.toggle('is-flipped');
         });
     });
 
-
-    // 2. PAGE FADE IN ON LOAD
-    // Removes the fade class so the content smoothly drifts in
+    // 2. INITIAL PAGE FADE IN
     document.body.classList.remove("fade-out");
 
-
-    // 3. SMOOTH PAGE TRANSITIONS FOR LINKS
-    // Handles page switching animations cleanly when navigation links are clicked
+    // 3. SMOOTH LINKS CROSS-FADE
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
-
-        // Ignore external links or anchors
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
             e.preventDefault();
-
             document.body.classList.add("fade-out");
-
             setTimeout(() => {
                 window.location.href = href;
-            }, 350); // matches CSS transition time
+            }, 350);
         });
     });
 
@@ -75,100 +69,102 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
 
         <section class="gallery-section" style="padding: 40px 0 100px 0;">
-    <div class="postcard-rack-grid" style="max-width: 75%; margin: 0 auto;"> <div class="postcard-container">
-                    <div class="postcard-card">
-                        <div class="postcard-front">
-    <img src="Photos/Japan/hostle.webp" alt="Tokyo Alleyway" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
+    <div class="postcard-rack-grid" style="max-width: 75%; margin: 0 auto;"> 
+        
+        <div class="postcard-container">
+            <div class="postcard-card">
+                <div class="postcard-front">
+                    <img src="Photos/Japan/hostle.webp" alt="Tokyo Alleyway" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
+                </div>
+                <div class="postcard-back">
+                    <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
+                        <div class="postcard-note">
+                            <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">JANUARY 2026</span>
+                            <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Tokyo, Japan</span>
+                            <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
+                                A chill winter evening, tucked away into the narrow alleys chasing the perfect bowl of duck ramen.
+                            </p>
                         </div>
-                        <div class="postcard-back">
-                            <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
-                                <div class="postcard-note">
-                                    <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">JANUARY 2026</span>
-                                    <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Tokyo, Japan</span>
-                                    <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
-                                        A chill winter evening, tucked away into the narrow alleys chasing the perfect bowl of duck ramen.
-                                    </p>
-                                </div>
-                                <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
-                                    <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
-                                    <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
-                                </div>
-                            </div>
+                        <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                            <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
+                            <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="postcard-container">
-                    <div class="postcard-card">
-                     <div class="postcard-front">
-    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney Sunset" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
-</div>
-                        <div class="postcard-back">
-                            <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
-                                <div class="postcard-note">
-                                    <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">FEBRUARY 2026</span>
-                                    <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Sydney, AUS</span>
-                                    <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
-                                        Watching the setting sun completely fracture the sky over the harbor, turning concrete into gold.
-                                    </p>
-                                </div>
-                                <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
-                                    <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
-                                    <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="postcard-container">
-                    <div class="postcard-card">
-                        <div class="postcard-front">
-    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Crowd" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
-</div>
-                        <div class="postcard-back">
-                            <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
-                                <div class="postcard-note">
-                                    <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">SUMMER 2025</span>
-                                    <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Warped Tour '25</span>
-                                    <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
-                                        The intense, beautiful energy of a community built out of noise, dust, and a deep sense of belonging.
-                                    </p>
-                                </div>
-                                <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
-                                    <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
-                                    <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="postcard-container">
-                    <div class="postcard-card">
-                        <div class="postcard-front">
-    <img src="Photos/Morocco/marketdoors.webp" alt="Marrakech Marketplace" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
-</div>
-                        <div class="postcard-back">
-                            <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
-                                <div class="postcard-note">
-                                    <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">OCTOBER 2025</span>
-                                    <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Marrakech</span>
-                                    <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
-                                        Chasing light through structural symmetries and ancient marketplace entries. Lost, but exactly where I needed to be.
-                                    </p>
-                                </div>
-                                <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
-                                    <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
-                                    <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
+        </div>
+
+        <div class="postcard-container">
+            <div class="postcard-card">
+                <div class="postcard-front">
+                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney Sunset" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
+                </div>
+                <div class="postcard-back">
+                    <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
+                        <div class="postcard-note">
+                            <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">FEBRUARY 2026</span>
+                            <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Sydney, Australia</span>
+                            <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
+                                Watching the sky turn into deep shades of orange and violet over the harbor as the city winds down.
+                            </p>
+                        </div>
+                        <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                            <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
+                            <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="postcard-container">
+            <div class="postcard-card">
+                <div class="postcard-front">
+                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Crowd" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
+                </div>
+                <div class="postcard-back">
+                    <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
+                        <div class="postcard-note">
+                            <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">JULY 2025</span>
+                            <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Warped Tour</span>
+                            <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
+                                Pure, raw energy under the blazing sun. A beautiful sea of motion, music, and unforgettable memories.
+                            </p>
+                        </div>
+                        <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                            <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
+                            <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="postcard-container">
+            <div class="postcard-card">
+                <div class="postcard-front">
+                    <img src="Photos/Morocco/marketdoors.webp" alt="Marrakech Marketplace" style="width: 100%; height: 100%; object-fit: cover; display: block; background: #faf9f5; padding: 12px; box-sizing: border-box;">
+                </div>
+                <div class="postcard-back">
+                    <div class="postcard-back-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
+                        <div class="postcard-note">
+                            <span class="update-date" style="display: block; font-size: 0.75rem; color: #7a756c; letter-spacing: 0.1em; margin-bottom: 5px;">MARCH 2026</span>
+                            <span class="handwritten-caption" style="font-size: 1.6rem; display: block; margin-bottom: 8px;">Marrakech, Morocco</span>
+                            <p class="paragraph" style="font-size: 0.85rem; line-height: 1.4; color: #4a453c; margin: 0;">
+                                Lost in a maze of carved cedar doorways, vibrant spices, and the timeless echoes of the old Medina.
+                            </p>
+                        </div>
+                        <div class="postcard-meta" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                            <div class="stamp-placeholder" style="width: 45px; height: 55px; border: 1px dashed #a39e93; border-radius: 2px; background: rgba(0,0,0,0.02);"></div>
+                            <a href="#" class="filter-link" style="padding: 6px 14px; font-size: 0.75rem; border: 1px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Inter', sans-serif; text-decoration: none; color: #1a1a1a;">Buy Print</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
