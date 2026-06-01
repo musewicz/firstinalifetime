@@ -24,15 +24,49 @@
         </nav>
     </header>
 
-   <main class="content-container" style="padding: 120px max(8%, 20px); min-height: 70vh;">
-        <span class="section-label">DEEP NARRATIVES</span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 10px;">The Journey</h2>
-        <p style="color: #555; max-width: 600px; font-size: 1.1rem; line-height: 1.8; margin-bottom: 50px;">
-            Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.
-        </p>
+   <main class="content-container internal-page-padding">
+        
+        <!-- HEADER SECTION -->
+        <section class="journey-header-layout">
+            <div class="header-text-block">
+                <span class="section-tag">Deep Narratives</span>
+                <h1 class="section-title">The Journey</h1>
+                <p class="paragraph">
+                    Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.
+                </p>
+                
+                <!-- Category Filters -->
+                <div class="journey-filters">
+                    <a href="#" class="filter-link active">All Logs</a>
+                    <a href="#" class="filter-link">Asia</a>
+                    <a href="#" class="filter-link">Americas</a>
+                    <a href="#" class="filter-link">Oceania</a>
+                    <a href="#" class="filter-link">Food Heritage</a>
+                </div>
+            </div>
 
+            <!-- FEATURED BIG STORY HERO (Breaks up the blandness) -->
+            <div class="featured-story-hero">
+                <a href="stories/tokyo-ramen.html" class="featured-hero-link">
+                    <div class="featured-image-wrapper">
+                        <!-- Temporary placeholder background color until photo is added -->
+                        <div class="story-photo-placeholder" style="height: 100%; background-color: #bab3a6;"></div>
+                    </div>
+                    <div class="featured-hero-badge">Latest Field Notes</div>
+                    <div class="featured-hero-content">
+                        <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
+                        <h3 class="featured-hero-title">The Master Artisans of Tokyo Duck Ramen</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- THE POLAROID GRID -->
         <div class="polaroid-grid">
             
+            <!-- Polaroid Card 1 -->
             <a href="stories/tokyo-ramen.html" class="journey-card polaroid tilt-left">
                 <div class="polaroid-img-wrapper">
                     <img src="Photos/tokyo-duck.jpg" alt="Tokyo Alleyway">
@@ -40,6 +74,7 @@
                 <span class="handwritten-caption">Tokyo, Japan</span>
             </a>
 
+            <!-- Polaroid Card 2 -->
             <a href="stories/australia-outback.html" class="journey-card polaroid tilt-right">
                 <div class="polaroid-img-wrapper">
                     <img src="Photos/desert-sunset.jpg" alt="Australian Outback">
@@ -47,6 +82,7 @@
                 <span class="handwritten-caption">Melbourne, AUS</span>
             </a>
 
+            <!-- Polaroid Card 3 -->
             <a href="stories/warped-tour.html" class="journey-card polaroid tilt-left">
                 <div class="polaroid-img-wrapper">
                     <img src="Photos/warped-crowd.jpg" alt="Warped Tour Community">
@@ -54,7 +90,7 @@
                 <span class="handwritten-caption">Warped Tour '25</span>
             </a>
 
-            </div>
+        </div>
     </main>
 
         <footer class="main-footer">
