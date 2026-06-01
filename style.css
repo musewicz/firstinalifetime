@@ -1385,4 +1385,23 @@ body.fade-out {
     .postcard-rack-grid .postcard-container::after {
         top: -2px !important;
     }
+/* ==========================================================================
+   DESKTOP 3D LAYER FIX (PULLS PINS TO THE FRONT)
+   ========================================================================== */
+@media (min-width: 769px) {
+    /* Forces the 3D card structure to respect the pushpin stacking layer */
+    .postcard-rack-grid .postcard-container {
+        transform-style: preserve-3d !important;
+    }
+
+    /* Elevates the pin and its shadow forward along the Z-axis */
+    .postcard-rack-grid .postcard-container::before {
+        z-index: 9999 !important;
+        transform: translateX(-50%) translateZ(20px) !important;
+    }
+    
+    .postcard-rack-grid .postcard-container::after {
+        z-index: 9998 !important;
+        transform: translateZ(10px) !important;
+    }
 }
