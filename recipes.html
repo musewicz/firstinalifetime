@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal - First in a Lifetime</title>
+    <title>Gastronomy Index - First in a Lifetime</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<body class="fade-out">
+<body class="fade-out recipes-page-body">
 
     <!-- Shared House Navigation Header -->
     <header class="main-header" style="background: #1a1a1a; position: relative; padding: 20px 8%;">
@@ -45,25 +45,100 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="Logos/LogoTopClear.png" alt="FIAL Icon" class="logo-img">
         </a>
         <nav class="nav-links">
-           <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="journey.html">Journey</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li class="mobile-hide"><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="recipes.html" class="active">Recipes</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li class="mobile-hide"><a href="about.html">About</a></li>
         </nav>
     </header>
 
-    <!-- Empty Room Frame ready for interior design -->
+    <!-- HYBRID LEDGER CONTENT ROOM -->
     <main class="content-container" style="padding: 120px max(8%, 20px); min-height: 70vh;">
-        <span class="section-label">EXPLORE THE FIELD</span>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">The Travel Journal</h2>
-        <p style="color: #555; max-width: 600px; font-size: 1.1rem; line-height: 1.8;">
-            Welcome to the empty Journal frame. This room will hold your chronological logbook, thoughts from the road, and field notes from recent expeditions.
-        </p>
+        
+        <!-- HEADER MODULE -->
+        <header class="recipes-header" style="margin-bottom: 60px;">
+            <span class="section-label" style="display: block; margin-bottom: 5px;">EXPLORE THE FIELD</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">Gastronomy Index</h2>
+            <p style="color: #555; max-width: 600px; font-size: 1.1rem; line-height: 1.8;">
+                An interconnected ledger of tastes, street heritages, and kitchen blueprints designed to recreate the dishes encountered on the road.
+            </p>
+        </header>
+
+        <hr style="border: none; border-top: 1px solid rgba(26,26,26,0.08); margin-bottom: 60px;">
+
+        <!-- HYBRID LEDGER SYSTEM -->
+        <section class="hybrid-ledger">
+
+            <!-- Entry 1: Tokyo Ramen -->
+            <article class="ledger-row">
+                <!-- Column 1: The Visual Anchor -->
+                <div class="ledger-col-visual">
+                    <div class="food-thumbnail-wrapper">
+                        <!-- Drop your food image here later -->
+                        <div class="food-photo-placeholder" style="background-color: #bab3a6; aspect-ratio: 1/1; width: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Column 2: The Editorial Core -->
+                <div class="ledger-col-core">
+                    <span class="recipe-origin">Tokyo, Japan // Staples</span>
+                    <h3 class="recipe-title" style="font-family: 'Playfair Display', serif;">Shinjuku Shoyu Duck Broth</h3>
+                    <p class="recipe-description">
+                        A rich, clear shoyu broth built on duck carcasses, roasted negi, and a delicate soy tare. Deeply comforting, echoing cold January nights at hidden alleyway counters.
+                    </p>
+                </div>
+
+                <!-- Column 3: Interactive "Click-Me" Capsule Hub -->
+                <div class="ledger-col-interactive">
+                    <span class="wiki-label">Connected Records</span>
+                    <div class="interactive-capsule-stack">
+                        <a href="stories/tokyo-ramen.html" target="_blank" rel="noopener noreferrer" class="click-me-capsule">
+                            <span class="capsule-text">Field Notes: Artisans of Kamo to Negi</span>
+                            <span class="capsule-arrow">↗</span>
+                        </a>
+                        <a href="photos.html" target="_blank" rel="noopener noreferrer" class="click-me-capsule">
+                            <span class="capsule-text">Visual Gallery: Shinjuku Nights</span>
+                            <span class="capsule-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Entry 2: Australian Meat Pie -->
+            <article class="ledger-row">
+                <!-- Column 1 -->
+                <div class="ledger-col-visual">
+                    <div class="food-thumbnail-wrapper">
+                        <div class="food-photo-placeholder" style="background-color: #aba293; aspect-ratio: 1/1; width: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="ledger-col-core">
+                    <span class="recipe-origin">Victoria, Australia // Comfort</span>
+                    <h3 class="recipe-title" style="font-family: 'Playfair Display', serif;">Shortcrust Meat Pie</h3>
+                    <p class="recipe-description">
+                        An authentic flaky pie stuffed with minced beef, rich gravy, and a touch of Vegemite. A staple pulled straight from tiny roadside outback bakeries.
+                    </p>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="ledger-col-interactive">
+                    <span class="wiki-label">Connected Records</span>
+                    <div class="interactive-capsule-stack">
+                        <a href="stories/australia-outback.html" target="_blank" rel="noopener noreferrer" class="click-me-capsule">
+                            <span class="capsule-text">Field Notes: Dust & Light in the Red Center</span>
+                            <span class="capsule-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
     </main>
 
     <!-- Shared House Footer -->
-    
     <footer class="main-footer">
         <div class="footer-grid">
             <div class="footer-column">
