@@ -985,24 +985,25 @@ body.fade-out {
 }
 
 /* ==========================================================================
-   GASTRONOMY INDEX: POSTCARD RECIPE CARDS
+   GASTRONOMY INDEX: POSTCARD RECIPE CARDS (RECTANGLE & FIXED SIZE)
    ========================================================================== */
 
 /* --- 1. Base Layout Row Configuration --- */
 .ledger-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch; /* Forces sidebar and card to match height beautifully */
     gap: 40px;
     margin-bottom: 60px;
     width: 100%;
 }
 
-/* --- 2. The Postcard Box (Stops before the Connected Records sidebar) --- */
+/* --- 2. The Postcard Box (Constrained Size & Rectangular Shape) --- */
 .recipe-card-postcard {
     display: flex;
-    gap: 30px;
-    flex: 1; /* Naturally fills up all horizontal space left by the sidebar */
+    gap: 25px;
+    flex: 1; 
+    max-height: 380px; /* Restricts the overall card size from getting huge */
     
     /* Tactile Cardstock Background Texture */
     background-color: #faf9f5;
@@ -1010,48 +1011,78 @@ body.fade-out {
     background-size: 4px 4px;
     
     border: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 35px 30px;
-    position: relative; /* Crucial so that the absolute pins stick to this card */
+    padding: 25px;
+    position: relative; 
     border-radius: 4px;
     
     /* Deep Polaroid-style Drop Shadows */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 
-                0 5px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 
+                0 4px 10px rgba(0, 0, 0, 0.06);
+    overflow: visible; /* Makes sure our pushpins aren't cut off */
 }
 
-/* --- 3. Red Pushpin Placements --- */
+/* --- 3. Rectangular Image Thumbnail (The Fix for the Giant Photo) --- */
+.ledger-col-visual {
+    width: 220px; /* Hard lock on image column width */
+    flex-shrink: 0;
+}
+
+.food-thumbnail-wrapper {
+    width: 100%;
+    height: 100%;
+    max-height: 330px; /* Constrains image height inside the postcard */
+    aspect-ratio: 2 / 3; /* Forces a sharp, classic rectangular recipe card photo look */
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.food-thumbnail-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image perfectly proportioned without squishing */
+}
+
+/* --- 4. Red Pushpin Placements (Shifted lower to prevent clipping) --- */
 .recipe-card-postcard::before, 
 .recipe-card-postcard::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #b53a2b; /* Rich Crimson Pin Head */
+    width: 14px;
+    height: 14px;
+    background: #b53a2b; 
     border-radius: 50%;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3), 
                 inset -2px -2px 4px rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
 
-/* Pin 1: Top Left */
+/* Pin 1: Top Left (Moved slightly inward and down) */
 .recipe-card-postcard::before { 
-    top: -8px; 
-    left: 20px; 
+    top: 10px; 
+    left: 12px; 
 }
 
-/* Pin 2: Top Right */
+/* Pin 2: Top Right (Moved slightly inward and down) */
 .recipe-card-postcard::after { 
-    top: -8px; 
-    right: 20px; 
+    top: 10px; 
+    right: 12px; 
 }
 
-/* --- 4. Bolder, High-Contrast Ruled Notebook Lines --- */
+/* --- 5. High-Contrast Ruled Notebook Lines --- */
+.ledger-col-core {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .notebook-lines {
-    /* Increased line weight and opacity to create realistic gray rules */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px) !important;
-    background-size: 100% 2.2rem !important; 
-    line-height: 2.2rem !important; 
-    margin-top: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px) !important;
+    background-size: 100% 2rem !important; 
+    line-height: 2rem !important; 
+    margin-top: 15px;
+    flex-grow: 1;
 }
 
 .recipe-description {
@@ -1060,8 +1091,8 @@ body.fade-out {
     color: #2b2b2b;
 }
 
-/* --- 5. Interactive Connected Records Sidebar Layout --- */
+/* --- 6. Interactive Sidebar Layout --- */
 .ledger-col-interactive {
-    width: 280px; /* Locks down the width of the link sidebar */
-    flex-shrink: 0; /* Prevents the card layout from squishing the sidebar */
+    width: 280px; 
+    flex-shrink: 0; 
 }
