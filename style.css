@@ -411,25 +411,34 @@ body {
     .main-header {
         padding: 15px 6%;
     }
+
     .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
+        gap: 15px;
     }
+
     .nav-links a {
         font-size: 0.75rem;
         letter-spacing: 0.1em;
     }
+
     .hero-emblem-center {
-        width: 160px; /* Adapts beautifully for small mobile phones */
+        width: 160px;
     }
+
     .hero-logo-text {
         width: 90vw;
     }
 
-}
+    /* ADD THIS HERE */
+    .hero-logo-wrapper {
+        transform: translateX(-10px);
+    }
+
     .hero-subtitle {
         font-size: 1.25rem;
         margin-bottom: 25px;
     }
+}
     .cta-button {
         padding: 12px 28px;
         font-size: 0.75rem;
