@@ -760,16 +760,16 @@ body {
 .journey-card.polaroid::before {
     content: '';
     position: absolute;
-    top: -12px;
+    top: -14px;                           /* Placed slightly higher to account for width */
     left: 50%;
-    transform: translateX(-50%) rotate(-1deg);
-    width: 75px;
-    height: 22px;
-    background-color: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    border-left: 1px dashed rgba(0,0,0,0.05);
-    border-right: 1px dashed rgba(0,0,0,0.05);
+    transform: translateX(-50%) rotate(-2.5deg); /* A slightly stronger tilt makes long tape look more natural */
+    width: 140px;                         /* Increased from 75px to push horizontally way out */
+    height: 24px;                         /* Just a pixel or two taller for visual weight */
+    background-color: rgba(255, 255, 255, 0.42); /* Marginally more opaque so it pops against the background */
+    backdrop-filter: blur(1.5px);         /* Slightly smoother glassmorphism blur */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    border-left: 1px dashed rgba(0,0,0,0.08);  /* Clean "torn edge" look on the left side */
+    border-right: 1px dashed rgba(0,0,0,0.08); /* Clean "torn edge" look on the right side */
     z-index: 5;
 }
 
