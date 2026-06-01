@@ -463,19 +463,6 @@ body {
         gap: 10px;
         text-align: center;
     }
-
-@media (max-width: 600px) {
-
-    .nav-links {
-        gap: 8px; /* tighter spacing for mobile only */
-    }
-
-    .nav-links a {
-        font-size: 0.65rem;
-        letter-spacing: 0.05em;
-    }
-
-}
 }
 
 /* --- Horizontal Updates Ticker --- */
