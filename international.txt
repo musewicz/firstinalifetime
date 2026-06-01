@@ -37,8 +37,8 @@
                 
                 <!-- Category Filters -->
                 <div class="journey-filters">
-                     <a href="alllinks.html" class="filter-link active">All Logs</a>
-                     <a href="international.html" class="filter-link">International</a>
+                     <a href="alllinks.html" class="filter-link">All Logs</a>
+                     <a href="international.html" class="filter-link active">International</a>
                      <a href="states.html" class="filter-link">The States</a>
                      <a href="food.html" class="filter-link">Food</a>
                    </div>
