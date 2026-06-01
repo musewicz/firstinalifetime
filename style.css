@@ -550,3 +550,97 @@ body {
     padding: 2px 6px;
     letter-spacing: 0.05em;
 }
+
+/* --- Google Font for Polaroid Captions --- */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+/* --- Journey Polaroid Grid Structure --- */
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* Individual Polaroid Card Base */
+.journey-card.polaroid {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 16px 16px 32px 16px; /* Thick bottom border for handwritten text */
+    text-decoration: none;
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Prevents photos from breaking out of the container */
+.polaroid-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Classic square Polaroid photo crop */
+    overflow: hidden;
+    background: #eae5db;
+    margin-bottom: 20px;
+}
+
+.polaroid-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%) contrast(95%); /* Subtle vintage film shift */
+    transition: all 0.5s ease;
+}
+
+/* Handwritten City Caption */
+.handwritten-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    text-align: center;
+    display: block;
+    line-height: 1.2;
+}
+
+/* --- Subtle Desktop Rotations (Nostalgic Layout) --- */
+@media (min-width: 769px) {
+    .tilt-left {
+        transform: rotate(-2deg);
+    }
+    .tilt-right {
+        transform: rotate(3deg);
+    }
+    
+    /* Hover Effects */
+    .journey-card.polaroid:hover {
+        transform: rotate(0deg) translateY(-8px); /* Straightens out and lifts up */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        z-index: 10;
+    }
+    
+    .journey-card.polaroid:hover .polaroid-img-wrapper img {
+        transform: scale(1.03);
+        filter: grayscale(0%) contrast(100%); /* Color pops fully alive on hover */
+    }
+}
+
+/* --- Flawless Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .polaroid-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 30px;
+    }
+    
+    /* Strips tilts on mobile so it's clean and easy to thumb-scroll */
+    .journey-card.polaroid {
+        transform: none !important;
+        padding: 12px 12px 24px 12px;
+    }
+    
+    .journey-card.polaroid:active {
+        transform: scale(0.98); /* Tactile press feedback on touch screen */
+    }
+}
