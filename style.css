@@ -1141,57 +1141,58 @@ body.fade-out {
         margin: 0 auto !important;
     }
 
-/* --- 2. Smart Phone Viewports (Screens under 768px) --- */
-/* Container to give 3D perspective */
+/* --- Postcard Rack Gallery Styles --- */
+
+/* 1. Force the cards to stack neatly in your grid and lock their height */
 .postcard-container {
     background-color: transparent;
     width: 100%;
-    height: 300px; /* Keeps a consistent postcard proportion */
-    perspective: 1000px; 
+    height: 380px;             /* Locks a standard vertical postcard aspect ratio */
+    perspective: 1000px;       /* Critical for the 3D depth flip effect */
     cursor: pointer;
 }
 
-/* The element that handles the actual rotation */
+/* 2. The physical card asset that rotates inside the container */
 .postcard-card {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 }
 
-/* Flip behavior on hover */
+/* 3. Handle the flip command when hovering */
 .postcard-container:hover .postcard-card {
     transform: rotateY(180deg);
 }
 
-/* Common properties for front and back */
+/* 4. Force both sides to perfectly lock to the container dimensions */
 .postcard-front, .postcard-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Hides front when back is shown */
+    -webkit-backface-visibility: hidden; /* Keeps the reverse hidden when flipped */
     backface-visibility: hidden;
     border-radius: 4px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;            /* Keeps margins inside bounds */
 }
 
-/* Front Side Styling */
+/* 5. FIX THE HUGE IMAGE: Force the photo to scale down cleanly and fill the frame */
 .postcard-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border: 8px solid #faf9f5; /* Clean matte border like classic cardstock */
+    object-fit: cover;                 /* Automatically crops and fills cleanly without distortion */
+    border: 10px solid #faf9f5;        /* Clean matte border like heavy cardstock */
+    box-sizing: border-box;
+    border-radius: 4px;
 }
 
-/* Back Side Styling */
+/* 6. The Back Side Style */
 .postcard-back {
-    background-color: #faf9f5; /* Tactile Cardstock color matching your recipe lines */
-    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 8px 8px;
+    background-color: #faf9f5;         /* Vintage tactile paper tone */
     color: #1a1a1a;
-    transform: rotateY(180deg); /* Pre-flipped so it faces the right way when turned */
-    padding: 20px;
-    border: 1px solid rgba(0,0,0,0.06);
+    transform: rotateY(180deg);        /* Starts flipped so it rights itself on hover */
+    padding: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
