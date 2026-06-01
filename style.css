@@ -1226,8 +1226,10 @@ body.fade-out {
     }
     
     .postcard-rack-grid .postcard-container {
-        aspect-ratio: 3 / 2 !important; /* Preserves standard dimensions beautifully */
-        height: auto !important;
+        /* CHANGED: Swapped strict aspect-ratio for a slightly taller fixed height 
+           to give the text backplate plenty of breathing room on small screens */
+        aspect-ratio: auto !important; 
+        height: 280px !important; 
     }
     
     .postcard-rack-grid .postcard-front img {
@@ -1235,10 +1237,20 @@ body.fade-out {
     }
     
     .postcard-rack-grid .postcard-back {
-        padding: 16px !important;
+        padding: 16px 20px !important; /* Slightly tighter top/bottom padding to gain space */
     }
     
+    /* CHANGED: Made the ink font slightly smaller on mobile so it leaves 
+       plenty of clean canvas space for the paragraph and the button */
     .postcard-back .handwritten-caption {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .postcard-back .paragraph {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
     }
 }
