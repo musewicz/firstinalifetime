@@ -9,7 +9,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Fade in on page load
+    document.body.classList.remove("fade-out");
+
+    // Handle link clicks
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+
+        // Ignore external links or anchors
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 350); // matches CSS transition time
+        });
+    });
+
+});
+</script>
+
+<body class="fade-out">
 
     <header class="main-header">
         <div class="logo">

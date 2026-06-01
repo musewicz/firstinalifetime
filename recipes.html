@@ -9,7 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Fade in on page load
+    document.body.classList.remove("fade-out");
+
+    // Handle link clicks
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+
+        // Ignore external links or anchors
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 350); // matches CSS transition time
+        });
+    });
+
+});
+</script>
+
+<body class="fade-out">
 
     <!-- Shared House Navigation Header -->
     <header class="main-header" style="background: #1a1a1a; position: relative; padding: 20px 8%;">
