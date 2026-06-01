@@ -1353,3 +1353,18 @@ body.fade-out {
     transform: translateX(-50%) scale(0.8);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/* ==========================================================================
+   MOBILE-ONLY PUSHPIN ADJUSTMENTS (SHIFTS PINS DOWN)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Moves the red pinhead down onto the postcard border */
+    .postcard-rack-grid .postcard-container::before {
+        top: -10px !important;
+    }
+    
+    /* Moves the pin's tiny cast shadow down to match */
+    .postcard-rack-grid .postcard-container::after {
+        top: -2px !important;
+    }
+}
