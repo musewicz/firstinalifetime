@@ -1,5 +1,6 @@
 /* Change your existing Google Font import to include 'Caveat' for everything */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
 /* --- Master Core Reset --- */
 * {
     margin: 0;
@@ -14,6 +15,12 @@ body {
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     overflow-x: hidden;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+body.fade-out {
+    opacity: 0;
 }
 
 /* --- 1. Global Header (Default for Home Page) --- */
@@ -50,6 +57,11 @@ body {
     /* Hand-pressed crease line along the bottom edge */
     border-bottom: 2px solid #160f0a;
     box-shadow: inset 0 -1px 0 rgba(255,255,255,0.03), 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.logo a {
+    display: inline-block;
+    text-decoration: none;
 }
 
 .logo-img {
@@ -233,7 +245,6 @@ body {
     margin-top: 10px;
     border-bottom: 1px solid #1a1a1a;
     padding-bottom: 4px;
- 
 }
 
 /* --- Gallery & Journal Architecture --- */
@@ -249,18 +260,18 @@ body {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px; /* Base structural track height unit */
-    gap: 24px;
+    grid-auto-rows: 290px; /* Elevated track depth unit to cleanly yield space for captions */
+    gap: 55px 24px;       /* Wide top-to-bottom row margins isolates handwriting cleanly */
 }
 
+/* --- THE DESKTOP FIX: Keeps handwriting from getting chopped off --- */
 .gallery-item {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible !important; /* BROKEN invisible wall window restriction disabled */
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* Outer wrapper subtle scale & elevation change */
@@ -270,7 +281,14 @@ body {
     z-index: 10;
 }
 
-/* Inner picture frame properties with matching transition curve */
+/* Isolated layout wrap frame boundary locks picture zoom behavior strictly to image */
+.gallery-item a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
 .gallery-item img {
     width: 100%;
     height: 100%;
@@ -278,11 +296,27 @@ body {
     object-position: center center;
     display: block;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* Tells the inside photo to expand slightly within the frame when hovered */
 .gallery-item:hover img {
     transform: scale(1.06);
+}
+
+/* Global Handwriting Ink Settings Typography Layer */
+.handwritten-caption {
+    font-family: 'Caveat', cursive !important;
+    font-size: 2.2rem !important;
+    color: #2b2b2b !important; /* Elegant natural ink tone */
+    text-align: center;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 15px !important;
+    line-height: 1.2;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
 
 /* Neutral Placeholder Colors */
@@ -295,29 +329,11 @@ body {
 .gallery-item.medium { grid-row: span 1; }
 .gallery-item.short { grid-row: span 1; }
 
-
-/* --- CUSTOM OVERRIDES --- */
-
-/* Japan Castle Override - Pushes framing view up to capture the peaks */
-.japan-castle img {
-    object-position: center top;
-}
-
-/* Specific override for the bus */
-.nz-bus img {
-    object-position: center 20%; 
-}
-
-/* Bali Sunset Override - Aligns focal center & matches structural mechanics */
-.bali-sunset img {
-    object-position: center center;
-}
-
-/* Scales the inside image on hover perfectly matching custom frame logic */
-.bali-sunset:hover img {
-    transform: scale(1.08);
-}
-
+/* --- CUSTOM GALLERY OVERRIDES --- */
+.japan-castle img { object-position: center top; }
+.nz-bus img { object-position: center 20%;  }
+.bali-sunset img { object-position: center center; }
+.bali-sunset:hover img { transform: scale(1.08); }
 
 /* --- Universal Footer Architecture --- */
 .main-footer {
@@ -404,462 +420,8 @@ body {
 }
 
 /* ==========================================================================
-   MOBILE & TABLET RESPONSIVE ARCHITECTURE
-   ========================================================================== */
-
-/* --- 1. Tablet Viewports (Screens under 968px) --- */
-@media (max-width: 968px) {
-    .main-header {
-        padding: 20px 6%;
-    }
-    .hero {
-        justify-content: center; 
-        padding-left: 0;
-    }
-    .hero-content {
-        margin-left: 0;
-    }
-    .hero-emblem-center {
-        width: 220px; 
-    }
-    .hero-logo-text {
-        width: 85vw; 
-        transform: translateX(8px);
-    }
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    .narrative-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .section-title {
-        font-size: 2.8rem;
-    }
-    .story-photo-placeholder {
-        height: 380px;
-    }
-    .journey-header-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .featured-story-hero {
-        height: 320px;
-    }
-}
-
-/* --- 2. Smart Phone Viewports (Screens under 768px) --- */
-@media (max-width: 768px) {
-    .main-header {
-        padding: 15px 6%;
-    }
-    .nav-links {
-        gap: 15px;
-    }
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-    }
-    .hero-emblem-center {
-        width: 160px;
-    }
-    .hero-logo-text {
-        width: 90vw;
-    }
-    .hero-logo-wrapper {
-        transform: translateX(-16px);
-    }
-    .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 25px;
-        transform: translateX(-16px);
-    }
-    .cta-button {
-        padding: 12px 28px;
-        font-size: 0.75rem;
-        transform: translateX(-16px);
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-    .mobile-hide {
-        display: none !important;
-    }
-
-    /* --- THE FIX: True Full-Screen Stacking Layouts --- */
-    
-    /* Forces both Journey Page polaroids and Index Page grid galleries into 1 column */
-    .polaroid-grid, 
-    .gallery-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 50px !important; /* Spacious layout as you scroll past each block */
-        padding: 20px 4% !important;
-        grid-template-columns: 1fr !important; /* Safety grid override */
-    }
-
-    /* Polaroids fill the viewport screen area comfortably */
-    .journey-card.polaroid,
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto !important;
-        width: 100% !important;
-        max-width: 420px !important; /* Perfect phone display width frame scale */
-        height: auto !important;
-        min-height: 380px !important;
-        margin: 0 auto !important;
-    }
-
-    /* --- Gastronomy Index & Recipes Breakdowns --- */
-    .hybrid-ledger {
-        gap: 50px !important;
-    }
-
-    .ledger-row {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important;
-        padding-bottom: 40px !important;
-        grid-template-columns: 1fr !important;
-    }
-
-    .recipe-card-postcard {
-        display: flex !important;
-        flex-direction: column !important; 
-        max-height: none !important; /* Unlocks vertical growth so text doesn't spill over */
-        width: 100% !important;
-        padding: 30px 20px !important;
-    }
-
-    .ledger-col-visual {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .food-thumbnail-wrapper {
-        width: 100% !important;
-        max-width: 320px !important;
-        height: auto !important;
-        aspect-ratio: 4 / 3 !important; /* Landscape presentation frame looks best inside mobile cards */
-    }
-
-    .ledger-col-interactive {
-        width: 100% !important;
-        padding-left: 0 !important;
-    }
-    
-    .click-me-capsule {
-        width: 100% !important;
-    }
-}
-
-/* --- Horizontal Updates Ticker --- */
-.updates-ticker-section {
-    padding: 40px 0;
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
-    margin: 40px 0 60px 0;
-}
-
-.ticker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* --- Ticker / Logs Section --- */
-.ticker-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;              /* Increased size */
-    text-transform: uppercase;
-    letter-spacing: 0.22em;         /* More spacing to prevent letters from bunching up */
-    color: #4a453c;                 /* Deepened color matching the core section tags */
-    font-weight: 600;               /* Added bold clarity */
-}
-/* This is the magic wrapper that enables horizontal scrolling */
-/* Update this exact block in your style.css */
-.updates-scroll-container {
-    display: flex;
-    flex-direction: row;       /* Explicitly forces cards side-by-side */
-    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
-    gap: 20px;
-    overflow-x: auto;          /* Turns on horizontal scrolling */
-    padding-bottom: 15px;
-    width: 100%;               /* Ensures it uses the full content window width */
-    
-    /* Smooth native momentum scrolling on mobile */
-    -webkit-overflow-scrolling: touch; 
-    
-    /* Hide ugly scrollbars on clean browsers */
-    scrollbar-width: thin;
-    scrollbar-color: #a39e93 transparent;
-}
-
-/* Individual Update Card Styles */
-.update-card {
-    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(26, 26, 26, 0.08);
-    padding: 24px;
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.update-card:hover {
-    background: #ffffff;
-    border-color: #1a1a1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
-
-.update-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a39e93;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.update-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.update-excerpt {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: #555555;
-}
-
-/* Optional "NEW" dot indicator for the latest post */
-.update-card.new-tag::after {
-    content: 'NEW';
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    background: #1a1a1a;
-    color: #eae5db;
-    padding: 2px 6px;
-    letter-spacing: 0.05em;
-}
-
-/* --- 1. Base Polaroid Styling --- */
-.journey-card.polaroid {
-    display: flex;
-    flex-direction: column;
-    background: #fbfbfb;
-    padding: 16px 16px 40px 16px;
-    text-decoration: none !important;
-    color: #1a1a1a;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    /* The magic: we apply the transition to transform ONLY */
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-    position: relative;
-    cursor: pointer;
-}
-
-/* --- 2. Tilt Logic (Applied to the cards) --- */
-@media (min-width: 769px) {
-    .tilt-left { transform: rotate(-3deg); }
-    .tilt-right { transform: rotate(3deg); }
-
-    /* Hover: Lift and slight scale-up, keeping the rotation! */
-    .journey-card.polaroid:hover {
-        transform: translateY(-15px) scale(1.03) !important;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        z-index: 10;
-    }
-}
-
-/* --- 3. Image Wrapper & Effects --- */
-.polaroid-img-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #eae5db;
-    margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.polaroid-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.journey-card.polaroid:hover .polaroid-img-wrapper img {
-    transform: scale(1.08);
-}
-
-.polaroid-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Forces 4 equal columns */
-    gap: 30px;
-    padding: 20px 0;
-}
-
-/* --- Journey Page Layout Upgrades --- */
-.journey-header-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-    padding: 40px 0;
-}
-
-.section-divider {
-    border: none;
-    border-top: 1px solid rgba(26, 26, 26, 0.1);
-    margin: 40px 0 60px 0;
-}
-
-/* Category Filter Menu Styles */
-.journey-filters {
-    display: flex;
-    gap: 20px;
-    margin-top: 35px;
-    flex-wrap: wrap;
-}
-
-.filter-link {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #7a756c;
-    text-decoration: none;
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.filter-link:hover,
-.filter-link.active {
-    color: #1a1a1a;
-    border-bottom-color: #1a1a1a;
-}
-
-/* Featured Hero Banner Styles */
-.featured-story-hero {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    
-}
-
-.featured-hero-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    text-decoration: none;
-}
-
-.featured-image-wrapper {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease;
-}
-
-.featured-story-hero:hover .featured-image-wrapper {
-    transform: scale(1.04);
-}
-
-.featured-hero-badge {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    background: #1a1a1a;
-    color: #eae5db;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding: 6px 14px;
-    z-index: 2;
-}
-
-.featured-hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-top: 10px;
-    line-height: 1.2;
-}
-
-/* --- Tape Accent for Polaroids --- */
-.journey-card.polaroid::before {
-    content: '';
-    position: absolute;
-    top: -14px;                           /* Placed slightly higher to account for width */
-    left: 50%;
-    transform: translateX(-50%) rotate(-2.5deg); /* A slightly stronger tilt makes long tape look more natural */
-    width: 140px;                         /* Increased from 75px to push horizontally way out */
-    height: 24px;                         /* Just a pixel or two taller for visual weight */
-    background-color: rgba(255, 255, 255, 0.42); /* Marginally more opaque so it pops against the background */
-    backdrop-filter: blur(1.5px);         /* Slightly smoother glassmorphism blur */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    border-left: 1px dashed rgba(0,0,0,0.08);  /* Clean "torn edge" look on the left side */
-    border-right: 1px dashed rgba(0,0,0,0.08); /* Clean "torn edge" look on the right side */
-    z-index: 5;
-}
-
-/* Responsive fixes for tablet/mobile */
-@media (max-width: 968px) {
-    .journey-header-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .featured-story-hero {
-        height: 320px;
-    }
-}
-
-.logo a {
-    display: inline-block;
-    text-decoration: none;
-}
-
-body {
-    opacity: 1;
-    transition: opacity 0.35s ease;
-}
-
-body.fade-out {
-    opacity: 0;
-}
-
-
-/* ==========================================================================
    RECIPES HYBRID - SLEEK LEDGER + INTERACTIVE CAPSULES
    ========================================================================== */
-
-/* Page Background Setup utilizing your fine canvas texture image */
 .recipes-page-body {
     background-color: #eae5db; 
     background-image: url('PageBackground.png');
@@ -869,18 +431,20 @@ body.fade-out {
 .hybrid-ledger {
     display: flex;
     flex-direction: column;
-    gap: 80px; /* Generous editorial spacing between row structures */
+    gap: 80px; 
     width: 100%;
 }
 
 /* Strict Row Layout (Sleekness & Organization) */
 .ledger-row {
-    display: grid;
-    grid-template-columns: 140px 1.2fr 1fr;
-    gap: 50px;
-    align-items: flex-start;
-    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Forces sidebar and card to match height beautifully */
+    gap: 40px;
+    margin-bottom: 60px;
+    width: 100%;
     border-bottom: 1px dashed rgba(26, 26, 26, 0.08);
+    padding-bottom: 60px;
 }
 
 .ledger-row:last-child {
@@ -896,9 +460,9 @@ body.fade-out {
 
 /* --- Column B text metadata --- */
 .recipe-origin {
-    font-size: 0.72rem;             /* Increased from 0.65rem */
+    font-size: 0.72rem;             
     text-transform: uppercase;
-    letter-spacing: 0.2em;          /* Wider spacing across the canvas */
+    letter-spacing: 0.2em;          
     color: #4a453c;                 /* Brought into the high-contrast dark charcoal spectrum */
     display: block;
     margin-bottom: 8px;
@@ -912,23 +476,19 @@ body.fade-out {
     color: #1a1a1a;
 }
 
-.recipe-description {
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: #444;
-}
-
 /* Column C: Interactive Wiki Module Space */
 .ledger-col-interactive {
     padding-left: 20px;
+    width: 280px; 
+    flex-shrink: 0; 
 }
 
 /* --- Column C interactive header label --- */
 .wiki-label {
-    font-size: 0.72rem;             /* Increased size */
+    font-size: 0.72rem;             
     text-transform: uppercase;
-    letter-spacing: 0.18em;         /* Balanced width */
-    color: #4a453c;                 /* Replaced light gray with clean charcoal */
+    letter-spacing: 0.18em;         
+    color: #4a453c;                 
     font-weight: 600;               /* Standardized explicit bolding across all pages */
     display: block;
     margin-bottom: 15px;
@@ -948,8 +508,6 @@ body.fade-out {
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
-    
-    /* Smooth transition framework for the physical tactile feel */
     transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -973,20 +531,6 @@ body.fade-out {
     transform: translate(2px, -2px); /* Makes the wiki arrow spring outward on hover */
 }
 
-/* Responsive Fallbacks for Tablets & Mobile Viewports */
-@media (max-width: 900px) {
-    .ledger-row {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding-bottom: 40px;
-    }
-    .ledger-col-interactive {
-        padding-left: 0;
-    }
-    .food-thumbnail-wrapper {
-        width: 120px;
-    }
-}
 /* --- Distressed Weathered Leather Base --- */
 .weathered-leather-block {
     position: relative;
@@ -1038,22 +582,11 @@ body.fade-out {
 .japan-castle .polaroid-img-wrapper img {
     object-position: center top 30% !important;
     object-fit: cover !important;
-    
 }
 
 /* ==========================================================================
    GASTRONOMY INDEX: POSTCARD RECIPE CARDS (RECTANGLE & FIXED SIZE)
    ========================================================================== */
-
-/* --- 1. Base Layout Row Configuration --- */
-.ledger-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Forces sidebar and card to match height beautifully */
-    gap: 40px;
-    margin-bottom: 60px;
-    width: 100%;
-}
 
 /* --- 2. The Postcard Box (Constrained Size & Rectangular Shape) --- */
 .recipe-card-postcard {
@@ -1146,47 +679,411 @@ body.fade-out {
     margin: 0 !important;
     padding: 0 !important;
     color: #2b2b2b;
+    font-size: 0.98rem;
+    line-height: 1.7;
 }
 
-/* --- 6. Interactive Sidebar Layout --- */
-.ledger-col-interactive {
-    width: 280px; 
-    flex-shrink: 0; 
+/* --- 1. Base Polaroid Styling --- */
+.journey-card.polaroid {
+    display: flex;
+    flex-direction: column;
+    background: #fbfbfb;
+    padding: 16px 16px 40px 16px;
+    text-decoration: none !important;
+    color: #1a1a1a;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    position: relative;
+    cursor: pointer;
 }
+
+/* --- 2. Tilt Logic (Applied to the cards) --- */
+@media (min-width: 769px) {
+    .tilt-left { transform: rotate(-3deg); }
+    .tilt-right { transform: rotate(3deg); }
+
+    /* Hover: Lift and slight scale-up, keeping the rotation! */
+    .journey-card.polaroid:hover {
+        transform: translateY(-15px) scale(1.03) !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+}
+
+/* --- 3. Image Wrapper & Effects --- */
+.polaroid-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #eae5db;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.polaroid-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.journey-card.polaroid:hover .polaroid-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces 4 equal columns */
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* --- Journey Page Layout Upgrades --- */
+.journey-header-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    margin: 40px 0 60px 0;
+}
+
+/* Category Filter Menu Styles */
+.journey-filters {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.filter-link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #7a756c;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.filter-link:hover,
+.filter-link.active {
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+}
+
+/* Featured Hero Banner Styles */
+.featured-story-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.featured-hero-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.featured-image-wrapper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+}
+
+.featured-story-hero:hover .featured-image-wrapper {
+    transform: scale(1.04);
+}
+
+.featured-hero-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #1a1a1a;
+    color: #eae5db;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 6px 14px;
+    z-index: 2;
+}
+
+.featured-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+/* --- Tape Accent for Polaroids --- */
+.journey-card.polaroid::before {
+    content: '';
+    position: absolute;
+    top: -14px;                                            /* Placed slightly higher to account for width */
+    left: 50%;
+    transform: translateX(-50%) rotate(-2.5deg); /* A slightly stronger tilt makes long tape look more natural */
+    width: 140px;                                         /* Increased from 75px to push horizontally way out */
+    height: 24px;                                         /* Just a pixel or two taller for visual weight */
+    background-color: rgba(255, 255, 255, 0.42); /* Marginally more opaque so it pops against the background */
+    backdrop-filter: blur(1.5px);          /* Slightly smoother glassmorphism blur */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    border-left: 1px dashed rgba(0,0,0,0.08);  /* Clean "torn edge" look on the left side */
+    border-right: 1px dashed rgba(0,0,0,0.08); /* Clean "torn edge" look on the right side */
+    z-index: 5;
+}
+
+/* --- Horizontal Updates Ticker --- */
+.updates-ticker-section {
+    padding: 40px 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    margin: 40px 0 60px 0;
+}
+
+.ticker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* --- Ticker / Logs Section --- */
+.ticker-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;              /* Increased size */
+    text-transform: uppercase;
+    letter-spacing: 0.22em;         /* More spacing to prevent letters from bunching up */
+    color: #4a453c;                 /* Deepened color matching the core section tags */
+    font-weight: 600;               /* Added bold clarity */
+}
+
+.updates-scroll-container {
+    display: flex;
+    flex-direction: row;       /* Explicitly forces cards side-by-side */
+    flex-wrap: nowrap;         /* Stops cards from breaking down to new rows */
+    gap: 20px;
+    overflow-x: auto;          /* Turns on horizontal scrolling */
+    padding-bottom: 15px;
+    width: 100%;               /* Ensures it uses the full content window width */
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin;
+    scrollbar-color: #a39e93 transparent;
+}
+
+/* Individual Update Card Styles */
+.update-card {
+    flex: 0 0 300px; /* Forces cards to stay exactly 300px wide without shrinking */
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 24px;
+    text-decoration: none;
+    color: #1a1a1a;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-card:hover {
+    background: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.update-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a39e93;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.update-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.update-excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Optional "NEW" dot indicator for the latest post */
+.update-card.new-tag::after {
+    content: 'NEW';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    background: #1a1a1a;
+    color: #eae5db;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+}
+
 
 /* ==========================================================================
-   MOBILE RESPONSIVENESS FIXES (Phones & Tablets)
+   UNIFIED MEDIA QUERY ARCHITECTURE (TABLETS & PHONES)
    ========================================================================== */
+
+/* --- 1. Tablet Viewports (Screens under 968px) --- */
+@media (max-width: 968px) {
+    .main-header {
+        padding: 20px 6%;
+    }
+    .hero {
+        justify-content: center; 
+        padding-left: 0;
+    }
+    .hero-content {
+        margin-left: 0;
+    }
+    .hero-emblem-center {
+        width: 220px; 
+    }
+    .hero-logo-text {
+        width: 85vw; 
+        transform: translateX(8px);
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .narrative-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .section-title {
+        font-size: 2.8rem;
+    }
+    .story-photo-placeholder {
+        height: 380px;
+    }
+    .journey-header-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .featured-story-hero {
+        height: 320px;
+    }
+    .ledger-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-bottom: 40px;
+    }
+    .ledger-col-interactive {
+        padding-left: 0;
+        width: 100%;
+    }
+    .food-thumbnail-wrapper {
+        width: 120px;
+    }
+}
+
+/* --- 2. Smart Phone Viewports (Screens under 768px) --- */
 @media (max-width: 768px) {
     
-    /* --- 1. Polaroid Grids (Index & Journey Pages) --- */
-    /* Forces the grid into 1 column so photos stack vertically */
+    /* THE FIXED LEAN INTERIOR NAVBAR BAR FRAME */
+    .main-header, 
+    .inner-page-header {
+        position: relative !important;
+        padding: 15px 4% !important;   
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        flex-direction: column !important; /* Stack branding safely above links */
+        gap: 12px !important;
+    }
+
+    .logo-img {
+        height: 30px !important; 
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 18px !important; 
+        padding: 4px 0 !important;
+        width: 100% !important;
+    }
+
+    .nav-links a {
+        font-size: 0.72rem !important; 
+        letter-spacing: 0.1em !important;
+    }
+
+    /* Hero elements positioning adjustments */
+    .hero-emblem-center { width: 160px; }
+    .hero-logo-text { width: 90vw; }
+    .hero-logo-wrapper { transform: translateX(-16px); }
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+        transform: translateX(-16px);
+    }
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 0.75rem;
+        transform: translateX(-16px);
+    }
+    .section-title { font-size: 2.2rem; }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .mobile-hide { display: none !important; }
+
+    /* --- THE VERTICAL COMPACT STACK ARCHITECTURE --- */
+    
+    /* Forces both Journey Page polaroids and Index Page grid galleries into 1 vertical column */
     .polaroid-grid, 
     .gallery-grid {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 65px !important; /* Increased to give handwritten captions breathing room */
-        padding: 20px 4% !important;
+        gap: 75px !important; /* Balanced display clearance for text elements below cards */
+        padding: 40px 4% !important;
         grid-template-columns: 1fr !important;
     }
 
-    /* Makes the Polaroids expand to fill the screen beautifully */
+    /* Polaroids scaling execution structures safely displaying text layers */
     .journey-card.polaroid,
     .gallery-item.tall, 
     .gallery-item.medium, 
     .gallery-item.short { 
         grid-row: auto !important;
         width: 100% !important;
-        max-width: 420px !important; 
+        max-width: 400px !important; 
         height: auto !important;
-        min-height: 380px !important;
+        min-height: 360px !important;
         margin: 0 auto !important;
-        overflow: visible !important; /* Crucial so the handwritten caption text isn't cut off */
+        overflow: visible !important; /* Locks lettering visibility cleanly into play */
     }
 
-    /* --- 2. Gastronomy Index (Recipes Page) --- */
-    /* Breaks the horizontal postcard split and stacks the elements */
+    /* --- Gastronomy Ledger Breakdown Elements on Mobile --- */
     .ledger-row {
         flex-direction: column !important;
         align-items: center !important;
@@ -1194,64 +1091,31 @@ body.fade-out {
     }
 
     .recipe-card-postcard {
-        flex-direction: column !important; /* Stacks photo over text inside card */
-        max-height: none !important; /* Unlocks the desktop height restriction */
+        flex-direction: column !important; 
+        max-height: none !important; /* Unlocks card expansion boundaries dynamically */
         width: 100% !important;
-        padding: 20px !important;
+        padding: 30px 20px !important;
     }
 
     .ledger-col-visual {
         width: 100% !important;
-        display: flex;
-        justify-content: center;
+        display: flex !important;
+        justify-content: center !important;
     }
 
     .food-thumbnail-wrapper {
         width: 100% !important;
-        max-width: 280px !important;
+        max-width: 320px !important;
         height: auto !important;
-        aspect-ratio: 4 / 3 !important; /* Better landscape layout for mobile recipe cards */
+        aspect-ratio: 4 / 3 !important; /* Clean landscape crop transformation for stacked card flow */
     }
 
     .ledger-col-interactive {
-        width: 100% !important; /* Sidebar links stretch to full width below card */
-    }
-
-    .handwritten-caption {
-        font-size: 1.8rem !important; /* Slightly scaled down so it fits gracefully on phone screens */
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        margin-top: 20px !important;
-    }
-    /* Tighten the leather header layout box constraints on phones */
-    .main-header, 
-    .inner-page-header {
-        position: relative !important; /* Allows layout content flow without absolute overlapping */
-        padding: 12px 4% !important;   /* Slams the vertical thickness down */
-        height: auto !important;
-        min-height: unset !important;
-        display: flex !important;
-        flex-direction: column !important; /* Stacks logo above navigation links cleanly if tight */
-        gap: 8px !important;
-    }
-
-    .logo-img {
-        height: 28px !important; /* Slightly smaller logo profile on phone viewports */
-        width: auto;
-    }
-
-    .nav-links {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 16px !important; /* Perfectly balanced horizontal link gaps */
-        padding: 4px 0 !important;
         width: 100% !important;
+        padding-left: 0 !important;
     }
-
-    .nav-links a {
-        font-size: 0.7rem !important; /* Crisp, readable text that doesn't wrap or truncate */
-        letter-spacing: 0.08em !important;
+    
+    .click-me-capsule {
+        width: 100% !important;
     }
 }
