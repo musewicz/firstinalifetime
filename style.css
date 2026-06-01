@@ -1022,8 +1022,9 @@ body.fade-out {
 
 /* Force the Japan Castle image to move down 20% regardless of other settings */
 .japan-castle .polaroid-img-wrapper img {
-    object-position: center 30% !important;
+    object-position: center top 30% !important;
     object-fit: cover !important;
+    
 }
 
 /* Notebook Page Styling */
