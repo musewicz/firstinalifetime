@@ -1031,12 +1031,37 @@ body.fade-out {
         transform: rotate(-2.5deg) translateY(-10px);
     }
 
+    /* ==========================================================================
+       POSTCARD DESKTOP WIGGLE EFFECTS (UPDATED HOVER STATES)
+       ========================================================================== */
     .postcard-rack-grid .postcard-container:hover {
         z-index: 50 !important;
     }
     
     .postcard-rack-grid .postcard-container:hover .postcard-card {
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22) !important;
+    }
+
+    /* Cards natively tilted left will wiggle smoothly from a left-leaning bias */
+    .postcard-rack-grid .postcard-container:nth-child(3n+1):hover .postcard-card,
+    .postcard-rack-grid .postcard-container:nth-child(3n+3):hover .postcard-card {
+        animation: postcardWiggleLeft 1s ease-in-out infinite alternate !important;
+    }
+
+    /* Cards natively tilted right will wiggle smoothly from a right-leaning bias */
+    .postcard-rack-grid .postcard-container:nth-child(3n+2):hover .postcard-card {
+        animation: postcardWiggleRight 1s ease-in-out infinite alternate !important;
+    }
+
+    /* Custom Keyframes matching the organic rhythm of the Polaroids */
+    @keyframes postcardWiggleLeft {
+        0% { transform: rotate(-1.5deg) scale(1.02); }
+        100% { transform: rotate(1deg) scale(1.02); }
+    }
+
+    @keyframes postcardWiggleRight {
+        0% { transform: rotate(2deg) translateY(15px) scale(1.02); }
+        100% { transform: rotate(-0.5deg) translateY(15px) scale(1.02); }
     }
 
     .postcard-rack-grid .postcard-container {
