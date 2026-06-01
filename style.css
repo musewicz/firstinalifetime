@@ -1050,3 +1050,48 @@ body.fade-out {
     margin-top: 15px; /* Adds space between the photo frame and the text */
     line-height: 1.2;
 }
+
+.recipe-card-frame {
+    background: #fbfbfb; /* Paper color */
+    border: 1px solid #e0ddd5;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* --- Creating the 3 Pins --- */
+.recipe-card-frame::before, 
+.recipe-card-frame::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #c0392b; /* Pin color */
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Top Left Pin */
+.recipe-card-frame::before { top: -8px; left: 10px; }
+/* Top Right Pin */
+.recipe-card-frame::after { top: -8px; right: 10px; }
+
+/* Bottom Right Pin (Custom class) */
+.recipe-card-frame-pin-bottom::after {
+    content: '';
+    position: absolute;
+    width: 15px; height: 15px;
+    background: #c0392b;
+    border-radius: 50%;
+    bottom: -8px; right: 10px;
+}
+
+/* --- Lined Paper Effect --- */
+.notebook-lines {
+    background-image: linear-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 100% 1.5em; /* Space between lines */
+    padding-top: 0.5em;
+}
