@@ -696,6 +696,11 @@ body {
     .polaroid-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 30px;
+	.handwritten-caption {
+        font-size: 3.2rem !important;
+        line-height: 1.1;
+    }
+}
     }
     
     /* Strips tilts on mobile so it's clean and easy to thumb-scroll */
@@ -1022,6 +1027,6 @@ body.fade-out {
 
 /* Force the Japan Castle image to move down 20% regardless of other settings */
 .japan-castle .polaroid-img-wrapper img {
-    object-position: center 20% !important;
+    object-position: center 25% !important;
     object-fit: cover !important;
 }
