@@ -80,23 +80,39 @@ body {
     z-index: 1;
 }
 
+/* --- Hero Content Container Positioning --- */
 .hero-content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns all children elements symmetrically down a shared center line */
+    align-items: center;
     text-align: center;
-    margin-left: 34px;    /* Global anchor layout offset offset */
-    transform: translateY(-120px);
+    margin-left: 18%;       /* Shifting right: increased from your old baseline to push it into the sky */
+    transform: translateY(-100px); /* Slightly adjusted up/down position to account for larger size */
 }
 
-/* Centers the emblem and word logo text relative to each other */
+/* --- Hero Logo & Emblem Sizing --- */
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin-bottom: 25px;
+    align-items: center;
+    margin-bottom: 30px;    /* Extra breathing room before your subtitle text */
+}
+
+/* The Mountain/Sunset Emblem Image */
+.hero-logo-wrapper img[src*="WoodsLogoTopClear"] {
+    width: 420px;          /* Enlarged from 320px to fill the space */
+    height: auto;
+    object-fit: contain;
+    margin-bottom: -10px;   /* Pulls the text up closer to the emblem if needed */
+}
+
+/* The "First In A Lifetime" Words Image */
+.hero-logo-text {
+    width: 440px;          /* Enlarged from 325px to match the bold new footprint */
+    height: auto;
+    object-fit: contain;
 }
 
 .hero-emblem-center {
