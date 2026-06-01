@@ -6,7 +6,9 @@
 }
 
 body {
-    background-color: #eae5db; /* Main Sand Color */
+    background-color: #eae5db; /* Your signature sand color remains the foundation */
+    background-image: url('PageBackground.png'); /* Paths directly to your new texture file */
+    background-repeat: repeat; /* Tells the browser to tile it seamlessly infinitely */
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     overflow-x: hidden;
@@ -214,7 +216,7 @@ body {
 
 /* --- Gallery & Journal Architecture --- */
 .gallery-section {
-    padding: 80px 0 140px 0;
+    padding: 80px 0 200px 0; /* Changed from 140px to 200px to push the footer away */
 }
 
 .section-header-center {

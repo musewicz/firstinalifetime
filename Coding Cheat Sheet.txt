@@ -44,3 +44,12 @@ Example for a newly created page:
 <li><a href="yourpage.html" class="active">Your Page</a></li>
 
 ==========================================================================
+
+--------------------------------------------------------------------------
+SECTION 1B: POLAROID GRID VERTICAL SPACING CONTROLS
+--------------------------------------------------------------------------
+Rule: If the footer ever feels too close to the layout grid elements,
+adjust the 'margin-bottom' property inside the '.polaroid-grid' rule in style.css.
+
+* Standard Spacing Cushion: 160px
+* Code Location: style.css -> .polaroid-grid -> margin-bottom
