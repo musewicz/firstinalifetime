@@ -1278,4 +1278,78 @@ body.fade-out {
     .postcard-stamp-box {
         width: 52px !important;    /* Marginally smaller box execution for mobile canvas sizes */
     }
+/* ==========================================================================
+   VINTAGE BULLETIN BOARD / POSTCARD RACK THEME OVERLAYS
+   ========================================================================== */
+
+/* Add extra breathing room between rows so tilted cards don't collide */
+.postcard-rack-grid {
+    gap: 80px 45px !important;
+    padding: 60px 0 !important;
+}
+
+/* Apply hand-placed organic rotations to desktop viewports */
+@media (min-width: 769px) {
+    /* Stagger the rotations using structural child selectors */
+    .postcard-rack-grid .postcard-container:nth-child(3n+1) {
+        transform: rotate(-1.5deg);
+    }
+    .postcard-rack-grid .postcard-container:nth-child(3n+2) {
+        transform: rotate(2deg) translateY(15px); /* Creates a staggered tier drop */
+    }
+    .postcard-rack-grid .postcard-container:nth-child(3n+3) {
+        transform: rotate(-2.5deg) translateY(-10px);
+    }
+
+    /* Keep the rotation intact while lifting the card off the board on hover */
+    .postcard-rack-grid .postcard-container:hover {
+        z-index: 50 !important;
+    }
+    
+    .postcard-rack-grid .postcard-container:hover .postcard-card {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22) !important;
+    }
+}
+
+/* --- THE 3D BULLETIN BOARD PUSHPIN ACCENT --- */
+.postcard-rack-grid .postcard-container::before {
+    content: '';
+    position: absolute;
+    top: -18px;            /* Floats perfectly over the top border margin */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: #b53a2b;   /* Deep crimson wax finish */
+    border-radius: 50%;
+    z-index: 100;          /* Forces it to sit proudly on top of the card border */
+    
+    /* Layered lighting: Real-world plastic sheen highlights and drop shadow */
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.35), 
+        inset -3px -3px 5px rgba(0, 0, 0, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease;
+}
+
+/* Pin Shadow Pinhead Extension Pinhole Effect */
+.postcard-rack-grid .postcard-container::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 53%;
+    width: 4px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    z-index: 99;
+    filter: blur(1px);
+}
+
+/* Smoothly ease the pin out of the way when flipping so it doesn't break immersion */
+.postcard-container.is-flipped::before,
+.postcard-container.is-flipped::after {
+    opacity: 0.15;
+    transform: translateX(-50%) scale(0.8);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
