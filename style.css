@@ -1367,4 +1367,22 @@ body.fade-out {
     .postcard-rack-grid .postcard-container::after {
         top: -4px !important;
     }
+/* ==========================================================================
+   DESKTOP-ONLY PUSHPIN VISIBILITY OVERRIDE
+   ========================================================================== */
+@media (min-width: 769px) {
+    /* Forces the desktop page to render elements sitting outside the card borders */
+    .postcard-rack-grid .postcard-container {
+        overflow: visible !important;
+    }
+    
+    /* Adjusts desktop pinhead down into the frame margin so it matches mobile */
+    .postcard-rack-grid .postcard-container::before {
+        top: -10px !important;
+    }
+    
+    /* Adjusts desktop pin shadow down to match */
+    .postcard-rack-grid .postcard-container::after {
+        top: -2px !important;
+    }
 }
