@@ -408,15 +408,27 @@ body {
 
 @media (max-width: 600px) {
     .main-header {
-        padding: 15px 6%;
+        padding: 12px 4%;
+        justify-content: center; /* Centers the navigation track on small phone screens */
     }
+    
+    /* Forces the home logo icon to drop down in size so it stops crowding the links */
+    .main-header .logo-img, 
+    .main-header .logo-link img {
+        height: 28px !important;
+        margin-bottom: 5px;
+    }
+
     .nav-links {
-        gap: 15px; /* Tighter navigation layout on small phones */
+        gap: 10px;               /* Squeezes layout tracks closer together on mobile */
+        flex-wrap: nowrap;       /* Absolute lock preventing items from dropping off screen */
     }
+    
     .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
+        font-size: 0.65rem;      /* Precision font scale optimized to fit all 5 links perfectly */
+        letter-spacing: 0.04em;  /* Shaves down whitespace tracking for ultra-tight mobile rows */
     }
+  
     .hero-emblem-center {
         width: 160px; /* Adapts beautifully for small mobile phones */
     }
