@@ -624,16 +624,15 @@ body {
 
 /* Individual Polaroid Card Base */
 .journey-card.polaroid {
-journey-card.polaroid {
     display: flex;
     flex-direction: column;
-    background: #fbfbfb;
-    background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-    background-size: 4px 4px;
-    padding: 16px 16px 40px 16px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border: 1px solid rgba(0,0,0,0.08);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    /* 1. Off-white color for a 'real' paper feel */
+    background: #fbfbfb; 
+    padding: 16px 16px 40px 16px;    text-decoration: none;
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0,0,0,0.08);    
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -680,8 +679,8 @@ journey-card.polaroid {
     
     /* Hover Effects */
     .journey-card.polaroid:hover {
-        transform: rotate(0deg) translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        transform: rotate(0deg) translateY(-8px); /* Straightens out and lifts up */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         z-index: 10;
     }
     
