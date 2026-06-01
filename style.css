@@ -424,9 +424,6 @@ body {
     .hero-logo-text {
         width: 90vw;
     }
-    .hero-logo-wrapper {
-        transform: translateX(-12px);
-    }
 
 }
     .hero-subtitle {
@@ -742,7 +739,7 @@ body {
     align-items: center;
     text-align: center;
     margin-left: 12%;       /* Shifted right to move it out of the left corner gutter */
-    transform: translateY(-120px);
+    transform: translateY(-16px, -120px);
 }
 
 .featured-hero-title {
