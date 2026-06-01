@@ -1140,4 +1140,58 @@ body.fade-out {
         max-width: 100% !important;
         margin: 0 auto !important;
     }
+
+/* --- 2. Smart Phone Viewports (Screens under 768px) --- */
+/* Container to give 3D perspective */
+.postcard-container {
+    background-color: transparent;
+    width: 100%;
+    height: 300px; /* Keeps a consistent postcard proportion */
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+/* The element that handles the actual rotation */
+.postcard-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Flip behavior on hover */
+.postcard-container:hover .postcard-card {
+    transform: rotateY(180deg);
+}
+
+/* Common properties for front and back */
+.postcard-front, .postcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Hides front when back is shown */
+    backface-visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Front Side Styling */
+.postcard-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 8px solid #faf9f5; /* Clean matte border like classic cardstock */
+}
+
+/* Back Side Styling */
+.postcard-back {
+    background-color: #faf9f5; /* Tactile Cardstock color matching your recipe lines */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 8px 8px;
+    color: #1a1a1a;
+    transform: rotateY(180deg); /* Pre-flipped so it faces the right way when turned */
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.06);
 }
