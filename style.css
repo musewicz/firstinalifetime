@@ -1176,9 +1176,17 @@ body.fade-out {
     transform-style: preserve-3d !important;
 }
 
-/* 3. Hover command to rotate the card matrix */
-.postcard-rack-grid .postcard-container:hover .postcard-card {
+/* Click/Tap flip trigger (Replaces the old hover rule) */
+.postcard-container.is-flipped .postcard-card {
     transform: rotateY(180deg) !important;
+}
+
+/* Make them smaller on desktop (75% width) and center them in their grid spots */
+@media (min-width: 769px) {
+    .postcard-rack-grid .postcard-container {
+        width: 75% !important;
+        margin: 0 auto !important; /* Centers them perfectly in the grid columns */
+    }
 }
 
 /* 4. Layer anchors flattening front and back elements inside container dimensions */
