@@ -1118,7 +1118,6 @@ body.fade-out {
         width: 100% !important;
     }
 
-    /* PASTE THE FIX HERE: */
     .footer-grid {
         grid-template-columns: 1fr !important;
         gap: 40px !important;
@@ -1130,10 +1129,10 @@ body.fade-out {
         max-width: 100% !important;
         margin: 0 auto !important;
     }
-} /* <--- MANDATORY MISSING BRACKET ADDED HERE TO PREVENT DEKTOP CSS BLOWOUT */
+} 
 
 /* ==========================================================================
-   POSTCARD RACK SYSTEM (APPEND TO THE ABSOLUTE BOTTOM OF STYLE.CSS)
+   POSTCARD RACK SYSTEM (DESKTOP GRID ARCHITECTURE)
    ========================================================================== */
 
 /* 1. Fully isolated grid system independent of old site properties */
@@ -1166,7 +1165,7 @@ body.fade-out {
     transform-style: preserve-3d !important;
 }
 
-/* Click/Tap flip trigger (Replaces the old hover rule) */
+/* Click/Tap flip trigger */
 .postcard-container.is-flipped .postcard-card {
     transform: rotateY(180deg) !important;
 }
@@ -1217,7 +1216,7 @@ body.fade-out {
 }
 
 /* ==========================================================================
-   MOBILE VIEWPORT ADAPTATION (SCREENS 768PX AND LOWER)
+   POSTCARD RACK SYSTEM - MOBILE VIEWPORT ADAPTATION (SCREENS 768PX AND LOWER)
    ========================================================================== */
 @media (max-width: 768px) {
     .postcard-rack-grid {
@@ -1226,7 +1225,7 @@ body.fade-out {
     }
     
     .postcard-rack-grid .postcard-container {
-        /* CHANGED: Swapped strict aspect-ratio for a slightly taller fixed height 
+        /* Swapped strict aspect-ratio for a slightly taller fixed height 
            to give the text backplate plenty of breathing room on small screens */
         aspect-ratio: auto !important; 
         height: 280px !important; 
@@ -1240,7 +1239,7 @@ body.fade-out {
         padding: 16px 20px !important; /* Slightly tighter top/bottom padding to gain space */
     }
     
-    /* CHANGED: Made the ink font slightly smaller on mobile so it leaves 
+    /* Made the ink font slightly smaller on mobile so it leaves 
        plenty of clean canvas space for the paragraph and the button */
     .postcard-back .handwritten-caption {
         font-size: 1.3rem !important;
@@ -1253,12 +1252,14 @@ body.fade-out {
         line-height: 1.35 !important;
         margin-bottom: 10px !important;
     }
+}
+
 
 /* ==========================================================================
-   CLEAN DIGITAL INK STAMP CONTEXT
+   GLOBAL INK STAMP CONSTRAINT RULES (APPLIES TO ALL SCREENS)
    ========================================================================== */
 .postcard-stamp-box {
-    width: 65px !important;  /* Sets the perfect proportional stamp width */
+    width: 65px !important;       /* Hard constraint to keep the stamp small and crisp */
     height: auto !important;
     display: block !important;
     overflow: visible !important;
@@ -1266,41 +1267,15 @@ body.fade-out {
 }
 
 .postcard-stamp-box img {
-    width: 100% !important;
+    width: 100% !important;        /* Forces high-res asset to behave inside the 65px box */
     height: auto !important;
     display: block !important;
-    mix-blend-mode: multiply; /* Optional: Makes the clear background merge seamlessly into your cardstock color */
+    mix-blend-mode: multiply !important; /* Erases transparent backing into your cardstock color */
 }
 
-/* Scaled adjustments for mobile views so it fits smaller screens perfectly */
+/* Responsive down-scaling for mobile viewports */
 @media (max-width: 768px) {
     .postcard-stamp-box {
-        width: 52px !important;
+        width: 52px !important;    /* Marginally smaller box execution for mobile canvas sizes */
     }
-
-/* ==========================================================================
-   INK STAMP SIZING RULES
-   ========================================================================== */
-.postcard-stamp-box {
-    width: 65px !important;       /* Keeps the stamp small and proportional */
-    height: auto !important;
-    display: block !important;
-    overflow: visible !important;
-    flex-shrink: 0 !important;
-}
-
-.postcard-stamp-box img {
-    width: 100% !important;        /* Forces the image to fit the 65px container */
-    height: auto !important;
-    display: block !important;
-    mix-blend-mode: multiply !important; /* Blends the ink texture directly into the cardstock */
-}
-
-/* Mobile responsive sizing */
-@media (max-width: 768px) {
-    .postcard-stamp-box {
-        width: 52px !important;    /* Shrinks perfectly on mobile viewports */
-    }
-}
-
 }
