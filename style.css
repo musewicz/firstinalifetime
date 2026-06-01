@@ -403,24 +403,28 @@ body {
     color: #555555;
 }
 
-/* --- Mobile Responsive Rules --- */
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE ARCHITECTURE
+   ========================================================================== */
+
+/* --- 1. Tablet Viewports (Screens under 968px) --- */
 @media (max-width: 968px) {
     .main-header {
         padding: 20px 6%;
     }
     .hero {
-        justify-content: center; /* Sits block completely centered on screen viewports */
+        justify-content: center; 
         padding-left: 0;
     }
     .hero-content {
         margin-left: 0;
     }
     .hero-emblem-center {
-        width: 220px; /* Adapts size for tablet */
+        width: 220px; 
     }
     .hero-logo-text {
-        width: 85vw; /* Fluid scaling width profiles */
-	transform: translateX(8px);
+        width: 85vw; 
+        transform: translateX(8px);
     }
     .hero-subtitle {
         font-size: 1.5rem;
@@ -435,48 +439,41 @@ body {
     .story-photo-placeholder {
         height: 380px;
     }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr; /* 2 Column layout on tablets */
-    }
-    .footer-grid {
+    .journey-header-layout {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    .featured-story-hero {
+        height: 320px;
+    }
 }
 
-@media (max-width: 600px) {
+/* --- 2. Smart Phone Viewports (Screens under 768px) --- */
+@media (max-width: 768px) {
     .main-header {
         padding: 15px 6%;
     }
-
     .nav-links {
         gap: 15px;
     }
-
     .nav-links a {
         font-size: 0.75rem;
         letter-spacing: 0.1em;
     }
-
     .hero-emblem-center {
         width: 160px;
     }
-
     .hero-logo-text {
         width: 90vw;
     }
-
-    /* ADD THIS HERE */
     .hero-logo-wrapper {
         transform: translateX(-16px);
     }
-
     .hero-subtitle {
         font-size: 1.25rem;
         margin-bottom: 25px;
         transform: translateX(-16px);
     }
-
     .cta-button {
         padding: 12px 28px;
         font-size: 0.75rem;
@@ -485,26 +482,84 @@ body {
     .section-title {
         font-size: 2.2rem;
     }
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Clean single image viewport pipeline on phone screens */
-        grid-auto-rows: auto;      /* Drops restrictive heights to let images breath */
-    }
-    .gallery-item.tall, 
-    .gallery-item.medium, 
-    .gallery-item.short { 
-        grid-row: auto;           /* Resets masonry constraints for true phone fluidity */
-        height: 320px;            /* Symmetrical portrait presentation scale */
-    }
     .footer-bottom {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
-      /* Cleanly hides the About link on mobile viewports */
     .mobile-hide {
         display: none !important;
     }
 
+    /* --- THE FIX: True Full-Screen Stacking Layouts --- */
+    
+    /* Forces both Journey Page polaroids and Index Page grid galleries into 1 column */
+    .polaroid-grid, 
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 50px !important; /* Spacious layout as you scroll past each block */
+        padding: 20px 4% !important;
+        grid-template-columns: 1fr !important; /* Safety grid override */
+    }
+
+    /* Polaroids fill the viewport screen area comfortably */
+    .journey-card.polaroid,
+    .gallery-item.tall, 
+    .gallery-item.medium, 
+    .gallery-item.short { 
+        grid-row: auto !important;
+        width: 100% !important;
+        max-width: 420px !important; /* Perfect phone display width frame scale */
+        height: auto !important;
+        min-height: 380px !important;
+        margin: 0 auto !important;
+    }
+
+    /* --- Gastronomy Index & Recipes Breakdowns --- */
+    .hybrid-ledger {
+        gap: 50px !important;
+    }
+
+    .ledger-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+        padding-bottom: 40px !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .recipe-card-postcard {
+        display: flex !important;
+        flex-direction: column !important; 
+        max-height: none !important; /* Unlocks vertical growth so text doesn't spill over */
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+
+    .ledger-col-visual {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .food-thumbnail-wrapper {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important; /* Landscape presentation frame looks best inside mobile cards */
+    }
+
+    .ledger-col-interactive {
+        width: 100% !important;
+        padding-left: 0 !important;
+    }
+    
+    .click-me-capsule {
+        width: 100% !important;
+    }
 }
 
 /* --- Horizontal Updates Ticker --- */
