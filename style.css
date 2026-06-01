@@ -463,11 +463,11 @@ body {
         gap: 10px;
         text-align: center;
     }
-
-/* Cleanly hides the About link on mobile viewports */
+      /* Cleanly hides the About link on mobile viewports */
     .mobile-hide {
         display: none !important;
     }
+
 }
 
 /* --- Horizontal Updates Ticker --- */
