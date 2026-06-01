@@ -408,29 +408,15 @@ body {
 
 @media (max-width: 600px) {
     .main-header {
-        padding: 15px 4%;
-        flex-direction: column;   /* Stacks your logo neatly above the links on tiny screens */
-        gap: 12px;
-        background: rgba(26, 26, 26, 0.95); /* Gives it a solid, clean backing on mobile */
+        padding: 15px 6%;
     }
-    
     .nav-links {
-        gap: 12px;                /* Calibrated spacing so things don't collide */
-        flex-wrap: wrap;          /* Let links flow to a second line safely if needed */
-        justify-content: center;  /* Keeps links centered beautifully under your logo */
-        width: 100%;
+        gap: 15px; /* Tighter navigation layout on small phones */
     }
-    
     .nav-links a {
-        font-size: 0.72rem;       /* Slightly scales typography down for perfect framing */
-        letter-spacing: 0.08em;   /* Polishes tracking for smaller screen viewports */
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
     }
-    
-    /* Pushes your main content down slightly extra so it doesn't get covered by the stacked header */
-    .internal-page-padding {
-        padding-top: 160px; 
-} 
-   }
     .hero-emblem-center {
         width: 160px; /* Adapts beautifully for small mobile phones */
     }
