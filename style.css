@@ -1143,3 +1143,68 @@ body.fade-out {
         margin: 0 auto !important;
     }
 
+/* ==========================================================================
+   POSTCARD RACK SYSTEM (APPEND TO THE BOTTOM OF STYLE.CSS)
+   ========================================================================== */
+
+/* Fixes global desktop grid rendering for postcards */
+.gallery-grid .postcard-container {
+    width: 100%;
+    min-height: 250px;
+    aspect-ratio: 3 / 2;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.postcard-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Hover flip trigger */
+.gallery-grid .postcard-container:hover .postcard-card {
+    transform: rotateY(180deg);
+}
+
+/* Force elements to match card wrappers seamlessly */
+.postcard-front, 
+.postcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+/* Formats the raw image elements flawlessly */
+.postcard-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 10px solid #faf9f5;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+/* Style the text-heavy back face */
+.postcard-back {
+    background-color: #faf9f5;
+    color: #1a1a1a;
+    transform: rotateY(180deg);
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Adaptive Override Structure */
+@media (max-width: 768px) {
+    .gallery-grid .postcard-container {
+        aspect-ratio: auto;
+        height: 380px; /* Gives the text block plenty of breathing space vertically on phone layouts */
+    }
+}
