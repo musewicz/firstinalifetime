@@ -626,24 +626,30 @@ body {
 .journey-card.polaroid {
     display: flex;
     flex-direction: column;
-    background: #ffffff;
-    padding: 16px 16px 32px 16px; /* Thick bottom border for handwritten text */
-    text-decoration: none;
+    /* 1. Off-white color for a 'real' paper feel */
+    background-color: #fbfbfb;
+    background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 4px 4px; /* The 'grain' size */ 
+    padding: 16px 16px 40px 16px;    text-decoration: none;
     color: #1a1a1a;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.08);    
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    
 }
 
 /* Prevents photos from breaking out of the container */
 .polaroid-img-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Classic square Polaroid photo crop */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background: #eae5db;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); 
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
 .polaroid-img-wrapper img {
