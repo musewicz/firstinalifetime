@@ -687,15 +687,25 @@ body.fade-out {
 .journey-card.polaroid {
     display: flex;
     flex-direction: column;
-    background: #fbfbfb;
+    background-color: #faf9f6;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0),
+        linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.0));
+    background-size: 3px 3px, 100% 100%;
+    
     padding: 16px 16px 40px 16px;
     text-decoration: none !important;
     color: #1a1a1a;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-    position: relative;
-    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    
+    /* Hover State: Makes the 2x darker shadow expand even deeper as it lifts */
+@media (min-width: 769px) {
+    .journey-card.polaroid:hover {
+        transform: translateY(-15px) scale(1.03) !important;
+        box-shadow: 0 35px 60px rgba(0, 0, 0, 0.38), 
+                    0 15px 25px rgba(0, 0, 0, 0.22);
+        z-index: 10;
+    }
 }
 
 /* --- 2. Tilt Logic (Applied to the cards) --- */
