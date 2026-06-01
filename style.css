@@ -424,6 +424,11 @@ body {
     .hero-logo-text {
         width: 90vw;
     }
+    .hero-logo-wrapper {
+        transform: translateX(-12px);
+    }
+
+}
     .hero-subtitle {
         font-size: 1.25rem;
         margin-bottom: 25px;
