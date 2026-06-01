@@ -1360,11 +1360,11 @@ body.fade-out {
 @media (max-width: 768px) {
     /* Moves the red pinhead down onto the postcard border */
     .postcard-rack-grid .postcard-container::before {
-        top: -10px !important;
+        top: -20px !important;
     }
     
     /* Moves the pin's tiny cast shadow down to match */
     .postcard-rack-grid .postcard-container::after {
-        top: -2px !important;
+        top: -4px !important;
     }
 }
