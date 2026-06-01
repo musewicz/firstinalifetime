@@ -1036,6 +1036,9 @@ body.fade-out {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     /* Torn bottom-left corner */
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 90%);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .notebook-header {
@@ -1052,6 +1055,8 @@ body.fade-out {
     line-height: 30px;
     font-family: 'Caveat', cursive;
     font-size: 1.4rem;
+    flex-grow: 1;
+    padding-bottom: 20px;
 }
 
 /* Pins */
