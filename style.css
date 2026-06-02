@@ -711,70 +711,628 @@ body.fade-out {
     margin: 40px 0 60px 0;
 }
 
+.ticker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ticker-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;              
+    text-transform: uppercase;
+    letter-spacing: 0.22em;         
+    color: #4a453c;                 
+    font-weight: 600;               
+}
+
+.updates-scroll-container {
+    display: flex;
+    flex-direction: row;       
+    flex-wrap: nowrap;         
+    gap: 20px;
+    overflow-x: auto;          
+    padding-bottom: 15px;
+    width: 100%;               
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin;
+    scrollbar-color: #a39e93 transparent;
+}
+
+.update-card {
+    flex: 0 0 300px; 
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 24px;
+    text-decoration: none;
+    color: #1a1a1a;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-card:hover {
+    background: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.update-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a39e93;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.update-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.update-excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #555555;
+}
+
+.update-card.new-tag::after {
+    content: 'NEW';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    background: #1a1a1a;
+    color: #eae5db;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+}
 
 /* ==========================================================================
-   NEW INDEPENDENT LAYER: TARGETED OVERRIDES FOR THE TAN THEMING
+   POSTCARD RACK SYSTEM (NEW INDEPENDENT DESKTOP LAYER)
    ========================================================================== */
+.postcard-rack-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    grid-auto-rows: auto !important;
+    gap: 80px 45px !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 60px 0 !important;
+}
 
-/* Target the header and break any cascading leather styling patterns */
-header.tan-page-header {
+.postcard-rack-grid .postcard-container {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important; 
+    perspective: 1200px !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.postcard-rack-grid .postcard-card {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-style: preserve-3d !important;
+}
+
+.postcard-container.is-flipped .postcard-card {
+    transform: rotateY(180deg) !important;
+}
+
+/* Updated Postcard Front - Generates stacking order safely accommodating reflections */
+.postcard-rack-grid .postcard-front {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 12px solid #faf9f5 !important; 
+    box-sizing: border-box !important;
+    background-color: #faf9f5 !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+}
+
+.postcard-rack-grid .postcard-front img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important; 
+    display: block !important;
+}
+
+/* Photographic Satin/Glossy Reflection Layer */
+.postcard-rack-grid .postcard-front::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.18) 0%, 
+        rgba(255, 255, 255, 0.08) 25%, 
+        rgba(255, 255, 255, 0) 50%, 
+        rgba(0, 0, 0, 0.02) 80%,
+        rgba(0, 0, 0, 0.05) 100%
+    ) !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+/* Microscopic Front Paper-Grain Pattern Overlay */
+.postcard-rack-grid .postcard-front::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E") !important;
+    background-size: 100px 100px !important;
+    mix-blend-mode: overlay !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Updated Postcard Back - Merges Original Notebook Dots with Uncoated Heavy Stock Fibers */
+.postcard-rack-grid .postcard-back {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    border-radius: 4px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+    transform: rotateY(180deg) !important;
+    padding: 24px !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background-color: #faf9f5 !important;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.04) 1.2px, transparent 1.2px), 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E") !important;
+    background-size: 4px 4px, 150px 150px !important;
+}
+
+.postcard-back .handwritten-caption {
+    margin-top: 5px !important;
+    text-align: left !important;
+}
+
+.postcard-stamp-box {
+    width: 65px !important;       
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+}
+
+.postcard-stamp-box img {
+    width: 100% !important;        
+    height: auto !important;
+    display: block !important;
+    mix-blend-mode: multiply !important; 
+}
+
+/* ==========================================================================
+   UNIVERSAL FOOTER ARCHITECTURE
+   ========================================================================== */
+.main-footer {
+    color: #ffffff;
+    padding: 90px 6% 40px 6%;
+    margin-top: 100px !important;
+    background-color: #241911;
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
+        radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+    background-size: 4px 4px, 5px 5px, 100% 100%;
+    background-blend-mode: multiply;
+    border-top: 2px solid #160f0a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 60px;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    color: #999999;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 320px;
+}
+
+.footer-heading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #999999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #555555;
+}
+
+
+/* ==========================================================================
+   DESKTOP ONLY CONDITIONAL QUERIES (WIDTHS 769PX AND HIGHER)
+   ========================================================================== */
+@media (min-width: 769px) {
+    .tilt-left { transform: rotate(-3deg); }
+    .tilt-right { transform: rotate(3deg); }
+
+    .journey-card.polaroid:hover {
+        transform: translateY(-15px) scale(1.03) !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .postcard-rack-grid .postcard-container:nth-child(3n+1) {
+        transform: rotate(-1.5deg);
+    }
+    .postcard-rack-grid .postcard-container:nth-child(3n+2) {
+        transform: rotate(2deg) translateY(15px); 
+    }
+    .postcard-rack-grid .postcard-container:nth-child(3n+3) {
+        transform: rotate(-2.5deg) translateY(-10px);
+    }
+
+    /* ==========================================================================
+       POSTCARD DESKTOP WIGGLE EFFECTS (UPDATED HOVER STATES)
+       ========================================================================== */
+    .postcard-rack-grid .postcard-container:hover {
+        z-index: 50 !important;
+    }
+    
+    .postcard-rack-grid .postcard-container:hover .postcard-card {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22) !important;
+    }
+
+    /* Cards natively tilted left will wiggle smoothly from a left-leaning bias */
+    .postcard-rack-grid .postcard-container:nth-child(3n+1):hover .postcard-card,
+    .postcard-rack-grid .postcard-container:nth-child(3n+3):hover .postcard-card {
+        animation: postcardWiggleLeft 1s ease-in-out infinite alternate !important;
+    }
+
+    /* Cards natively tilted right will wiggle smoothly from a right-leaning bias */
+    .postcard-rack-grid .postcard-container:nth-child(3n+2):hover .postcard-card {
+        animation: postcardWiggleRight 1s ease-in-out infinite alternate !important;
+    }
+
+    /* Custom Keyframes matching the organic rhythm of the Polaroids */
+    @keyframes postcardWiggleLeft {
+        0% { transform: rotate(-1.5deg) scale(1.02); }
+        100% { transform: rotate(1deg) scale(1.02); }
+    }
+
+    @keyframes postcardWiggleRight {
+        0% { transform: rotate(2deg) translateY(15px) scale(1.02); }
+        100% { transform: rotate(-0.5deg) translateY(15px) scale(1.02); }
+    }
+
+    .postcard-rack-grid .postcard-container {
+        overflow: visible !important;
+        transform-style: preserve-3d !important;
+    }
+    
+    /* Clean desktop pin alignment specs */
+    .postcard-rack-grid .postcard-container::before {
+        content: '';
+        position: absolute;
+        top: -10px !important;
+        left: 50%;
+        width: 14px;
+        height: 14px;
+        background: #b53a2b;   
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35), inset -3px -3px 5px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+        transition: transform 0.3s ease;
+        z-index: 9999 !important;
+        transform: translateX(-50%) translateZ(20px) !important;
+    }
+    
+    .postcard-rack-grid .postcard-container::after {
+        content: '';
+        position: absolute;
+        top: -2px !important;
+        left: 53%;
+        width: 4px;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        filter: blur(1px);
+        z-index: 9998 !important;
+        transform: translateZ(10px) !important;
+    }
+
+    .postcard-container.is-flipped::before,
+    .postcard-container.is-flipped::after {
+        opacity: 0.15;
+        transform: translateX(-50%) scale(0.8);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+}
+
+
+/* ==========================================================================
+   TABLET RESPONSIVE RECONSTRUCTION (MAX-WIDTH: 968PX)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .main-header { padding: 20px 6%; }
+    .hero { justify-content: center; padding-left: 0; }
+    .hero-content { margin-left: 0; }
+    .hero-emblem-center { width: 220px; }
+    .hero-logo-text { width: 85vw; transform: translateX(8px); }
+    .hero-subtitle { font-size: 1.5rem; }
+    .narrative-grid { grid-template-columns: 1fr; gap: 40px; }
+    .section-title { font-size: 2.8rem; }
+    .journey-header-layout { grid-template-columns: 1fr; gap: 40px; }
+    .featured-story-hero { height: 320px; }
+    
+    .ledger-row {
+        flex-direction: column !important;
+        gap: 25px;
+        padding-bottom: 40px;
+    }
+    .ledger-col-interactive { padding-left: 0; width: 100%; }
+    .food-thumbnail-wrapper { width: 100%; }
+}
+
+
+/* ==========================================================================
+   MOBILE SCREEN LAYER & COMPACT RE-ALIGNMENTS (MAX-WIDTH: 768PX)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header, 
+    .inner-page-header {
+        position: relative !important;
+        padding: 15px 4% !important;   
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        flex-direction: column !important; 
+        gap: 12px !important;
+    }
+
+    .logo-img { height: 30px !important; margin: 0 auto; }
+
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 18px !important; 
+        padding: 4px 0 !important;
+        width: 100% !important;
+    }
+
+    .nav-links a { font-size: 0.72rem !important; letter-spacing: 0.1em !important; }
+
+    .hero-emblem-center { width: 160px; }
+    .hero-logo-text { width: 90vw; }
+    .hero-logo-wrapper { transform: translateX(-16px); }
+    .hero-subtitle { font-size: 1.25rem; margin-bottom: 25px; transform: translateX(-16px); }
+    .cta-button { padding: 12px 28px; font-size: 0.75rem; transform: translateX(-16px); }
+    .section-title { font-size: 2.2rem; }
+    
+    /* Ensure the landing page text layout resets naturally in mobile viewports */
+    .hero.home-hero .hero-content {
+        transform: translateY(0);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .mobile-hide { display: none !important; }
+
+    .polaroid-grid, 
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 75px !important; 
+        padding: 40px 4% !important;
+    }
+
+    .journey-card.polaroid,
+    .gallery-item.tall, 
+    .gallery-item.medium, 
+    .gallery-item.short { 
+        grid-row: auto !important;
+        width: 100% !important;
+        max-width: 400px !important; 
+        height: auto !important;
+        min-height: 360px !important;
+        margin: 0 auto !important;
+        overflow: visible !important; 
+    }
+
+    .recipe-card-postcard {
+        flex-direction: column !important; 
+        max-height: none !important; 
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+
+    .ledger-col-visual {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .food-thumbnail-wrapper {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important; 
+    }
+
+    .ledger-col-interactive { width: 100% !important; padding-left: 0 !important; }
+    .click-me-capsule { width: 100% !important; }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding-bottom: 40px !important;
+        text-align: center !important;
+    }
+
+    .footer-text { max-width: 100% !important; margin: 0 auto !important; }
+
+    /* Postcard Rack Grid Mobile Stack Fixes */
+    .postcard-rack-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 50px !important;
+    }
+    
+    .postcard-rack-grid .postcard-container {
+        aspect-ratio: auto !important; 
+        height: 280px !important; 
+        overflow: visible !important;
+    }
+    
+    .postcard-rack-grid .postcard-front { border: 8px solid #faf9f5 !important; }
+    .postcard-rack-grid .postcard-back { padding: 16px 20px !important; }
+    
+    .postcard-back .handwritten-caption {
+        font-size: 1.3rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .postcard-back .paragraph {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .postcard-stamp-box { width: 52px !important; }
+
+    /* TARGETED MOBILE PUSHPIN ALIGNMENT RULES */
+    .postcard-rack-grid .postcard-container::before {
+        content: '';
+        position: absolute;
+        top: -10px !important;   
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        background: #b53a2b;   
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35), inset -3px -3px 5px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+        z-index: 100 !important;
+    }
+    
+    .postcard-rack-grid .postcard-container::after {
+        content: '';
+        position: absolute;
+        top: -2px !important;    
+        left: 53%;
+        width: 4px;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        filter: blur(1px);
+        z-index: 99 !important;
+    }
+/* --- TAN PAGE VARIATIONS (Apply these classes to your HTML) --- */
+
+/* Header Variation */
+.tan-page-header {
     background-color: #dcd5c8 !important; 
     background-image: 
         radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.05)) !important;
-    background-size: auto, 100% 100% !important;
-    background-blend-mode: normal !important;
     border-bottom: 2px solid #c4bdae !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
 }
 
-/* Force dark navigation text on light tan headers */
-header.tan-page-header .nav-links a {
-    color: #1a1a1a !important; 
+.tan-page-header .nav-links a {
+    color: #1a1a1a !important; /* Dark text for readability */
     text-shadow: none !important;
 }
 
-/* Force dark hover states on light tan headers */
-header.tan-page-header .nav-links a:hover,
-header.tan-page-header .nav-links a.active {
-    opacity: 0.5 !important;
-    color: #1a1a1a !important;
-}
-
-/* Override the dark weathered leather blocks on specialized footers */
-footer.tan-page-footer {
+/* Footer Variation */
+.tan-page-footer {
     background-color: #dcd5c8 !important;
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.08)) !important;
-    background-size: auto, 100% 100% !important;
-    background-blend-mode: normal !important;
-    color: #1a1a1a !important;
-    mask-image: none !important; /* Removes the raw leather jagged tear masking edges */
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 -4px 20px rgba(0,0,0,0.05) !important;
-}
-
-/* Ensure footer lines stay neat and clear */
-footer.tan-page-footer::after {
-    border: 1px dashed rgba(0, 0, 0, 0.15) !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
-    opacity: 0.8 !important;
-}
-
-/* Text coloring specifics inside the light footer */
-footer.tan-page-footer .footer-brand,
-footer.tan-page-footer .footer-heading {
+        radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0),
+        linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.05)) !important;
+    border-top: 2px solid #c4bdae !important;
     color: #1a1a1a !important;
 }
 
-footer.tan-page-footer .footer-text,
-footer.tan-page-footer .footer-links a,
-footer.tan-page-footer .footer-bottom p {
+.tan-page-footer .footer-text,
+.tan-page-footer .footer-links a,
+.tan-page-footer .footer-heading {
     color: #4a453c !important;
 }
 
-footer.tan-page-footer .footer-links a:hover {
+.tan-page-footer .footer-links a:hover {
     color: #1a1a1a !important;
-    text-decoration: underline !important;
+
 }
