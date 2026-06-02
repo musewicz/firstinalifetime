@@ -178,15 +178,23 @@ body.fade-out {
 
 .cta-button {
     display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    padding: 12px 30px;
+    background-color: #b53a2b; 
+    color: #f5f1e6; 
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    background: transparent;
-    transition: all 0.4s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+
+    /* --- New absolute placement to put it right inside your red rectangle --- */
+    position: absolute !important;
+    right: -250px !important;       /* Adjusts how far right into the rectangle it sits */
+    top: 65% !important;            /* Vertical alignment to balance it with the text elements */
 }
 
 .cta-button:hover {
@@ -1215,6 +1223,18 @@ body.fade-out {
         display: block !important;
         margin: 0 auto !important; 
     }
+
+	/* --- Reset the button layout on mobile to stack naturally underneath your subtitle --- */
+    .cta-button {
+        position: relative !important;
+        right: 0 !important;
+        top: 0 !important;
+        margin: 20px auto 0 auto !important;
+        display: inline-block !important;
+    }
+    
+    /* ... your other mobile grid definitions ... */
+}
 
     .nav-links {
         display: flex !important;
