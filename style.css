@@ -21,6 +21,11 @@ body {
     transition: opacity 0.35s ease;
 }
 
+/* --- Hides the logo ONLY on the homepage header (For both PC & Mobile) --- */
+.main-header:not(.inner-page-header) .logo {
+    display: none !important;
+}
+
 body.fade-out {
     opacity: 0;
 }
