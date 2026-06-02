@@ -139,9 +139,10 @@ body.fade-out {
     align-items: center;
     text-align: center;
     margin-left: 18%;       
-    transform: translateY(-150px); /* Changed from -100px to shift the entire layout cluster upward */
+    
+    /* Changed from -100px/-150px to -230px to pull the top of the logo up to your header text alignment line */
+    transform: translateY(-230px); 
 }
-
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
