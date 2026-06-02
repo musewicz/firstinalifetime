@@ -1250,7 +1250,7 @@ body.fade-out {
         font-size: 1.25rem; 
         margin-top: 30px !important; 
         margin-bottom: -5px !important; 
-        transform: translate(-16px, 175px) !important; 
+        transform: translate(-16px, 145px) !important; 
     }
 
     /* --- MOBILE ONLY: Action Button --- 
