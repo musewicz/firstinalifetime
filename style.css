@@ -73,15 +73,15 @@ body.fade-out {
 }
 
 .nav-links a {
-    font-family: 'Permanent Marker', cursive;[cite: 1]
-    color: #2b1f1d;[cite: 1]
-    text-decoration: none;[cite: 1]
-    font-size: 1.45rem; /* Increased from 1.15rem to make it much larger on PC */
-    letter-spacing: 0.05em;[cite: 1]
-    text-transform: none;[cite: 1]
-    font-weight: 400;[cite: 1]
-    transition: opacity 0.3s ease, transform 0.3s ease;[cite: 1]
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);[cite: 1]
+    font-family: 'Playfair Display', serif; /* Matches your core logo style */
+    font-weight: 900; /* Maximum boldness so it looks thick and carved */
+    color: #110b08; /* Deep dark ink black */
+    text-decoration: none;
+    font-size: 1.5rem; /* Large and readable */
+    letter-spacing: 0.02em;
+    text-transform: none; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); /* Crisp background contrast */
 }
 
 .nav-links a:hover,
@@ -970,11 +970,12 @@ body.fade-out {
 }
 
 .footer-brand {
-    font-family: 'Permanent Marker', cursive; /* Wilderness style */
-    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; /* Heavy, bold presence */
+    font-size: 2.4rem;
     letter-spacing: 0.02em;
-    margin-bottom: 20px;[cite: 1]
-    color: #2b1f1d; /* Matches the header ink */
+    margin-bottom: 20px;
+    color: #110b08; /* Matching deep dark ink */
 }
 
 .footer-text {
@@ -986,13 +987,13 @@ body.fade-out {
 }
 
 .footer-heading {
-    font-family: 'Permanent Marker', cursive; /* Wilderness style */
-    font-size: 1.1rem;
-    text-transform: none; /* Let handwriting flow naturally */
-    letter-spacing: 0.05em;
-    color: #2b1f1d; 
-    margin-bottom: 25px;[cite: 1]
-    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; /* Heavy bold title style */
+    font-size: 1.25rem;
+    text-transform: none; 
+    letter-spacing: 0.02em;
+    color: #110b08; 
+    margin-bottom: 25px;
 }
 
 .footer-links {
@@ -1179,8 +1180,10 @@ body.fade-out {
     }
 
     .nav-links a { 
-        font-size: 1.1rem !important; /* Increased from 0.72rem so it stays big on phones[cite: 1] */
-        letter-spacing: 0.05em !important;[cite: 1]
+        font-family: 'Playfair Display', serif !important;
+        font-weight: 900 !important;
+        font-size: 1.2rem !important; /* Kept nice and large for mobile tapping */
+        color: #110b08 !important;
     }
 
     .hero-emblem-center { width: 160px; }
