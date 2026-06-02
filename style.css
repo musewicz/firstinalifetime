@@ -942,20 +942,19 @@ body.fade-out {
 /* ==========================================================================
    UNIVERSAL FOOTER ARCHITECTURE
    ========================================================================== */
-/* --- Universal Footer Base Text Color --- */
 .main-footer {
-    color: #1a1a1a; /* Changed from #ffffff to dark text[cite: 1] */
-    padding: 90px 6% 40px 6%;[cite: 1]
-    margin-top: 100px !important;[cite: 1]
-    background-color: #a88f74; /* Match the header tan[cite: 1] */
+    color: #1a1a1a; /* Dark charcoal text for readability on tan background */
+    padding: 90px 6% 40px 6%;
+    margin-top: 100px !important;
+    background-color: #a88f74; /* Your medium tan leather base */
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),[cite: 1]
-        radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 0),[cite: 1]
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.4));[cite: 1]
-    background-size: 4px 4px, 5px 5px, 100% 100%;[cite: 1]
-    background-blend-mode: multiply;[cite: 1]
-    border-top: 2px solid #8c745c; /* Tan variant border[cite: 1] */
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);[cite: 1]
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0), /* Lightened dust overlay */
+        radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 0),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.4)); /* Softened grimy gradient */
+    background-size: 4px 4px, 5px 5px, 100% 100%;
+    background-blend-mode: multiply;
+    border-top: 2px solid #8c745c; /* Weathered tan accent border */
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .footer-grid {
@@ -964,53 +963,61 @@ body.fade-out {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #8c745c; /* Match the layout line to the new theme */
     padding-bottom: 60px;
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;[cite: 1]
-    font-size: 2rem;[cite: 1]
-    letter-spacing: 0.1em;[cite: 1]
-    margin-bottom: 20px;[cite: 1]
-    color: #1a1a1a; /* Ensure the brand name is dark[cite: 1] */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    color: #1a1a1a;
 }
 
 .footer-text {
-    color: #333333; /* Changed from #999999 to darker charcoal for better readability[cite: 1] */
-    line-height: 1.6;[cite: 1]
-    font-size: 0.95rem;[cite: 1]
-    max-width: 320px;[cite: 1]
+    color: #333333; /* Darker grey for legibility */
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 320px;
 }
 
 .footer-heading {
-    font-size: 0.8rem;[cite: 1]
-    text-transform: uppercase;[cite: 1]
-    letter-spacing: 0.2em;[cite: 1]
-    color: #1a1a1a; /* Changed from #ffffff[cite: 1] */
-    margin-bottom: 25px;[cite: 1]
-    font-weight: 500;[cite: 1]
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
 }
 
 .footer-links a {
-    color: #444444; /* Changed from #999999 to an earthy dark grey[cite: 1] */
-    text-decoration: none;[cite: 1]
-    font-size: 0.9rem;[cite: 1]
-    transition: color 0.3s ease;[cite: 1]
+    color: #444444; /* Earthy dark grey links */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #000000; /* Changed from #ffffff[cite: 1] */
+    color: #000000;
 }
 
 .footer-bottom {
-    max-width: 1400px;[cite: 1]
-    margin: 0 auto;[cite: 1]
-    padding-top: 30px;[cite: 1]
-    display: flex;[cite: 1]
-    justify-content: space-between;[cite: 1]
-    font-size: 0.8rem;[cite: 1]
-    color: #444444; /* Changed from #555555[cite: 1] */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #444444;
 }
 
 /* ==========================================================================
