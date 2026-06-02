@@ -39,7 +39,7 @@ body.fade-out {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
+    padding: 20px 6% 20px 4%; /* Increased right padding to 6% to scoot links left */
     z-index: 2000;
     background: transparent; 
     border-bottom: none;
@@ -139,7 +139,7 @@ body.fade-out {
     align-items: center;
     text-align: center;
     margin-left: 18%;       
-    transform: translateY(-100px); 
+    transform: translateY(-150px); /* Changed from -100px to shift the entire layout cluster upward */
 }
 
 .hero-logo-wrapper {
