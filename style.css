@@ -1236,15 +1236,16 @@ body.fade-out {
         position: relative !important;
         left: 0 !important;
         top: 0 !important;
-        margin: 25px auto 0 auto !important;
+        margin: 55px auto 0 auto !important; 
+        
         display: inline-block !important;
         white-space: normal !important;
-        
-        /* --- Keeps it transparent with the white outline on mobile screens too --- */
         background-color: transparent !important; 
         border: 2px solid #f5f1e6 !important;
         color: #f5f1e6 !important;
+        font-family: 'Playfair Display', serif !important;
     }
+        
 
     .nav-links {
         display: flex !important;
@@ -1257,7 +1258,8 @@ body.fade-out {
     .hero-emblem-center { width: 160px; }
     .hero-logo-text { width: 90vw; }
     .hero-logo-wrapper { transform: translateX(-16px); }
-    .hero-subtitle { font-size: 1.25rem; margin-bottom: 25px; transform: translateX(-16px); }
+    .hero-subtitle { font-size: 1.25rem; margin-top: 30px !important; 
+        margin-bottom: 10px !important; transform: translateX(-16px); }
     .cta-button { padding: 12px 28px; font-size: 0.75rem; transform: translateX(-16px); }
     .section-title { font-size: 2.2rem; }
     
