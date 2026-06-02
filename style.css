@@ -1159,12 +1159,6 @@ body.fade-out {
         transform: translateX(-50%) scale(0.8);
         transition: opacity 0.4s ease, transform 0.4s ease;
     }
-
-	@media (min-width: 769px) {
-    .hero-content {
-        /* Adds an extra upward push of 10px to the existing desktop shift */
-        transform: translateY(-90px) !important; 
-    }
 }
 
 
