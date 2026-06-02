@@ -1300,39 +1300,4 @@ body.fade-out {
         filter: blur(1px);
         z-index: 99 !important;
     }
-/* --- TAN PAGE VARIATIONS (Apply these classes to your HTML) --- */
-
-/* Header Variation */
-.tan-page-header {
-    background-color: #dcd5c8 !important; 
-    background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.05)) !important;
-    border-bottom: 2px solid #c4bdae !important;
-}
-
-.tan-page-header .nav-links a {
-    color: #1a1a1a !important; /* Dark text for readability */
-    text-shadow: none !important;
-}
-
-/* Footer Variation */
-.tan-page-footer {
-    background-color: #dcd5c8 !important;
-    background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0),
-        linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.05)) !important;
-    border-top: 2px solid #c4bdae !important;
-    color: #1a1a1a !important;
-}
-
-.tan-page-footer .footer-text,
-.tan-page-footer .footer-links a,
-.tan-page-footer .footer-heading {
-    color: #4a453c !important;
-}
-
-.tan-page-footer .footer-links a:hover {
-    color: #1a1a1a !important;
-
 }
