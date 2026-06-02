@@ -659,14 +659,16 @@ body.fade-out {
 }
 
 .filter-link {
-    font-size: 0.75rem;
+    font-size: 1 rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: #7a756c;
     text-decoration: none;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
+    font-weight: 600;
+
 }
 
 .filter-link:hover,
