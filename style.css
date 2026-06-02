@@ -176,11 +176,16 @@ body.fade-out {
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
+/* --- DESKTOP BUTTON POSITIONING --- */
 .cta-button {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #b53a2b; 
-    color: #f5f1e6; 
+    
+    /* --- Styles it transparent/clear instead of solid red --- */
+    background-color: transparent !important; 
+    border: 2px solid #f5f1e6 !important;
+    color: #f5f1e6 !important; 
+    
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
@@ -188,17 +193,19 @@ body.fade-out {
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-
-    /* --- New absolute placement to put it right inside your red rectangle --- */
+    
+    /* --- Precise positioning over the rock formations --- */
     position: absolute !important;
-    right: -250px !important;       /* Adjusts how far right into the rectangle it sits */
-    top: 65% !important;            /* Vertical alignment to balance it with the text elements */
+    left: 155% !important;   /* Pushes it further right (increase this number to scoot it more right) */
+    top: 40% !important;     /* Shims it up higher (decrease this number to move it up more) */
+    white-space: nowrap !important;
 }
+
 .cta-button:hover {
-    background: #ffffff;
-    color: #1a1a1a;
+    background-color: rgba(245, 241, 230, 0.15) !important; /* Gentle hover highlight */
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -1221,6 +1228,20 @@ body.fade-out {
         width: auto !important;
         display: block !important;
         margin: 0 auto !important; 
+    }
+
+	.cta-button {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 25px auto 0 auto !important;
+        display: inline-block !important;
+        white-space: normal !important;
+        
+        /* --- Keeps it transparent with the white outline on mobile screens too --- */
+        background-color: transparent !important; 
+        border: 2px solid #f5f1e6 !important;
+        color: #f5f1e6 !important;
     }
 
     .nav-links {
