@@ -1066,6 +1066,10 @@ body.fade-out {
    DESKTOP ONLY CONDITIONAL QUERIES (WIDTHS 769PX AND HIGHER)
    ========================================================================== */
 @media (min-width: 769px) {
+	.hero-content {
+        transform: translateY(-90px) !important; 
+    }
+
     .tilt-left { transform: rotate(-3deg); }
     .tilt-right { transform: rotate(3deg); }
 
