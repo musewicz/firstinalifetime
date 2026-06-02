@@ -1180,7 +1180,7 @@ body.fade-out {
         box-shadow: none !important;
     }
 
-    .logo-img { height: 60px !important; margin: 0 auto; }
+    .logo-img { height: 30px !important; margin: 0 auto; }
 
     .nav-links {
         display: flex !important;
