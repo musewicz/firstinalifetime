@@ -1316,7 +1316,7 @@ body.fade-out {
         font-family: 'Playfair Display', serif !important;
         padding: 12px 28px !important; 
         font-size: 0.8rem !important;
-	transform: translateY(35px) !important;
+	transform: translateY(60px) !important;
     }
 
     /* ... Keep all your card/gallery responsive classes below this point ... */        
