@@ -1269,7 +1269,7 @@ body.fade-out {
         flex-direction: column !important;
         align-items: center !important;
         margin-bottom: 20px !important;
-        transform: none !important;        /* Strips the left push */
+        transform: translateY(-25px) !important; /* Shuts off old code and pulls just the logos 25px higher into the sky */
     }
 
     .hero-emblem-center { 
