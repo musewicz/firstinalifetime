@@ -1165,9 +1165,7 @@ body.fade-out {
    ========================================================================== */
 @media (max-width: 768px) {
     /* --- 1. Reset the Default Header back to a Floating Transparent Bar --- */
-    .main-header:not(.inner-page-header) .logo {
-        display: none !important;
-    }
+    .main-header {
         position: absolute; /* Floating overlay state */
         display: flex;
         flex-direction: column;
