@@ -1185,33 +1185,42 @@ body.fade-out {
         box-shadow: none !important;
     }
 
-    .logo-img { height: 60px !important; margin: 0 auto; }
+    /* --- Force the logo wrapper block to be perfectly centered on mobile --- */
+    .logo {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks graphic directly on top of the text */
+        justify-content: center !important;
+        align-items: center !important;    /* Locks alignment down your red axis line */
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto 10px auto !important;
+    }
+
+    /* --- Keep the links inside tracking cleanly down the center --- */
+    .logo a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* --- Compact Half-Size Mobile Logo Graphic Alignment --- */
+    .logo-img { 
+        height: 30px !important; /* Maintains your clean half-size layout choice */
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important; 
+    }
 
     .nav-links {
         display: flex !important;
-        flex-direction: row !important; /* Keeps links horizontal across the row */
-        flex-wrap: wrap !important;     /* Allows clean wrapping if text is long */
-        justify-content: center !important; /* Centers items along your red axis line */
+        justify-content: center !important;
         align-items: center !important;
+        gap: 18px !important; 
+        padding: 4px 0 !important;
         width: 100% !important;
-        gap: 15px !important;           /* Even, clean spacing between words */
-        margin: 0 auto !important;
-        padding: 0 !important;
-        list-style: none !important;
     }
-
-    .nav-links a { 
-        font-family: 'Playfair Display', serif !important;
-        font-weight: 900 !important;
-        font-size: 1.2rem !important; /* Kept nice and large for mobile tapping */
-        color: #110b08 !important;
-    }
-	.nav-links li {
-        margin: 0 !important;
-        padding: 0 !important;
-        display: inline-block !important;
-    }
-
     .hero-emblem-center { width: 160px; }
     .hero-logo-text { width: 90vw; }
     .hero-logo-wrapper { transform: translateX(-16px); }
