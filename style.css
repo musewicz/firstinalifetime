@@ -1168,6 +1168,12 @@ body.fade-out {
     .main-header:not(.inner-page-header) .logo {
         display: none !important;
     }
+        position: absolute; /* Floating overlay state */
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 2%;
+        width: 100%;
         
         /* Make background completely transparent so the hero photo shows through */
         background-color: transparent !important; 
