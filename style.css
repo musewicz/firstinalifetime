@@ -471,17 +471,20 @@ body.fade-out {
     color: #110b08; 
     margin-top: 100px !important;
     background-color: #a88f74; 
+    /* Combined all layers into one clean statement, removed the breaking semicolons */
     background-image: 
-        url('leather-skin.png'), /* Fuses the real leather skin here */
-        linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%);
-    background-repeat: repeat;
-    background-blend-mode: multiply;
+        url('leather-skin.png'), 
+        linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%),
         radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),
         radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
         linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),
         radial-gradient(circle at 30% 20%, rgba(140, 116, 92, 0.2) 0%, transparent 60%);
-    background-size: 3px 3px, 5px 5px, 100% 100%, 100% 100%;
+    
+    /* Changed the first value from 3px/5px to 'repeat' or 'auto' so your leather image doesn't scale down into tiny lines */
+    background-size: auto, 100% 100%, 3px 3px, 5px 5px, 100% 100%, 100% 100%;
+    background-repeat: repeat, no-repeat, repeat, repeat, no-repeat, no-repeat;
     background-blend-mode: multiply;
+    
     mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 4px), transparent),
                 radial-gradient(circle at 50% 100%, #000 3px, transparent 4px);
     mask-size: 100% 100%, 8px 4px;
