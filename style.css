@@ -1248,7 +1248,7 @@ body.fade-out {
         position: relative !important;
         left: 0 !important;
         top: 0 !important;
-        margin: 55px auto 0 auto !important; 
+        margin: 20px auto 0 auto !important; 
         display: inline-block !important;
         white-space: normal !important;
         background-color: transparent !important; 
@@ -1273,8 +1273,9 @@ body.fade-out {
     .hero-logo-wrapper { transform: translateX(-16px); }
     .hero-subtitle { 
         font-size: 1.25rem; 
-        margin-top: 30px !important; 
-        margin-bottom: 10px !important; 
+        margin-top: 80px !important; 
+        margin-bottom: 5px !important;
+        font-size: 1.25rem; 
         transform: translateX(-16px); 
     }
     
