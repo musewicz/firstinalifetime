@@ -1257,7 +1257,7 @@ body.fade-out {
         font-family: 'Playfair Display', serif !important;
         padding: 12px 28px; 
         font-size: 0.75rem; 
-        transform: translateX(-16px, 145px); !important;
+        transform: translateX(-16px, 175px); !important;
     }
         
     .nav-links {
