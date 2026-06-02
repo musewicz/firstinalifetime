@@ -956,7 +956,7 @@ body.fade-out {
 /* --- Universal Footer Base --- */
 .main-footer {
     color: #110b08; 
-    padding: 90px 6% 40px 6%;
+    padding: 50px 6% 40px 6%;
     margin-top: 100px !important;
     background-color: #a88f74; 
     background-image: 
@@ -975,7 +975,7 @@ body.fade-out {
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
     border-bottom: 1px solid #8c745c; /* Match the layout line to the new theme */
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .footer-brand {
@@ -1144,7 +1144,7 @@ body.fade-out {
    TABLET RESPONSIVE RECONSTRUCTION (MAX-WIDTH: 968PX)
    ========================================================================== */
 @media (max-width: 968px) {
-    .main-header { padding: 20px 6%; }
+    .main-header { padding: 10px 6%; }
     .hero { justify-content: center; padding-left: 0; }
     .hero-content { margin-left: 0; }
     .hero-emblem-center { width: 220px; }
@@ -1158,7 +1158,7 @@ body.fade-out {
     .ledger-row {
         flex-direction: column !important;
         gap: 25px;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
     }
     .ledger-col-interactive { padding-left: 0; width: 100%; }
     .food-thumbnail-wrapper { width: 100%; }
