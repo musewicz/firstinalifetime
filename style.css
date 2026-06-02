@@ -166,14 +166,16 @@ body.fade-out {
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    font-style: italic;
+    color: #f5f1e6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    margin-top: 5px !important;
+    margin-bottom: 20px !important;
+    
+    /* --- Shrinks the vertical height taken up by the text lines --- */
+    line-height: 1.2 !important; 
 }
 
 /* --- DESKTOP BUTTON POSITIONING --- */
