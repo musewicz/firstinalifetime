@@ -1265,7 +1265,7 @@ body.fade-out {
         justify-content: center !important;
         align-items: center !important;
         gap: 18px !important; 
-        padding: 4px 0 !important;
+        padding: 4px 25px 4px 0 !important;
         width: 100% !important;
     }
     .hero-emblem-center { width: 160px; }
