@@ -41,17 +41,16 @@ body.fade-out {
     box-shadow: none;
 }
 
-/* --- Inner Page Header (Medium Tan Weathered Leather) --- */
+/* --- Inner Page Header (Real Leather Skin Texture) --- */
 .inner-page-header {
-    background-color: #a88f74; /* Changed from #241911 to medium tan[cite: 1] */
+    background-color: #a88f74; /* Your medium tan base color */
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0), /* Slightly lightened noise[cite: 1] */
-        radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)); /* Softer grime gradient[cite: 1] */
-    background-size: 4px 4px, 5px 5px, 100% 100%;[cite: 1]
-    background-blend-mode: multiply;[cite: 1]
-    border-bottom: 2px solid #8c745c; /* Adjusted border to match tan theme[cite: 1] */
-    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.15); /* Softened shadows[cite: 1] */
+        url('leather-skin.png'), /* Your downloaded free leather image */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3)); /* Soft shadow overlay for depth */
+    background-repeat: repeat; /* Allows the skin texture to tile seamlessly */
+    background-blend-mode: multiply; /* Fuses the image textures directly into the tan color */
+    border-bottom: 2px solid #8c745c; 
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.15); 
 }
 
 .logo a {
@@ -441,14 +440,17 @@ body.fade-out {
     transform: translate(2px, -2px); 
 }
 
-/* --- Leather Accents & Card Specific Overrides --- */
-/* --- Weathered Leather Block (Medium Tan Texture) --- */
+/* --- Weathered Leather Block --- */
 .weathered-leather-block {
-    position: relative;[cite: 1]
-    color: #1a1a1a; /* Changed from #e3dcd2 to dark text[cite: 1] */
-    margin-top: 100px !important;[cite: 1]
-    background-color: #a88f74; /* Changed from #2b1d12[cite: 1] */
+    position: relative;
+    color: #110b08; 
+    margin-top: 100px !important;
+    background-color: #a88f74; 
     background-image: 
+        url('leather-skin.png'), /* Fuses the real leather skin here */
+        linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%);
+    background-repeat: repeat;
+    background-blend-mode: multiply;
         radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),[cite: 1]
         radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),[cite: 1]
         linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),[cite: 1]
@@ -945,18 +947,18 @@ body.fade-out {
 /* ==========================================================================
    UNIVERSAL FOOTER ARCHITECTURE
    ========================================================================== */
+/* --- Universal Footer Base --- */
 .main-footer {
-    color: #1a1a1a; /* Dark charcoal text for readability on tan background */
+    color: #110b08; 
     padding: 90px 6% 40px 6%;
     margin-top: 100px !important;
-    background-color: #a88f74; /* Your medium tan leather base */
+    background-color: #a88f74; 
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0), /* Lightened dust overlay */
-        radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.4)); /* Softened grimy gradient */
-    background-size: 4px 4px, 5px 5px, 100% 100%;
+        url('leather-skin.png'), /* Fuses the real leather skin here */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.35));
+    background-repeat: repeat;
     background-blend-mode: multiply;
-    border-top: 2px solid #8c745c; /* Weathered tan accent border */
+    border-top: 2px solid #8c745c; 
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
