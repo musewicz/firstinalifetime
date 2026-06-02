@@ -1290,6 +1290,7 @@ body.fade-out {
         text-align: center !important;
         transform: none !important;        /* Strips legacy positioning offsets */
         width: 90% !important;
+	transform: translateY(20px) !important;
     }
 
     /* 8. Call To Action Button */
@@ -1306,7 +1307,8 @@ body.fade-out {
         color: #f5f1e6 !important;
         font-family: 'Playfair Display', serif !important;
         padding: 12px 28px !important; 
-        font-size: 0.8rem !important; 
+        font-size: 0.8rem !important;
+	transform: translateY(35px) !important;
     }
 
     /* ... Keep all your card/gallery responsive classes below this point ... */        
