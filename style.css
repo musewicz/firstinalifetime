@@ -47,17 +47,17 @@ body.fade-out {
 }
 
 /* --- 2. Explicitly apply the Solid Leather Skin ONLY to Inner Pages on Mobile --- */
-    .inner-page-header {
-        position: relative !important; /* Keeps it as a structured top block on sub-pages */
-        background-color: #a88f74 !important; /* Your chosen leather code */
-        background-image: 
-            url('leather-skin.png'), 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)) !important;
-        background-repeat: repeat !important;
-        background-blend-mode: multiply !important;
-        border-bottom: 2px solid #8c745c !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    }
+.inner-page-header {
+    position: relative !important; /* Keeps it as a structured top block on sub-pages */
+    background-color: #a88f74 !important; /* Your chosen leather code */
+    background-image: 
+        url('leather-skin.png'), 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)) !important;
+    background-repeat: repeat !important;
+    background-blend-mode: multiply !important;
+    border-bottom: 2px solid #8c745c !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
 
 .logo a {
     display: inline-block;
@@ -141,7 +141,7 @@ body.fade-out {
     text-align: center;
     margin-left: 18%;       
     
-    /* Changed to -240px to pull the top of the tree logo up level with your header text */
+    /* Global Desktop translation value */
     transform: translateY(-80px) !important; 
 }
 
@@ -189,7 +189,7 @@ body.fade-out {
     color: #f5f1e6 !important; 
     
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif !important; /* Elegant Desktop Serif Font Choice */
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -476,12 +476,12 @@ body.fade-out {
         linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%);
     background-repeat: repeat;
     background-blend-mode: multiply;
-        radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),[cite: 1]
-        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),[cite: 1]
-        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),[cite: 1]
-        radial-gradient(circle at 30% 20%, rgba(140, 116, 92, 0.2) 0%, transparent 60%);[cite: 1]
-    background-size: 3px 3px, 5px 5px, 100% 100%, 100% 100%;[cite: 1]
-    background-blend-mode: multiply;[cite: 1]
+        radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
+        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),
+        radial-gradient(circle at 30% 20%, rgba(140, 116, 92, 0.2) 0%, transparent 60%);
+    background-size: 3px 3px, 5px 5px, 100% 100%, 100% 100%;
+    background-blend-mode: multiply;
     mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 4px), transparent),
                 radial-gradient(circle at 50% 100%, #000 3px, transparent 4px);
     mask-size: 100% 100%, 8px 4px;
@@ -1010,7 +1010,7 @@ body.fade-out {
     color: #1a1a1a; /* Darkened from #333333 to pure deep ink */
     line-height: 1.6;
     font-size: 0.95rem;
-    max-width: 320px;[cite: 1]
+    max-width: 320px;
     font-weight: 500; /* Bumped up weight to make it stand out */
 }
 
@@ -1232,21 +1232,31 @@ body.fade-out {
         margin: 0 auto !important; 
     }
 
-	.cta-button {
+    /* --- MOBILE HERO ADJUSTMENT (Moves tree graphic + titles down slightly on phone screen) --- */
+    .hero-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 0 20px !important;
+        transform: translateY(-10px) !important; 
+    }
+
+    /* --- MOBILE BUTTON RESET --- */
+    .cta-button {
         position: relative !important;
         left: 0 !important;
         top: 0 !important;
         margin: 55px auto 0 auto !important; 
-        
         display: inline-block !important;
         white-space: normal !important;
         background-color: transparent !important; 
         border: 2px solid #f5f1e6 !important;
         color: #f5f1e6 !important;
         font-family: 'Playfair Display', serif !important;
+        padding: 12px 28px; 
+        font-size: 0.75rem; 
+        transform: translateX(-16px);
     }
         
-
     .nav-links {
         display: flex !important;
         justify-content: center !important;
@@ -1258,9 +1268,13 @@ body.fade-out {
     .hero-emblem-center { width: 160px; }
     .hero-logo-text { width: 90vw; }
     .hero-logo-wrapper { transform: translateX(-16px); }
-    .hero-subtitle { font-size: 1.25rem; margin-top: 30px !important; 
-        margin-bottom: 10px !important; transform: translateX(-16px); }
-    .cta-button { padding: 12px 28px; font-size: 0.75rem; transform: translateX(-16px); }
+    .hero-subtitle { 
+        font-size: 1.25rem; 
+        margin-top: 30px !important; 
+        margin-bottom: 10px !important; 
+        transform: translateX(-16px); 
+    }
+    
     .section-title { font-size: 2.2rem; }
     
     /* Ensure the landing page text layout resets naturally in mobile viewports */
