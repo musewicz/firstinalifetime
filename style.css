@@ -1189,11 +1189,15 @@ body.fade-out {
 
     .nav-links {
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: row !important; /* Keeps links horizontal across the row */
+        flex-wrap: wrap !important;     /* Allows clean wrapping if text is long */
+        justify-content: center !important; /* Centers items along your red axis line */
         align-items: center !important;
-        gap: 18px !important; 
-        padding: 4px 0 !important;
         width: 100% !important;
+        gap: 15px !important;           /* Even, clean spacing between words */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
 
     .nav-links a { 
@@ -1201,6 +1205,11 @@ body.fade-out {
         font-weight: 900 !important;
         font-size: 1.2rem !important; /* Kept nice and large for mobile tapping */
         color: #110b08 !important;
+    }
+	.nav-links li {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-block !important;
     }
 
     .hero-emblem-center { width: 160px; }
