@@ -1186,17 +1186,19 @@ body.fade-out {
     .food-thumbnail-wrapper { width: 100%; }
 }
 
-
 /* ==========================================================================
    MOBILE SCREEN LAYER & COMPACT RE-ALIGNMENTS (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* 1. Global Header Container */
     .main-header {
         position: absolute; 
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        padding: 15px 2%;
+        align-items: center;    /* Centers items horizontally */
+        justify-content: center; /* Centers items vertically */
+        gap: 15px;
+        padding: 20px 0;
         width: 100%;
         background-color: transparent !important; 
         background-image: none !important;
@@ -1204,6 +1206,7 @@ body.fade-out {
         box-shadow: none !important;
     }
 
+    /* 2. Logo Wrapper */
     .logo {
         display: flex !important;
         flex-direction: column !important; 
@@ -1211,7 +1214,7 @@ body.fade-out {
         align-items: center !important;    
         text-align: center !important;
         width: 100% !important;
-        margin: 0 auto 10px auto !important;
+        margin: 0 auto !important;
     }
 
     .logo a {
@@ -1229,40 +1232,84 @@ body.fade-out {
         margin: 0 auto !important; 
     }
 
-    .hero-content {
-        margin-left: 0 !important;
+    /* 3. Navigation Links Grid/Flex */
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important; /* Perfect horizontal center for links */
+        align-items: center !important;
+        gap: 20px !important; 
+        padding: 0 !important;             /* Strips old asymmetric right padding */
         width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 4. Main Hero Wrapper */
+    .hero { 
+        justify-content: center !important; /* Forces the flex content to the middle */
+        padding-left: 0 !important; 
+        align-items: center !important;
+    }
+
+    /* 5. Central Hero Content Box */
+    .hero-content {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 0 20px !important;
-        transform: translate(-16px, 10px) !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;    /* Hard aligns children down the spine */
+        text-align: center !important;
+        transform: translateY(20px) !important; /* Removes the horizontal shift entirely */
     }
 
-    .hero-emblem-center { width: 160px; }
-    .hero-logo-text { width: 90vw; }
-    .hero-logo-wrapper { transform: translateX(-16px); }
+    /* 6. Logo Images & Wrapper inside Hero */
+    .hero-logo-wrapper { 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 20px !important;
+        transform: none !important;        /* Strips the left push */
+    }
 
+    .hero-emblem-center { 
+        width: 160px !important; 
+        margin: 0 auto 15px auto !important;
+    }
+    
+    .hero-logo-text { 
+        width: 85vw !important; 
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 7. Subtitle Typography */
     .hero-subtitle { 
-        font-size: 1.25rem; 
-        margin-top: 30px !important; 
-        margin-bottom: -5px !important; 
-        transform: translate(-16px, 115px) !important; 
+        font-size: 1.25rem !important; 
+        margin: 20px auto !important; 
+        text-align: center !important;
+        transform: none !important;        /* Strips legacy positioning offsets */
+        width: 90% !important;
     }
 
+    /* 8. Call To Action Button */
     .cta-button {
         position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
-        margin: 20px auto 0 auto !important; 
         display: inline-block !important;
-        white-space: normal !important;
+        margin: 15px auto 0 auto !important; /* Auto left/right handles the centering */
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;        /* Strips old layout rules */
+        white-space: nowrap !important;
         background-color: transparent !important; 
         border: 2px solid #f5f1e6 !important;
         color: #f5f1e6 !important;
         font-family: 'Playfair Display', serif !important;
-        padding: 12px 28px; 
-        font-size: 0.75rem; 
-        transform: translate(-16px, 150px) !important; 
+        padding: 12px 28px !important; 
+        font-size: 0.8rem !important; 
     }
-        
+
+    /* ... Keep all your card/gallery responsive classes below this point ... */        
     .nav-links {
         display: flex !important;
         justify-content: center !important;
