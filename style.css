@@ -1070,6 +1070,10 @@ body.fade-out {
         transform: translateY(-90px) !important; 
     }
 
+    .hero-subtitle {
+        margin-top: -12px !important; /* Adjust this number to bring it closer or push it further down */
+    }
+
     .tilt-left { transform: rotate(-3deg); }
     .tilt-right { transform: rotate(3deg); }
 
