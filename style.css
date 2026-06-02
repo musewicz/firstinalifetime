@@ -1276,7 +1276,7 @@ body.fade-out {
         margin-top: 20px !important; 
         margin-bottom: 0px !important;
         font-size: 1.25rem; 
-        transform: translateX(-16px, 145 px); !important;
+        transform: translateX(-16px, 120 px); !important;
     }
     
     .section-title { font-size: 2.2rem; }
