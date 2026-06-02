@@ -196,7 +196,6 @@ body.fade-out {
     right: -250px !important;       /* Adjusts how far right into the rectangle it sits */
     top: 65% !important;            /* Vertical alignment to balance it with the text elements */
 }
-
 .cta-button:hover {
     background: #ffffff;
     color: #1a1a1a;
@@ -1223,18 +1222,6 @@ body.fade-out {
         display: block !important;
         margin: 0 auto !important; 
     }
-
-	/* --- Reset the button layout on mobile to stack naturally underneath your subtitle --- */
-    .cta-button {
-        position: relative !important;
-        right: 0 !important;
-        top: 0 !important;
-        margin: 20px auto 0 auto !important;
-        display: inline-block !important;
-    }
-    
-    /* ... your other mobile grid definitions ... */
-}
 
     .nav-links {
         display: flex !important;
