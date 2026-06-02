@@ -71,16 +71,18 @@ body.fade-out {
     gap: 20px;
 }
 
-.nav-links a {
-    font-family: 'Playfair Display', serif; /* Matches your core logo style */
-    font-weight: 900; /* Maximum boldness so it looks thick and carved */
-    color: #110b08; /* Deep dark ink black */
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:active {
+    font-family: 'Playfair Display', serif !important; 
+    font-weight: 900 !important; 
+    color: #110b08 !important; /* Forces the deep dark ink color even if clicked */
     text-decoration: none;
-    font-size: 1.5rem; /* Large and readable */
+    font-size: 1.5rem; 
     letter-spacing: 0.02em;
     text-transform: none; 
     transition: opacity 0.3s ease, transform 0.3s ease;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); /* Crisp background contrast */
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); 
 }
 
 .nav-links a:hover,
@@ -1003,18 +1005,20 @@ body.fade-out {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    font-family: 'Montserrat', sans-serif;[cite: 1]
-    color: #2b1f1d; /* Darkened from #444444 to match your header font ink[cite: 1] */
-    text-decoration: none;[cite: 1]
-    font-size: 0.95rem; /* Slightly increased size */
-    font-weight: 600; /* Made it bold so it's sharp against the tan leather */
-    transition: color 0.3s ease;[cite: 1]
+.footer-links a,
+.footer-links a:visited,
+.footer-links a:active {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #110b08 !important; /* Forces dark ink over clicked purple browser states */
+    text-decoration: none;
+    font-size: 0.95rem; 
+    font-weight: 600 !important; 
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #000000;[cite: 1]
-    text-decoration: underline; /* Visual cue on hover */
+    color: #000000 !important;
+    text-decoration: underline; 
 }
 
 .footer-bottom {
