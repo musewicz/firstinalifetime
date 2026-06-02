@@ -102,6 +102,16 @@ body.fade-out {
     padding-left: 6%;
 }
 
+/* --- Isolated Landing Page Hero Peeking Modification --- */
+.hero.home-hero {
+    height: 85vh;
+    min-height: 600px;
+}
+
+.hero.home-hero .hero-content {
+    transform: translateY(-40px);
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -1167,6 +1177,11 @@ body.fade-out {
     .hero-subtitle { font-size: 1.25rem; margin-bottom: 25px; transform: translateX(-16px); }
     .cta-button { padding: 12px 28px; font-size: 0.75rem; transform: translateX(-16px); }
     .section-title { font-size: 2.2rem; }
+    
+    /* Ensure the landing page text layout resets naturally in mobile viewports */
+    .hero.home-hero .hero-content {
+        transform: translateY(0);
+    }
     
     .footer-bottom {
         flex-direction: column;
