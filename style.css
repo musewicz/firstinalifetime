@@ -2,6 +2,7 @@
    MASTER CORE ARCHITECTURE & TYPOGRAPHY
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 * {
     margin: 0;
@@ -72,14 +73,15 @@ body.fade-out {
 }
 
 .nav-links a {
-    color: #1a1a1a; /* Changed from #ffffff to dark charcoal for legibility on tan[cite: 1] */
+    font-family: 'Permanent Marker', cursive; /* Rough wilderness marker font */
+    color: #2b1f1d; /* Deep charred-timber brown for organic contrast */
     text-decoration: none;[cite: 1]
-    font-size: 0.85rem;[cite: 1]
-    letter-spacing: 0.15em;[cite: 1]
-    text-transform: uppercase;[cite: 1]
+    font-size: 1.15rem; /* Increased slightly since handwritten fonts run smaller */
+    letter-spacing: 0.05em; 
+    text-transform: none; /* Disables uppercase to show natural handwriting flow */
     font-weight: 400;[cite: 1]
-    transition: opacity 0.3s ease;[cite: 1]
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); /* Flipped shadow to a light highlight[cite: 1] */
+    transition: opacity 0.3s ease, transform 0.3s ease;[cite: 1]
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2); 
 }
 
 .nav-links a:hover,
@@ -968,11 +970,11 @@ body.fade-out {
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-    color: #1a1a1a;
+    font-family: 'Permanent Marker', cursive; /* Wilderness style */
+    font-size: 2.2rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;[cite: 1]
+    color: #2b1f1d; /* Matches the header ink */
 }
 
 .footer-text {
@@ -983,12 +985,13 @@ body.fade-out {
 }
 
 .footer-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #1a1a1a;
-    margin-bottom: 25px;
-    font-weight: 500;
+    font-family: 'Permanent Marker', cursive; /* Wilderness style */
+    font-size: 1.1rem;
+    text-transform: none; /* Let handwriting flow naturally */
+    letter-spacing: 0.05em;
+    color: #2b1f1d; 
+    margin-bottom: 25px;[cite: 1]
+    font-weight: 400;
 }
 
 .footer-links {
@@ -1000,10 +1003,11 @@ body.fade-out {
 }
 
 .footer-links a {
-    color: #444444; /* Earthy dark grey links */
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* Keep standard links clean for readability */
+    color: #3d312e; /* Slightly softer ink color */
+    text-decoration: none;[cite: 1]
+    font-size: 0.9rem;[cite: 1]
+    transition: color 0.3s ease;[cite: 1]
 }
 
 .footer-links a:hover {
