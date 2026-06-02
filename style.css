@@ -42,7 +42,7 @@ body.fade-out {
 
 /* --- Inner Page Header (Leather Style for All Other Pages) --- */
 .inner-page-header {
-    background-color: #241911; 
+    background-color: #241911; !important;
     background-image: 
         radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
         radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
@@ -84,6 +84,10 @@ body.fade-out {
 .nav-links a:hover,
 .nav-links a.active {
     opacity: 0.6;
+}
+.main-header {
+    background: transparent !important;
+    background-image: none !important;
 }
 
 /* ==========================================================================
@@ -1167,6 +1171,12 @@ body.fade-out {
         gap: 18px !important; 
         padding: 4px 0 !important;
         width: 100% !important;
+	.main-header {
+   	background: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+}
     }
 
     .nav-links a { font-size: 0.72rem !important; letter-spacing: 0.1em !important; }
@@ -1300,4 +1310,22 @@ body.fade-out {
         filter: blur(1px);
         z-index: 99 !important;
     }
+/* Fix Homepage Navigation & Logo Overlap Layout */
+.main-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 20px 6% !important; /* Pushes the layout out toward the screen edges */
+}
+
+.logo {
+    flex-shrink: 0 !important; /* Prevents the logo from getting squeezed */
+}
+
+.nav-links {
+    display: flex !important;
+    gap: 30px !important; /* Gives clean, professional breathing room between each menu link */
+    margin-left: auto !important; /* Ensures the navigation tags stick beautifully to the right side */
+    list-style: none !important;
 }
