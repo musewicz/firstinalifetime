@@ -1237,7 +1237,7 @@ body.fade-out {
         margin-left: 0 !important;
         width: 100% !important;
         padding: 0 20px !important;
-        transform: translate(-16px, 45px) !important; 
+        transform: translate(-16px, 30px) !important; 
     }
 
     .hero-emblem-center { width: 160px; }
@@ -1250,7 +1250,7 @@ body.fade-out {
         font-size: 1.25rem; 
         margin-top: 30px !important; 
         margin-bottom: -5px !important; 
-        transform: translate(-16px, 185px) !important; 
+        transform: translate(-16px, 175px) !important; 
     }
 
     /* --- MOBILE ONLY: Action Button --- 
@@ -1268,7 +1268,7 @@ body.fade-out {
         font-family: 'Playfair Display', serif !important;
         padding: 12px 28px; 
         font-size: 0.75rem; 
-        transform: translate(-16px, 200px) !important; 
+        transform: translate(-16px, 205px) !important; 
     }
         
     .nav-links {
