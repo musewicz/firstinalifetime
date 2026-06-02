@@ -1235,12 +1235,12 @@ body.fade-out {
         margin: 0 auto !important; 
     }
 
-    /* --- MOBILE HERO ADJUSTMENT (Moves tree graphic + titles down slightly on phone screen) --- */
+    /* --- MOBILE HERO ADJUSTMENT (Moves logo graphic + titles down slightly on phone screen) --- */
     .hero-content {
         margin-left: 0 !important;
         width: 100% !important;
         padding: 0 20px !important;
-        transform: translateY(-10px) !important; 
+        transform: translateY(-16 px, -10px) !important; 
     }
 
     /* --- MOBILE BUTTON RESET --- */
