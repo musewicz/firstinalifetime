@@ -131,6 +131,7 @@ body.fade-out {
     z-index: 1;
 }
 
+/* --- Hero Content Main Alignment Block --- */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -140,9 +141,10 @@ body.fade-out {
     text-align: center;
     margin-left: 18%;       
     
-    /* Changed from -100px/-150px to -230px to pull the top of the logo up to your header text alignment line */
-    transform: translateY(-230px); 
+    /* Changed to -240px to pull the top of the tree logo up level with your header text */
+    transform: translateY(-240px) !important; 
 }
+
 .hero-logo-wrapper {
     display: flex;
     flex-direction: column;
@@ -1324,7 +1326,7 @@ body.fade-out {
 
     .postcard-stamp-box { width: 52px !important; }
 
-    /* TARGETED MOBILE PUSHPIN ALIGNMENT RULES */
+   /* TARGETED MOBILE PUSHPIN ALIGNMENT RULES */
     .postcard-rack-grid .postcard-container::before {
         content: '';
         position: absolute;
@@ -1352,4 +1354,3 @@ body.fade-out {
         z-index: 99 !important;
     }
 }
-
