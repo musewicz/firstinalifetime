@@ -1494,3 +1494,13 @@ body.fade-out {
         z-index: 99 !important;
     }
 }
+
+/* Recipe Card Underline Fix */
+.recipe-card-anchor,
+.recipe-card-anchor *,
+.recipe-card-anchor .recipe-title,
+.recipe-card-anchor h2,
+.recipe-card-anchor span,
+.recipe-card-anchor p {
+    text-decoration: none !important;
+}
