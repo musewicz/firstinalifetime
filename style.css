@@ -601,6 +601,12 @@ body.fade-out {
     text-decoration: none;
 }
 
+/* Strip all text underlines inside the clickable recipe cards */
+.recipe-card-anchor,
+.recipe-card-anchor * {
+    text-decoration: none !important;
+}
+
 /* ==========================================================================
    RECIPE CARD HYBRID HOVER EFFECTS (THE CHEF'S GRIP)
    ========================================================================== */
