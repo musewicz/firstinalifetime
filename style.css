@@ -220,7 +220,7 @@ body.fade-out {
 }
 
 .internal-page-padding {
-    padding-top: 195px; 
+    padding-top: 60px; 
 }
 
 .max-width-center {
@@ -671,11 +671,12 @@ body.fade-out {
     padding: 20px 0;
 }
 
-journey-header-layout {
-    display: flex;
-    justify-content: space-between; /* Change this to flex-start if it spaces them out too much */
-    gap: 2rem; /* Reduce this value to half of whatever it currently is (e.g., if it was 4rem, make it 2rem) */
+.journey-header-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
     align-items: center;
+    padding: 40px 0;
 }
 
 .section-divider {
