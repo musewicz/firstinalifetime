@@ -14,35 +14,24 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. CLICK TO FLIP CARDS WITH EVENT STABILIZER
-    document.querySelectorAll('.postcard-container').forEach(card => {
-        card.addEventListener('click', function(e) {
-            // If the user clicks on the "Buy Print" link directly, let the link fire normally.
-            if (e.target.tagName === 'A' || e.target.closest('a')) {
-                return; 
-            }
-            // Otherwise, toggle the card flip state
-            this.classList.toggle('is-flipped');
-        });
-    });
-
-    // 2. INITIAL PAGE FADE IN
+    // Fade in on page load
     document.body.classList.remove("fade-out");
 
-    // 3. SMOOTH LINKS CROSS-FADE
+    // Handle link clicks
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
+
+        // Ignore external links or anchors
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
-            // Only apply cross-fade to standard navigation menu/footer items
-            if (this.classList.contains('filter-link')) return;
-
             e.preventDefault();
+
             document.body.classList.add("fade-out");
+
             setTimeout(() => {
                 window.location.href = href;
-            }, 350);
+            }, 350); // matches CSS transition time
         });
     });
 
@@ -50,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <body class="fade-out">
+
 
     <header class="main-header inner-page-header tan-page-header">
     <div class="logo">
