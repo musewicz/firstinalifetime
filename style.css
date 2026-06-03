@@ -671,12 +671,11 @@ body.fade-out {
     padding: 20px 0;
 }
 
-.journey-header-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+journey-header-layout {
+    display: flex;
+    justify-content: space-between; /* Change this to flex-start if it spaces them out too much */
+    gap: 2rem; /* Reduce this value to half of whatever it currently is (e.g., if it was 4rem, make it 2rem) */
     align-items: center;
-    padding: 40px 0;
 }
 
 .section-divider {
