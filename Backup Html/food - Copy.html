@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foor, Recipes, Resturaunts, Dining, Yum — First In A Lifetime</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content= Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Giide, Food, Destinations, Places, Word, International, USA, Local | First In A Lifetime">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. CLICK TO FLIP CARDS WITH EVENT STABILIZER
+    document.querySelectorAll('.postcard-container').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // If the user clicks on the "Buy Print" link directly, let the link fire normally.
+            if (e.target.tagName === 'A' || e.target.closest('a')) {
+                return; 
+            }
+            // Otherwise, toggle the card flip state
+            this.classList.toggle('is-flipped');
+        });
+    });
+
+    // 2. INITIAL PAGE FADE IN
+    document.body.classList.remove("fade-out");
+
+    // 3. SMOOTH LINKS CROSS-FADE
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        link.addEventListener("click", function (e) {
+            // Only apply cross-fade to standard navigation menu/footer items
+            if (this.classList.contains('filter-link')) return;
+
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 350);
+        });
+    });
+
+});
+</script>
+
+<body class="fade-out">
+
+    <header class="main-header inner-page-header tan-page-header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
+        </a> 
+    </div>
+    <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="photos.html" class="active">Photos</a></li>
+            <li class="mobile-hide"><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+   <main class="content-container internal-page-padding">
+        
+        <!-- HEADER SECTION -->
+        <section class="journey-header-layout">
+            <div class="header-text-block">
+                <span class="section-tag">Deep Narratives</span>
+                <h1 class="section-title">The Journey</h1>
+                <p class="paragraph">
+                    Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.
+                </p>
+                
+               <!-- Category Filters -->
+                <div class="journey-filters">
+                     <a href="alllogs.html" class="filter-link">All Logs</a>
+                     <a href="international.html" class="filter-link">International</a>
+                     <a href="states.html" class="filter-link">The States</a>
+                     <a href="food.html" class="filter-link active">Food</a>
+                   </div>
+
+            </div>
+
+            <!-- FEATURED BIG STORY HERO (Breaks up the blandness) -->
+            <div class="featured-story-hero">
+                <a href="./" class="featured-hero-link">
+                    <div class="featured-image-wrapper">
+                        <!-- Temporary placeholder background color until photo is added -->
+                        <div class="story-photo-placeholder" style="height: 100%; background-color: #bab3a6;"></div>
+                    </div>
+                    <div class="featured-hero-badge">Latest Field Notes</div>
+                    <div class="featured-hero-content">
+                        <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
+                        <h3 class="featured-hero-title">The Master Artisans of Tokyo Duck Ramen</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- THE POLAROID GRID -->
+        <div class="polaroid-grid">
+            
+            <!-- Polaroid Card 1 -->
+            <a href="./" class="journey-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Japan/hostle.webp" alt="Tokyo Alleyway">
+                </div>
+                <span class="handwritten-caption">Tokyo, Japan</span>
+            </a>
+
+            <!-- Polaroid Card 2 -->
+            <a href="./" class="journey-card polaroid tilt-right">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney Sunset">
+                </div>
+                <span class="handwritten-caption">Sydney, AUS</span>
+            </a>
+
+            <!-- Polaroid Card 3 -->
+            <a href="./" class="journey-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community">
+                </div>
+                <span class="handwritten-caption">Warped Tour '25</span>
+            </a>
+
+            <!-- Polaroid Card 4 -->
+            <a href="./" class="journey-card polaroid TILT-right">
+                <div class="polaroid-img-wrapper">
+                     <img src="Photos/Morocco/marketdoors.webp" alt="Morocco">
+                </div>
+                <span class="handwritten-caption">Marrakech</span>
+            </a>
+
+
+        </div>
+
+    </main>
+
+        <footer class="main-footer weathered-leather-block">
+    	<div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+           </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
