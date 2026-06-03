@@ -2,6 +2,7 @@
    MASTER CORE ARCHITECTURE & TYPOGRAPHY
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 * {
     margin: 0;
@@ -20,6 +21,11 @@ body {
     transition: opacity 0.35s ease;
 }
 
+/* --- Hides the logo ONLY on the homepage header (For both PC & Mobile) --- */
+.main-header:not(.inner-page-header) .logo {
+    display: none !important;
+}
+
 body.fade-out {
     opacity: 0;
 }
@@ -33,24 +39,24 @@ body.fade-out {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 4%;
+    padding: 20px 6% 20px 4%; /* Increased right padding to 6% to scoot links left */
     z-index: 2000;
     background: transparent; 
     border-bottom: none;
     box-shadow: none;
 }
 
-/* --- Inner Page Header (Leather Style for All Other Pages) --- */
+/* --- 2. Explicitly apply the Solid Leather Skin ONLY to Inner Pages on Mobile --- */
 .inner-page-header {
-    background-color: #241911; 
+    position: relative !important; /* Keeps it as a structured top block on sub-pages */
+    background-color: #a88f74 !important; /* Your chosen leather code */
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
-        radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
-    background-size: 4px 4px, 5px 5px, 100% 100%;
-    background-blend-mode: multiply;
-    border-bottom: 2px solid #160f0a;
-    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.03), 0 4px 20px rgba(0,0,0,0.4);
+        url('leather-skin.png'), 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)) !important;
+    background-repeat: repeat !important;
+    background-blend-mode: multiply !important;
+    border-bottom: 2px solid #8c745c !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 }
 
 .logo a {
@@ -59,7 +65,7 @@ body.fade-out {
 }
 
 .logo-img {
-    height: 40px;
+    height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -70,15 +76,18 @@ body.fade-out {
     gap: 20px;
 }
 
-.nav-links a {
-    color: #ffffff;
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:active {
+    font-family: 'Playfair Display', serif !important; 
+    font-weight: 900 !important; 
+    color: #110b08 !important; /* Forces the deep dark ink color even if clicked */
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 400;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem; 
+    letter-spacing: 0.02em;
+    text-transform: none; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); 
 }
 
 .nav-links a:hover,
@@ -122,6 +131,7 @@ body.fade-out {
     z-index: 1;
 }
 
+/* --- Hero Content Main Alignment Block --- */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -130,7 +140,9 @@ body.fade-out {
     align-items: center;
     text-align: center;
     margin-left: 18%;       
-    transform: translateY(-100px); 
+    
+    /* Global Desktop translation value */
+    transform: translateY(-80px) !important; 
 }
 
 .hero-logo-wrapper {
@@ -154,32 +166,48 @@ body.fade-out {
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 35px;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    font-style: italic;
+    color: #f5f1e6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    margin-top: 5px !important;
+    margin-bottom: 20px !important;
+    
+    /* --- Shrinks the vertical height taken up by the text lines --- */
+    line-height: 1.2 !important; 
 }
 
+/* --- DESKTOP BUTTON POSITIONING --- */
 .cta-button {
     display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    padding: 12px 30px;
+    
+    /* --- Styles it transparent/clear instead of solid red --- */
+    background-color: transparent !important; 
+    border: 2px solid #f5f1e6 !important;
+    color: #f5f1e6 !important; 
+    
     text-decoration: none;
+    font-family: 'Playfair Display', serif !important; /* Elegant Desktop Serif Font Choice */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    background: transparent;
-    transition: all 0.4s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    
+    /* --- Precise positioning over the rock formations --- */
+    position: absolute !important;
+    left: 155% !important;   /* Pushes it further right (increase this number to scoot it more right) */
+    top: 40% !important;     /* Shims it up higher (decrease this number to move it up more) */
+    white-space: nowrap !important;
 }
 
 .cta-button:hover {
-    background: #ffffff;
-    color: #1a1a1a;
+    background-color: rgba(245, 241, 230, 0.15) !important; /* Gentle hover highlight */
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -192,7 +220,7 @@ body.fade-out {
 }
 
 .internal-page-padding {
-    padding-top: 140px; 
+    padding-top: 195px; 
 }
 
 .max-width-center {
@@ -437,19 +465,26 @@ body.fade-out {
     transform: translate(2px, -2px); 
 }
 
-/* --- Leather Accents & Card Specific Overrides --- */
+/* --- Weathered Leather Block --- */
 .weathered-leather-block {
     position: relative;
-    color: #e3dcd2; 
+    color: #110b08; 
     margin-top: 100px !important;
-    background-color: #2b1d12; 
+    background-color: #a88f74; 
+    /* Combined all layers into one clean statement, removed the breaking semicolons */
     background-image: 
-        radial-gradient(rgba(0, 0, 0, 0.35) 1px, transparent 0),
-        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
-        linear-gradient(135deg, rgba(0,0,0,0.4) 0%, transparent 40%, rgba(0,0,0,0.6) 100%),
-        radial-gradient(circle at 30% 20%, rgba(68, 44, 26, 0.4) 0%, transparent 60%);
-    background-size: 3px 3px, 5px 5px, 100% 100%, 100% 100%;
+        url('leather-skin.png'), 
+        linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%),
+        radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
+        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),
+        radial-gradient(circle at 30% 20%, rgba(140, 116, 92, 0.2) 0%, transparent 60%);
+    
+    /* Changed the first value from 3px/5px to 'repeat' or 'auto' so your leather image doesn't scale down into tiny lines */
+    background-size: auto, 100% 100%, 3px 3px, 5px 5px, 100% 100%, 100% 100%;
+    background-repeat: repeat, no-repeat, repeat, repeat, no-repeat, no-repeat;
     background-blend-mode: multiply;
+    
     mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 4px), transparent),
                 radial-gradient(circle at 50% 100%, #000 3px, transparent 4px);
     mask-size: 100% 100%, 8px 4px;
@@ -543,19 +578,40 @@ body.fade-out {
 }
 
 .notebook-lines {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px) !important;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px) !important;
     background-size: 100% 2rem !important; 
     line-height: 2rem !important; 
     margin-top: 15px;
     flex-grow: 1;
+    padding-top: 0.15rem !important; /* Shims the first line of text right onto the track */
 }
 
 .recipe-description {
     margin: 0 !important;
     padding: 0 !important;
     color: #2b2b2b;
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 1rem !important;       /* Clean reading height */
+    line-height: 2rem !important;     /* MAGIC MATH: Matches background size exactly */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ==========================================================================
+   RECIPE CARD HYBRID HOVER EFFECTS (THE CHEF'S GRIP + BLEMISH)
+   ========================================================================== */
+
+/* 1. Base Card setup for smooth interactive transitions */
+.recipe-card-postcard {
+    position: relative;
+    overflow: hidden !important; /* Keeps the smudges perfectly clipped within the card edges */
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* 2. CONCEPT 2: The Physical Press/Grip (Triggers on Hover) */
+.recipe-card-postcard:hover {
+    /* Subtle downward scale and slight counter-clockwise tweak to look hand-pressed */
+    transform: scale(0.99) rotate(-0.5deg) !important;
+    /* Flattens the sharp desktop shadow to make it look close to the table surface */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* ==========================================================================
@@ -624,14 +680,16 @@ body.fade-out {
 }
 
 .filter-link {
-    font-size: 0.75rem;
+    font-size: 1 rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: #7a756c;
     text-decoration: none;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
+    font-weight: 600;
+
 }
 
 .filter-link:hover,
@@ -940,19 +998,19 @@ body.fade-out {
 /* ==========================================================================
    UNIVERSAL FOOTER ARCHITECTURE
    ========================================================================== */
+/* --- Universal Footer Base --- */
 .main-footer {
-    color: #ffffff;
-    padding: 90px 6% 40px 6%;
+    color: #110b08; 
+    padding: 50px 6% 40px 6%;
     margin-top: 100px !important;
-    background-color: #241911;
+    background-color: #a88f74; 
     background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0),
-        radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
-    background-size: 4px 4px, 5px 5px, 100% 100%;
+        url('leather-skin.png'), /* Fuses the real leather skin here */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.35));
+    background-repeat: repeat;
     background-blend-mode: multiply;
-    border-top: 2px solid #160f0a;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    border-top: 2px solid #8c745c; 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .footer-grid {
@@ -961,31 +1019,35 @@ body.fade-out {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
-    border-bottom: 1px solid #333333;
-    padding-bottom: 60px;
+    border-bottom: 1px solid #8c745c; /* Match the layout line to the new theme */
+    padding-bottom: 30px;
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; /* Heavy, bold presence */
+    font-size: 2.4rem;
+    letter-spacing: 0.02em;
     margin-bottom: 20px;
+    color: #110b08; /* Matching deep dark ink */
 }
 
 .footer-text {
-    color: #999999;
+    color: #1a1a1a; /* Darkened from #333333 to pure deep ink */
     line-height: 1.6;
     font-size: 0.95rem;
     max-width: 320px;
+    font-weight: 500; /* Bumped up weight to make it stand out */
 }
 
 .footer-heading {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; /* Heavy bold title style */
+    font-size: 1.25rem;
+    text-transform: none; 
+    letter-spacing: 0.02em;
+    color: #110b08; 
     margin-bottom: 25px;
-    font-weight: 500;
 }
 
 .footer-links {
@@ -996,15 +1058,20 @@ body.fade-out {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    color: #999999;
+.footer-links a,
+.footer-links a:visited,
+.footer-links a:active {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #110b08 !important; /* Forces dark ink over clicked purple browser states */
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem; 
+    font-weight: 600 !important; 
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    color: #000000 !important;
+    text-decoration: underline; 
 }
 
 .footer-bottom {
@@ -1013,15 +1080,23 @@ body.fade-out {
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
-    color: #555555;
+    font-size: 0.85rem;
+    color: #110b08; /* Changed from grey to match your thick, dark header/footer ink */
+    font-weight: 500; /* Bumps up the thickness slightly so it stands out on the tan leather */
 }
-
 
 /* ==========================================================================
    DESKTOP ONLY CONDITIONAL QUERIES (WIDTHS 769PX AND HIGHER)
    ========================================================================== */
 @media (min-width: 769px) {
+	.hero-content {
+        transform: translateY(-90px) !important; 
+    }
+
+    .hero-subtitle {
+        margin-top: -18px !important; /* Adjust this number to bring it closer or push it further down */
+    }
+
     .tilt-left { transform: rotate(-3deg); }
     .tilt-right { transform: rotate(3deg); }
 
@@ -1122,7 +1197,7 @@ body.fade-out {
    TABLET RESPONSIVE RECONSTRUCTION (MAX-WIDTH: 968PX)
    ========================================================================== */
 @media (max-width: 968px) {
-    .main-header { padding: 20px 6%; }
+    .main-header { padding: 10px 6%; }
     .hero { justify-content: center; padding-left: 0; }
     .hero-content { margin-left: 0; }
     .hero-emblem-center { width: 220px; }
@@ -1136,49 +1211,149 @@ body.fade-out {
     .ledger-row {
         flex-direction: column !important;
         gap: 25px;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
     }
     .ledger-col-interactive { padding-left: 0; width: 100%; }
     .food-thumbnail-wrapper { width: 100%; }
 }
 
-
 /* ==========================================================================
    MOBILE SCREEN LAYER & COMPACT RE-ALIGNMENTS (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
-    .main-header, 
-    .inner-page-header {
-        position: relative !important;
-        padding: 15px 4% !important;   
-        height: auto !important;
-        min-height: unset !important;
-        display: flex !important;
-        flex-direction: column !important; 
-        gap: 12px !important;
+    /* 1. Global Header Container */
+    .main-header {
+        position: absolute; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centers items horizontally */
+        justify-content: center; /* Centers items vertically */
+        gap: 15px;
+        padding: 20px 0;
+        width: 100%;
+        background-color: transparent !important; 
+        background-image: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
     }
 
-    .logo-img { height: 30px !important; margin: 0 auto; }
+    /* 2. Logo Wrapper */
+    .logo {
+        display: flex !important;
+        flex-direction: column !important; 
+        justify-content: center !important;
+        align-items: center !important;    
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
 
+    .logo a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    .logo-img { 
+        height: 30px !important; 
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important; 
+    }
+
+    /* 3. Navigation Links Grid/Flex */
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important; /* Perfect horizontal center for links */
+        align-items: center !important;
+        gap: 20px !important; 
+        padding: 0 !important;             /* Strips old asymmetric right padding */
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 4. Main Hero Wrapper */
+    .hero { 
+        justify-content: center !important; /* Forces the flex content to the middle */
+        padding-left: 0 !important; 
+        align-items: center !important;
+    }
+
+    /* 5. Central Hero Content Box */
+    .hero-content {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;    /* Hard aligns children down the spine */
+        text-align: center !important;
+        transform: translateY(20px) !important; /* Removes the horizontal shift entirely */
+    }
+
+    /* 6. Logo Images & Wrapper inside Hero */
+    .hero-logo-wrapper { 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 20px !important;
+        transform: translateY(-45px) !important; /* Shuts off old code and pulls just the logos 45px higher into the sky */
+    }
+
+    .hero-emblem-center { 
+        width: 160px !important; 
+        margin: 0 auto 15px auto !important;
+    }
+    
+    .hero-logo-text { 
+        width: 85vw !important; 
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 7. Subtitle Typography */
+    .hero-subtitle { 
+        font-size: 1.25rem !important; 
+        margin: 20px auto !important; 
+        text-align: center !important;
+        transform: none !important;        /* Strips legacy positioning offsets */
+        width: 90% !important;
+	transform: translateY(20px) !important;
+    }
+
+    /* 8. Call To Action Button */
+    .cta-button {
+        position: relative !important;
+        display: inline-block !important;
+        margin: 15px auto 0 auto !important; /* Auto left/right handles the centering */
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;        /* Strips old layout rules */
+        white-space: nowrap !important;
+        background-color: transparent !important; 
+        border: 2px solid #f5f1e6 !important;
+        color: #f5f1e6 !important;
+        font-family: 'Playfair Display', serif !important;
+        padding: 12px 28px !important; 
+        font-size: 0.8rem !important;
+	transform: translateY(60px) !important;
+    }
+
+    /* ... Keep all your card/gallery responsive classes below this point ... */        
     .nav-links {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         gap: 18px !important; 
-        padding: 4px 0 !important;
+        padding: 4px 25px 4px 0 !important; 
         width: 100% !important;
     }
-
-    .nav-links a { font-size: 0.72rem !important; letter-spacing: 0.1em !important; }
-
-    .hero-emblem-center { width: 160px; }
-    .hero-logo-text { width: 90vw; }
-    .hero-logo-wrapper { transform: translateX(-16px); }
-    .hero-subtitle { font-size: 1.25rem; margin-bottom: 25px; transform: translateX(-16px); }
-    .cta-button { padding: 12px 28px; font-size: 0.75rem; transform: translateX(-16px); }
+    
     .section-title { font-size: 2.2rem; }
     
-    /* Ensure the landing page text layout resets naturally in mobile viewports */
     .hero.home-hero .hero-content {
         transform: translateY(0);
     }
@@ -1212,11 +1387,17 @@ body.fade-out {
         overflow: visible !important; 
     }
 
-    .recipe-card-postcard {
+   .recipe-card-postcard {
         flex-direction: column !important; 
         max-height: none !important; 
         width: 100% !important;
         padding: 30px 20px !important;
+    }
+
+    /* Add this rule right here to lock mobile cards to the same grid: */
+    .recipes-page-body .recipe-description {
+        font-size: 0.95rem !important;    /* Slightly crisper text for small phone windows */
+        line-height: 2rem !important;     /* STAYS AT 2REM: forces the text to step perfectly onto the lines */
     }
 
     .ledger-col-visual {
@@ -1244,7 +1425,6 @@ body.fade-out {
 
     .footer-text { max-width: 100% !important; margin: 0 auto !important; }
 
-    /* Postcard Rack Grid Mobile Stack Fixes */
     .postcard-rack-grid {
         grid-template-columns: 1fr !important; 
         gap: 50px !important;
@@ -1273,7 +1453,7 @@ body.fade-out {
 
     .postcard-stamp-box { width: 52px !important; }
 
-    /* TARGETED MOBILE PUSHPIN ALIGNMENT RULES */
+    /* The rules below are now safely tucked inside the media block */
     .postcard-rack-grid .postcard-container::before {
         content: '';
         position: absolute;
