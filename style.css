@@ -614,43 +614,6 @@ body.fade-out {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* 3. CONCEPT 1: Building the Fingerprint Layers (Hidden by default) */
-.recipe-card-postcard::before {
-    content: '';
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    opacity: 0;
-    filter: blur(12px); /* Makes the edges look rough, chalky, and organic */
-    mix-blend-mode: multiply; /* Blends the stain dynamically into the paper texture lines */
-    transition: opacity 0.3s ease !important;
-    pointer-events: none; /* Stops the smudge from messing with text selection mouse targets */
-    z-index: 5;
-}
-
-/* 4. Card 1: Flour Smudge Specifications (Top-Left Side) */
-.flour-grip::before {
-    top: -20px;
-    left: -20px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
-    mix-blend-mode: overlay !important; /* White flour needs 'overlay' to brighten the tan paper correctly */
-}
-
-/* 5. Card 2: Sauce/Oil Stain Specifications (Bottom-Right Side) */
-.sauce-grip::before {
-    bottom: -15px;
-    right: -20px;
-    /* A rustic, rich terracotta/tomato reduction color profile */
-    background: radial-gradient(circle, rgba(166, 68, 46, 0.55) 0%, rgba(138, 43, 22, 0.2) 40%, rgba(0,0,0,0) 70%);
-}
-
-/* 6. Revealing the Blemishes precisely when the card is hovered */
-.recipe-card-postcard:hover::before {
-    opacity: 1; /* Smoothly fades the flour/sauce print into view as the hand "presses down" */
-}
-
-
 /* ==========================================================================
    JOURNEY POLAROID ARTISTRY & TICKER
    ========================================================================== */
