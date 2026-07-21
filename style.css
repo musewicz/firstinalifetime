@@ -1505,10 +1505,16 @@ body.fade-out {
     text-decoration: none !important;
 }
 
+/* Center 3 polaroids and keep them sized properly */
 .polaroid-grid-3 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    gap: 20px;
     flex-wrap: wrap;
+}
+
+.polaroid-grid-3 .journal-card {
+    max-width: 260px;
+    flex: 1 1 240px;
+}
 }
