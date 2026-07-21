@@ -9,6 +9,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="description" content="About | First In A Lifetime">
+
+    <!-- HIGH-CONTRAST EDITORIAL CARD STYLES MATCHING JOURNAL PAGES -->
+    <style>
+        .story-body {
+            background-color: #faf8f5; /* Warm off-white paper card background */
+            color: #1a1a1a;            /* Dark ink text */
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Lifts card off background texture */
+            margin: 40px auto;
+        }
+
+        .story-body .paragraph {
+            color: #1c1c1c !important;
+            line-height: 1.85 !important;
+            font-size: 1.1rem !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 300 !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .story-body {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: #eae5db; font-family: 'Inter', sans-serif; color: #1a1a1a; margin: 0; padding: 0;">
 
@@ -40,20 +67,21 @@
                 </div>
             </div>
 
-            <div class="about-text-column" style="flex: 2; min-width: 300px; color: #2b2b2b; line-height: 1.8; font-weight: 300; font-size: 1.05rem;">
+            <!-- MANIFESTO TEXT CONTAINER (Matched with journal .story-body card style) -->
+            <div class="story-body" style="flex: 2; min-width: 300px; margin: 0;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 30px; letter-spacing: 0.05em; color: #1a1a1a;">
                     The Path Not For The Brave.
                 </h1>
 
-                <p style="margin-bottom: 20px;">
-                    I am always asked how I can just leave everything behind and shift my geography on a whim, chasing the unknown. People tell me I’m brave—to quit a job, to book a one-way ticket to a foreign country with no plan, to simply walk away from stability.
+                <p class="paragraph">
+                    I am always asked how I can just leave everything behind and shift my geography on a whim, chasing the unknown. People tell me I’m brave, to quit a job, to book a one-way ticket to a foreign country with no plan, to simply walk away from stability.
                 </p>
 
-                <p style="margin-bottom: 20px;">
+                <p class="paragraph">
                     But they’re wrong. It isn’t bravery; it’s a lifetime of... seasons and shifts... losses and lessons... virtues and views... that have shaped my mindset to trust the path.
                 </p>
 
-                <p style="margin-bottom: 20px;">
+                <p class="paragraph">
                     So for those who wonder how it’s done, I can only share what I’ve found: focus entirely on what you can control, while still dreaming larger than any reasonable person should.
                 </p>
 
@@ -61,17 +89,21 @@
                     "Fix your eyes on the distant star, but conquer only the horizon of the next sunrise. Trust the road to build itself beneath you... one stone at a time."
                 </blockquote>
 
-                <p style="margin-bottom: 20px;">
+                <p class="paragraph">
                     Find a quiet grace when you stumble, and pause to receive those moments that are uniquely yours—like the sharp, rhythmic crack of pine trees swaying in the wind while hiking through Yellowstone with no one else for miles. You realize then that the beauty exists whether it is witnessed or not, but it is sweeter because you are there to hear it.
                 </p>
 
-                <p style="margin-bottom: 20px;">
+                <p class="paragraph">
                     In this vast tapestry of existence, you are striking your own red dash across the map, tracing the stops and the detours that eventually guide you to where you belong.
                 </p>
 
-                <p style="margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: #1a1a1a;">
+                <p class="paragraph" style="font-family: 'Cormorant Garamond', serif !important; font-style: italic; font-size: 1.25rem !important; color: #1a1a1a; margin-top: 30px;">
                     This is why I choose to wander; it is the North Star that shapes my entire life, my entire existence. And that... in all its jagged beauty... has made the journey mine.
                 </p>
+
+                <p class="paragraph" style="margin-top: 25px;">
+		    Welcome to First In A Lifetime Vicarious Ones. My biggest hope is that something in these pages inspires you to find your next great adventure.
+		</p>
             </div>
 
         </div>
