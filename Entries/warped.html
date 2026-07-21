@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warped Tour '25 — First In A Lifetime</title>
+    <title>Warped Tour 2025: Meaning From The Chaos — First In A Lifetime</title>
     <!-- Relative paths updated to point to root directory using ../ -->
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations | First In A Lifetime">
+
+    <!-- HIGH-CONTRAST EDITORIAL CARD STYLES -->
+    <style>
+        .story-body {
+            background-color: #faf8f5; /* Warm off-white paper card */
+            color: #1a1a1a;            /* Dark ink text */
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Lifts card off background texture */
+            margin: 40px auto;
+        }
+
+        .story-body .paragraph {
+            color: #1c1c1c !important;
+            line-height: 1.85 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .story-body {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 
 <script>
@@ -24,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
-            if (this.classList.contains('filter-link')) return;
+            if (this.classList.contains('filter-link') || this.classList.contains('journal-card')) return;
 
             e.preventDefault();
             document.body.classList.add("fade-out");
@@ -59,21 +84,65 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- ARTICLE HEADER SECTION -->
         <section class="journal-header-layout">
             <div class="header-text-block">
-                <span class="section-tag">Warped Tour</span>
-                <h1 class="section-title">Warped Tour '25</h1>
-                <span class="update-date" style="color: #666; display: block; margin-top: 10px;">May 30, 2026</span>
+                <span class="section-tag">Orlando, Florida</span>
+                <h1 class="section-title">Warped Tour 2025: Meaning From The Chaos</h1>
+                <span class="update-date" style="color: #666; display: block; margin-top: 10px;">October 25, 2025</span>
             </div>
         </section>
 
         <!-- MAIN ARTICLE CONTENT -->
         <article class="story-body" style="max-width: 800px; margin: 40px auto;">
-            <div class="story-main-image" style="margin-bottom: 30px;">
-                <img src="../Photos/Japan/hostle.webp" alt="Warped Tour" style="width: 100%; border-radius: 4px;">
+            
+            <!-- HERO / FEATURED PHOTO PLACEHOLDER 1 -->
+            <div class="story-main-image" style="margin-bottom: 35px;">
+                <img src="../Photos/Events/warped25spin.webp" alt="Warped Tour Crowd and Stage" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 1: The High-Energy Chaos of the Road & Travel]</span>
             </div>
 
-            <p class="paragraph">
-                Write your entry text here...
-            </p>
+            <p class="paragraph">This year didn’t just change me—it helped some of the puzzle pieces finally fit, even if the overall image still isn't completely clear. Asia. Australia. New Zealand. Forty-nine U.S. states, hundreds of highways, and thousands of "How lucky am I?" moments. It was a relentless streak of conversations with strangers that will stay with me for life, alongside more quiet reflections and heavy realizations than I was ever ready to confront. I lived a year most people hope to piece together over an entire lifetime, pulling every version of me directly into the light: the confident parts, the scared parts, the searching parts, and the pieces I spent years pretending didn’t exist.</p>
+
+            <!-- PHOTO PLACEHOLDER 2: CONDO SILENCE -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Quiet+Living+Room+Condo" alt="Quiet Condo Room" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 2: Stillness in the Orlando Resort Living Room]</span>
+            </div>
+
+            <p class="paragraph">And now, it’s ending in a modern, cream-white-walled resort near Disney. I find myself in a quiet condo meant for a complete family—not someone who’s spent the last twelve months living life purely on instinct and adrenaline. The living room is still in a way my life hasn’t been all year. It feels like a mirror image of my very first apartment: me, lying restless on the couch, while two of my best friends sleep still and quiet in their respective rooms. Stepping into that sudden stillness feels like walking straight into a truth I’ve spent months avoiding.</p>
+
+            <p class="paragraph">Tomorrow is maybe my final Warped Tour. It marks the last heartbeat of a community that shaped me long before I even knew who I was becoming. Warped was where the introverted, dorky, trying-to-blend-in version of me finally felt like he belonged. It was a haven where being different wasn’t something you hid—it was the currency. Every misfit, every outsider, every restless kid found their people there. It’s impossible not to feel the full weight of that history as I stand at the end of this journey.</p>
+
+            <!-- PHOTO PLACEHOLDER 3: CHILDHOOD / RUNWAY METAPHOR -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Driveway+%26+Suitcase+Metaphor" alt="Driveway and Suitcase" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 3: Visual Representation of the Journey & Driveway Edge]</span>
+            </div>
+
+            <p class="paragraph">Nearly thirty-five years ago, I stood at the end of my driveway holding a Snoopy suitcase. I was five years old, terrified to take a single step forward, yet driven by an unexplainable urge to run away. I didn’t know why I needed to go—only that the place I was standing didn’t quite fit me. I didn’t have the words for it then; just a fear of the next step into the unknown and a quiet, lingering sense that something else was calling me from further down the road.</p>
+
+            <p class="paragraph">That moment became the blueprint for my entire life. After all these years, after all the endless miles and continents, I finally understand that kid. I understand why he felt misplaced even in a full house filled with love, why he learned to leave before he learned to stay, and why he needed constant movement to make sense of himself. I understand myself in ways I never have—why I do things, why I chase things, why I get restless, and why I’m drawn to the world the way some people are drawn to routine.</p>
+
+            <!-- PHOTO PLACEHOLDER 4: DISNEY CONTRAST -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Disney+Resort+vs+Punk+Rock" alt="Disney Commercialization vs Rebellion" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 4: The Irony of Commercialization vs. Anti-Establishment]</span>
+            </div>
+
+            <p class="paragraph">Understanding all of that is beautiful… and heartbreaking. Because somehow, even with all this clarity, I’m standing on the edge again. Not the same edge—not a cracked asphalt driveway with a Snoopy suitcase—but an emotional edge. It's the border between the wildest year of my life and whatever comes after. The edge between who I’ve been and who I’m supposed to grow into; between constant motion and the terrifying thought of stillness. It’s strange to realize you’ve lived a thousand moments of freedom, only to arrive in a place that asks you to slow down and actually feel them.</p>
+
+            <p class="paragraph">There is a profound irony in ending a year of rebellion and soul-searching in the shadow of the most commercialized place on Earth, on the day of the most anti-establishment event of my youth. But maybe it’s supposed to feel like this. Maybe the world is showing me the two halves of myself: the dreamer and the doer, the runner and the rester, the kid with the suitcase and the adult with a deeper understanding of why he packed it in the first place.</p>
+
+            <!-- PHOTO PLACEHOLDER 5: FINAL CROWD / WARPED PIT -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Final+Warped+Tour+Crowd" alt="Warped Tour Pit Crowd" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 5: Thousands of Souls Moving as One in the Pit]</span>
+            </div>
+
+            <p class="paragraph">Today, I’ll stand in that crowd one last time. I’ll hear the music that carried me through years I didn’t know how to survive, feeling thousands of souls move as one—loud, messy, imperfect, beautiful. And I’ll know that every version of me is standing there too: the kid who never left the driveway, the teen who found belonging in the pits and chaos, the man who lived a thousand lives in one year, and the one lying here now, trying to figure out how to grow up and move on without losing any of them.</p>
+
+            <p class="paragraph" style="font-weight: 500; font-style: italic; margin-top: 2rem;">Here’s to the last Warped Tour. For now...</p>
+            <p class="paragraph" style="font-weight: 500; font-style: italic;">Here’s to the year that changed me.</p>
+            <p class="paragraph" style="font-weight: 500; font-style: italic;">And here’s to the next step—even if it still scares me the way it did all those years ago.</p>
+
         </article>
 
         <hr class="section-divider">
