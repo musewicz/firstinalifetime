@@ -17,15 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // 1. INITIAL PAGE FADE IN
     document.body.classList.remove("fade-out");
 
-    // 2. SMOOTH LINKS CROSS-FADE
+    // 2. SMOOTH LINKS CROSS-FADE (Excludes polaroid cards)
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
-        link.addEventListener("click", function (e) {
-            // Only apply cross-fade to standard navigation menu/footer items
-            if (this.classList.contains('filter-link')) return;
+        // SKIP POLAROID CARDS AND FILTER LINKS
+        if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
 
+        link.addEventListener("click", function (e) {
             e.preventDefault();
             document.body.classList.add("fade-out");
             setTimeout(() => {
