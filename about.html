@@ -3,106 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos and Photogtophy — First In A Lifetime</title>
+    <title>About — First In A Lifetime</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <meta name="description" content= Travel Photography Gallery | First In A Lifetime">
+    <meta name="description" content="About | First In A Lifetime">
 </head>
+<body style="background-color: #eae5db; font-family: 'Inter', sans-serif; color: #1a1a1a; margin: 0; padding: 0;">
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // 1. CLICK TO FLIP CARDS WITH EVENT STABILIZER
-    document.querySelectorAll('.postcard-container').forEach(card => {
-        card.addEventListener('click', function(e) {
-            // If the user clicks on the "Buy Print" link directly, let the link fire normally.
-            if (e.target.tagName === 'A' || e.target.closest('a')) {
-                return; 
-            }
-            // Otherwise, toggle the card flip state
-            this.classList.toggle('is-flipped');
-        });
-    });
-
-    // 2. INITIAL PAGE FADE IN
-    document.body.classList.remove("fade-out");
-
-    // 3. SMOOTH LINKS CROSS-FADE
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        link.addEventListener("click", function (e) {
-            // Only apply cross-fade to standard navigation menu/footer items
-            if (this.classList.contains('filter-link')) return;
-
-            e.preventDefault();
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350);
-        });
-    });
-
-});
-</script>
-
-<body class="fade-out">
-
-    <header class="main-header inner-page-header tan-page-header">
-    <div class="logo">
+    <header class="main-header" style="position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 4%; z-index: 1000; background: #eae5db; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
         <a href="index.html">
-            <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
-        </a> 
-    </div>
-    <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="journal.html">Journal</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="photos.html">Photos</a></li>
-            <li class="mobile-hide"><a href="about.html"class="active">About</a></li>
+            <img src="Logos/SmokeLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+        <ul class="nav-links" style="display: flex; list-style: none; gap: 30px; margin: 0;">
+            <li><a href="index.html" style="text-decoration: none; color: #1a1a1a; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Home</a></li>
+            <li><a href="journal.html" style="text-decoration: none; color: #1a1a1a; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Journal</a></li>
+            <li><a href="recipes.html" style="text-decoration: none; color: #1a1a1a; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Recipes</a></li>
+            <li><a href="photos.html" style="text-decoration: none; color: #1a1a1a; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Photos</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px;">About</a></li>
         </ul>
     </header>
-   
-    <main class="content-container" style="padding: 195px max(8%, 20px); min-height: 70vh;">
-        <span class="section-label">BEHIND THE LENS</span>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">Our Philosophy</h2>
-        <p style="color: #555; max-width: 600px; font-size: 1.1rem; line-height: 1.8;">
-            Welcome to the empty About frame. This room is dedicated to your mission statement, bio introduction, gear layout, and details on how people can reach out to connect or collaborate.
-        </p>
-    </main>
 
-      <footer class="main-footer weathered-leather-block">
-    	<div class="footer-grid">
-            <div class="footer-column">
-                <h3 class="footer-brand">First In A Lifetime</h3>
-                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
-           </div>
-            <div class="footer-column">
-                <h4 class="footer-heading">Navigation</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="journal.html">Journal</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="photos.html">Photos</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
+    <main class="about-main" style="padding: 140px 6% 80px 6%; max-width: 1200px; margin: 0 auto;">
+        <div class="about-container" style="display: flex; flex-direction: row; gap: 60px; align-items: flex-start; flex-wrap: wrap;">
+            
+            <div class="about-photo-column" style="flex: 1; min-width: 280px; max-width: 400px;">
+                <div class="polaroid-frame" style="background: #ffffff; padding: 15px 15px 45px 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: rotate(-1deg);">
+                    <img src="Photos/my-portrait.jpg" alt="First In A Lifetime Portrait" style="width: 100%; height: auto; display: block; filter: sepia(10%) contrast(105%);" onerror="this.style.display='none'; document.getElementById('placeholder-text').style.display='block';">
+                    <div id="placeholder-text" style="display: none; background: #f4f1ea; height: 400px; display: flex; align-items: center; justify-content: center; color: #666; font-family: 'Cormorant Garamond', serif; font-style: italic; text-align: center; padding: 20px; border: 1px dashed #d1cbbd;">
+                        [ Drop your portrait photo here: Photos/my-portrait.jpg ]
+                    </div>
+                    <div class="polaroid-caption" style="font-family: 'Cormorant Garamond', serif; text-align: center; margin-top: 15px; color: #2b2b2b; font-size: 1.1rem; letter-spacing: 0.05em;">
+                        The road, one stone at a time.
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-column">
-                <h4 class="footer-heading">Connect</h4>
-                <ul class="footer-links">
-                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
-                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
-                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+            <div class="about-text-column" style="flex: 2; min-width: 300px; color: #2b2b2b; line-height: 1.8; font-weight: 300; font-size: 1.05rem;">
+                <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 30px; letter-spacing: 0.05em; color: #1a1a1a;">
+                    The Path Not For The Brave.
+                </h1>
+
+                <p style="margin-bottom: 20px;">
+                    I am always asked how I can just leave everything behind and shift my geography on a whim, chasing the unknown. People tell me I’m brave—to quit a job, to book a one-way ticket to a foreign country with no plan, to simply walk away from stability.
+                </p>
+
+                <p style="margin-bottom: 20px;">
+                    But they’re wrong. It isn’t bravery; it’s a lifetime of... seasons and shifts... losses and lessons... virtues and views... that have shaped my mindset to trust the path.
+                </p>
+
+                <p style="margin-bottom: 20px;">
+                    So for those who wonder how it’s done, I can only share what I’ve found: focus entirely on what you can control, while still dreaming larger than any reasonable person should.
+                </p>
+
+                <blockquote style="border-left: 2px solid #1a1a1a; margin: 30px 0; padding-left: 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #4a4a4a;">
+                    "Fix your eyes on the distant star, but conquer only the horizon of the next sunrise. Trust the road to build itself beneath you... one stone at a time."
+                </blockquote>
+
+                <p style="margin-bottom: 20px;">
+                    Find a quiet grace when you stumble, and pause to receive those moments that are uniquely yours—like the sharp, rhythmic crack of pine trees swaying in the wind while hiking through Yellowstone with no one else for miles. You realize then that the beauty exists whether it is witnessed or not, but it is sweeter because you are there to hear it.
+                </p>
+
+                <p style="margin-bottom: 20px;">
+                    In this vast tapestry of existence, you are striking your own red dash across the map, tracing the stops and the detours that eventually guide you to where you belong.
+                </p>
+
+                <p style="margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: #1a1a1a;">
+                    This is why I choose to wander; it is the North Star that shapes my entire life, my entire existence. And that... in all its jagged beauty... has made the journey mine.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer" style="background: #1a1a1a; color: #ffffff; padding: 60px 4% 30px 4%; margin-top: 80px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+            <div style="flex: 2; min-width: 250px;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 15px;">First In A Lifetime</h3>
+                <p style="font-size: 0.9rem; color: #aaa; line-height: 1.6;">Every journey has a story. Capturing the world one adventure at a time.</p>
+            </div>
+            <div style="flex: 1; min-width: 150px;">
+                <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 15px;">Navigation</h4>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="index.html" style="color: #aaa; text-decoration: none;">Home</a></li>
+                    <li><a href="journal.html" style="color: #aaa; text-decoration: none;">Journal</a></li>
+                    <li><a href="recipes.html" style="color: #aaa; text-decoration: none;">Recipes</a></li>
+                    <li><a href="photos.html" style="color: #aaa; text-decoration: none;">Photos</a></li>
+                    <li><a href="about.html" style="color: #aaa; text-decoration: none;">About</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 150px;">
+                <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 15px;">Connect</h4>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank" style="color: #aaa; text-decoration: none;">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank" style="color: #aaa; text-decoration: none;">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank" style="color: #aaa; text-decoration: none;">YouTube</a></li>
+                    <li><a href="mailto:firstinalifetime@gmail.com" style="color: #aaa; text-decoration: none;">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div style="max-width: 1200px; margin: 40px auto 0 auto; border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.8rem; color: #777;">
             <p>&copy; 2026 First In A Lifetime. All rights reserved.</p>
         </div>
     </footer>
