@@ -14,22 +14,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. CLICK TO FLIP CARDS WITH EVENT STABILIZER
-    document.querySelectorAll('.postcard-container').forEach(card => {
-        card.addEventListener('click', function(e) {
-            // If the user clicks on the "Buy Print" link directly, let the link fire normally.
-            if (e.target.tagName === 'A' || e.target.closest('a')) {
-                return; 
-            }
-            // Otherwise, toggle the card flip state
-            this.classList.toggle('is-flipped');
-        });
-    });
-
-    // 2. INITIAL PAGE FADE IN
+    // 1. INITIAL PAGE FADE IN
     document.body.classList.remove("fade-out");
 
-    // 3. SMOOTH LINKS CROSS-FADE
+    // 2. SMOOTH LINKS CROSS-FADE
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
