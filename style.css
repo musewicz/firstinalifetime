@@ -1504,3 +1504,8 @@ body.fade-out {
 .recipe-card-anchor p {
     text-decoration: none !important;
 }
+
+/* Hide journal category links temporarily */
+.journal-filters {
+    display: none !important;
+}
