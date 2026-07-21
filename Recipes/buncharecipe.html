@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bún Chả Recipe — First In A Lifetime</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Bún Chả Recipe | First In A Lifetime">
+
+    <!-- RECIPE PAGE STYLING -->
+    <style>
+        .recipe-body {
+            background-color: #faf8f5;
+            color: #1a1a1a;
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            margin: 40px auto;
+            max-width: 850px;
+        }
+
+        .recipe-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: #f4f1ea;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 30px 0;
+            border: 1px solid #d1cbbd;
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .meta-item strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+
+        .recipe-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+            border-bottom: 1px solid #d1cbbd;
+            padding-bottom: 8px;
+        }
+
+        .recipe-body ul, .recipe-body ol {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            padding-left: 20px;
+            color: #2b2b2b;
+        }
+
+        .recipe-body li {
+            margin-bottom: 12px;
+        }
+
+        .recipe-story-intro {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            color: #1c1c1c;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-body {
+                padding: 25px 20px;
+            }
+            .recipe-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.remove("fade-out");
+
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 350);
+        });
+    });
+});
+</script>
+
+<body class="fade-out">
+
+    <!-- HEADER -->
+    <header class="main-header inner-page-header tan-page-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
+            </a> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="recipes.html" class="active">Recipes</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li class="mobile-hide"><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <main class="content-container" style="padding: 140px max(6%, 20px) 80px max(6%, 20px); max-width: 1200px; margin: 0 auto;">
+        
+        <article class="recipe-body">
+            
+            <span class="recipe-origin" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666;">Hanoi, Vietnam // Comfort</span>
+            
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; margin-top: 10px; margin-bottom: 20px; letter-spacing: 0.03em; color: #1a1a1a;">
+                Bún Chả
+            </h1>
+
+            <p class="recipe-story-intro">
+                Tender smokey pork patties, cool rice noodles, and a dipping sauce that hits every single tastebud. Recreate one of my absolute favorite international dishes right at home—no plastic children's stool required (though highly suggested).
+            </p>
+
+            <!-- FEATURED RECIPE IMAGE -->
+            <div style="margin: 30px 0; border-radius: 4px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+                <img src="Photos/Recipes/BunCha.webp" alt="Bún Chả" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <!-- QUICK INFO METRICS -->
+            <div class="recipe-meta-grid">
+                <div class="meta-item">
+                    <span>Prep Time</span>
+                    <strong>30 Minutes</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Cook Time</span>
+                    <strong>15 Minutes</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Servings</span>
+                    <strong>4 People</strong>
+                </div>
+            </div>
+
+            <!-- INGREDIENTS SECTION -->
+            <h2 class="recipe-section-title">Ingredients</h2>
+            <ul>
+                <li><strong>For the Pork:</strong> 1 lb ground pork (or finely minced pork shoulder), 3 shallots (finely minced), 3 cloves garlic (minced), 2 tbsp fish sauce, 1 tbsp sugar, and black pepper.</li>
+                <li><strong>For the Broth/Dipping Sauce (Nước Chấm):</strong> 1/2 cup fish sauce, 1/2 cup sugar, 2 cups warm water, 3-4 tbsp rice vinegar, lime juice, sliced garlic, and chili.</li>
+                <li><strong>To Serve:</strong> Rice vermicelli noodles (cooked), fresh herbs (mint, cilantro, perilla, basil), green leaf lettuce, and sliced pickled green papaya or carrots.</li>
+            </ul>
+
+            <!-- INSTRUCTIONS SECTION -->
+            <h2 class="recipe-section-title">Instructions</h2>
+            <ol>
+                <li><strong>Form the Patties:</strong> Combine the minced pork, shallots, garlic, fish sauce, sugar, and pepper in a bowl. Mix thoroughly and shape into small, flat patties.</li>
+                <li><strong>Prepare the Sauce:</strong> Whisk together the water, sugar, and fish sauce until the sugar dissolves. Stir in the vinegar, lime juice, garlic, and chilies to taste. Warm gently if desired.</li>
+                <li><strong>Cook the Pork:</strong> Grill or pan-sear the pork patties over high heat until deeply charred, caramelized, and fully cooked through with a smoky crust.</li>
+                <li><strong>Assemble and Serve:</strong> Serve the hot smoky pork swimming in a warm bowl of the dipping sauce, alongside a separate platter of cool rice noodles, fresh herbs, and greens. Dip and enjoy.</li>
+            </ol>
+
+            <!-- SIGNATURE / NOTE BLOCK -->
+            <div style="margin-top: 50px; border-top: 1px solid #d1cbbd; padding-top: 25px;">
+                <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #4a4a4a; margin: 0;">
+                    "Food is the shortest bridge between a stranger's doorway and your own memory." — Matthew Usewicz
+                </p>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer weathered-leather-block">
+    	<div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journal.html">Journal</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 8px;">All original photography, journals, and text content are property of First In A Lifetime. Unauthorized use or duplication is strictly prohibited.</p>
+            <p style="font-size: 0.8rem; color: #888;">&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

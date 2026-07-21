@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonkotsu Ramen Broth Recipe — First In A Lifetime</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Tonkotsu Ramen Broth Recipe | First In A Lifetime">
+
+    <!-- RECIPE PAGE STYLING -->
+    <style>
+        .recipe-body {
+            background-color: #faf8f5;
+            color: #1a1a1a;
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            margin: 40px auto;
+            max-width: 850px;
+        }
+
+        .recipe-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: #f4f1ea;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 30px 0;
+            border: 1px solid #d1cbbd;
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .meta-item strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+
+        .recipe-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+            border-bottom: 1px solid #d1cbbd;
+            padding-bottom: 8px;
+        }
+
+        .recipe-body ul, .recipe-body ol {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            padding-left: 20px;
+            color: #2b2b2b;
+        }
+
+        .recipe-body li {
+            margin-bottom: 12px;
+        }
+
+        .recipe-story-intro {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            color: #1c1c1c;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-body {
+                padding: 25px 20px;
+            }
+            .recipe-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.remove("fade-out");
+
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 350);
+        });
+    });
+});
+</script>
+
+<body class="fade-out">
+
+    <!-- HEADER -->
+    <header class="main-header inner-page-header tan-page-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
+            </a> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="recipes.html" class="active">Recipes</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li class="mobile-hide"><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <main class="content-container" style="padding: 140px max(6%, 20px) 80px max(6%, 20px); max-width: 1200px; margin: 0 auto;">
+        
+        <article class="recipe-body">
+            
+            <span class="recipe-origin" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666;">Tokyo, Japan // Staples</span>
+            
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; margin-top: 10px; margin-bottom: 20px; letter-spacing: 0.03em; color: #1a1a1a;">
+                Tonkotsu Ramen Broth
+            </h1>
+
+            <p class="recipe-story-intro">
+                Warm, comforting, rich, and total Umami. Leave that canned soup in your pantry and step into the world of genuine, slow-cooked ramen mastery.
+            </p>
+
+            <!-- FEATURED RECIPE IMAGE -->
+            <div style="margin: 30px 0; border-radius: 4px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+                <img src="Photos/Recipes/Ramen.webp" alt="Tonkotsu Ramen Broth" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <!-- QUICK INFO METRICS -->
+            <div class="recipe-meta-grid">
+                <div class="meta-item">
+                    <span>Prep Time</span>
+                    <strong>45 Minutes</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Cook Time</span>
+                    <strong>12 Hours</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Servings</span>
+                    <strong>6-8 People</strong>
+                </div>
+            </div>
+
+            <!-- INGREDIENTS SECTION -->
+            <h2 class="recipe-section-title">Ingredients</h2>
+            <ul>
+                <li><strong>The Bones:</strong> 3-4 lbs pork neck bones and pork femur/leg bones (ask your butcher to cut them in half to release the marrow).</li>
+                <li><strong>Aromatics:</strong> 1 head of garlic (halved horizontally), 1 large knob of fresh ginger (thickly sliced), 2-3 scallions or leeks, and 1 onion.</li>
+                <li><strong>The Liquids & Seasonings:</strong> Water, a splash of sake, soy sauce, and sea salt or shio tare for final seasoning.</li>
+                <li><strong>To Serve:</strong> Fresh ramen noodles, soft-boiled ajitsuke tamago (ramen eggs), chashu pork slices, menma, and chopped green onions.</li>
+            </ul>
+
+            <!-- INSTRUCTIONS SECTION -->
+            <h2 class="recipe-section-title">Instructions</h2>
+            <ol>
+                <li><strong>Blanch the Bones:</strong> Place all pork bones in a large stockpot, cover with cold water, and bring to a rolling boil for 10 minutes. Dump the water and thoroughly wash each bone individually under running water to remove any scum or impurities.</li>
+                <li><strong>The Rolling Boil:</strong> Clean the pot, return the clean bones, and cover with fresh water. Bring to a vigorous, rolling boil. Tonkotsu requires a continuous rolling boil rather than a gentle simmer so that the fat and collagen emulsify into the water.</li>
+                <li><strong>Add Aromatics:</strong> After the broth has turned milky white (usually around 4 hours), add the garlic, ginger, onion, and scallions into the pot.</li>
+                <li><strong>Simmer and Strain:</strong> Maintain the boil, topping up with boiling water as needed, for at least 10 to 12 hours. Once rich and opaque, strain the broth through a fine-mesh sieve. Season with your tare or salt to taste, ladle over fresh noodles, and serve hot.</li>
+            </ol>
+
+            <!-- SIGNATURE / NOTE BLOCK -->
+            <div style="margin-top: 50px; border-top: 1px solid #d1cbbd; padding-top: 25px;">
+                <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #4a4a4a; margin: 0;">
+                    "Patience is the primary ingredient. Good broth cannot be rushed, and neither can a life well traveled." — Matthew Usewicz
+                </p>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer weathered-leather-block">
+    	<div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journal.html">Journal</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 8px;">All original photography, journals, and text content are property of First In A Lifetime. Unauthorized use or duplication is strictly prohibited.</p>
+            <p style="font-size: 0.80rem; color: #888;">&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
