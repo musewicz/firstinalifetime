@@ -20,13 +20,13 @@ body {
     transition: opacity 0.35s ease;
 }
 
+body.fade-out {
+    opacity: 0;
+}
+
 /* --- Hides the logo ONLY on the homepage header (For both PC & Mobile) --- */
 .main-header:not(.inner-page-header) .logo {
     display: none !important;
-}
-
-body.fade-out {
-    opacity: 0;
 }
 
 /* --- Global Header (Default for Home Page) --- */
@@ -38,17 +38,17 @@ body.fade-out {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 6% 20px 4%; /* Increased right padding to 6% to scoot links left */
+    padding: 20px 6% 20px 4%;
     z-index: 2000;
     background: transparent; 
     border-bottom: none;
     box-shadow: none;
 }
 
-/* --- 2. Explicitly apply the Solid Leather Skin ONLY to Inner Pages on Mobile --- */
+/* --- Explicitly apply the Solid Leather Skin ONLY to Inner Pages on Mobile --- */
 .inner-page-header {
-    position: relative !important; /* Keeps it as a structured top block on sub-pages */
-    background-color: #a88f74 !important; /* Your chosen leather code */
+    position: relative !important;
+    background-color: #a88f74 !important;
     background-image: 
         url('leather-skin.png'), 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)) !important;
@@ -80,7 +80,7 @@ body.fade-out {
 .nav-links a:active {
     font-family: 'Playfair Display', serif !important; 
     font-weight: 900 !important; 
-    color: #110b08 !important; /* Forces the deep dark ink color even if clicked */
+    color: #110b08 !important;
     text-decoration: none;
     font-size: 1.5rem; 
     letter-spacing: 0.02em;
@@ -110,7 +110,6 @@ body.fade-out {
     padding-left: 6%;
 }
 
-/* --- Isolated Landing Page Hero Peeking Modification --- */
 .hero.home-hero {
     height: 85vh;
     min-height: 600px;
@@ -130,7 +129,6 @@ body.fade-out {
     z-index: 1;
 }
 
-/* --- Hero Content Main Alignment Block --- */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -139,8 +137,6 @@ body.fade-out {
     align-items: center;
     text-align: center;
     margin-left: 18%;       
-    
-    /* Global Desktop translation value */
     transform: translateY(-80px) !important; 
 }
 
@@ -172,8 +168,6 @@ body.fade-out {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     margin-top: 5px !important;
     margin-bottom: 20px !important;
-    
-    /* --- Shrinks the vertical height taken up by the text lines --- */
     line-height: 1.2 !important; 
 }
 
@@ -181,14 +175,11 @@ body.fade-out {
 .cta-button {
     display: inline-block;
     padding: 12px 30px;
-    
-    /* --- Styles it transparent/clear instead of solid red --- */
     background-color: transparent !important; 
     border: 2px solid #f5f1e6 !important;
     color: #f5f1e6 !important; 
-    
     text-decoration: none;
-    font-family: 'Playfair Display', serif !important; /* Elegant Desktop Serif Font Choice */
+    font-family: 'Playfair Display', serif !important;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -196,16 +187,14 @@ body.fade-out {
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-    
-    /* --- Precise positioning over the rock formations --- */
     position: absolute !important;
-    left: 155% !important;   /* Pushes it further right (increase this number to scoot it more right) */
-    top: 40% !important;     /* Shims it up higher (decrease this number to move it up more) */
+    left: 155% !important;
+    top: 40% !important;
     white-space: nowrap !important;
 }
 
 .cta-button:hover {
-    background-color: rgba(245, 241, 230, 0.15) !important; /* Gentle hover highlight */
+    background-color: rgba(245, 241, 230, 0.15) !important;
     transform: scale(1.05);
 }
 
@@ -470,7 +459,6 @@ body.fade-out {
     color: #110b08; 
     margin-top: 100px !important;
     background-color: #a88f74; 
-    /* Combined all layers into one clean statement, removed the breaking semicolons */
     background-image: 
         url('leather-skin.png'), 
         linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%, rgba(0,0,0,0.35) 100%),
@@ -478,12 +466,9 @@ body.fade-out {
         radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
         linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.4) 100%),
         radial-gradient(circle at 30% 20%, rgba(140, 116, 92, 0.2) 0%, transparent 60%);
-    
-    /* Changed the first value from 3px/5px to 'repeat' or 'auto' so your leather image doesn't scale down into tiny lines */
     background-size: auto, 100% 100%, 3px 3px, 5px 5px, 100% 100%, 100% 100%;
     background-repeat: repeat, no-repeat, repeat, repeat, no-repeat, no-repeat;
     background-blend-mode: multiply;
-    
     mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 4px), transparent),
                 radial-gradient(circle at 50% 100%, #000 3px, transparent 4px);
     mask-size: 100% 100%, 8px 4px;
@@ -530,7 +515,13 @@ body.fade-out {
     position: relative; 
     border-radius: 4px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
-    overflow: visible; 
+    overflow: hidden !important; 
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.recipe-card-postcard:hover {
+    transform: scale(0.99) rotate(-0.5deg) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 .ledger-col-visual {
@@ -577,54 +568,34 @@ body.fade-out {
 }
 
 .notebook-lines {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px) !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px) !important;
     background-size: 100% 2rem !important; 
     line-height: 2rem !important; 
     margin-top: 15px;
     flex-grow: 1;
-    padding-top: 0.15rem !important; /* Shims the first line of text right onto the track */
+    padding-top: 0.15rem !important;
 }
 
 .recipe-description {
     margin: 0 !important;
     padding: 0 !important;
     color: #2b2b2b;
-    font-size: 1rem !important;       /* Clean reading height */
-    line-height: 2rem !important;     /* MAGIC MATH: Matches background size exactly */
+    font-size: 1rem !important;
+    line-height: 2rem !important;
     font-family: 'Montserrat', sans-serif;
 }
 
-.recipe-card-link {
+.recipe-card-link,
+.recipe-card-anchor,
+.recipe-card-anchor *,
+.recipe-card-anchor .recipe-title,
+.recipe-card-anchor h2,
+.recipe-card-anchor span,
+.recipe-card-anchor p {
     display: block;
     color: inherit;
-    text-decoration: none;
-}
-
-/* Strip all text underlines inside the clickable recipe cards */
-.recipe-card-anchor,
-.recipe-card-anchor * {
     text-decoration: none !important;
 }
-
-/* ==========================================================================
-   RECIPE CARD HYBRID HOVER EFFECTS (THE CHEF'S GRIP)
-   ========================================================================== */
-
-/* 1. Base Card setup for smooth interactive transitions */
-.recipe-card-postcard {
-    position: relative;
-    overflow: hidden !important; /* Keeps the smudges perfectly clipped within the card edges */
-    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-}
-
-/* 2. CONCEPT 2: The Physical Press/Grip (Triggers on Hover) */
-.recipe-card-postcard:hover {
-    /* Subtle downward scale and slight counter-clockwise tweak to look hand-pressed */
-    transform: scale(0.99) rotate(-0.5deg) !important;
-    /* Flattens the sharp desktop shadow to make it look close to the table surface */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
-}
-
 
 /* ==========================================================================
    JOURNAL POLAROID ARTISTRY & TICKER
@@ -670,6 +641,18 @@ body.fade-out {
     padding: 20px 0;
 }
 
+.polaroid-grid-3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.polaroid-grid-3 .journal-card {
+    max-width: 260px;
+    flex: 1 1 240px;
+}
+
 .journal-header-layout {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -701,7 +684,6 @@ body.fade-out {
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
     font-weight: 600;
-
 }
 
 .filter-link:hover,
@@ -869,7 +851,7 @@ body.fade-out {
 }
 
 /* ==========================================================================
-   POSTCARD RACK SYSTEM (NEW INDEPENDENT DESKTOP LAYER)
+   POSTCARD RACK SYSTEM
    ========================================================================== */
 .postcard-rack-grid {
     display: grid !important;
@@ -903,7 +885,6 @@ body.fade-out {
     transform: rotateY(180deg) !important;
 }
 
-/* Updated Postcard Front - Generates stacking order safely accommodating reflections */
 .postcard-rack-grid .postcard-front {
     position: absolute !important;
     top: 0 !important;
@@ -927,7 +908,6 @@ body.fade-out {
     display: block !important;
 }
 
-/* Photographic Satin/Glossy Reflection Layer */
 .postcard-rack-grid .postcard-front::after {
     content: '' !important;
     position: absolute !important;
@@ -947,7 +927,6 @@ body.fade-out {
     z-index: 2 !important;
 }
 
-/* Microscopic Front Paper-Grain Pattern Overlay */
 .postcard-rack-grid .postcard-front::before {
     content: '' !important;
     position: absolute !important;
@@ -962,7 +941,6 @@ body.fade-out {
     z-index: 1 !important;
 }
 
-/* Updated Postcard Back - Merges Original Notebook Dots with Uncoated Heavy Stock Fibers */
 .postcard-rack-grid .postcard-back {
     position: absolute !important;
     top: 0 !important;
@@ -1010,14 +988,13 @@ body.fade-out {
 /* ==========================================================================
    UNIVERSAL FOOTER ARCHITECTURE
    ========================================================================== */
-/* --- Universal Footer Base --- */
 .main-footer {
     color: #110b08; 
     padding: 50px 6% 40px 6%;
     margin-top: 100px !important;
     background-color: #a88f74; 
     background-image: 
-        url('leather-skin.png'), /* Fuses the real leather skin here */
+        url('leather-skin.png'),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.35));
     background-repeat: repeat;
     background-blend-mode: multiply;
@@ -1031,30 +1008,30 @@ body.fade-out {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
-    border-bottom: 1px solid #8c745c; /* Match the layout line to the new theme */
+    border-bottom: 1px solid #8c745c;
     padding-bottom: 30px;
 }
 
 .footer-brand {
     font-family: 'Playfair Display', serif;
-    font-weight: 900; /* Heavy, bold presence */
+    font-weight: 900;
     font-size: 2.4rem;
     letter-spacing: 0.02em;
     margin-bottom: 20px;
-    color: #110b08; /* Matching deep dark ink */
+    color: #110b08;
 }
 
 .footer-text {
-    color: #1a1a1a; /* Darkened from #333333 to pure deep ink */
+    color: #1a1a1a;
     line-height: 1.6;
     font-size: 0.95rem;
     max-width: 320px;
-    font-weight: 500; /* Bumped up weight to make it stand out */
+    font-weight: 500;
 }
 
 .footer-heading {
     font-family: 'Playfair Display', serif;
-    font-weight: 900; /* Heavy bold title style */
+    font-weight: 900;
     font-size: 1.25rem;
     text-transform: none; 
     letter-spacing: 0.02em;
@@ -1074,7 +1051,7 @@ body.fade-out {
 .footer-links a:visited,
 .footer-links a:active {
     font-family: 'Montserrat', sans-serif !important;
-    color: #110b08 !important; /* Forces dark ink over clicked purple browser states */
+    color: #110b08 !important;
     text-decoration: none;
     font-size: 0.95rem; 
     font-weight: 600 !important; 
@@ -1093,20 +1070,20 @@ body.fade-out {
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    color: #110b08; /* Changed from grey to match your thick, dark header/footer ink */
-    font-weight: 500; /* Bumps up the thickness slightly so it stands out on the tan leather */
+    color: #110b08;
+    font-weight: 500;
 }
 
 /* ==========================================================================
-   DESKTOP ONLY CONDITIONAL QUERIES (WIDTHS 769PX AND HIGHER)
+   DESKTOP ONLY CONDITIONAL QUERIES (MIN-WIDTH: 769PX)
    ========================================================================== */
 @media (min-width: 769px) {
-	.hero-content {
+    .hero-content {
         transform: translateY(-90px) !important; 
     }
 
     .hero-subtitle {
-        margin-top: -18px !important; /* Adjust this number to bring it closer or push it further down */
+        margin-top: -18px !important;
     }
 
     .tilt-left { transform: rotate(-3deg); }
@@ -1128,9 +1105,6 @@ body.fade-out {
         transform: rotate(-2.5deg) translateY(-10px);
     }
 
-    /* ==========================================================================
-       POSTCARD DESKTOP WIGGLE EFFECTS (UPDATED HOVER STATES)
-       ========================================================================== */
     .postcard-rack-grid .postcard-container:hover {
         z-index: 50 !important;
     }
@@ -1139,18 +1113,15 @@ body.fade-out {
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22) !important;
     }
 
-    /* Cards natively tilted left will wiggle smoothly from a left-leaning bias */
     .postcard-rack-grid .postcard-container:nth-child(3n+1):hover .postcard-card,
     .postcard-rack-grid .postcard-container:nth-child(3n+3):hover .postcard-card {
         animation: postcardWiggleLeft 1s ease-in-out infinite alternate !important;
     }
 
-    /* Cards natively tilted right will wiggle smoothly from a right-leaning bias */
     .postcard-rack-grid .postcard-container:nth-child(3n+2):hover .postcard-card {
         animation: postcardWiggleRight 1s ease-in-out infinite alternate !important;
     }
 
-    /* Custom Keyframes matching the organic rhythm of the Polaroids */
     @keyframes postcardWiggleLeft {
         0% { transform: rotate(-1.5deg) scale(1.02); }
         100% { transform: rotate(1deg) scale(1.02); }
@@ -1166,7 +1137,6 @@ body.fade-out {
         transform-style: preserve-3d !important;
     }
     
-    /* Clean desktop pin alignment specs */
     .postcard-rack-grid .postcard-container::before {
         content: '';
         position: absolute;
@@ -1204,7 +1174,6 @@ body.fade-out {
     }
 }
 
-
 /* ==========================================================================
    TABLET RESPONSIVE RECONSTRUCTION (MAX-WIDTH: 968PX)
    ========================================================================== */
@@ -1233,13 +1202,12 @@ body.fade-out {
    MOBILE SCREEN LAYER & COMPACT RE-ALIGNMENTS (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. Global Header Container */
     .main-header {
         position: absolute; 
         display: flex;
         flex-direction: column;
-        align-items: center;    /* Centers items horizontally */
-        justify-content: center; /* Centers items vertically */
+        align-items: center;
+        justify-content: center;
         gap: 15px;
         padding: 20px 0;
         width: 100%;
@@ -1249,7 +1217,6 @@ body.fade-out {
         box-shadow: none !important;
     }
 
-    /* 2. Logo Wrapper */
     .logo {
         display: flex !important;
         flex-direction: column !important; 
@@ -1275,25 +1242,22 @@ body.fade-out {
         margin: 0 auto !important; 
     }
 
-    /* 3. Navigation Links Grid/Flex */
     .nav-links {
         display: flex !important;
-        justify-content: center !important; /* Perfect horizontal center for links */
+        justify-content: center !important;
         align-items: center !important;
-        gap: 20px !important; 
-        padding: 0 !important;             /* Strips old asymmetric right padding */
+        gap: 18px !important; 
+        padding: 0 !important; 
         width: 100% !important;
         margin: 0 auto !important;
     }
 
-    /* 4. Main Hero Wrapper */
     .hero { 
-        justify-content: center !important; /* Forces the flex content to the middle */
+        justify-content: center !important;
         padding-left: 0 !important; 
         align-items: center !important;
     }
 
-    /* 5. Central Hero Content Box */
     .hero-content {
         margin: 0 auto !important;
         width: 100% !important;
@@ -1301,18 +1265,17 @@ body.fade-out {
         padding: 0 20px !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;    /* Hard aligns children down the spine */
+        align-items: center !important;
         text-align: center !important;
-        transform: translateY(20px) !important; /* Removes the horizontal shift entirely */
+        transform: translateY(20px) !important;
     }
 
-    /* 6. Logo Images & Wrapper inside Hero */
     .hero-logo-wrapper { 
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         margin-bottom: 20px !important;
-        transform: translateY(-45px) !important; /* Shuts off old code and pulls just the logos 45px higher into the sky */
+        transform: translateY(-45px) !important;
     }
 
     .hero-emblem-center { 
@@ -1326,24 +1289,20 @@ body.fade-out {
         margin: 0 auto !important;
     }
 
-    /* 7. Subtitle Typography */
     .hero-subtitle { 
         font-size: 1.25rem !important; 
         margin: 20px auto !important; 
         text-align: center !important;
-        transform: none !important;        /* Strips legacy positioning offsets */
         width: 90% !important;
-	transform: translateY(20px) !important;
+        transform: translateY(20px) !important;
     }
 
-    /* 8. Call To Action Button */
     .cta-button {
         position: relative !important;
         display: inline-block !important;
-        margin: 15px auto 0 auto !important; /* Auto left/right handles the centering */
+        margin: 15px auto 0 auto !important;
         left: auto !important;
         top: auto !important;
-        transform: none !important;        /* Strips old layout rules */
         white-space: nowrap !important;
         background-color: transparent !important; 
         border: 2px solid #f5f1e6 !important;
@@ -1351,19 +1310,9 @@ body.fade-out {
         font-family: 'Playfair Display', serif !important;
         padding: 12px 28px !important; 
         font-size: 0.8rem !important;
-	transform: translateY(60px) !important;
+        transform: translateY(60px) !important;
     }
 
-    /* ... Keep all your card/gallery responsive classes below this point ... */        
-    .nav-links {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 18px !important; 
-        padding: 4px 25px 4px 0 !important; 
-        width: 100% !important;
-    }
-    
     .section-title { font-size: 2.2rem; }
     
     .hero.home-hero .hero-content {
@@ -1399,17 +1348,16 @@ body.fade-out {
         overflow: visible !important; 
     }
 
-   .recipe-card-postcard {
+    .recipe-card-postcard {
         flex-direction: column !important; 
         max-height: none !important; 
         width: 100% !important;
         padding: 30px 20px !important;
     }
 
-    /* Add this rule right here to lock mobile cards to the same grid: */
     .recipes-page-body .recipe-description {
-        font-size: 0.95rem !important;    /* Slightly crisper text for small phone windows */
-        line-height: 2rem !important;     /* STAYS AT 2REM: forces the text to step perfectly onto the lines */
+        font-size: 0.95rem !important;
+        line-height: 2rem !important;
     }
 
     .ledger-col-visual {
@@ -1465,7 +1413,6 @@ body.fade-out {
 
     .postcard-stamp-box { width: 52px !important; }
 
-    /* The rules below are now safely tucked inside the media block */
     .postcard-rack-grid .postcard-container::before {
         content: '';
         position: absolute;
@@ -1492,27 +1439,4 @@ body.fade-out {
         filter: blur(1px);
         z-index: 99 !important;
     }
-}
-
-/* Recipe Card Underline Fix */
-.recipe-card-anchor,
-.recipe-card-anchor *,
-.recipe-card-anchor .recipe-title,
-.recipe-card-anchor h2,
-.recipe-card-anchor span,
-.recipe-card-anchor p {
-    text-decoration: none !important;
-}
-
-/* Center 3 polaroids and keep them sized properly */
-.polaroid-grid-3 {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.polaroid-grid-3 .journal-card {
-    max-width: 260px;
-    flex: 1 1 240px;
 }
