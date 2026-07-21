@@ -1,7 +1,6 @@
 /* ==========================================================================
    MASTER CORE ARCHITECTURE & TYPOGRAPHY
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;500;600&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 * {
@@ -693,7 +692,7 @@ body.fade-out {
 }
 
 .filter-link {
-    font-size: 1 rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: #7a756c;
@@ -1516,5 +1515,4 @@ body.fade-out {
 .polaroid-grid-3 .journal-card {
     max-width: 260px;
     flex: 1 1 240px;
-}
 }
