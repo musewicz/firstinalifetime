@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Stories, Photos, and Adventures — First In A Lifetime</title>
+    <title>Travel Stories and Blog — First In A Lifetime</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <meta name="description" content= Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Giide, Food, Destinations, Places, Word, International, USA, Local  | First In A Lifetime">
+    <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations, Places, World, International, USA, Local | First In A Lifetime">
 </head>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Fade in on page load
+    // 1. INITIAL PAGE FADE IN
     document.body.classList.remove("fade-out");
 
-    // Handle link clicks
+    // 2. SMOOTH LINKS CROSS-FADE (Excludes polaroid cards)
     document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
-
-        // Ignore external links or anchors
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+        // SKIP POLAROID CARDS AND FILTER LINKS
+        if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
 
         link.addEventListener("click", function (e) {
             e.preventDefault();
-
             document.body.classList.add("fade-out");
-
             setTimeout(() => {
                 window.location.href = href;
-            }, 350); // matches CSS transition time
+            }, 350);
         });
     });
 
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <body class="fade-out">
-
 
     <header class="main-header inner-page-header tan-page-header">
     <div class="logo">
@@ -49,45 +47,49 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="journal.html">Journal</a></li>
+            <li><a href="journal.html" class="active">Journal</a></li>
             <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="photos.html" class="active">Photos</a></li>
+            <li><a href="photos.html">Photos</a></li>
             <li class="mobile-hide"><a href="about.html">About</a></li>
         </ul>
     </header>
 
    <main class="content-container internal-page-padding">
         
-        <!-- HEADER SECTION -->
-        <section class="journal-header-layout">
-            <div class="header-text-block">
-                <span class="section-tag">Deep Narratives</span>
-                <h1 class="section-title">The Journal</h1>
-                <p class="paragraph">
-                    Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.
-                </p>
+        <!-- THE JOURNAL HEADER SECTION -->
+<section class="journal-header-layout">
+    <div class="header-text-block">
+        <span class="section-tag">Deep Narratives</span>
+        <h1 class="section-title">The Journal</h1>
+        <p class="paragraph">Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.</p>
                 
                 <!-- Category Filters -->
                 <div class="journal-filters">
-                     <a href="alllogs.html" class="filter-link active">All Logs</a>
-                     <a href="international.html" class="filter-link">International</a>
-                     <a href="states.html" class="filter-link">The States</a>
-                     <a href="food.html" class="filter-link">Food</a>
+                     <a href="allentries.html" class="filter-link">All Entries</a>
                    </div>
 
             </div>
 
             <!-- FEATURED BIG STORY HERO (Breaks up the blandness) -->
             <div class="featured-story-hero">
-                <a href="./" class="featured-hero-link">
+                <a href="stories/tokyo-ramen.html" class="featured-hero-link">
                     <div class="featured-image-wrapper">
                         <!-- Temporary placeholder background color until photo is added -->
                         <div class="story-photo-placeholder" style="height: 100%; background-color: #bab3a6;"></div>
                     </div>
-                    <div class="featured-hero-badge">Latest Field Notes</div>
+		    <div class="featured-hero-badge">Latest Field Note</div>
+                    <div class="notebook-page">
+    <div class="notebook-header">FIELD NOTE</div>
+    <div class="notebook-lines">
+        <p>Your content goes here...</p>
+    </div>
+    
+    <div class="pin-bottom-right"></div>
+</div>
+
                     <div class="featured-hero-content">
                         <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
-                        <h3 class="featured-hero-title">The Master Artisans of Tokyo Duck Ramen</h3>
+                        <h3 class="featured-hero-title">Not Sure What This Does Here</h3>
                     </div>
                 </a>
             </div>
@@ -96,42 +98,41 @@ document.addEventListener("DOMContentLoaded", function () {
         <hr class="section-divider">
 
         <!-- THE POLAROID GRID -->
-        <div class="polaroid-grid">
-            
-            <!-- Polaroid Card 1 -->
-            <a href="./" class="journal-card polaroid tilt-left">
-                <div class="polaroid-img-wrapper">
-                    <img src="Photos/Japan/hostle.webp" alt="Tokyo Alleyway">
-                </div>
-                <span class="handwritten-caption">Tokyo, Japan</span>
-            </a>
-
-            <!-- Polaroid Card 2 -->
-            <a href="./" class="journal-card polaroid tilt-right">
-                <div class="polaroid-img-wrapper">
-                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney Sunset">
-                </div>
-                <span class="handwritten-caption">Sydney, AUS</span>
-            </a>
-
-            <!-- Polaroid Card 3 -->
-            <a href="./" class="journal-card polaroid tilt-left">
-                <div class="polaroid-img-wrapper">
-                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community">
-                </div>
-                <span class="handwritten-caption">Warped Tour '25</span>
-            </a>
-
-            <!-- Polaroid Card 4 -->
-            <a href="./" class="journal-card polaroid TILT-right">
-                <div class="polaroid-img-wrapper">
-                     <img src="Photos/Morocco/marketdoors.webp" alt="Morocco">
-                </div>
-                <span class="handwritten-caption">Marrakech</span>
-            </a>
-
-
+<div class="polaroid-grid">
+    
+    <!-- Polaroid Card 1: Bún Chả -->
+    <a href="Entries/buncha.html" class="journal-card polaroid tilt-left">
+        <div class="polaroid-img-wrapper">
+            <img src="Photos/Japan/hostle.webp" alt="Bún Chả And Belonging">
         </div>
+        <span class="handwritten-caption">Bún Chả And Belonging</span>
+    </a>
+
+    <!-- Polaroid Card 2: Roma Sparta -->
+    <a href="Entries/romasparta.html" class="journal-card polaroid tilt-right">
+        <div class="polaroid-img-wrapper">
+            <img src="Photos/Austrailia/sydneysunset.webp" alt="Ghost of Roma Sparta">
+        </div>
+        <span class="handwritten-caption">Ghost of Roma Sparta</span>
+    </a>
+
+    <!-- Polaroid Card 3: Warped Tour -->
+    <a href="Entries/warped.html" class="journal-card polaroid tilt-left">
+        <div class="polaroid-img-wrapper">
+            <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community">
+        </div>
+        <span class="handwritten-caption">Warped Tour '25</span>
+    </a>
+
+    <!-- Polaroid Card 4: Communion -->
+    <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
+        <div class="polaroid-img-wrapper">
+             <img src="Photos/Morocco/marketdoors.webp" alt="Communion and Calçada">
+        </div>
+        <span class="handwritten-caption">Communion and Calçada</span>
+    </a>
+
+</div>
 
     </main>
 
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="journal.html">Journal</a></li>
+                    <li><a href="journal.html">journal</a></li>
                     <li><a href="recipes.html">Recipes</a></li>
                     <li><a href="photos.html">Photos</a></li>
                     <li><a href="about.html">About</a></li>
