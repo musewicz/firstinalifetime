@@ -1504,3 +1504,11 @@ body.fade-out {
 .recipe-card-anchor p {
     text-decoration: none !important;
 }
+
+.polaroid-grid-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
