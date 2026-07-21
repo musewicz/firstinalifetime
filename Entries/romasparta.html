@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost of Roma Sparta — First In A Lifetime</title>
+    <title>The Ghost of Roma Sparita — First In A Lifetime</title>
     <!-- Relative paths updated to point to root directory using ../ -->
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations | First In A Lifetime">
+
+    <!-- HIGH-CONTRAST EDITORIAL CARD STYLES -->
+    <style>
+        .story-body {
+            background-color: #faf8f5; /* Warm off-white paper card */
+            color: #1a1a1a;            /* Dark ink text */
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Lifts card off background texture */
+            margin: 40px auto;
+        }
+
+        .story-body .paragraph {
+            color: #1c1c1c !important;
+            line-height: 1.85 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .story-body {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 
 <script>
@@ -24,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
-            if (this.classList.contains('filter-link')) return;
+            if (this.classList.contains('filter-link') || this.classList.contains('journal-card')) return;
 
             e.preventDefault();
             document.body.classList.add("fade-out");
@@ -60,20 +85,78 @@ document.addEventListener("DOMContentLoaded", function () {
         <section class="journal-header-layout">
             <div class="header-text-block">
                 <span class="section-tag">Rome, Italy</span>
-                <h1 class="section-title">The Ghost Of Roma Sparta</h1>
+                <h1 class="section-title">The Ghost of Roma Sparita</h1>
                 <span class="update-date" style="color: #666; display: block; margin-top: 10px;">May 30, 2026</span>
             </div>
         </section>
 
         <!-- MAIN ARTICLE CONTENT -->
         <article class="story-body" style="max-width: 800px; margin: 40px auto;">
-            <div class="story-main-image" style="margin-bottom: 30px;">
-                <img src="../Photos/Japan/hostle.webp" alt="c" style="width: 100%; border-radius: 4px;">
+            
+            <!-- HERO / FEATURED PHOTO PLACEHOLDER 1 -->
+            <div class="story-main-image" style="margin-bottom: 35px;">
+                <img src="../Photos/Japan/hostle.webp" alt="Rainy Rome and the Tiber River" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 1: Nighttime Rain over Rome & Tiber River]</span>
             </div>
 
-            <p class="paragraph">
-                Write your entry text here...
-            </p>
+            <p class="paragraph">If I have said it once, I have said it a thousand times: I love it when it rains at night in a city. Rain rinses the day from the streets and turns them into stained-glass versions of themselves. Lights bounce off the wet pavement like neon open signs in shop windows, inviting me to step closer and see what the city has been hiding.</p>
+
+            <p class="paragraph">The downpour also washes away the realization that after eleven days, four countries, and over a hundred miles walked, my feet are absolutely killing me. But that is the small price to pay to see Rome at its most beautiful.</p>
+
+            <p class="paragraph">As I walk through the bustling heart of the Eternal City, I pass over the Tiber River—a waterway that literally brought life to ancient Rome. To me, more importantly, it nourished the crops that would end up making this country one of the most renowned culinary meccas of the world. Abruptly, my GPS commands me to turn right onto <em>Via Santa Cecilia</em>. I found myself staring directly down a dark alley away from the busy main street, its only descriptive feature a gambling storefront on the corner.</p>
+
+            <!-- PHOTO PLACEHOLDER 2: THE ALLEY & PIAZZA -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Alleyway+to+Piazza+Roma+Sparita" alt="Via Santa Cecilia Alleyway" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 2: Alleyway Entrance & Quiet Piazza Patio]</span>
+            </div>
+
+            <p class="paragraph">Walking further down, I get the feeling that I may have misunderstood the directions. There is nothing down this narrow alley but one restaurant and old, locked iron doors much like the one to my Airbnb. Finally, around the corner, a <em>piazza</em> opens to an outdoor seating area. Two waiters are setting up for the dinner service; they don’t open for another seven minutes. It is just me and an American couple standing outside, waiting for the official nod to take a seat and enjoy some food.</p>
+
+            <p class="paragraph">Years ago, I watched an episode of <em>No Reservations</em> that had completely slipped my mind. Then, the night before this dinner, my uncle—a world traveler himself—sent me a link to the restaurant where Anthony Bourdain had once eaten one of the best meals of his life. Bourdain said he would gladly trade any of his top memories just to try that food for the first time again.</p>
+
+            <p class="paragraph">The dish was a simple <em>Cacio e Pepe</em>—Cheese and Pepper. There are no truffles imported from far away, nor cheese made from a rare breed of Himalayan Mountain goats. Just four basic ingredients: water, pasta, pecorino cheese, and pepper. In the episode, Bourdain chose not to name the establishment out of fear that tourists would turn his beloved sanctuary into the next <em>Diners, Drive-Ins and Dives</em> joint. Years later, it was revealed to be this tiny restaurant in a nondescript alley called <em>Roma Sparita</em>. Translated: Rome Gone.</p>
+
+            <!-- PHOTO PLACEHOLDER 3: APPETIZERS & LOCAL WINE -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Olives,+Bresaola+Salad+%26+Lazio+Wine" alt="Lazio Wine and Bresaola Salad" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 3: Stuffed Olives, Bresaola Salad & Local Lazio Wine]</span>
+            </div>
+
+            <p class="paragraph">Finally, the waiter gestured for me to take a seat anywhere outside. While I looked over the menu, a few more couples started to file in. When he returned, I ordered the legendary dish, some fried stuffed olives, a glass of white wine from the local Lazio region, and a salad of <em>bresaola</em>, rocket, and parmesan. As he walked away to input the order, I surreptitiously searched my phone to find out what <em>bresaola</em> even was. Air-dried, salted, aged beef. It can also be made with horse meat.</p>
+
+            <p class="paragraph">Please, I thought, don’t let it be horse meat.</p>
+
+            <p class="paragraph">The clients around me started to order as well, scanning the menu as if they didn’t already know exactly why they were there. All of them, of course, requested <em>Cacio e Pepe</em>.</p>
+
+            <p class="paragraph">First off, the salad and the olives were absolutely delicious—well worth the price of admission alone. As I worked my way through the sharp taste of freshly shaved parmesan and, thankfully, regular air-dried beef, a familiar voice spoke from directly behind me. It was Bourdain himself, narrating the intro to one of his episodes.</p>
+
+            <p class="paragraph">No, my mind wasn't playing tricks on me, nor was I being visited by a hungover specter. Another solo traveler from Miami had simply hit play on a YouTube video before plugging in his headphones. But in a strange way, it felt as though Tony was welcoming me into this little secret spot of his, just like the rain-washed streets had welcomed me less than an hour before.</p>
+
+            <p class="paragraph">At the time, I was just a guy who appreciated a good meal, completely blind to the grueling, beautiful reality of what happens behind a kitchen door. But sitting there, hearing his voice in the Roman night, I began to look at the patio differently. I wanted to see what he had seen. I wanted to know whether a plate of food could really carry that much memory, labor, and longing.</p>
+
+            <!-- PHOTO PLACEHOLDER 4: CACIO E PEPE IN CHEESE BOWL -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Roma+Sparita+Cacio+e+Pepe" alt="Cacio e Pepe in Parmesan Bowl" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 4: Cacio e Pepe Tagliolini Served in a Baked Parmesan Bowl]</span>
+            </div>
+
+            <p class="paragraph">Then, the main course arrived. A humble combination of cheese and cracked black pepper had fed Romans for generations. Except here, this bird's nest of <em>tagliolini</em> was placed inside a baked parmesan cheese bowl for a brilliant addition of crunch and salt.</p>
+
+            <p class="paragraph">I took my first bite and immediately realized I had never eaten—let alone cooked—an acceptable plate of pasta in my entire life. I had always assumed pasta was just a vessel for sauce, a cheap weeknight baseline. But this? This was an absolute shutdown of my entire culinary worldview. I now realized I had failed to appreciate the sheer gravity of what a master can do with just water, flour, cheese, and pepper. The texture of the fresh pasta, the sharp richness of the cheese, and the spicy bite of the black pepper sat on the exact same level as my viewing of the Sistine Chapel earlier that day.</p>
+
+            <p class="paragraph">It was a religious experience that leaves a person sitting in awe, with a jaw dropped to the floor. Luckily, I got to pick mine back up to take another satisfying bite.</p>
+
+            <!-- PHOTO PLACEHOLDER 5: DEPARTING THE ALLEYWAY -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Leaving+the+Alleyway" alt="Leaving Trastevere Alleyway" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 5: Stepping Back into the Main Roman Street]</span>
+            </div>
+
+            <p class="paragraph">As I finished and paid the bill, I sat there reflecting on how absolutely lucky I am to be sitting in the city of the Seven Hills, experiencing this "hidden" gem almost entirely to myself. As I stood up to leave, the rain slowly returned to a light drizzle. I walked back down the alley as if I had just stepped through the wardrobe in a C.S. Lewis novel, returning to the harsh reality of the main road.</p>
+
+            <p class="paragraph">The popping of a wine cork startled me from the doorway of a neighboring restaurant. A group of friends sat around a dinner table laughing, about to start their meal, likely talking about the events of the day or sharing some funny story of an adventure. For a moment, I thought about how amazing my day had been, and how nice it would be to share it with my own friends and family. And just like them, here we are, Vicarious Ones. A group of friendly faces gathered around an imaginary table, sharing a story from the night I sat down for a meal with a hero of mine in Rome.</p>
+
         </article>
 
         <hr class="section-divider">

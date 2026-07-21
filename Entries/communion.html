@@ -10,6 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations | First In A Lifetime">
+
+    <!-- HIGH-CONTRAST EDITORIAL CARD STYLES -->
+    <style>
+        .story-body {
+            background-color: #faf8f5; /* Warm off-white paper card */
+            color: #1a1a1a;            /* Dark ink text */
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Lifts card off background texture */
+            margin: 40px auto;
+        }
+
+        .story-body .paragraph {
+            color: #1c1c1c !important;
+            line-height: 1.85 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .story-body {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 
 <script>
@@ -24,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
-            if (this.classList.contains('filter-link')) return;
+            if (this.classList.contains('filter-link') || this.classList.contains('journal-card')) return;
 
             e.preventDefault();
             document.body.classList.add("fade-out");
@@ -67,13 +92,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <!-- MAIN ARTICLE CONTENT -->
         <article class="story-body" style="max-width: 800px; margin: 40px auto;">
-            <div class="story-main-image" style="margin-bottom: 30px;">
-                <img src="../Photos/Japan/hostle.webp" alt="Communion and Calçada" style="width: 100%; border-radius: 4px;">
+            
+            <!-- HERO / FEATURED PHOTO PLACEHOLDER 1 -->
+            <div class="story-main-image" style="margin-bottom: 35px;">
+                <img src="../Photos/Japan/hostle.webp" alt="Damp Lisbon Calçada at Night" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 1: Rain-slicked Lisbon Streets & Calçada]</span>
             </div>
 
-            <p class="paragraph">
-                Write your entry text here...
-            </p>
+            <p class="paragraph">I’ve said it before: my absolute favorite way to experience an ancient city is right after a light rain at night. Streetlights and neon shop signs spill across the damp, cobblestone <em>calçada</em> of Lisbon, reflecting back like shattered stained glass. The labyrinth of these streets is my cathedral; the midnight air is my sanctuary. The rain doesn't feel like an inconvenience; it feels like absolution—a quiet forgiveness for things I still carry with me.</p>
+
+            <p class="paragraph">The hymns don’t come from an altar. They drift from a busker standing under a stone archway on the corner, pouring out songs of love, passion, hope, and loss. The exact themes that nourish the soul while breaking it wide open at the same time. His voice mixes seamlessly with the pitter-patter of drops against canvas awnings and the low, distant hum of passing cars—a grand organ playing just beneath the surface of the city.</p>
+
+            <!-- PHOTO PLACEHOLDER 2: OLIVES & CALDO VERDE -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Bowl+of+Caldo+Verde+%26+Olives" alt="Caldo Verde and Olives" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 2: Olives and a Warm Bowl of Caldo Verde]</span>
+            </div>
+
+            <p class="paragraph">Tonight’s accompaniment was simple, traditional. A small bowl of olives. And a quick rule of survival: if they hand you a second bowl, it’s because the first ones aren't pitted.</p>
+
+            <p class="paragraph">Then came the soup. A humble bowl of <em>Caldo Verde</em>—finely shredded collard greens floating in a rich potato broth, finished with a few thick slices of smoky chorizo. Warm, comforting, and exactly what a cold, wet Lisbon night demands.</p>
+
+            <p class="paragraph">This is communion, Portuguese style.</p>
+
+            <!-- PHOTO PLACEHOLDER 3: THE BIFANA SANDWICH -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+The+Classic+Bifana+Sandwich" alt="Bifana Sandwich" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 3: The Bifana Sandwich & Tavern Setting]</span>
+            </div>
+
+            <p class="paragraph">Next was the <em>Bifana</em>. Thin slices of pork slow-cooked in white wine, garlic, and lard, slapped inside a crusty roll. A heavy squeeze of yellow mustard. A sharp dash of <em>piri-piri</em> hot sauce. Tender meat, crispy bread, entirely unpretentious and perfectly pure. It made every single block of that wet uphill walk worth it. Inside the small tavern, lively Fado chord progressions wrapped the room like a warm embrace, topped off with a sharp gin and tonic to wash it all down.</p>
+
+            <p class="paragraph">And then, back out into the nave of the city.</p>
+
+            <!-- PHOTO PLACEHOLDER 4: SHADOWY ALLEYWAYS -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Lisbon+Alleyways+at+Midnight" alt="Lisbon Alleyways" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 4: Midnight Crossings & Narrow Passages]</span>
+            </div>
+
+            <p class="paragraph">As midnight deepened, the crowds thinned out, but the men lingering in the dark stone crossings remained. Each one approaching with a slight tilt of the head, whispering as if sharing a sacred secret.</p>
+
+            <p class="paragraph">Hash. Marijuana. Coke. Temptations offered the only way Lisbon knows how to offer them. Casual. Almost polite. A whispered invitation in the shadows between centuries-old buildings.</p>
+
+            <p class="paragraph">But the final indulgence of the night belonged to something holier: a fresh <em>Pastel de Nata</em>.</p>
+
+            <!-- PHOTO PLACEHOLDER 5: PASTEL DE NATA -->
+            <div class="story-inline-image" style="margin: 35px 0;">
+                <img src="https://via.placeholder.com/800x500?text=Photo+Placeholder:+Fresh+Pastel+de+Nata" alt="Pastel de Nata" style="width: 100%; border-radius: 4px;">
+                <span class="caption-text" style="display: block; text-align: center; font-size: 0.85rem; color: #777; margin-top: 8px; font-style: italic;">[PHOTO PLACEHOLDER 5: Fresh Pastel de Nata with Cinnamon & Powdered Sugar]</span>
+            </div>
+
+            <p class="paragraph">Legend says these iconic custard tarts trace their roots to 19th-century monks who used egg whites to starch their religious robes, leaving them searching for a purpose for the leftover yolks. The result is pure art. Creamy, lightly sweet custard nestled inside a blistered, incredibly flaky pastry shell, heavily dusted with cinnamon and powdered sugar. I could have eaten six without thinking. I barely resisted when the girl behind the counter tried to sell me sixteen.</p>
+
+            <p class="paragraph">Gluttony is still a deadly sin, after all.</p>
+
+            <p class="paragraph">That is how the night closed. A quiet, wandering journey through narrow, historic veins that felt profoundly moving.</p>
+
+            <p class="paragraph">The streets are my chapel. The food, the people, the art of letting yourself get entirely lost in a city's history—that is where I find peace.</p>
+
+            <p class="paragraph">Maybe it sounds cinematic. Maybe even a little corny. But as an old Incubus lyric once echoed: in this moment, I am happy. Happy.</p>
+
         </article>
 
         <hr class="section-divider">
