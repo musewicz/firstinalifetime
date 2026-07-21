@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Stories and Blog — First In A Lifetime</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bún Chả And Belonging — First In A Lifetime</title>
+    <!-- Relative paths updated to point to root directory using ../ -->
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <meta name="description" content= Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Giide, Food, Destinations, Places, Word, International, USA, Local  | First In A Lifetime">
+    <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations | First In A Lifetime">
 </head>
 
 <script>
@@ -23,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!href || href.startsWith("#") || href.startsWith("http")) return;
 
         link.addEventListener("click", function (e) {
-            // Only apply cross-fade to standard navigation menu/footer items
             if (this.classList.contains('filter-link')) return;
 
             e.preventDefault();
@@ -40,84 +40,89 @@ document.addEventListener("DOMContentLoaded", function () {
 <body class="fade-out">
 
     <header class="main-header inner-page-header tan-page-header">
-    <div class="logo">
-        <a href="index.html">
-            <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
-        </a> 
-    </div>
-    <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="journal.html" class="active">Journal</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="photos.html" class=>Photos</a></li>
-            <li class="mobile-hide"><a href="about.html">About</a></li>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
+            </a> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../journal.html" class="active">Journal</a></li>
+            <li><a href="../recipes.html">Recipes</a></li>
+            <li><a href="../photos.html">Photos</a></li>
+            <li class="mobile-hide"><a href="../about.html">About</a></li>
         </ul>
     </header>
 
-   <main class="content-container internal-page-padding">
+    <main class="content-container internal-page-padding">
         
-        <!-- THE JOURNAL HEADER SECTION -->
-<section class="journal-header-layout">
-    <div class="header-text-block">
-        <h1 class="section-title">Bún Chả And Belonging/h1>
-                    
-              </div>
-
-             <div class="featured-hero-content">
-                        <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
-                        <h3 class="featured-hero-title">Not Sure What This Does Here</h3>
-                    </div>
-                </a>
+        <!-- ARTICLE HEADER SECTION -->
+        <section class="journal-header-layout">
+            <div class="header-text-block">
+                <span class="section-tag">Hanoi, Vietnam</span>
+                <h1 class="section-title">Bún Chả And Belonging</h1>
+                <span class="update-date" style="color: #666; display: block; margin-top: 10px;">May 30, 2026</span>
             </div>
         </section>
 
+        <!-- MAIN ARTICLE CONTENT -->
+        <article class="story-body" style="max-width: 800px; margin: 40px auto;">
+            <div class="story-main-image" style="margin-bottom: 30px;">
+                <img src="../Photos/Japan/hostle.webp" alt="Bún Chả And Belonging" style="width: 100%; border-radius: 4px;">
+            </div>
+
+            <p class="paragraph">
+                Write your entry text here...
+            </p>
+        </article>
+
         <hr class="section-divider">
 
-        <!-- THE POLAROID GRID -->
+        <!-- RELATED / OTHER STORIES GRID -->
+        <h3 style="text-align: center; margin-bottom: 20px;">More Stories</h3>
         <div class="polaroid-grid">
             
             <!-- Polaroid Card 1 -->
-            <a href="./" class="journal-card polaroid tilt-right">
+            <a href="../journal.html" class="journal-card polaroid tilt-right">
                 <div class="polaroid-img-wrapper">
-                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Ghost of Roma Sparta">
+                    <img src="../Photos/Austrailia/sydneysunset.webp" alt="Ghost of Roma Sparta">
                 </div>
                 <span class="handwritten-caption">Ghost of Roma Sparta</span>
             </a>
 
             <!-- Polaroid Card 2 -->
-            <a href="./" class="journal-card polaroid tilt-left">
+            <a href="../journal.html" class="journal-card polaroid tilt-left">
                 <div class="polaroid-img-wrapper">
-                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community">
+                    <img src="../Photos/Events/warped25spin.webp" alt="Warped Tour Community">
                 </div>
                 <span class="handwritten-caption">Warped Tour '25</span>
             </a>
 
             <!-- Polaroid Card 3 -->
-            <a href="./" class="journal-card polaroid tilt-right">
+            <a href="../journal.html" class="journal-card polaroid tilt-right">
                 <div class="polaroid-img-wrapper">
-                     <img src="Photos/Morocco/marketdoors.webp" alt="Communion and Calçada">
+                     <img src="../Photos/Morocco/marketdoors.webp" alt="Communion and Calçada">
                 </div>
                 <span class="handwritten-caption">Communion and Calçada</span>
             </a>
 
-
         </div>
     </main>
 
-        <footer class="main-footer weathered-leather-block">
-    	<div class="footer-grid">
+    <footer class="main-footer weathered-leather-block">
+        <div class="footer-grid">
             <div class="footer-column">
                 <h3 class="footer-brand">First In A Lifetime</h3>
                 <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
-           </div>
+            </div>
             <div class="footer-column">
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="journal.html">journal</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="photos.html">Photos</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../journal.html">Journal</a></li>
+                    <li><a href="../recipes.html">Recipes</a></li>
+                    <li><a href="../photos.html">Photos</a></li>
+                    <li><a href="../about.html">About</a></li>
                 </ul>
             </div>
 
