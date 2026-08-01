@@ -37,37 +37,13 @@
         }
     </style>
 </head>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // INITIAL PAGE FADE IN
-    document.body.classList.remove("fade-out");
-
-    // SMOOTH LINKS CROSS-FADE
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        link.addEventListener("click", function (e) {
-            if (this.classList.contains('filter-link')) return;
-
-            e.preventDefault();
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350);
-        });
-    });
-});
-</script>
-
 <body class="fade-out">
 
     <!-- MATCHED HEADER WITH TAN/WEATHERED BACKGROUND CLASSES -->
     <header class="main-header inner-page-header tan-page-header">
         <div class="logo">
             <a href="index.html">
-                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img" width="120" height="40">
             </a> 
         </div>
         <ul class="nav-links">
@@ -85,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- PHOTO PLACEHOLDER COLUMN -->
             <div class="about-photo-column" style="flex: 1; min-width: 280px; max-width: 400px;">
                 <div class="polaroid-frame" style="background: #ffffff; padding: 15px 15px 45px 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: rotate(-1deg);">
-                    <img src="Photos/my-portrait.jpg" alt="First In A Lifetime Portrait" style="width: 100%; height: auto; display: block; filter: sepia(10%) contrast(105%);" onerror="this.style.display='none'; document.getElementById('placeholder-text').style.display='block';">
+                    <img src="Photos/my-portrait.jpg" alt="First In A Lifetime Portrait" width="400" height="500" style="width: 100%; height: auto; display: block; filter: sepia(10%) contrast(105%);" loading="lazy" decoding="async" onerror="this.style.display='none'; document.getElementById('placeholder-text').style.display='block';">
                     <div id="placeholder-text" style="display: none; background: #f4f1ea; height: 400px; display: flex; align-items: center; justify-content: center; color: #666; font-family: 'Cormorant Garamond', serif; font-style: italic; text-align: center; padding: 20px; border: 1px dashed #d1cbbd;">
                         [ Drop your portrait photo here: Photos/my-portrait.jpg ]
                     </div>
@@ -130,20 +106,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
 
                 <p class="paragraph" style="margin-top: 25px;">
-		    Welcome to First In A Lifetime, Vicarious Ones. My only ask is simple: after wandering through these private journals, take time today to claim a moment that is uniquely human, and entirely your own.
-		</p>
+                    Welcome to First In A Lifetime, Vicarious Ones. My only ask is simple: after wandering through these private journals, take time today to claim a moment that is uniquely human, and entirely your own.
+                </p>
 
-		<div class="signature-block" style="margin-top: 40px; border-top: 1px solid #d1cbbd; padding-top: 20px;">
+                <div class="signature-block" style="margin-top: 40px; border-top: 1px solid #d1cbbd; padding-top: 20px;">
                     <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: #2b2b2b; margin: 0;">
                         Matthew Usewicz
                     </p>
+                </div>
             </div>
 
         </div>
     </main>
 
-   <footer class="main-footer weathered-leather-block">
-    	<div class="footer-grid">
+    <footer class="main-footer weathered-leather-block">
+        <div class="footer-grid">
             <div class="footer-column">
                 <h3 class="footer-brand">First In A Lifetime</h3>
                 <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
@@ -176,5 +153,25 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                if (this.classList.contains('filter-link')) return;
+
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

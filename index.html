@@ -8,44 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations, Places, World, International, USA, Local | First In A Lifetime">
+    <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations, Places, World, International, USA, Local | First In A Lifetime">
 </head>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Fade in on page load
-    document.body.classList.remove("fade-out");
-
-    // Handle link clicks
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-
-        // Ignore external links or anchors
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            document.body.classList.add("fade-out");
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350); // matches CSS transition time
-        });
-    });
-
-});
-</script>
-
 <body class="fade-out">
 
-	<header class="main-header">
+    <header class="main-header">
         <div class="logo">
-        <a href="index.html">
-        <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img">
-        </a>
-         </div>
+            <a href="index.html">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img" width="120" height="40">
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="journal.html">Journal</a></li>
@@ -62,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="Logos/WoodsLogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center" width="320" height="320">
                 <img src="Logos/WoodsLogoWordsClear.png" alt="First In A Lifetime" class="hero-logo-text" width="325" height="auto">
             </div>
-            <h2 class="hero-subtitle">“Chasing Sunsets, Collecting Stories” </h2>
+            <h2 class="hero-subtitle">“Chasing Sunsets, Collecting Stories”</h2>
             <a href="about.html" class="cta-button">Start The Journey</a>
         </div>
     </section>
@@ -83,86 +55,81 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </section>
 
-<!-- Recent Entries Ticker -->
-<section class="updates-ticker-section">
-    <div class="ticker-header">
-        <span class="ticker-hint">Recent Entries</span>
-    </div>
-    <div class="updates-scroll-container">
-        <!-- ONLY update cards here -->
-        <a href="Recipes/buncharecipe.html" class="update-card">
-            <span class="update-date">July 26, 2026</span>
-            <h4 class="update-title">Bún Chả Hanoi Recipe</h4>
-            <p class="update-excerpt">No plastic kids stool required.     But highly suggested.</p>
-        </a>
-        <a href="photos.html" class="update-card new-tag">
-            <span class="update-date">July 26, 2026</span>
-            <h4 class="update-title">Print Shop</h4>
-            <p class="update-excerpt">Museum- grade prints from the road. (Coming Soon)</p>
-        </a>
-        <a href="Entries/romasparta.html" class="update-card">
-            <span class="update-date">July 26, 2026</span>
-            <h4 class="update-title">The Ghost of Roma Sparita</h4>
-            <p class="update-excerpt">Have dinner with me in the Eternal City with a ghost.</p>
-        </a>
-	<a href="about.html" class="update-card new-tag">
-	    <span class="update-date">July 26, 2026</span>
-            <h4 class="update-title">The Philosophy</h4>
-            <p class="update-excerpt">An Essay on Travel and Bravery</p>
-        </a> 
-	<a href="Recipes/tonkotsurecipe.html" class="update-card new-tag">
-	    <span class="update-date">July 26, 2026</span>
-            <h4 class="update-title">Tonkotsu Ramen Broth Recipe</h4>
-            <p class="update-excerpt">Forget the Campbell's Soup Snowman, this is the true cold buster!</p>
-        </a>
-
-
-    </div>
-</section>
-
-<!-- The Visual Archive Gallery -->
-<section id="journal" class="gallery-section">
-    <div class="section-header-center">
-        <span class="section-tag">Recent Snapshots</span>
-        <h2 class="section-title">The Visual Archive</h2>
-    </div>
-    
-    <div class="polaroid-grid">
-        <a href="Entries/romasparta.html" class="journal-card polaroid tilt-left">
-            <div class="polaroid-img-wrapper">
-                <img src="Photos/NewZealand/TheShire.webp" alt="The Ghost Of Roma Sparta" loading="lazy" decoding="async">
+        <!-- Recent Entries Ticker -->
+        <section class="updates-ticker-section">
+            <div class="ticker-header">
+                <span class="ticker-hint">Recent Entries</span>
             </div>
-            <span class="handwritten-caption">The Ghost Of Roma Sparta</span>
-        </a>
-
-        <a href="Entries/buncha.html" class="journal-card polaroid tilt-right">
-            <div class="polaroid-img-wrapper">
-                <img src="Photos/Hanoi/bunchakim.webp" alt="Bún Chả And Belonging" loading="lazy" decoding="async">
+            <div class="updates-scroll-container">
+                <a href="Recipes/buncharecipe.html" class="update-card">
+                    <span class="update-date">July 26, 2026</span>
+                    <h4 class="update-title">Bún Chả Hanoi Recipe</h4>
+                    <p class="update-excerpt">No plastic kids stool required. But highly suggested.</p>
+                </a>
+                <a href="photos.html" class="update-card new-tag">
+                    <span class="update-date">July 26, 2026</span>
+                    <h4 class="update-title">Print Shop</h4>
+                    <p class="update-excerpt">Museum- grade prints from the road. (Coming Soon)</p>
+                </a>
+                <a href="Entries/romasparta.html" class="update-card">
+                    <span class="update-date">July 26, 2026</span>
+                    <h4 class="update-title">The Ghost of Roma Sparita</h4>
+                    <p class="update-excerpt">Have dinner with me in the Eternal City with a ghost.</p>
+                </a>
+                <a href="about.html" class="update-card new-tag">
+                    <span class="update-date">July 26, 2026</span>
+                    <h4 class="update-title">The Philosophy</h4>
+                    <p class="update-excerpt">An Essay on Travel and Bravery</p>
+                </a> 
+                <a href="Recipes/tonkotsurecipe.html" class="update-card new-tag">
+                    <span class="update-date">July 26, 2026</span>
+                    <h4 class="update-title">Tonkotsu Ramen Broth Recipe</h4>
+                    <p class="update-excerpt">Forget the Campbell's Soup Snowman, this is the true cold buster!</p>
+                </a>
             </div>
-            <span class="handwritten-caption">Bún Chả And Belonging</span>
-        </a>
+        </section>
 
-        <a href="Entries/warped.html" class="journal-card polaroid warped logo tilt-left">
-            <div class="polaroid-img-wrapper">
-                <img src="Photos/Events/warped25spin.webp" alt="Warped Tour" loading="lazy" decoding="async">
+        <!-- The Visual Archive Gallery -->
+        <section id="journal" class="gallery-section">
+            <div class="section-header-center">
+                <span class="section-tag">Recent Snapshots</span>
+                <h2 class="section-title">The Visual Archive</h2>
             </div>
-            <span class="handwritten-caption">Warped Tour</span>
-        </a>
+            
+            <div class="polaroid-grid">
+                <a href="Entries/romasparta.html" class="journal-card polaroid tilt-left">
+                    <div class="polaroid-img-wrapper">
+                        <img src="Photos/NewZealand/TheShire.webp" alt="The Ghost Of Roma Sparta" width="600" height="600" loading="lazy" decoding="async">
+                    </div>
+                    <span class="handwritten-caption">The Ghost Of Roma Sparta</span>
+                </a>
 
-        <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
-            <div class="polaroid-img-wrapper">
-                <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada" loading="lazy" decoding="async">
+                <a href="Entries/buncha.html" class="journal-card polaroid tilt-right">
+                    <div class="polaroid-img-wrapper">
+                        <img src="Photos/Hanoi/bunchakim.webp" alt="Bún Chả And Belonging" width="600" height="600" loading="lazy" decoding="async">
+                    </div>
+                    <span class="handwritten-caption">Bún Chả And Belonging</span>
+                </a>
+
+                <a href="Entries/warped.html" class="journal-card polaroid warped logo tilt-left">
+                    <div class="polaroid-img-wrapper">
+                        <img src="Photos/Events/warped25spin.webp" alt="Warped Tour" width="600" height="600" loading="lazy" decoding="async">
+                    </div>
+                    <span class="handwritten-caption">Warped Tour</span>
+                </a>
+
+                <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
+                    <div class="polaroid-img-wrapper">
+                        <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada" width="600" height="600" loading="lazy" decoding="async">
+                    </div>
+                    <span class="handwritten-caption">Communion and Calçada</span>
+                </a>
             </div>
-            <span class="handwritten-caption">Communion and Calçada</span>
-        </a>
-
-    </div>
-</section>
-
+        </section>
     </main>
 
     <footer class="main-footer weathered-leather-block">
-    	<div class="footer-grid">
+        <div class="footer-grid">
             <div class="footer-column">
                 <h3 class="footer-brand">First In A Lifetime</h3>
                 <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
@@ -195,5 +162,23 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

@@ -1440,4 +1440,12 @@ body.fade-out {
         filter: blur(1px);
         z-index: 99 !important;
     }
+
+@media (max-width: 768px) {
+    .postcard-rack-grid .postcard-container {
+        aspect-ratio: auto !important; 
+        height: 280px !important; 
+        overflow: visible !important;
+    }
+}
 }
