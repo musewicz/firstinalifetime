@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food, Recipes, Restaurants, Dining, Yum — First In A Lifetime</title>
+    
+    <!-- TECHNICAL SEO FIXES -->
+    <link rel="canonical" href="https://firstinalifetime.com/food.html">
     <link rel="icon" type="image/png" href="/Logos/favicon.png">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,40 +23,12 @@
     <meta property="og:url" content="https://firstinalifetime.com/food.html">
 </head>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Fade in on page load
-    document.body.classList.remove("fade-out");
-
-    // Handle link clicks
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-
-        // Ignore external links or anchors
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            document.body.classList.add("fade-out");
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350); // matches CSS transition time
-        });
-    });
-
-});
-</script>
-
 <body class="fade-out">
-
 
     <header class="main-header inner-page-header tan-page-header">
     <div class="logo">
         <a href="index.html">
-            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img">
+            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img" width="120" height="40">
         </a> 
     </div>
     <ul class="nav-links">
@@ -109,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Polaroid Card 1 -->
             <a href="./" class="journal-card polaroid tilt-left">
                 <div class="polaroid-img-wrapper">
-                    <img src="Photos/Japan/hostle.webp" alt="Tokyo alleyway exploration and food culture link">
+                    <img src="Photos/Japan/hostle.webp" alt="Tokyo alleyway exploration and food culture link" width="600" height="600" loading="lazy" decoding="async">
                 </div>
                 <span class="handwritten-caption">Tokyo, Japan</span>
             </a>
@@ -117,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Polaroid Card 2 -->
             <a href="./" class="journal-card polaroid tilt-right">
                 <div class="polaroid-img-wrapper">
-                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney sunset harbor dining and travel link">
+                    <img src="Photos/Austrailia/sydneysunset.webp" alt="Sydney sunset harbor dining and travel link" width="600" height="600" loading="lazy" decoding="async">
                 </div>
                 <span class="handwritten-caption">Sydney, AUS</span>
             </a>
@@ -125,25 +101,24 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Polaroid Card 3 -->
             <a href="./" class="journal-card polaroid tilt-left">
                 <div class="polaroid-img-wrapper">
-                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour community and food culture link">
+                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour community and food culture link" width="600" height="600" loading="lazy" decoding="async">
                 </div>
                 <span class="handwritten-caption">Warped Tour '25</span>
             </a>
 
             <!-- Polaroid Card 4 -->
-            <a href="./" class="journal-card polaroid TILT-right">
+            <a href="./" class="journal-card polaroid tilt-right">
                 <div class="polaroid-img-wrapper">
-                     <img src="Photos/Morocco/marketdoors.webp" alt="Marrakech market doors and spice heritage link">
+                     <img src="Photos/Morocco/marketdoors.webp" alt="Marrakech market doors and spice heritage link" width="600" height="600" loading="lazy" decoding="async">
                 </div>
                 <span class="handwritten-caption">Marrakech</span>
             </a>
-
 
         </div>
 
     </main>
 
-        <footer class="main-footer weathered-leather-block">
+    <footer class="main-footer weathered-leather-block">
     	<div class="footer-grid">
             <div class="footer-column">
                 <h3 class="footer-brand">First In A Lifetime</h3>
@@ -176,5 +151,23 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

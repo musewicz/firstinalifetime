@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Stories, Field Notes & Memoirs — First In A Lifetime</title>
+    
+    <!-- TECHNICAL SEO FIXES -->
+    <link rel="canonical" href="https://firstinalifetime.com/journal.html">
     <link rel="icon" type="image/png" href="/Logos/favicon.png">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,39 +24,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstinalifetime.com/journal.html">
 </head>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // 1. INITIAL PAGE FADE IN
-    document.body.classList.remove("fade-out");
-
-    // 2. SMOOTH LINKS CROSS-FADE (Excludes polaroid cards)
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        // SKIP POLAROID CARDS AND FILTER LINKS
-        if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350);
-        });
-    });
-
-});
-</script>
-
 <body class="fade-out">
 
     <header class="main-header inner-page-header tan-page-header">
     <div class="logo">
         <a href="index.html">
-            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img">
+            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img" width="120" height="40">
         </a> 
     </div>
     <ul class="nav-links">
@@ -67,35 +44,33 @@ document.addEventListener("DOMContentLoaded", function () {
    <main class="content-container internal-page-padding">
         
         <!-- THE JOURNAL HEADER SECTION -->
-<section class="journal-header-layout">
-    <div class="header-text-block">
-        <span class="section-tag">Deep Narratives</span>
-        <h1 class="section-title">The Journal</h1>
-        <p class="paragraph">Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.</p>
+        <section class="journal-header-layout">
+            <div class="header-text-block">
+                <span class="section-tag">Deep Narratives</span>
+                <h1 class="section-title">The Journal</h1>
+                <p class="paragraph">Stories from the road. Capturing food heritages, hidden alleyways, and deep profiles of the places that shape us.</p>
                 
                 <!-- Category Filters -->
                 <div class="journal-filters">
                      <a href="allentries.html" class="filter-link">All Entries</a>
-                   </div>
-
+                </div>
             </div>
 
-            <!-- FEATURED BIG STORY HERO (Breaks up the blandness) -->
+            <!-- FEATURED BIG STORY HERO -->
             <div class="featured-story-hero">
                 <a href="Entries/romasparta.html" class="featured-hero-link">
                     <div class="featured-image-wrapper">
                         <!-- Temporary placeholder background color until photo is added -->
                         <div class="story-photo-placeholder" style="height: 100%; background-color: #bab3a6;"></div>
                     </div>
-		    <div class="featured-hero-badge">Latest Field Note</div>
+                    <div class="featured-hero-badge">Latest Field Note</div>
                     <div class="notebook-page">
-    <div class="notebook-header">FIELD NOTE</div>
-    <div class="notebook-lines">
-        <p>The Ghost of Roma Sparta</p>
-    </div>
-    
-    <div class="pin-bottom-right"></div>
-</div>
+                        <div class="notebook-header">FIELD NOTE</div>
+                        <div class="notebook-lines">
+                            <p>The Ghost of Roma Sparta</p>
+                        </div>
+                        <div class="pin-bottom-right"></div>
+                    </div>
 
                     <div class="featured-hero-content">
                         <span class="update-date" style="color: #ffffff;">May 30, 2026</span>
@@ -108,46 +83,46 @@ document.addEventListener("DOMContentLoaded", function () {
         <hr class="section-divider">
 
         <!-- THE POLAROID GRID -->
-<div class="polaroid-grid">
-    
-    <!-- Polaroid Card 1: Bún Chả -->
-    <a href="Entries/buncha.html" class="journal-card polaroid tilt-left">
-        <div class="polaroid-img-wrapper">
-            <img src="Photos/Hanoi/bunchakim.webp" alt="Bún chả and belonging travel story memoir entry">
-        </div>
-        <span class="handwritten-caption">Bún Chả And Belonging</span>
-    </a>
+        <div class="polaroid-grid">
+            
+            <!-- Polaroid Card 1: Bún Chả -->
+            <a href="Entries/buncha.html" class="journal-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Hanoi/bunchakim.webp" alt="Bún chả and belonging travel story memoir entry" width="600" height="600" loading="lazy" decoding="async">
+                </div>
+                <span class="handwritten-caption">Bún Chả And Belonging</span>
+            </a>
 
-    <!-- Polaroid Card 2: Roma Sparta -->
-    <a href="Entries/romasparta.html" class="journal-card polaroid tilt-right">
-        <div class="polaroid-img-wrapper">
-            <img src="Photos/Austrailia/sydneysunset.webp" alt="The Ghost of Roma Sparta travel entry">
-        </div>
-        <span class="handwritten-caption">Ghost of Roma Sparta</span>
-    </a>
+            <!-- Polaroid Card 2: Roma Sparta -->
+            <a href="Entries/romasparta.html" class="journal-card polaroid tilt-right">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Austrailia/sydneysunset.webp" alt="The Ghost of Roma Sparta travel entry" width="600" height="600" loading="lazy" decoding="async">
+                </div>
+                <span class="handwritten-caption">Ghost of Roma Sparta</span>
+            </a>
 
-    <!-- Polaroid Card 3: Warped Tour -->
-    <a href="Entries/warped.html" class="journal-card polaroid tilt-left">
-        <div class="polaroid-img-wrapper">
-            <img src="Photos/Events/warped25spin.webp" alt="Warped Tour community and music festival memories entry">
-        </div>
-        <span class="handwritten-caption">Warped Tour '25</span>
-    </a>
+            <!-- Polaroid Card 3: Warped Tour -->
+            <a href="Entries/warped.html" class="journal-card polaroid tilt-left">
+                <div class="polaroid-img-wrapper">
+                    <img src="Photos/Events/warped25spin.webp" alt="Warped Tour community and music festival memories entry" width="600" height="600" loading="lazy" decoding="async">
+                </div>
+                <span class="handwritten-caption">Warped Tour '25</span>
+            </a>
 
-    <!-- Polaroid Card 4: Communion -->
-    <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
-        <div class="polaroid-img-wrapper">
-             <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada travel memoir from Lisbon">
-        </div>
-        <span class="handwritten-caption">Communion and Calçada</span>
-    </a>
+            <!-- Polaroid Card 4: Communion -->
+            <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
+                <div class="polaroid-img-wrapper">
+                     <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada travel memoir from Lisbon" width="600" height="600" loading="lazy" decoding="async">
+                </div>
+                <span class="handwritten-caption">Communion and Calçada</span>
+            </a>
 
-</div>
+        </div>
 
     </main>
 
-        <footer class="main-footer weathered-leather-block">
-    	<div class="footer-grid">
+    <footer class="main-footer weathered-leather-block">
+        <div class="footer-grid">
             <div class="footer-column">
                 <h3 class="footer-brand">First In A Lifetime</h3>
                 <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
@@ -180,5 +155,28 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. INITIAL PAGE FADE IN
+        document.body.classList.remove("fade-out");
+
+        // 2. SMOOTH LINKS CROSS-FADE (Excludes polaroid cards)
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            // SKIP POLAROID CARDS AND FILTER LINKS
+            if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

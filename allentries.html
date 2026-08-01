@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Journal Entries & Field Notes — First In A Lifetime</title>
+    
+    <!-- TECHNICAL SEO FIXES -->
+    <link rel="canonical" href="https://firstinalifetime.com/allentries.html">
     <link rel="icon" type="image/png" href="/Logos/favicon.png">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,38 +23,12 @@
     <meta property="og:url" content="https://firstinalifetime.com/allentries.html">
 </head>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // 1. INITIAL PAGE FADE IN
-    document.body.classList.remove("fade-out");
-
-    // 2. SMOOTH LINKS CROSS-FADE (Excludes polaroid cards)
-    document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-        if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-        // SKIP POLAROID CARDS AND FILTER LINKS
-        if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350);
-        });
-    });
-
-});
-</script>
-
 <body class="fade-out">
 
     <header class="main-header inner-page-header tan-page-header">
     <div class="logo">
         <a href="index.html">
-            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img">
+            <img src="Logos/WoodsLogoTopClear.png" alt="First In A Lifetime Logo" class="logo-img" width="120" height="40">
         </a> 
     </div>
     <ul class="nav-links">
@@ -111,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Polaroid Card 1: Bún Chả -->
     <a href="Entries/buncha.html" class="journal-card polaroid tilt-left">
         <div class="polaroid-img-wrapper">
-            <img src="Photos/Japan/hostle.webp" alt="Bún Chả And Belonging travel journal entry link">
+            <img src="Photos/Japan/hostle.webp" alt="Bún Chả And Belonging travel journal entry link" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <span class="handwritten-caption">Bún Chả And Belonging</span>
     </a>
@@ -119,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Polaroid Card 2: Roma Sparta -->
     <a href="Entries/romasparta.html" class="journal-card polaroid tilt-right">
         <div class="polaroid-img-wrapper">
-            <img src="Photos/Austrailia/sydneysunset.webp" alt="Ghost of Roma Sparta travel journal entry link">
+            <img src="Photos/Austrailia/sydneysunset.webp" alt="Ghost of Roma Sparta travel journal entry link" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <span class="handwritten-caption">Ghost of Roma Sparta</span>
     </a>
@@ -127,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Polaroid Card 3: Warped Tour -->
     <a href="Entries/warped.html" class="journal-card polaroid tilt-left">
         <div class="polaroid-img-wrapper">
-            <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community travel journal entry link">
+            <img src="Photos/Events/warped25spin.webp" alt="Warped Tour Community travel journal entry link" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <span class="handwritten-caption">Warped Tour '25</span>
     </a>
@@ -135,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Polaroid Card 4: Communion -->
     <a href="Entries/communion.html" class="journal-card polaroid tilt-right">
         <div class="polaroid-img-wrapper">
-             <img src="Photos/Morocco/marketdoors.webp" alt="Communion and Calçada travel journal entry link">
+             <img src="Photos/Morocco/marketdoors.webp" alt="Communion and Calçada travel journal entry link" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <span class="handwritten-caption">Communion and Calçada</span>
     </a>
@@ -178,5 +156,25 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            if (link.classList.contains('filter-link') || link.classList.contains('journal-card')) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>
