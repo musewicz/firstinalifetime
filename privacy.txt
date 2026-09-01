@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSV737RNQC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DSV737RNQC');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — First In A Lifetime</title>
+    
+    <!-- TECHNICAL SEO FIXES -->
+    <link rel="canonical" href="https://firstinalifetime.com/privacy.html">
+    <link rel="icon" type="image/png" href="/Logos/favicon.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Privacy Policy | First In A Lifetime — How we handle and protect your personal information and data.">
+
+    <!-- HIGH-CONTRAST EDITORIAL CARD STYLES -->
+    <style>
+        .story-body {
+            background-color: #faf8f5; /* Warm off-white paper card background */
+            color: #1a1a1a;            /* Dark ink text */
+            padding: 50px 60px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); 
+            margin: 40px auto;
+            width: 100%;
+        }
+
+        .story-body .paragraph {
+            color: #1c1c1c !important;
+            line-height: 1.85 !important;
+            font-size: 1.05rem !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 300 !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .story-body h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 768px) {
+            .story-body {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="fade-out">
+
+    <!-- MATCHED HEADER WITH TAN/WEATHERED BACKGROUND CLASSES -->
+    <header class="main-header inner-page-header tan-page-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img" width="120" height="40">
+            </a> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li class="mobile-hide"><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <main class="content-container" style="padding: 140px max(6%, 20px) 80px max(6%, 20px); max-width: 900px; margin: 0 auto;">
+        
+        <!-- PRIVACY POLICY CONTENT CONTAINER -->
+        <div class="story-body">
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 400; margin-bottom: 20px; letter-spacing: 0.05em; color: #1a1a1a;">
+                Privacy Policy.
+            </h1>
+            
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: #666; margin-bottom: 40px; font-size: 1.1rem;">
+                Effective Date: August 2026
+            </p>
+
+            <p class="paragraph">
+                At <strong>First In A Lifetime</strong>, accessible from <a href="https://firstinalifetime.com" style="color: #1a1a1a; text-decoration: underline;">https://firstinalifetime.com</a>, your privacy is respected just as much as the open road. This Privacy Policy document outlines the types of information that is collected and recorded by First In A Lifetime and how it is used.
+            </p>
+
+            <h2>1. Information We Collect</h2>
+            <p class="paragraph">
+                When you interact with our site—whether by signing up for our email waitlist, subscribing to updates, or dropping a line—we may collect basic personal information such as your email address and name. Additionally, we automatically collect standard analytical data via Google Analytics (gtag.js) to understand how visitors navigate our digital memoirs, recipes, and photography archives.
+            </p>
+
+            <h2>2. How We Use Your Information</h2>
+            <p class="paragraph">
+                We use the information we collect in various ways, including to:
+            </p>
+            <ul class="paragraph" style="padding-left: 20px; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 8px;">Provide, operate, and maintain our website and physical art drops.</li>
+                <li style="margin-bottom: 8px;">Send you periodic emails, journal notes, and launch notifications for limited-run product drops (you can unsubscribe at any time).</li>
+                <li style="margin-bottom: 8px;">Analyze site traffic and user behavior to improve our content layout, recipes, and storytelling experience.</li>
+            </ul>
+
+            <h2>3. Cookies and Web Beacons</h2>
+            <p class="paragraph">
+                Like any other website, First In A Lifetime uses 'cookies'. These cookies are used to store information including visitors' preferences and the pages on the website that the visitor accessed or visited. This information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+            </p>
+
+            <h2>4. Third-Party Privacy Policies</h2>
+            <p class="paragraph">
+                First In A Lifetime's Privacy Policy does not apply to other advertisers or websites. We advise you to consult the respective Privacy Policies of these third-party services (such as Google Analytics or social media platforms linked on our site) for more detailed information.
+            </p>
+
+            <h2>5. Consent</h2>
+            <p class="paragraph">
+                By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+            </p>
+
+            <div class="signature-block" style="margin-top: 40px; border-top: 1px solid #d1cbbd; padding-top: 20px;">
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: #2b2b2b; margin: 0;">
+                    If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <a href="mailto:firstinalifetime@gmail.com" style="color: #1a1a1a; text-decoration: underline;">firstinalifetime@gmail.com</a>.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer weathered-leather-block">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-brand">First In A Lifetime</h3>
+                <p class="footer-text">For those who aren't finished exploring. Because the world is too big, the sunsets too beautiful, and the stories too important to believe any adventure should happen only once.</p>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="journal.html">Journal</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+                    <li style="margin-top: 15px;"><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 8px;">All original photography, journals, and text content are property of First In A Lifetime. Unauthorized use or duplication is strictly prohibited.</p>
+            <p style="font-size: 0.8rem; color: #888;">&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                if (this.classList.contains('filter-link')) return;
+
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
