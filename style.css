@@ -189,7 +189,7 @@ body.fade-out {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
     position: absolute !important;
-    left: 120% !important;
+    left: 90% !important;
     top: 40% !important;
     white-space: nowrap !important;
 }
