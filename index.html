@@ -1,104 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSV737RNQC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DSV737RNQC');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First In A Lifetime — Coming Soon</title>
+    <title>First In A Lifetime | Cinematic Travel Journal and Blog</title>
+    
+    <!-- TECHNICAL SEO FIXES -->
+    <link rel="canonical" href="https://firstinalifetime.com/index.html">
+    <link rel="icon" type="image/png" href="/Logos/favicon.png">
+    
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Travel Stories, Photographs, Photos, Blog, Commentary, Tips, Tricks, Guide, Food, Destinations, Places, World, International, USA, Local | First In A Lifetime">
 
-        body {
-            background-color: #181614; /* Dark tactile desk / board background */
-            color: #e3ded5;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
+    <style>
+        /* Workspace adjustments to match original site canvas and footer leather block */
+        body.teaser-body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
+            justify-content: space-between;
             overflow-x: hidden;
+            margin: 0;
+        }
+
+        /* Clean Header with only Logo - Fixed layer hierarchy */
+        .main-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 40px;
+            width: 100%;
             position: relative;
-            padding: 40px 20px;
+            z-index: 30;
         }
 
-        /* Subtle background texture effect */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-            background-size: 24px 24px;
-            pointer-events: none;
-        }
-
-        /* Main Workspace Container */
-        .workspace {
+        /* Workspace Core Layout - Contains absolute items safely */
+        .teaser-workspace {
             position: relative;
             width: 100%;
-            max-width: 1100px;
-            min-height: 650px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        /* Central Logo and Name */
-        .brand-header {
-            position: absolute;
-            top: 20px;
+            padding: 40px 20px;
             z-index: 10;
+        }
+
+        /* Hero Brand Section in Center */
+        .teaser-hero-content {
             text-align: center;
-            pointer-events: none;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 15;
         }
 
-        .brand-header h1 {
-            font-family: 'Special Elite', cursive;
-            font-size: 2.2rem;
-            letter-spacing: 0.15em;
-            color: #f4efe6;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        .teaser-hero-content .hero-emblem-center {
+            width: 110px;
+            height: auto;
+            margin-bottom: 8px;
         }
 
-        .brand-header p {
-            font-size: 0.85rem;
-            letter-spacing: 0.3em;
-            color: #a8a093;
-            text-transform: uppercase;
+        .teaser-hero-content .hero-logo-text {
+            width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto 12px auto;
         }
 
-        /* Polaroid Grid Layout */
-        .polaroids-container {
+        /* Entire Slogan styled with bold weight and the leather texture inside all letters */
+        .teaser-hero-content .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.45rem;
+            letter-spacing: 0.05em;
+            color: #181512;
+            background: #181512 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.12"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.15);
+        }
+
+        /* Pinned Polaroids Container */
+        .teaser-polaroids {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            pointer-events: none; /* Allow clicks through empty space */
+            pointer-events: none;
+            z-index: 5;
         }
 
-        .polaroid {
+        .polaroid-tease {
             position: absolute;
             background: #fcf9f2;
-            padding: 12px 12px 35px 12px;
-            width: 210px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+            padding: 12px 12px 45px 12px; 
+            width: 190px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             pointer-events: auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .polaroid img {
+        .polaroid-tease img {
             width: 100%;
-            height: 160px;
+            height: 150px;
             object-fit: cover;
             filter: sepia(15%) contrast(105%);
             display: block;
@@ -107,22 +128,22 @@
         /* Red Pin Graphic */
         .pin {
             position: absolute;
-            top: -8px;
+            top: -7px;
             left: 50%;
             transform: translateX(-50%);
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             background: radial-gradient(circle at 35% 35%, #ff5252, #b71c1c);
             border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset -1px -1px 2px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
             z-index: 5;
         }
 
         /* Wiggle Hover Effect */
-        .polaroid:hover {
+        .polaroid-tease:hover {
             animation: wiggle 0.4s ease infinite alternate;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            z-index: 20;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            z-index: 25;
         }
 
         @keyframes wiggle {
@@ -130,57 +151,56 @@
             100% { transform: calc(var(--rot) + 2deg) scale(1.03) translateY(-4px); }
         }
 
-        /* Sporadic positioning for the 4 polaroids (2 left, 2 right) */
-        .p-1 { top: 80px; left: 5%; --rot: -6deg; transform: rotate(-6deg); }
-        .p-2 { bottom: 120px; left: 8%; --rot: 4deg; transform: rotate(4deg); }
-        .p-3 { top: 90px; right: 5%; --rot: 5deg; transform: rotate(5deg); }
-        .p-4 { bottom: 100px; right: 10%; --rot: -4deg; transform: rotate(-4deg); }
+        /* Specific Sporadic Positioning */
+        .tp-1 { top: 20px; left: 6%; --rot: -5deg; transform: rotate(-5deg); }
+        .tp-2 { bottom: 30px; left: 8%; --rot: 4deg; transform: rotate(4deg); }
+        .tp-3 { top: 30px; right: 6%; --rot: 4deg; transform: rotate(4deg); }
+        .tp-4 { bottom: 30px; right: 8%; --rot: -5deg; transform: rotate(-5deg); }
 
 
-        /* Interactive Recipe Card (Coming Soon / Flip Up) */
-        .recipe-section {
+        /* Interactive Recipe Card (Flip Up) */
+        .recipe-section-tease {
             position: relative;
-            z-index: 15;
-            margin-top: 180px;
+            z-index: 20;
             perspective: 1200px;
-            width: 360px;
+            width: 340px;
             max-width: 90vw;
+            margin-top: 10px;
         }
 
-        /* The desk surface underneath the flap */
         .card-underneath {
             background: #24211c;
             border: 1px dashed #423b32;
-            padding: 25px 20px;
+            padding: 20px 18px;
             border-radius: 4px;
             text-align: center;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
         }
 
         .card-underneath h3 {
-            font-family: 'Special Elite', cursive;
-            font-size: 1.1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
             color: #d6cebf;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .card-underneath p {
             font-size: 0.8rem;
             color: #9e9587;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.4;
         }
 
         .signup-form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .signup-form input {
             background: #181614;
             border: 1px solid #423b32;
-            padding: 10px 12px;
+            padding: 9px 12px;
             color: #f4efe6;
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
@@ -196,9 +216,12 @@
             background: #f4efe6;
             color: #181614;
             border: none;
-            padding: 10px;
-            font-family: 'Special Elite', cursive;
-            font-size: 0.9rem;
+            padding: 9px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             cursor: pointer;
             border-radius: 2px;
             transition: background 0.2s;
@@ -215,16 +238,16 @@
             line-height: 1.3;
         }
 
-        /* The Flipping Recipe Card Flap */
+        /* Recipe Card Flap */
         .recipe-flap {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #f4ecd8; /* Recipe card parchment color */
+            background: #f4ecd8;
             color: #2c2721;
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 2px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             transform-origin: top;
@@ -236,30 +259,29 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            z-index: 5;
+            z-index: 25;
         }
 
-        /* Masking Tape at the top */
         .tape {
             position: absolute;
-            top: -10px;
+            top: -9px;
             left: 50%;
             transform: translateX(-50%);
-            width: 70px;
-            height: 22px;
-            background: rgba(245, 235, 210, 0.65);
+            width: 60px;
+            height: 20px;
+            background: rgba(245, 235, 210, 0.7);
             border: 1px solid rgba(0,0,0,0.08);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             pointer-events: none;
         }
 
         .recipe-flap h2 {
-            font-family: 'Special Elite', cursive;
-            font-size: 1.6rem;
-            letter-spacing: 0.05em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: #3b332b;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .recipe-flap .sub-text {
@@ -272,88 +294,137 @@
         .recipe-flap .hint {
             font-size: 0.65rem;
             color: #948877;
-            margin-top: 25px;
+            margin-top: 20px;
             font-style: italic;
         }
 
-        /* Hover Trigger: Flips the card upward */
-        .recipe-section:hover .recipe-flap {
+        .recipe-section-tease:hover .recipe-flap {
             transform: rotateX(180deg);
             box-shadow: 0 -10px 25px rgba(0,0,0,0.3);
         }
 
-        /* Responsive adjustments for mobile screens */
-        @media (max-width: 768px) {
-            .polaroid {
-                width: 130px;
-                padding: 8px 8px 25px 8px;
+        /* Footer Layer Fix */
+        .main-footer {
+            position: relative;
+            z-index: 30;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+
+        .footer-socials a {
+            color: #d4ccc0; 
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600; 
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-socials a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom p {
+            color: #d0c8bc !important; 
+            font-weight: 500; 
+        }
+
+        .footer-bottom p:last-child {
+            color: #b0a594 !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .polaroid-tease {
+                width: 120px;
+                padding: 8px 8px 30px 8px;
             }
-            .polaroid img {
-                height: 100px;
+            .polaroid-tease img {
+                height: 95px;
             }
-            .p-1 { top: 20px; left: 2%; }
-            .p-2 { bottom: 20px; left: 2%; }
-            .p-3 { top: 20px; right: 2%; }
-            .p-4 { bottom: 20px; right: 2%; }
-            .recipe-section {
-                margin-top: 140px;
-            }
+            .tp-1 { top: 10px; left: 2%; }
+            .tp-2 { bottom: 10px; left: 2%; }
+            .tp-3 { top: 10px; right: 2%; }
+            .tp-4 { bottom: 10px; right: 2%; }
         }
     </style>
 </head>
-<body>
+<body class="teaser-body fade-out">
 
-    <div class="workspace">
+    <!-- Main Header with corrected stacking context -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Logos/WoodsLogoTopClear.png" alt="Logo" class="logo-img" width="120" height="40">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Teaser Workspace Area -->
+    <div class="teaser-workspace">
         
-        <!-- Center Brand Header -->
-        <div class="brand-header">
-            <h1>First In A Lifetime</h1>
-            <p>Stories, recipes, and provisions</p>
-        </div>
+        <!-- Pinned Polaroids Container -->
+        <div class="teaser-polaroids">
+            <div class="polaroid-tease tp-1">
+                <div class="pin"></div>
+                <img src="Photos/NewZealand/TheShire.webp" alt="The Ghost Of Roma Sparta" width="600" height="600" loading="lazy">
+            </div>
 
-        <!-- Pinned Polaroids (2 on left, 2 on right) -->
-        <div class="polaroids-container">
-            <div class="polaroid p-1">
+            <div class="polaroid-tease tp-2">
                 <div class="pin"></div>
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Teaser 1">
+                <img src="Photos/Hanoi/bunchakim.webp" alt="Bún Chả And Belonging" width="600" height="600" loading="lazy">
             </div>
-            <div class="polaroid p-2">
+
+            <div class="polaroid-tease tp-3">
                 <div class="pin"></div>
-                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&q=80" alt="Teaser 2">
+                <img src="Photos/Events/warped25spin.webp" alt="Warped Tour" width="600" height="600" loading="lazy">
             </div>
-            <div class="polaroid p-3">
+
+            <div class="polaroid-tease tp-4">
                 <div class="pin"></div>
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Teaser 3">
-            </div>
-            <div class="polaroid p-4">
-                <div class="pin"></div>
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=400&q=80" alt="Teaser 4">
+                <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada" width="600" height="600" loading="lazy">
             </div>
         </div>
 
-        <!-- Recipe Card / Interactive Coming Soon Section -->
-        <div class="recipe-section">
+        <!-- Center Brand Emblem, Words, and Fully Textured Slogan -->
+        <div class="teaser-hero-content">
+            <img src="Logos/WoodsLogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center" width="320" height="320">
+            <img src="Logos/WoodsLogoWordsClear.png" alt="First In A Lifetime" class="hero-logo-text" width="325" height="auto" style="margin-bottom: 2rem;">
+            <h2 class="hero-subtitle">“Stories, recipes, and provisions for the road less scripted”</h2>
+        </div>
+
+        <!-- Interactive Recipe Card / Email Signup Section -->
+        <div class="recipe-section-tease">
             
-            <!-- What is revealed underneath when hovered -->
+            <!-- Hidden Beneath Flap -->
             <div class="card-underneath">
-                <h3>Join The Journey</h3>
-                <p>Be one of the first to start the journey. Drop your email to get early dispatches and launch updates.</p>
+                <h3>Be One of the First</h3>
+                <p>Start the journey. Enter your email address to get early dispatches and updates.</p>
                 
                 <form class="signup-form" action="#" method="POST">
-                    <input type="email" placeholder="Enter your email address..." required>
-                    <button type="submit">Request Access</button>
+                    <input type="email" name="email" placeholder="Enter your email address..." required>
+                    <button type="submit">Sign Up For Updates</button>
                 </form>
 
                 <div class="privacy-note">
-                    Strictly zero spam. Your email is kept private, secure, and will never be sold or shared with anyone, ever.
+                    Strictly zero spam. Your information is kept private and secure, and will never be sold or shared with anyone, ever.
                 </div>
             </div>
 
-            <!-- The Recipe Card Flap that lifts up on hover -->
+            <!-- Flipping Flap -->
             <div class="recipe-flap">
                 <div class="tape"></div>
                 <h2>Coming Soon</h2>
-                <span class="sub-text">Archive No. 01</span>
+                <span class="sub-text">First In A Lifetime</span>
                 <div class="hint">hover to open dispatch</div>
             </div>
 
@@ -361,5 +432,38 @@
 
     </div>
 
+    <!-- Weathered Leather Footer Block -->
+    <footer class="main-footer weathered-leather-block" style="padding: 30px 20px;">
+        <ul class="footer-socials">
+            <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+            <li><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+        </ul>
+        <div class="footer-bottom" style="text-align: center; margin: 0 auto; max-width: 800px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px;">
+            <p style="font-size: 0.85rem; margin-bottom: 8px;">All original photography, journals, and text content are property of First In A Lifetime. Unauthorized use or duplication is strictly prohibited.</p>
+            <p style="font-size: 0.8rem;">&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("ext-fade");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+    });
+    </script>
 </body>
 </html>
