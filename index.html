@@ -487,29 +487,25 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Joining...';
 
-                // MailerLite Universal tracker interaction or standard fetch integration fallback
-                // If using the universal snippet, we can utilize MailerLite's web-form push mechanics 
-                // or send directly to the specific form ID endpoint.
-                
-                // For a native custom form action using your account `2640833` and form `m8vPCD`:
-                const formData = new FormData();
-                formData.append('fields[email]', emailVal);
-                formData.append('ml-submit', '1');
+                // Properly encode data for MailerLite endpoint submission
+                const bodyData = new URLSearchParams();
+                bodyData.append('fields[email]', emailVal);
+                bodyData.append('ml-submit', '1');
 
-                // Submit via fetch to MailerLite's embedded form handler endpoint
+                // Submit via fetch directly to your MailerLite form endpoint
                 fetch('https://assets.mailerlite.com/json/2640833/forms/m8vPCD/subscribe', {
                     method: 'POST',
-                    body: formData,
+                    body: bodyData,
                     headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
+                        'Content-Type': 'application/x-www-form-urlencoded',
                     }
                 })
-                .then(response => {
+                .then(() => {
                     // Hide form and show success message
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
                 })
-                .catch(error => {
+                .catch(() => {
                     // Fallback visual success even if CORS blocks response details
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
@@ -531,3 +527,4 @@
 
 </body>
 </html>
+```[cite: 7]
