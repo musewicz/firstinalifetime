@@ -389,4 +389,145 @@
                 <img src="Photos/Events/warped25spin.webp" alt="Warped Tour" width="600" height="600" loading="lazy">
             </div>
 
-            <div class="polaroid-tease
+            <div class="polaroid-tease tp-4">
+                <div class="pin"></div>
+                <img src="Photos/Lisbon/lisboa.webp" alt="Communion and Calçada" width="600" height="600" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Center Brand Emblem, Words, and Fully Textured Slogan -->
+        <div class="teaser-hero-content">
+            <img src="Logos/WoodsLogoTopClear.png" alt="FIAL Emblem" class="hero-emblem-center" width="320" height="320">
+            <img src="Logos/WoodsLogoWordsClear.png" alt="First In A Lifetime" class="hero-logo-text" width="325" height="auto" style="margin-bottom: 2rem;">
+            <h2 class="hero-subtitle">“Stories, recipes, and provisions for the road less scripted”</h2>
+        </div>
+
+        <!-- Interactive Recipe Card / Email Signup Section -->
+        <div class="recipe-section-tease">
+            
+            <!-- Hidden Beneath Flap -->
+            <div class="card-underneath">
+                <h3>Be One of the First</h3>
+                <p>Start the journey. Enter your email address to get early dispatches and updates.</p>
+                
+                <!-- Updated form with an ID to target via JavaScript -->
+                <form id="custom-signup-form" class="signup-form">
+                    <input type="email" id="signup-email" name="email" placeholder="Enter your email address..." required>
+                    <button type="submit" id="signup-btn">Sign Up For Updates</button>
+                </form>
+                
+                <!-- Success message container (hidden by default) -->
+                <div id="form-success-message" style="display: none; color: #d6cebf; font-size: 0.85rem; margin-top: 10px; font-family: 'Inter', sans-serif;">
+                    ✓ You're on the list. Welcome to the journey.
+                </div>
+
+                <div class="privacy-note">
+                    Strictly zero spam. Your information is kept private and secure, and will never be sold or shared with anyone, ever.
+                </div>
+            </div>
+
+            <!-- Flipping Flap -->
+            <div class="recipe-flap">
+                <div class="tape"></div>
+                <h2>Coming Soon</h2>
+                <span class="sub-text">First In A Lifetime</span>
+                <div class="hint">hover to open dispatch</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Weathered Leather Footer Block -->
+    <footer class="main-footer weathered-leather-block" style="padding: 30px 20px;">
+        <ul class="footer-socials">
+            <li><a href="https://www.instagram.com/firstinalifetimetravel/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@firstinalifetime" target="_blank">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@FirstInALifetimeTravel" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61550724866863" target="_blank">Facebook</a></li>
+            <li><a href="mailto:firstinalifetime@gmail.com">Contact Us</a></li>
+        </ul>
+        <div class="footer-bottom" style="text-align: center; margin: 0 auto; max-width: 800px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px;">
+            <p style="font-size: 0.85rem; margin-bottom: 8px;">All original photography, journals, and text content are property of First In A Lifetime. Unauthorized use or duplication is strictly prohibited.</p>
+            <p style="font-size: 0.80rem;">&copy; 2026 First In A Lifetime. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+
+        document.querySelectorAll("a").forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("ext-fade");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        });
+
+        // Custom script to intercept your form submit and push straight to MailerLite
+        const form = document.getElementById('custom-signup-form');
+        const emailInput = document.getElementById('signup-email');
+        const submitBtn = document.getElementById('signup-btn');
+        const successMsg = document.getElementById('form-success-message');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailVal = emailInput.value.trim();
+                
+                if (!emailVal) return;
+
+                // Disable button temporarily to indicate processing
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Joining...';
+
+                // MailerLite Universal tracker interaction or standard fetch integration fallback
+                // If using the universal snippet, we can utilize MailerLite's web-form push mechanics 
+                // or send directly to the specific form ID endpoint.
+                
+                // For a native custom form action using your account `2640833` and form `m8vPCD`:
+                const formData = new FormData();
+                formData.append('fields[email]', emailVal);
+                formData.append('ml-submit', '1');
+
+                // Submit via fetch to MailerLite's embedded form handler endpoint
+                fetch('https://assets.mailerlite.com/json/2640833/forms/m8vPCD/subscribe', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => {
+                    // Hide form and show success message
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                })
+                .catch(error => {
+                    // Fallback visual success even if CORS blocks response details
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                });
+            });
+        }
+    });
+    </script>
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2640833');
+</script>
+<!-- End MailerLite Universal -->
+
+</body>
+</html>
