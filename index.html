@@ -410,9 +410,13 @@
                 <h3>Be One of the First</h3>
                 <p>Start the journey. Enter your email address to get early dispatches and updates.</p>
                 
-                <!-- Updated form with an ID to target via JavaScript -->
-                <form id="custom-signup-form" class="signup-form">
-                    <input type="email" id="signup-email" name="email" placeholder="Enter your email address..." required>
+                <!-- Hidden iframe to capture the silent form submission response -->
+                <iframe name="hidden-iframe" style="display:none;"></iframe>
+
+                <!-- Form pointing to MailerLite endpoint via hidden iframe target -->
+                <form id="custom-signup-form" action="https://assets.mailerlite.com/json/2640833/forms/m8vPCD/subscribe" method="POST" target="hidden-iframe" class="signup-form">
+                    <input type="email" id="signup-email" name="fields[email]" placeholder="Enter your email address..." required>
+                    <input type="hidden" name="ml-submit" value="1">
                     <button type="submit" id="signup-btn">Sign Up For Updates</button>
                 </form>
                 
@@ -470,7 +474,7 @@
             });
         });
 
-        // Custom script to intercept your form submit and push straight to MailerLite
+        // Script to handle the visual transition smoothly via the hidden iframe setup
         const form = document.getElementById('custom-signup-form');
         const emailInput = document.getElementById('signup-email');
         const submitBtn = document.getElementById('signup-btn');
@@ -478,38 +482,18 @@
 
         if (form) {
             form.addEventListener('submit', function (e) {
-                e.preventDefault();
                 const emailVal = emailInput.value.trim();
-                
                 if (!emailVal) return;
 
-                // Disable button temporarily to indicate processing
+                // Give immediate feedback to the user
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Joining...';
 
-                // Properly encode data for MailerLite endpoint submission
-                const bodyData = new URLSearchParams();
-                bodyData.append('fields[email]', emailVal);
-                bodyData.append('ml-submit', '1');
-
-                // Submit via fetch directly to your MailerLite form endpoint
-                fetch('https://assets.mailerlite.com/json/2640833/forms/m8vPCD/subscribe', {
-                    method: 'POST',
-                    body: bodyData,
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    }
-                })
-                .then(() => {
-                    // Hide form and show success message
+                // Brief timeout to let the native form post fire into the iframe, then reveal success
+                setTimeout(() => {
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
-                })
-                .catch(() => {
-                    // Fallback visual success even if CORS blocks response details
-                    form.style.display = 'none';
-                    successMsg.style.display = 'block';
-                });
+                }, 500);
             });
         }
     });
@@ -527,4 +511,3 @@
 
 </body>
 </html>
-```[cite: 7]
